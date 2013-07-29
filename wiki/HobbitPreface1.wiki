@@ -14,3 +14,5 @@ Translation: the hobbit or there and back again
 || *Rune* || THORN || EH || || HAEGL || OS || BEORC || BEORC || IS || TIW || || OS || RAD || || THORN || EH || RAD || EH || || AESC || NYD || DAEG || || BEORC || AESC || CEN || CEN || || AESC || GYFU || AESC || IS || NYD ||
 || *Phoneme* || TH || E || || H || O || B || B || I || T || || O || R || || TH || E || R || E || || A || N || D || || B || A || K || K || || A || G || A || I || N ||
 || *Language* || th || e || || h || o || b || b || i || t || || o || r || || th || e || r || e || || a || n || d || || b || a || c || k || || a || g || a || i || n ||
+
+[http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface1.html]
