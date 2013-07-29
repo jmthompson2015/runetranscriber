@@ -1,0 +1,284 @@
+body {
+	background-image: url('../images/yellowGradient.png');
+	font-family: Arial, Verdana, Helvetica, Sans-Serif;
+	font-size: medium;
+}
+
+@font-face { font-family: Junicode-Bold; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf'); }
+@font-face { font-family: Angerthas; src: url('ANGERTH.TTF'); }
+
+.accent {
+	background-image: url('../images/GreenMarbleVerdeGuatemala.jpg');
+	color: rgb(255, 255, 232);
+	padding: 10px;
+	width: 100%;
+}
+
+.background-blue {
+	background-color: blue;
+}
+
+.background-lightgrey {
+	background-color: lightgrey;
+}
+
+.background-green {
+	background-color: darkgreen;
+}
+
+.background-red {
+	background-color: red;
+}
+
+.background-yellow {
+	background-color: yellow;
+}
+
+.border-spacing-none {
+	border-spacing: 0px;
+}
+
+.center {
+	text-align: center;
+}
+
+.center-table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.code {
+	font-family: "Courier New", Courier;
+	font-size: small;
+	font-weight: bold;
+}
+
+.font {
+	font-family: Arial, Verdana, Helvetica, Sans-Serif;
+}
+
+.font-anglo-saxon{
+	font-family: Junicode-Bold;
+}
+
+.font-cirth{
+	font-family: Angerthas;
+}
+
+.font-size-large {
+	font-size: large;
+}
+
+.font-size-medium {
+	font-size: medium;
+}
+
+.font-size-small {
+	font-size: small;
+}
+
+.font-size-x-large {
+	font-size: x-large;
+}
+
+.font-size-x-small {
+	font-size: x-small;
+}
+
+.font-size-xx-large {
+	font-size: xx-large;
+}
+
+.font-size-xx-small {
+	font-size: xx-small;
+}
+
+.font-weight-normal {
+	font-weight: normal;
+}
+
+.full-height {
+	height: 100%;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.header1 {
+	font-size: xx-large;
+	font-weight: bold;
+	padding: 5px 10px 5px 10px;
+	text-align: left;
+}
+
+.header2 {
+	font-size: x-large;
+	font-weight: bold;
+	text-align: left;
+}
+
+.header3 {
+	font-size: large;
+	font-weight: bold;
+	text-align: left;
+}
+
+.icon-link-cell {
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.left {
+	text-align: left;
+}
+
+.madeOnAMac {
+	background-image: url('../images/madeOnAMac20050720.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-top: 5px;
+	padding-left : 5px;
+	padding-bottom: 36px;
+	padding-right: 98px;
+}
+
+.margin-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.middle {
+	vertical-align: middle;
+}
+
+.padding-5 {
+	padding: 5px;
+}
+
+.padding-10 {
+	padding: 10px;
+}
+
+.padding-none {
+	padding: 0px;
+}
+
+.padding-bottom-10 {
+	padding-bottom: 10px;
+}
+
+.padding-bottom-20 {
+	padding-bottom: 20px;
+}
+
+.padding-left-10 {
+	padding-left: 10px;
+}
+
+.padding-right-10 {
+	padding-right: 10px;
+}
+
+.padding-top-10 {
+	padding-top: 10px;
+}
+
+.padding-top-20 {
+	padding-top: 20px;
+}
+
+.right {
+	text-align: right;
+}
+
+.stretch {
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+}
+
+.table-cell-details {
+	border: 1px solid;
+	border-color: darkgreen;
+	font-size: small;
+	padding: 5px;
+}
+
+.table-cell-anglo-saxon {
+	border: 1px solid;
+	border-color: darkgreen;
+	font-family: Junicode-Bold;
+	font-size: x-large;
+	padding: 5px;
+}
+
+.table-cell-cirth {
+	border: 1px solid;
+	border-color: darkgreen;
+	font-family: Angerthas;
+	font-size: large;
+	padding: 5px;
+}
+
+.table-header-cell-details {
+	border: 1px solid;
+	background-color: darkgreen;
+	border-color: lightgrey;
+	color: lightyellow;
+	font-size: small;
+	font-style: bold;
+	padding: 5px;
+}
+
+.table-details {
+	border: 1px solid;
+	border-collapse: collapse;
+	border-color: darkgreen;
+	font-size: medium;
+}
+
+.top {
+	vertical-align: top;
+}
+
+a:link {
+	color: darkgreen;
+	text-decoration: none
+}
+
+a:visited {
+	color: darkgreen;
+	text-decoration: none
+}
+
+a:active {
+	color: darkgreen;
+	text-decoration: none
+}
+
+a:hover {
+	color: darkgreen;
+	text-decoration: underline;
+}
+
+a.link-footer:link {
+	color: rgb(255, 255, 232);
+	text-decoration: none
+}
+
+a.link-footer:visited {
+	color: rgb(255, 255, 232);
+	text-decoration: none
+}
+
+a.link-footer:active {
+	color: rgb(255, 255, 232);
+	text-decoration: none
+}
+
+a.link-footer:hover {
+	color: rgb(255, 255, 232);
+	text-decoration: underline;
+}
