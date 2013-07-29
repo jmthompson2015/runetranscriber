@@ -1,13 +1,16 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= The Hobbit, Preface 1 =
 
-Add your content here.
+http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/hobbit/TheHobbit_Preface1.jpg
 
+The Hobbit, Preface 1
 
-= Details =
+Rune Type: Anglo-Saxon
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Translation: the hobbit or there and back again
+
+|| *Font* || 
+|| *Rune* || THORN || EH || || HAEGL || OS || BEORC || BEORC || IS || TIW || || OS || RAD || || THORN || EH || RAD || EH || || AESC || NYD || DAEG || || BEORC || AESC || CEN || CEN || || AESC || GYFU || AESC || IS || NYD ||
+|| *Phoneme* || TH || E || || H || O || B || B || I || T || || O || R || || TH || E || R || E || || A || N || D || || B || A || K || K || || A || G || A || I || N ||
+|| *Language* || th || e || || h || o || b || b || i || t || || o || r || || th || e || r || e || || a || n || d || || b || a || c || k || || a || g || a || i || n ||
