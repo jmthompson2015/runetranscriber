@@ -1,4 +1,16 @@
 
+// 1
+function FEOH()
+{
+	document.write("&#5792;");
+}
+
+// 2
+function UR()
+{
+	document.write("&#5794;");
+}
+
 // 3
 function THORN()
 {
@@ -29,6 +41,12 @@ function GYFU()
 	document.write("&#5815;");
 }
 
+// 8
+function WYNN()
+{
+	document.write("&#5817;");
+}
+
 // 9
 function HAEGL()
 {
@@ -45,6 +63,18 @@ function NYD()
 function IS()
 {
 	document.write("&#5825;");
+}
+
+// 14
+function PEORD()
+{
+	document.write("&#5832;");
+}
+
+// 16
+function SIGEL()
+{
+	document.write("&#5835;");
 }
 
 // 17
@@ -65,6 +95,30 @@ function EH()
 	document.write("&#5846;");
 }
 
+// 20
+function MANN()
+{
+	document.write("&#5847;");
+}
+
+// 21
+function LAGU()
+{
+	document.write("&#5850;");
+}
+
+// 22
+function ING()
+{
+	document.write("&#5853;");
+}
+
+// 23
+function EOEL()
+{
+	document.write("&#5855;");
+}
+
 // 24
 function DAEG()
 {
@@ -77,7 +131,23 @@ function AESC()
 	document.write("&#5803;");
 }
 
+// 27
+function YR()
+{
+	document.write("&#5795;");
+}
+
 function SPACE()
 {
 	document.write("&#5867;");
+}
+
+function COMMA()
+{
+	document.write("&#5868;");
+}
+
+function PERIOD()
+{
+	document.write("&#5010;");
 }
