@@ -76,6 +76,42 @@ public class EnglishAngloSaxonPhoneticTranscriberTest extends DefaultPhoneticTra
      * Test the <code>transcribeForward()</code> method.
      */
     @Test
+    public void transcribeForward5()
+    {
+        final List<Phoneme> result = transcriber.transcribeForward(examples.getAngloSaxon5().getLanguageLetters());
+        final List<Phoneme> expected = examples.getAngloSaxon5().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward6()
+    {
+        final List<Phoneme> result = transcriber.transcribeForward(examples.getAngloSaxon6().getLanguageLetters());
+        final List<Phoneme> expected = examples.getAngloSaxon6().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward7()
+    {
+        final List<Phoneme> result = transcriber.transcribeForward(examples.getAngloSaxon7().getLanguageLetters());
+        final List<Phoneme> expected = examples.getAngloSaxon7().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
     public void transcribeForwardNull()
     {
         final List<Phoneme> phonemes = transcriber.transcribeForward(null);
@@ -126,6 +162,42 @@ public class EnglishAngloSaxonPhoneticTranscriberTest extends DefaultPhoneticTra
     {
         final List<String> result = transcriber.transcribeReverse(examples.getAngloSaxon4().getPhonemes());
         final List<String> expected = examples.getAngloSaxon4().getLanguageLetters();
+
+        verifyReverse(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse5()
+    {
+        final List<String> result = transcriber.transcribeReverse(examples.getAngloSaxon5().getPhonemes());
+        final List<String> expected = examples.getAngloSaxon5().getLanguageLetters();
+
+        verifyReverse(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse6()
+    {
+        final List<String> result = transcriber.transcribeReverse(examples.getAngloSaxon6().getPhonemes());
+        final List<String> expected = examples.getAngloSaxon6().getLanguageLetters();
+
+        verifyReverse(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse7()
+    {
+        final List<String> result = transcriber.transcribeReverse(examples.getAngloSaxon7().getPhonemes());
+        final List<String> expected = examples.getAngloSaxon7().getLanguageLetters();
 
         verifyReverse(result, expected, IS_VERBOSE);
     }
