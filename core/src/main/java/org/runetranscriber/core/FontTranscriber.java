@@ -7,11 +7,8 @@ import java.awt.Font;
  * 
  * @param <R> Rune type parameter.
  */
-public interface FontTranscriber<R> extends Transcriber<R, String>
+public interface FontTranscriber<R extends Rune> extends Transcriber<R, String>
 {
-    /** Default font size. */
-    // float DEFAULT_FONT_SIZE = 24f;
-
     /**
      * @return the default font size.
      */
