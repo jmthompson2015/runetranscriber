@@ -2,6 +2,8 @@
 
 = The Hobbit =
 
+== [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitTitlePage.html Title Page] ==
+
 == Thror's Map ==
 
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitThrorsMap1.html Thror's Map #1]
