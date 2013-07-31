@@ -103,6 +103,63 @@ public class AngloSaxonRuneTranscriberTest extends DefaultRuneTranscriberTest
     }
 
     /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward5()
+    {
+        final List<Phoneme> phonemes = examples.getAngloSaxon5().getPhonemes();
+        final List<AngloSaxonRune> result = transcriber.transcribeForward(phonemes);
+        final List<AngloSaxonRune> expected = examples.getAngloSaxon5().getRunes();
+
+        if (IS_VERBOSE)
+        {
+            System.out.println("expected = [" + AngloSaxonRune.toString(expected) + "]");
+            System.out.println("result   = [" + AngloSaxonRune.toString(result) + "]");
+        }
+
+        verifyRunes(result, expected);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward6()
+    {
+        final List<Phoneme> phonemes = examples.getAngloSaxon6().getPhonemes();
+        final List<AngloSaxonRune> result = transcriber.transcribeForward(phonemes);
+        final List<AngloSaxonRune> expected = examples.getAngloSaxon6().getRunes();
+
+        if (IS_VERBOSE)
+        {
+            System.out.println("expected = [" + AngloSaxonRune.toString(expected) + "]");
+            System.out.println("result   = [" + AngloSaxonRune.toString(result) + "]");
+        }
+
+        verifyRunes(result, expected);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward7()
+    {
+        final List<Phoneme> phonemes = examples.getAngloSaxon7().getPhonemes();
+        final List<AngloSaxonRune> result = transcriber.transcribeForward(phonemes);
+        final List<AngloSaxonRune> expected = examples.getAngloSaxon7().getRunes();
+
+        if (IS_VERBOSE)
+        {
+            System.out.println("expected = [" + AngloSaxonRune.toString(expected) + "]");
+            System.out.println("result   = [" + AngloSaxonRune.toString(result) + "]");
+        }
+
+        verifyRunes(result, expected);
+    }
+
+    /**
      * Test the <code>transcribeReverse()</code> method.
      */
     @Test
@@ -156,6 +213,48 @@ public class AngloSaxonRuneTranscriberTest extends DefaultRuneTranscriberTest
         final List<AngloSaxonRune> runes = examples.getAngloSaxon4().getRunes();
         final List<Phoneme> result = transcriber.transcribeReverse(runes);
         final List<Phoneme> expected = examples.getAngloSaxon4().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse5()
+    {
+        final List<AngloSaxonRune> runes = examples.getAngloSaxon5().getRunes();
+        final List<Phoneme> result = transcriber.transcribeReverse(runes);
+        final List<Phoneme> expected = examples.getAngloSaxon5().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse6()
+    {
+        final List<AngloSaxonRune> runes = examples.getAngloSaxon6().getRunes();
+        final List<Phoneme> result = transcriber.transcribeReverse(runes);
+        final List<Phoneme> expected = examples.getAngloSaxon6().getPhonemes();
+
+        // V to U knowledge lost.
+        replaceAll(expected, Phoneme.V, Phoneme.U);
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse7()
+    {
+        final List<AngloSaxonRune> runes = examples.getAngloSaxon7().getRunes();
+        final List<Phoneme> result = transcriber.transcribeReverse(runes);
+        final List<Phoneme> expected = examples.getAngloSaxon7().getPhonemes();
 
         verifyPhonemes(result, expected, IS_VERBOSE);
     }
