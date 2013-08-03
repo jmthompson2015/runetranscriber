@@ -1,6 +1,5 @@
 package org.runetranscriber.core;
 
-import java.util.List;
 
 /**
  * Defines methods required by an example.
@@ -12,20 +11,20 @@ public interface Example<R extends Rune>
     /**
      * @return font letters.
      */
-    List<String> getFontLetters();
+    FontLetterList getFontLetters();
 
     /**
      * @return language letters.
      */
-    List<String> getLanguageLetters();
+    LanguageLetterList getLanguageLetters();
 
     /**
      * @return phonemes.
      */
-    List<Phoneme> getPhonemes();
+    PhonemeList getPhonemes();
 
     /**
      * @return runes.
      */
-    List<R> getRunes();
+    RuneList<R> getRunes();
 }
