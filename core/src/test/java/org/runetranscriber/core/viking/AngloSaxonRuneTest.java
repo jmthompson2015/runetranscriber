@@ -14,7 +14,7 @@ import org.junit.Test;
 /**
  * Provides tests for the <code>AngloSaxonRune</code> class.
  */
-public class AngloSaxonRuneTest
+public final class AngloSaxonRuneTest
 {
     /**
      * Test the <code>equals()</code> method.
