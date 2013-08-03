@@ -3,7 +3,6 @@ package org.runetranscriber.core.viking;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.runetranscriber.core.DefaultRune;
 import org.runetranscriber.core.Rune;
 
@@ -117,54 +116,6 @@ public final class AngloSaxonRune implements Rune
 
     /** Values. */
     private static List<AngloSaxonRune> VALUES;
-
-    /**
-     * @param runes Runes.
-     * 
-     * @return a list containing the given parameters.
-     */
-    public static final List<AngloSaxonRune> asList(final AngloSaxonRune... runes)
-    {
-        final List<AngloSaxonRune> answer = new ArrayList<AngloSaxonRune>();
-
-        if (runes != null)
-        {
-            for (int i = 0; i < runes.length; i++)
-            {
-                if (runes[i] != null)
-                {
-                    answer.add(runes[i]);
-                }
-            }
-        }
-
-        return answer;
-    }
-
-    /**
-     * @param text Rune text.
-     * 
-     * @return a string representation of the given parameter.
-     */
-    public final static String toString(final List<AngloSaxonRune> text)
-    {
-        final StringBuilder sb = new StringBuilder();
-
-        if (CollectionUtils.isNotEmpty(text))
-        {
-            for (int i = 0; i < text.size(); i++)
-            {
-                sb.append(text.get(i).name());
-
-                if (i < (text.size() - 1))
-                {
-                    sb.append("-");
-                }
-            }
-        }
-
-        return sb.toString();
-    }
 
     /**
      * @param number Rune number.
