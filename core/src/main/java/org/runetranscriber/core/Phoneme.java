@@ -3,8 +3,6 @@ package org.runetranscriber.core;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.collections.CollectionUtils;
-
 /**
  * Provides an enumeration of phonemes.
  */
@@ -254,59 +252,6 @@ public enum Phoneme
         SPECIAL_CHARACTERS.add(NEWLINE.getMeaning());
     }
 
-    // static
-    // {
-    // System.out.println("Phoneme count = " + Phoneme.values().length);
-    // }
-
-    /**
-     * @param phonemes Phonemes.
-     * 
-     * @return a list containing the given parameters.
-     */
-    public static final List<Phoneme> asList(final Phoneme... phonemes)
-    {
-        final List<Phoneme> answer = new ArrayList<Phoneme>();
-
-        if (phonemes != null)
-        {
-            for (int i = 0; i < phonemes.length; i++)
-            {
-                if (phonemes[i] != null)
-                {
-                    answer.add(phonemes[i]);
-                }
-            }
-        }
-
-        return answer;
-    }
-
-    /**
-     * @param text phoneme text.
-     * 
-     * @return a string representation of the given parameter.
-     */
-    public final static String toString(final List<Phoneme> text)
-    {
-        final StringBuilder sb = new StringBuilder();
-
-        if (CollectionUtils.isNotEmpty(text))
-        {
-            for (int i = 0; i < text.size(); i++)
-            {
-                sb.append(text.get(i).getMeaning());
-
-                if (i < (text.size() - 1))
-                {
-                    sb.append("-");
-                }
-            }
-        }
-
-        return sb.toString();
-    }
-
     /**
      * @param meaning Meaning.
      * 
@@ -329,15 +274,6 @@ public enum Phoneme
 
     /** Meaning. */
     private final String meaning;
-
-    /**
-     * @param meaning Meaning.
-     */
-    // @SuppressWarnings("hiding")
-    // private Phoneme(final String meaning)
-    // {
-    // this.meaning = meaning;
-    // }
 
     /**
      * @param meanings Meanings. (optional)
