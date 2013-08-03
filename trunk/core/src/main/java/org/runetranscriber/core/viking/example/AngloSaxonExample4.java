@@ -1,11 +1,13 @@
 package org.runetranscriber.core.viking.example;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.runetranscriber.core.AbstractExample;
-import org.runetranscriber.core.ListUtilities;
+import org.runetranscriber.core.FontLetterList;
+import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
+import org.runetranscriber.core.PhonemeList;
+import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.viking.AngloSaxonFontLetter;
 import org.runetranscriber.core.viking.AngloSaxonRune;
 
@@ -15,7 +17,7 @@ import org.runetranscriber.core.viking.AngloSaxonRune;
 public final class AngloSaxonExample4 extends AbstractExample<AngloSaxonRune>
 {
     @Override
-    protected List<String> createFontLetters()
+    protected FontLetterList createFontLetters()
     {
         final String[] myFontLetters = {
                 // stand
@@ -161,22 +163,22 @@ public final class AngloSaxonExample4 extends AbstractExample<AngloSaxonRune>
                 // th.
                 AngloSaxonFontLetter.THORN, AngloSaxonFontLetter.PERIOD, };
 
-        return Arrays.asList(myFontLetters);
+        return new FontLetterList(Arrays.asList(myFontLetters));
     }
 
     @Override
-    protected List<String> createLanguageLetters()
+    protected LanguageLetterList createLanguageLetters()
     {
         final String text = "Stand by the grey st\none when the thrush kn\nocks and the setting s\nun with the last light \nof Durin's Day will sh\nine upon the keyhole. \nTh.";
 
-        return ListUtilities.convert(text);
+        return new LanguageLetterList(text);
     }
 
     /**
      * @return phonemes.
      */
     @Override
-    protected List<Phoneme> createPhonemes()
+    protected PhonemeList createPhonemes()
     {
         final Phoneme[] myPhonemes = {
                 // stand
@@ -233,14 +235,14 @@ public final class AngloSaxonExample4 extends AbstractExample<AngloSaxonRune>
                 // th.
                 Phoneme.TH, Phoneme.PERIOD, };
 
-        return Phoneme.asList(myPhonemes);
+        return new PhonemeList(myPhonemes);
     }
 
     /**
      * @return runes.
      */
     @Override
-    protected List<AngloSaxonRune> createRunes()
+    protected RuneList<AngloSaxonRune> createRunes()
     {
         final AngloSaxonRune[] myRunes = {
                 // stand
@@ -367,6 +369,6 @@ public final class AngloSaxonExample4 extends AbstractExample<AngloSaxonRune>
                 // th.
                 AngloSaxonRune.THORN, AngloSaxonRune.PERIOD, };
 
-        return AngloSaxonRune.asList(myRunes);
+        return new RuneList<AngloSaxonRune>(myRunes);
     }
 }
