@@ -2,10 +2,14 @@ package org.runetranscriber.core;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.example.CirthEreborExample1;
+import org.runetranscriber.core.cirth.example.CirthEreborExample2;
 
 /**
  * Provides tests for the <code>PhonemeList</code> class.
@@ -26,6 +30,12 @@ public final class PhonemeListTest
 
     /** List. */
     private final PhonemeList list2 = new PhonemeList(THE_HOBBIT);
+
+    /** Example. */
+    private Example<Certh> example1 = new CirthEreborExample1();
+
+    /** Example. */
+    private Example<Certh> example2 = new CirthEreborExample2();
 
     /**
      * Test the <code>PhonemeList()</code> method.
@@ -91,5 +101,36 @@ public final class PhonemeListTest
     public void testToString()
     {
         assertThat(list0.toString(), is("th-e- -h-o-b-b-i-t"));
+    }
+
+    /**
+     * Test the <code>toString()</code> method.
+     */
+    @Test
+    public void testToString1()
+    {
+        final PhonemeList phonemes = example1.getPhonemes();
+
+        final String result = phonemes.toString();
+        assertNotNull(result);
+
+        final String expected = "dh-e- -l-o-r-d- -o-v- -dh-e- -r-i-" + Constants.VELAR_NASAL
+                + "-s- -t-r-a-n-s-l-a-t-e-d- -f-r-o-m- -dh-e- -r-e-d- -b-" + Constants.O_MACRON + "-k";
+
+        assertThat(result, is(expected));
+    }
+
+    /**
+     * Test the <code>toString()</code> method.
+     */
+    @Test
+    public void testToString2()
+    {
+        final PhonemeList phonemes = example2.getPhonemes();
+
+        final String result = phonemes.toString();
+
+        assertNotNull(result);
+        assertThat(result, is("b-a-l-i-n- -s-u-n- -o-v- -f-u-nd-i-n- -l-o-r-d- -o-v- -m-o-r-i-a"));
     }
 }
