@@ -65,6 +65,12 @@ function IS()
 	document.write("&#5825;");
 }
 
+// 13
+function EOH()
+{
+	document.write("&#5831;");
+}
+
 // 14
 function PEORD()
 {
@@ -135,6 +141,12 @@ function AESC()
 function YR()
 {
 	document.write("&#5795;");
+}
+
+// 29
+function EAR()
+{
+	document.write("&#5856;");
 }
 
 function SPACE()
