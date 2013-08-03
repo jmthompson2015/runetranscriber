@@ -1,11 +1,13 @@
 package org.runetranscriber.core.viking.example;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.runetranscriber.core.AbstractExample;
-import org.runetranscriber.core.ListUtilities;
+import org.runetranscriber.core.FontLetterList;
+import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
+import org.runetranscriber.core.PhonemeList;
+import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.viking.AngloSaxonFontLetter;
 import org.runetranscriber.core.viking.AngloSaxonRune;
 
@@ -15,27 +17,27 @@ import org.runetranscriber.core.viking.AngloSaxonRune;
 public final class AngloSaxonExample2 extends AbstractExample<AngloSaxonRune>
 {
     @Override
-    protected List<String> createFontLetters()
+    protected FontLetterList createFontLetters()
     {
         final String[] myFontLetters = { AngloSaxonFontLetter.EH, AngloSaxonFontLetter.SIGEL,
                 AngloSaxonFontLetter.WYNN, AngloSaxonFontLetter.NYD, };
 
-        return Arrays.asList(myFontLetters);
+        return new FontLetterList(Arrays.asList(myFontLetters));
     }
 
     @Override
-    protected List<String> createLanguageLetters()
+    protected LanguageLetterList createLanguageLetters()
     {
         final String text = "ESWN";
 
-        return ListUtilities.convert(text);
+        return new LanguageLetterList(text);
     }
 
     /**
      * @return phonemes.
      */
     @Override
-    protected List<Phoneme> createPhonemes()
+    protected PhonemeList createPhonemes()
     {
         final Phoneme[] myPhonemes = {
                 // e
@@ -47,14 +49,14 @@ public final class AngloSaxonExample2 extends AbstractExample<AngloSaxonRune>
                 // n
                 Phoneme.N, };
 
-        return Phoneme.asList(myPhonemes);
+        return new PhonemeList(myPhonemes);
     }
 
     /**
      * @return runes.
      */
     @Override
-    protected List<AngloSaxonRune> createRunes()
+    protected RuneList<AngloSaxonRune> createRunes()
     {
         final AngloSaxonRune[] myRunes = {
                 // e
@@ -66,6 +68,6 @@ public final class AngloSaxonExample2 extends AbstractExample<AngloSaxonRune>
                 // n
                 AngloSaxonRune.NYD, };
 
-        return AngloSaxonRune.asList(myRunes);
+        return new RuneList<AngloSaxonRune>(myRunes);
     }
 }
