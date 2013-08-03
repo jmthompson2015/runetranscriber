@@ -11,19 +11,19 @@ import java.util.List;
 public abstract class AbstractExample<R extends Rune> implements Example<R>
 {
     /** Font letters. */
-    protected List<String> fontLetters;
+    protected FontLetterList fontLetters;
 
     /** Language letters. */
-    protected List<String> languageLetters;
+    protected LanguageLetterList languageLetters;
 
     /** Phonemes. */
-    protected List<Phoneme> phonemes;
+    protected PhonemeList phonemes;
 
     /** Runes. */
-    protected List<R> runes;
+    protected RuneList<R> runes;
 
     @Override
-    public List<String> getFontLetters()
+    public FontLetterList getFontLetters()
     {
         if (fontLetters == null)
         {
@@ -34,7 +34,7 @@ public abstract class AbstractExample<R extends Rune> implements Example<R>
     }
 
     @Override
-    public List<String> getLanguageLetters()
+    public LanguageLetterList getLanguageLetters()
     {
         if (languageLetters == null)
         {
@@ -45,7 +45,7 @@ public abstract class AbstractExample<R extends Rune> implements Example<R>
     }
 
     @Override
-    public List<Phoneme> getPhonemes()
+    public PhonemeList getPhonemes()
     {
         if (phonemes == null)
         {
@@ -55,11 +55,8 @@ public abstract class AbstractExample<R extends Rune> implements Example<R>
         return phonemes;
     }
 
-    /**
-     * @return runes.
-     */
     @Override
-    public List<R> getRunes()
+    public RuneList<R> getRunes()
     {
         if (runes == null)
         {
@@ -72,12 +69,12 @@ public abstract class AbstractExample<R extends Rune> implements Example<R>
     /**
      * @return a new list.
      */
-    protected abstract List<String> createFontLetters();
+    protected abstract FontLetterList createFontLetters();
 
     /**
      * @return a new list.
      */
-    protected abstract List<String> createLanguageLetters();
+    protected abstract LanguageLetterList createLanguageLetters();
 
     /**
      * @param runes Runes.
@@ -100,10 +97,10 @@ public abstract class AbstractExample<R extends Rune> implements Example<R>
     /**
      * @return a new list.
      */
-    protected abstract List<Phoneme> createPhonemes();
+    protected abstract PhonemeList createPhonemes();
 
     /**
      * @return a new list.
      */
-    protected abstract List<R> createRunes();
+    protected abstract RuneList<R> createRunes();
 }
