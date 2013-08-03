@@ -14,7 +14,7 @@ import org.junit.Test;
 /**
  * Provides tests for the <code>ListUtilities</code> class.
  */
-public class ListUtilitiesTest
+public final class ListUtilitiesTest
 {
     /**
      * Test the <code>convert()</code> method.
