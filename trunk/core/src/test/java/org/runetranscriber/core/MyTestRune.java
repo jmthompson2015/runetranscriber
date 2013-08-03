@@ -8,7 +8,7 @@ import org.apache.commons.collections.CollectionUtils;
 /**
  * Provides a test implementation of a rune.
  */
-public class MyTestRune implements Rune
+public final class MyTestRune implements Rune
 {
     /** Rune. */
     public static final MyTestRune A = new MyTestRune("A");
@@ -108,9 +108,9 @@ public class MyTestRune implements Rune
      * 
      * @return a list containing the given parameters.
      */
-    public static final List<MyTestRune> asList(final MyTestRune... runes)
+    public static final RuneList<MyTestRune> asList(final MyTestRune... runes)
     {
-        final List<MyTestRune> answer = new ArrayList<MyTestRune>();
+        final RuneList<MyTestRune> answer = new RuneList<MyTestRune>();
 
         if (runes != null)
         {
