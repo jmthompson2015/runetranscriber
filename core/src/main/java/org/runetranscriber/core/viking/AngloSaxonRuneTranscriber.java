@@ -1,9 +1,9 @@
 package org.runetranscriber.core.viking;
 
-import java.util.List;
-
 import org.runetranscriber.core.DefaultRuneTranscriber;
 import org.runetranscriber.core.Phoneme;
+import org.runetranscriber.core.PhonemeList;
+import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.RuneTranscriber;
 
 /**
@@ -58,21 +58,15 @@ public final class AngloSaxonRuneTranscriber implements RuneTranscriber<AngloSax
     }
 
     @Override
-    public List<Phoneme> getFromSequence()
+    public PhonemeList getFromSequence()
     {
         return delegate.getFromSequence();
     }
 
     @Override
-    public List<AngloSaxonRune> getToSequence()
+    public RuneList<AngloSaxonRune> getToSequence()
     {
         return delegate.getToSequence();
-    }
-
-    @Override
-    public void put(final List<Phoneme> fromSequence, final List<AngloSaxonRune> toSequence)
-    {
-        delegate.put(fromSequence, toSequence);
     }
 
     @Override
@@ -82,9 +76,9 @@ public final class AngloSaxonRuneTranscriber implements RuneTranscriber<AngloSax
     }
 
     @Override
-    public void putForward(final List<Phoneme> fromSequence, final List<AngloSaxonRune> toSequence)
+    public void put(final PhonemeList fromSequence, final RuneList<AngloSaxonRune> toSequence)
     {
-        delegate.putForward(fromSequence, toSequence);
+        delegate.put(fromSequence, toSequence);
     }
 
     @Override
@@ -94,9 +88,9 @@ public final class AngloSaxonRuneTranscriber implements RuneTranscriber<AngloSax
     }
 
     @Override
-    public void putReverse(final List<Phoneme> fromSequence, final List<AngloSaxonRune> toSequence)
+    public void putForward(final PhonemeList fromSequence, final RuneList<AngloSaxonRune> toSequence)
     {
-        delegate.putReverse(fromSequence, toSequence);
+        delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
@@ -106,13 +100,19 @@ public final class AngloSaxonRuneTranscriber implements RuneTranscriber<AngloSax
     }
 
     @Override
-    public List<AngloSaxonRune> transcribeForward(final List<Phoneme> fromSequence)
+    public void putReverse(final PhonemeList fromSequence, final RuneList<AngloSaxonRune> toSequence)
+    {
+        delegate.putReverse(fromSequence, toSequence);
+    }
+
+    @Override
+    public RuneList<AngloSaxonRune> transcribeForward(final PhonemeList fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public List<Phoneme> transcribeReverse(final List<AngloSaxonRune> toSequence)
+    public PhonemeList transcribeReverse(final RuneList<AngloSaxonRune> toSequence)
     {
         return delegate.transcribeReverse(toSequence);
     }

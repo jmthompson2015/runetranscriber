@@ -1,10 +1,8 @@
 package org.runetranscriber.core.viking;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.runetranscriber.core.DefaultRune;
 import org.runetranscriber.core.Rune;
+import org.runetranscriber.core.RuneList;
 
 /**
  * Provides an enumeration of runes in the Anglo-Saxon runic alphabet.
@@ -115,7 +113,7 @@ public final class AngloSaxonRune implements Rune
     private static int ordinalCount = 0;
 
     /** Values. */
-    private static List<AngloSaxonRune> VALUES;
+    private static RuneList<AngloSaxonRune> VALUES;
 
     /**
      * @param number Rune number.
@@ -126,7 +124,7 @@ public final class AngloSaxonRune implements Rune
     {
         AngloSaxonRune answer = null;
 
-        final List<AngloSaxonRune> values = values();
+        final RuneList<AngloSaxonRune> values = values();
 
         if ((0 < number) && (number <= values.size()))
         {
@@ -139,9 +137,9 @@ public final class AngloSaxonRune implements Rune
     /**
      * @return a copy of the list of rune values.
      */
-    public static final List<AngloSaxonRune> values()
+    public static final RuneList<AngloSaxonRune> values()
     {
-        return new ArrayList<AngloSaxonRune>(VALUES);
+        return new RuneList<AngloSaxonRune>(VALUES);
     }
 
     /** Delegate. */
@@ -160,7 +158,7 @@ public final class AngloSaxonRune implements Rune
 
         if (VALUES == null)
         {
-            VALUES = new ArrayList<AngloSaxonRune>();
+            VALUES = new RuneList<AngloSaxonRune>();
         }
 
         VALUES.add(this);
