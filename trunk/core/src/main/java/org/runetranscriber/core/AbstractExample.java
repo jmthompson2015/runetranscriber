@@ -1,8 +1,5 @@
 package org.runetranscriber.core;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Provides base functionality for an example.
  * 
@@ -75,24 +72,6 @@ public abstract class AbstractExample<R extends Rune> implements Example<R>
      * @return a new list.
      */
     protected abstract LanguageLetterList createLanguageLetters();
-
-    /**
-     * @param runes Runes.
-     * 
-     * @return a new list.
-     */
-    @SuppressWarnings("hiding")
-    protected List<R> createList(final R[] runes)
-    {
-        final List<R> answer = new ArrayList<R>();
-
-        for (final R rune : runes)
-        {
-            answer.add(rune);
-        }
-
-        return answer;
-    }
 
     /**
      * @return a new list.
