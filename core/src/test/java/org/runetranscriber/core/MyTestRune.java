@@ -1,10 +1,5 @@
 package org.runetranscriber.core;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.collections.CollectionUtils;
-
 /**
  * Provides a test implementation of a rune.
  */
@@ -104,54 +99,6 @@ public final class MyTestRune implements Rune
     private static int ordinalCount = 0;
 
     /**
-     * @param runes Runes.
-     * 
-     * @return a list containing the given parameters.
-     */
-    public static final RuneList<MyTestRune> asList(final MyTestRune... runes)
-    {
-        final RuneList<MyTestRune> answer = new RuneList<MyTestRune>();
-
-        if (runes != null)
-        {
-            for (int i = 0; i < runes.length; i++)
-            {
-                if (runes[i] != null)
-                {
-                    answer.add(runes[i]);
-                }
-            }
-        }
-
-        return answer;
-    }
-
-    /**
-     * @param text Rune text.
-     * 
-     * @return a string representation of the given parameter.
-     */
-    public final static String toString(final List<MyTestRune> text)
-    {
-        final StringBuilder sb = new StringBuilder();
-
-        if (CollectionUtils.isNotEmpty(text))
-        {
-            for (int i = 0; i < text.size(); i++)
-            {
-                sb.append(text.get(i).name());
-
-                if (i < (text.size() - 1))
-                {
-                    sb.append("-");
-                }
-            }
-        }
-
-        return sb.toString();
-    }
-
-    /**
      * @param number Rune number.
      * 
      * @return rune.
@@ -160,7 +107,7 @@ public final class MyTestRune implements Rune
     {
         MyTestRune answer = null;
 
-        final List<MyTestRune> values = values();
+        final RuneList<MyTestRune> values = values();
 
         if ((0 < number) && (number <= values.size()))
         {
@@ -173,16 +120,16 @@ public final class MyTestRune implements Rune
     /**
      * @return a copy of the list of rune values.
      */
-    public static final List<MyTestRune> values()
+    public static final RuneList<MyTestRune> values()
     {
-        return new ArrayList<MyTestRune>(VALUES);
+        return new RuneList<MyTestRune>(VALUES);
     }
 
     /** Delegate. */
     private final DefaultRune delegate;
 
     /** Values. */
-    private static List<MyTestRune> VALUES;
+    private static RuneList<MyTestRune> VALUES;
 
     /**
      * Construct this object.
@@ -195,7 +142,7 @@ public final class MyTestRune implements Rune
 
         if (VALUES == null)
         {
-            VALUES = new ArrayList<MyTestRune>();
+            VALUES = new RuneList<MyTestRune>();
         }
 
         VALUES.add(this);

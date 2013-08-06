@@ -1,12 +1,9 @@
 package org.runetranscriber.core;
 
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Provides a test implementation of a rune transcriber.
  */
-public class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
+public final class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
 {
     /** Delegate. */
     private final DefaultRuneTranscriber<MyTestRune> delegate = new DefaultRuneTranscriber<MyTestRune>();
@@ -38,21 +35,15 @@ public class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
     }
 
     @Override
-    public List<Phoneme> getFromSequence()
+    public PhonemeList getFromSequence()
     {
         return delegate.getFromSequence();
     }
 
     @Override
-    public List<MyTestRune> getToSequence()
+    public RuneList<MyTestRune> getToSequence()
     {
         return delegate.getToSequence();
-    }
-
-    @Override
-    public void put(final List<Phoneme> fromSequence, final List<MyTestRune> toSequence)
-    {
-        delegate.put(fromSequence, toSequence);
     }
 
     /**
@@ -61,8 +52,8 @@ public class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
      */
     public void put(final Phoneme phoneme, final MyTestRune... runes)
     {
-        final List<Phoneme> fromSequence = Collections.singletonList(phoneme);
-        final List<MyTestRune> toSequence = MyTestRune.asList(runes);
+        final PhonemeList fromSequence = new PhonemeList(phoneme);
+        final RuneList<MyTestRune> toSequence = new RuneList<MyTestRune>(runes);
 
         put(fromSequence, toSequence);
     }
@@ -74,9 +65,9 @@ public class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
     }
 
     @Override
-    public void putForward(final List<Phoneme> fromSequence, final List<MyTestRune> toSequence)
+    public void put(final PhonemeList fromSequence, final RuneList<MyTestRune> toSequence)
     {
-        delegate.putForward(fromSequence, toSequence);
+        delegate.put(fromSequence, toSequence);
     }
 
     @Override
@@ -86,9 +77,9 @@ public class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
     }
 
     @Override
-    public void putReverse(final List<Phoneme> fromSequence, final List<MyTestRune> toSequence)
+    public void putForward(final PhonemeList fromSequence, final RuneList<MyTestRune> toSequence)
     {
-        delegate.putReverse(fromSequence, toSequence);
+        delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
@@ -98,13 +89,19 @@ public class MyTestRuneTranscriber implements RuneTranscriber<MyTestRune>
     }
 
     @Override
-    public List<MyTestRune> transcribeForward(final List<Phoneme> fromSequence)
+    public void putReverse(final PhonemeList fromSequence, final RuneList<MyTestRune> toSequence)
+    {
+        delegate.putReverse(fromSequence, toSequence);
+    }
+
+    @Override
+    public RuneList<MyTestRune> transcribeForward(final PhonemeList fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public List<Phoneme> transcribeReverse(final List<MyTestRune> toSequence)
+    public PhonemeList transcribeReverse(final RuneList<MyTestRune> toSequence)
     {
         return delegate.transcribeReverse(toSequence);
     }
