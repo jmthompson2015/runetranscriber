@@ -4,8 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.util.List;
-
 /**
  * Provides tests for the <code>DefaultTranscriber</code> class.
  */
@@ -16,7 +14,7 @@ public class DefaultTranscriberTest
      * @param key Key.
      * @param replacement Replacement.
      */
-    protected void replaceAll(final List<Phoneme> list, final Phoneme key, final Phoneme replacement)
+    protected void replaceAll(final PhonemeList list, final Phoneme key, final Phoneme replacement)
     {
         for (int i = 0; i < list.size(); i++)
         {
@@ -32,10 +30,10 @@ public class DefaultTranscriberTest
      * @param expected Expected.
      * @param isVerbose Flag indicating if the output should be verbose.
      */
-    protected void verifyLetters(final List<String> result, final List<String> expected, final boolean isVerbose)
+    protected void verifyFontLetters(final FontLetterList result, final FontLetterList expected, final boolean isVerbose)
     {
-        final String expectedString = ListUtilities.convert(expected);
-        final String resultString = ListUtilities.convert(result);
+        final String expectedString = expected.toString();
+        final String resultString = result.toString();
 
         if (isVerbose)
         {
@@ -52,12 +50,33 @@ public class DefaultTranscriberTest
      * @param expected Expected.
      * @param isVerbose Flag indicating if the output should be verbose.
      */
-    protected void verifyPhonemes(final List<Phoneme> result, final List<Phoneme> expected, final boolean isVerbose)
+    protected void verifyLanguageLetters(final LanguageLetterList result, final LanguageLetterList expected,
+            final boolean isVerbose)
+    {
+        final String expectedString = expected.toString();
+        final String resultString = result.toString();
+
+        if (isVerbose)
+        {
+            System.out.println("expected = [" + expectedString + "]");
+            System.out.println("result   = [" + resultString + "]");
+        }
+
+        assertNotNull(result);
+        assertThat(resultString, is(expectedString));
+    }
+
+    /**
+     * @param result Result.
+     * @param expected Expected.
+     * @param isVerbose Flag indicating if the output should be verbose.
+     */
+    protected void verifyPhonemes(final PhonemeList result, final PhonemeList expected, final boolean isVerbose)
     {
         if (isVerbose)
         {
-            System.out.println("expected = [" + Phoneme.toString(expected) + "]");
-            System.out.println("result   = [" + Phoneme.toString(result) + "]");
+            System.out.println("expected = [" + expected.toString() + "]");
+            System.out.println("result   = [" + result.toString() + "]");
         }
 
         assertNotNull(result);

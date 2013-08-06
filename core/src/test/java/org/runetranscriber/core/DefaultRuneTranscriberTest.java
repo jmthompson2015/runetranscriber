@@ -4,9 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 /**
@@ -20,13 +17,13 @@ public class DefaultRuneTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeForward()
     {
-        final List<Phoneme> fromSequence = createFromSequence();
+        final PhonemeList fromSequence = createFromSequence();
         final RuneTranscriber<MyTestRune> transcriber = new MyTestRuneTranscriber();
 
-        final List<MyTestRune> result = transcriber.transcribeForward(fromSequence);
+        final RuneList<MyTestRune> result = transcriber.transcribeForward(fromSequence);
 
         assertNotNull(result);
-        final List<MyTestRune> expected = createToSequence();
+        final RuneList<MyTestRune> expected = createToSequence();
         assertThat(result, is(expected));
     }
 
@@ -36,23 +33,23 @@ public class DefaultRuneTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeReverse()
     {
-        final List<MyTestRune> toSequence = createToSequence();
+        final RuneList<MyTestRune> toSequence = createToSequence();
         final RuneTranscriber<MyTestRune> transcriber = new MyTestRuneTranscriber();
 
-        final List<Phoneme> result = transcriber.transcribeReverse(toSequence);
+        final PhonemeList result = transcriber.transcribeReverse(toSequence);
 
         assertNotNull(result);
         // Capital letters and apostrophes are lost in transcription.
-        final List<Phoneme> expected = createFromSequence();
+        final PhonemeList expected = createFromSequence();
         assertThat(result, is(expected));
     }
 
     /**
      * @return a new from sequence.
      */
-    private List<Phoneme> createFromSequence()
+    private PhonemeList createFromSequence()
     {
-        final List<Phoneme> answer = new ArrayList<Phoneme>();
+        final PhonemeList answer = new PhonemeList();
         answer.add(Phoneme.TH);
         answer.add(Phoneme.E);
         answer.add(Phoneme.SPACE);
@@ -94,9 +91,9 @@ public class DefaultRuneTranscriberTest extends DefaultTranscriberTest
     /**
      * @return a new to sequence.
      */
-    private List<MyTestRune> createToSequence()
+    private RuneList<MyTestRune> createToSequence()
     {
-        final List<MyTestRune> answer = new ArrayList<MyTestRune>();
+        final RuneList<MyTestRune> answer = new RuneList<MyTestRune>();
 
         answer.add(MyTestRune.T);
         answer.add(MyTestRune.H);
