@@ -4,14 +4,12 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.util.List;
-
 import org.junit.Test;
 
 /**
  * Provides tests for the <code>FullTranscriber</code> class.
  */
-public class FullTranscriberTest
+public final class FullTranscriberTest
 {
     /** Transcriber. */
     private final FullTranscriber<MyTestRune> transcriber = new FullTranscriber<MyTestRune>("MyTestRune",
@@ -24,13 +22,13 @@ public class FullTranscriberTest
     @Test
     public void transcribeForward()
     {
-        final List<String> languageLetters = ListUtilities.convert("the hobbit,\nor there and back again");
+        final LanguageLetterList languageLetters = new LanguageLetterList("the hobbit,\nor there and back again");
 
-        final List<String> result = transcriber.transcribeForward(languageLetters);
+        final FontLetterList result = transcriber.transcribeForward(languageLetters);
 
         assertNotNull(result);
         assertThat(result.size(), is(35));
-        assertThat(ListUtilities.convert(result), is("the hobbit,\nor there and bakk again"));
+        assertThat(result.toString(), is("the hobbit,\nor there and bakk again"));
     }
 
     /**
@@ -39,12 +37,12 @@ public class FullTranscriberTest
     @Test
     public void transcribeReverse()
     {
-        final List<String> fontLetters = ListUtilities.convert("the hobbit,\nor there and bakk again");
+        final FontLetterList fontLetters = new FontLetterList("the hobbit,\nor there and bakk again");
 
-        final List<String> result = transcriber.transcribeReverse(fontLetters);
+        final LanguageLetterList result = transcriber.transcribeReverse(fontLetters);
 
         assertNotNull(result);
         assertThat(result.size(), is(35));
-        assertThat(ListUtilities.convert(result), is("the hobbit,\nor there and bakk again"));
+        assertThat(result.toString(), is("the hobbit,\nor there and bakk again"));
     }
 }
