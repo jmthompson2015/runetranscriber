@@ -4,9 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 /**
@@ -20,13 +17,13 @@ public class DefaultPhoneticTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeForward()
     {
-        final List<String> fromSequence = createFromSequence();
+        final LanguageLetterList fromSequence = createFromSequence();
         final PhoneticTranscriber transcriber = new MyTestPhoneticTranscriber();
 
-        final List<Phoneme> result = transcriber.transcribeForward(fromSequence);
+        final PhonemeList result = transcriber.transcribeForward(fromSequence);
 
         assertNotNull(result);
-        final List<Phoneme> expected = createToSequence();
+        final PhonemeList expected = createToSequence();
         assertThat(result, is(expected));
     }
 
@@ -36,14 +33,14 @@ public class DefaultPhoneticTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeReverse()
     {
-        final List<Phoneme> toSequence = createToSequence();
+        final PhonemeList toSequence = createToSequence();
         final PhoneticTranscriber transcriber = new MyTestPhoneticTranscriber();
 
-        final List<String> result = transcriber.transcribeReverse(toSequence);
+        final LanguageLetterList result = transcriber.transcribeReverse(toSequence);
 
         assertNotNull(result);
         // Capital letters and apostrophes are lost in transcription.
-        assertThat(ListUtilities.convert(result), is("the hobbit,\nor there and bakk again."));
+        assertThat(result.toString(), is("the hobbit,\nor there and bakk again."));
     }
 
     /**
@@ -51,7 +48,7 @@ public class DefaultPhoneticTranscriberTest extends DefaultTranscriberTest
      * @param key Key.
      * @param replacement Replacement.
      */
-    protected void replaceAll(final List<String> list, final String key, final String replacement)
+    protected void replaceAll(final LanguageLetterList list, final String key, final String replacement)
     {
         for (int i = 0; i < list.size(); i++)
         {
@@ -63,41 +60,19 @@ public class DefaultPhoneticTranscriberTest extends DefaultTranscriberTest
     }
 
     /**
-     * @param result Result.
-     * @param expected Expected.
-     * @param isVerbose Flag indicating if the output should be verbose.
-     */
-    protected void verifyReverse(final List<String> result, final List<String> expected, final boolean isVerbose)
-    {
-        // Capital letters and apostrophes are lost in transcription.
-        String expectedString = ListUtilities.convert(expected).toLowerCase();
-        expectedString = expectedString.replaceAll("[']", "");
-        final String resultString = ListUtilities.convert(result);
-
-        if (isVerbose)
-        {
-            System.out.println("expected = [" + expectedString + "]");
-            System.out.println("result   = [" + resultString + "]");
-        }
-
-        assertNotNull(result);
-        assertThat(resultString, is(expectedString));
-    }
-
-    /**
      * @return a new from sequence.
      */
-    private List<String> createFromSequence()
+    private LanguageLetterList createFromSequence()
     {
-        return ListUtilities.convert("The hobbit,\nor there and back again.");
+        return new LanguageLetterList("The hobbit,\nor there and back again.");
     }
 
     /**
      * @return a new to sequence.
      */
-    private List<Phoneme> createToSequence()
+    private PhonemeList createToSequence()
     {
-        final List<Phoneme> answer = new ArrayList<Phoneme>();
+        final PhonemeList answer = new PhonemeList();
         answer.add(Phoneme.TH);
         answer.add(Phoneme.E);
         answer.add(Phoneme.SPACE);

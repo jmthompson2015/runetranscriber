@@ -4,9 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 /**
@@ -20,13 +17,13 @@ public class DefaultFontTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeForward()
     {
-        final List<MyTestRune> fromSequence = createFromSequence();
+        final RuneList<MyTestRune> fromSequence = createFromSequence();
         final FontTranscriber<MyTestRune> transcriber = new MyTestFontTranscriber();
 
-        final List<String> result = transcriber.transcribeForward(fromSequence);
+        final FontLetterList result = transcriber.transcribeForward(fromSequence);
 
         assertNotNull(result);
-        final List<String> expected = createToSequence();
+        final FontLetterList expected = createToSequence();
         assertThat(result, is(expected));
     }
 
@@ -36,23 +33,23 @@ public class DefaultFontTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeReverse()
     {
-        final List<String> toSequence = createToSequence();
+        final FontLetterList toSequence = createToSequence();
         final FontTranscriber<MyTestRune> transcriber = new MyTestFontTranscriber();
 
-        final List<MyTestRune> result = transcriber.transcribeReverse(toSequence);
+        final RuneList<MyTestRune> result = transcriber.transcribeReverse(toSequence);
 
         assertNotNull(result);
         // Capital letters and apostrophes are lost in transcription.
-        final List<MyTestRune> expected = createFromSequence();
+        final RuneList<MyTestRune> expected = createFromSequence();
         assertThat(result, is(expected));
     }
 
     /**
      * @return a new from sequence.
      */
-    private List<MyTestRune> createFromSequence()
+    private RuneList<MyTestRune> createFromSequence()
     {
-        final List<MyTestRune> answer = new ArrayList<MyTestRune>();
+        final RuneList<MyTestRune> answer = new RuneList<MyTestRune>();
 
         answer.add(MyTestRune.T);
         answer.add(MyTestRune.H);
@@ -97,8 +94,8 @@ public class DefaultFontTranscriberTest extends DefaultTranscriberTest
     /**
      * @return a new to sequence.
      */
-    private List<String> createToSequence()
+    private FontLetterList createToSequence()
     {
-        return ListUtilities.convert("the hobbit,\nor there and bakk again.");
+        return new FontLetterList("the hobbit,\nor there and bakk again.");
     }
 }
