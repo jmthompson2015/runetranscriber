@@ -1,9 +1,5 @@
 package org.runetranscriber.core;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import org.apache.commons.collections.CollectionUtils;
 
 /**
@@ -12,22 +8,31 @@ import org.apache.commons.collections.CollectionUtils;
 public final class DefaultPhoneticTranscriber implements PhoneticTranscriber
 {
     /** Delegate. */
-    private final DefaultTranscriber<String, Phoneme> delegate = new DefaultTranscriber<String, Phoneme>();
+    protected final DefaultTranscriber<LanguageLetterList, String, PhonemeList, Phoneme> delegate;
+
+    /**
+     * Construct this object.
+     */
+    public DefaultPhoneticTranscriber()
+    {
+        delegate = new DefaultTranscriber<LanguageLetterList, String, PhonemeList, Phoneme>(
+                new LanguageLetterListFactory(), new PhonemeListFactory());
+    }
 
     @Override
-    public List<String> getFromSequence()
+    public LanguageLetterList getFromSequence()
     {
         return delegate.getFromSequence();
     }
 
     @Override
-    public List<Phoneme> getToSequence()
+    public PhonemeList getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void put(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
@@ -35,15 +40,14 @@ public final class DefaultPhoneticTranscriber implements PhoneticTranscriber
     @Override
     public void put(final String fromString, final Phoneme... toSequence)
     {
-        final List<String> fromSequence = ListUtilities.convert(fromString);
-        final List<Phoneme> myToSequence = Phoneme.asList(toSequence);
+        final LanguageLetterList fromSequence = new LanguageLetterList(fromString);
+        final PhonemeList myToSequence = new PhonemeList(toSequence);
 
-        delegate.putForward(fromSequence, myToSequence);
-        delegate.putReverse(fromSequence, myToSequence);
+        delegate.put(fromSequence, myToSequence);
     }
 
     @Override
-    public void putForward(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void putForward(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
@@ -51,12 +55,14 @@ public final class DefaultPhoneticTranscriber implements PhoneticTranscriber
     @Override
     public void putForward(final String string, final Phoneme phoneme)
     {
-        final List<String> list = ListUtilities.convert(string);
-        delegate.putForward(list, Collections.singletonList(phoneme));
+        final LanguageLetterList fromSequence = new LanguageLetterList(string);
+        final PhonemeList toSequence = new PhonemeList(phoneme);
+
+        delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void putReverse(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
@@ -64,41 +70,41 @@ public final class DefaultPhoneticTranscriber implements PhoneticTranscriber
     @Override
     public void putReverse(final String string, final Phoneme... phonemes)
     {
-        final List<String> list = ListUtilities.convert(string);
-        final List<Phoneme> toSequence = Phoneme.asList(phonemes);
+        final LanguageLetterList fromSequence = new LanguageLetterList(string);
+        final PhonemeList toSequence = new PhonemeList(phonemes);
 
-        delegate.putReverse(list, toSequence);
+        delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public List<Phoneme> transcribeForward(final List<String> input)
+    public PhonemeList transcribeForward(final LanguageLetterList fromSequence)
     {
-        List<Phoneme> answer = null;
+        PhonemeList answer = null;
 
-        if (CollectionUtils.isNotEmpty(input))
+        if (CollectionUtils.isNotEmpty(fromSequence))
         {
             // Convert to lower case.
-            final List<String> myInput = new ArrayList<String>();
+            final LanguageLetterList myFromSequence = new LanguageLetterList();
 
-            for (final String element : input)
+            for (final String element : fromSequence)
             {
-                myInput.add(element.toLowerCase());
+                myFromSequence.add(element.toLowerCase());
             }
 
-            answer = delegate.transcribeForward(myInput);
+            answer = delegate.transcribeForward(myFromSequence);
         }
 
         return answer;
     }
 
     @Override
-    public List<String> transcribeReverse(final List<Phoneme> input)
+    public LanguageLetterList transcribeReverse(final PhonemeList toSequence)
     {
-        List<String> answer = null;
+        LanguageLetterList answer = null;
 
-        if (CollectionUtils.isNotEmpty(input))
+        if (CollectionUtils.isNotEmpty(toSequence))
         {
-            answer = delegate.transcribeReverse(input);
+            answer = delegate.transcribeReverse(toSequence);
 
             // Trim a trailing space.
             if (CollectionUtils.isNotEmpty(answer))

@@ -4,8 +4,6 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Provides default functionality for a rune to font character transcriber.
@@ -15,7 +13,7 @@ import java.util.List;
 public final class DefaultFontTranscriber<R extends Rune> implements FontTranscriber<R>
 {
     /** Delegate. */
-    private final DefaultTranscriber<R, String> delegate = new DefaultTranscriber<R, String>();
+    private final DefaultTranscriber<RuneList<R>, R, FontLetterList, String> delegate;
 
     /** Original font. */
     private Font originalFont;
@@ -34,6 +32,8 @@ public final class DefaultFontTranscriber<R extends Rune> implements FontTranscr
     @SuppressWarnings("hiding")
     public DefaultFontTranscriber(final String fontFilename)
     {
+        delegate = new DefaultTranscriber<RuneList<R>, R, FontLetterList, String>(new RuneListFactory<R>(),
+                new FontLetterListFactory());
         this.fontFilename = fontFilename;
     }
 
@@ -68,21 +68,15 @@ public final class DefaultFontTranscriber<R extends Rune> implements FontTranscr
     }
 
     @Override
-    public List<R> getFromSequence()
+    public RuneList<R> getFromSequence()
     {
-        return delegate.getFromSequence();
+        return new RuneList<R>(delegate.getFromSequence());
     }
 
     @Override
-    public List<String> getToSequence()
+    public FontLetterList getToSequence()
     {
-        return delegate.getToSequence();
-    }
-
-    @Override
-    public void put(final List<R> fromSequence, final List<String> toSequence)
-    {
-        delegate.put(fromSequence, toSequence);
+        return new FontLetterList(delegate.getToSequence());
     }
 
     /**
@@ -92,35 +86,41 @@ public final class DefaultFontTranscriber<R extends Rune> implements FontTranscr
     @Override
     public void put(final R rune, final String fontLetter)
     {
-        final List<R> fromSequence = Collections.singletonList(rune);
-        final List<String> toSequence = Collections.singletonList(fontLetter);
+        final RuneList<R> fromSequence = new RuneList<R>(rune);
+        final FontLetterList toSequence = new FontLetterList(fontLetter);
 
         putForward(fromSequence, toSequence);
         putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final List<R> fromSequence, final List<String> toSequence)
+    public void put(final RuneList<R> fromSequence, final FontLetterList toSequence)
+    {
+        delegate.put(fromSequence, toSequence);
+    }
+
+    @Override
+    public void putForward(final RuneList<R> fromSequence, final FontLetterList toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final List<R> fromSequence, final List<String> toSequence)
+    public void putReverse(final RuneList<R> fromSequence, final FontLetterList toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public List<String> transcribeForward(final List<R> fromSequence)
+    public FontLetterList transcribeForward(final RuneList<R> fromSequence)
     {
-        return delegate.transcribeForward(fromSequence);
+        return new FontLetterList(delegate.transcribeForward(fromSequence));
     }
 
     @Override
-    public List<R> transcribeReverse(final List<String> toSequence)
+    public RuneList<R> transcribeReverse(final FontLetterList toSequence)
     {
-        return delegate.transcribeReverse(toSequence);
+        return new RuneList<R>(delegate.transcribeReverse(toSequence));
     }
 
     /**

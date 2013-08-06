@@ -1,6 +1,5 @@
 package org.runetranscriber.core;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,43 +11,64 @@ import org.apache.commons.collections.CollectionUtils;
  * Provides default functionality for a transcriber.
  * 
  * @param <A> From sequence type.
+ * @param <E> From element type.
  * @param <B> To sequence type.
+ * @param <F> To element type.
  */
-public final class DefaultTranscriber<A, B> implements Transcriber<A, B>
+public final class DefaultTranscriber<A extends List<E>, E, B extends List<F>, F> implements Transcriber<A, E, B, F>
 {
     /** Map of fromSequence to toSequence. */
-    private final Map<List<A>, List<B>> forwardMap = new LinkedHashMap<List<A>, List<B>>();
+    private final Map<A, B> forwardMap = new LinkedHashMap<A, B>();
 
     /** Last from sequence. */
-    private List<A> fromSequence;
+    private A fromSequence;
 
     /** Map of toSequence to fromSequence. */
-    private final Map<List<B>, List<A>> reverseMap = new LinkedHashMap<List<B>, List<A>>();
+    private final Map<B, A> reverseMap = new LinkedHashMap<B, A>();
 
     /** Last to sequence. */
-    private List<B> toSequence;
+    private B toSequence;
+
+    /** A list factory. */
+    private final ListFactory<A, E> aListFactory;
+
+    /** B list factory. */
+    private final ListFactory<B, F> bListFactory;
+
+    /**
+     * Construct this object.
+     * 
+     * @param aListFactory A list factory.
+     * @param bListFactory B list factory.
+     */
+    @SuppressWarnings("hiding")
+    public DefaultTranscriber(final ListFactory<A, E> aListFactory, final ListFactory<B, F> bListFactory)
+    {
+        this.aListFactory = aListFactory;
+        this.bListFactory = bListFactory;
+    }
 
     @Override
-    public List<A> getFromSequence()
+    public A getFromSequence()
     {
-        List<A> answer = null;
+        A answer = null;
 
         if (fromSequence != null)
         {
-            answer = new ArrayList<A>(fromSequence);
+            answer = aListFactory.create(fromSequence);
         }
 
         return answer;
     }
 
     @Override
-    public List<B> getToSequence()
+    public B getToSequence()
     {
-        List<B> answer = null;
+        B answer = null;
 
         if (toSequence != null)
         {
-            answer = new ArrayList<B>(toSequence);
+            answer = bListFactory.create(toSequence);
         }
 
         return answer;
@@ -56,7 +76,7 @@ public final class DefaultTranscriber<A, B> implements Transcriber<A, B>
 
     @Override
     @SuppressWarnings("hiding")
-    public void put(final List<A> fromSequence, final List<B> toSequence)
+    public void put(final A fromSequence, final B toSequence)
     {
         forwardMap.put(fromSequence, toSequence);
         reverseMap.put(toSequence, fromSequence);
@@ -64,40 +84,41 @@ public final class DefaultTranscriber<A, B> implements Transcriber<A, B>
 
     @Override
     @SuppressWarnings("hiding")
-    public void putForward(final List<A> fromSequence, final List<B> toSequence)
+    public void putForward(final A fromSequence, final B toSequence)
     {
         forwardMap.put(fromSequence, toSequence);
     }
 
     @Override
     @SuppressWarnings("hiding")
-    public void putReverse(final List<A> fromSequence, final List<B> toSequence)
+    public void putReverse(final A fromSequence, final B toSequence)
     {
         reverseMap.put(toSequence, fromSequence);
     }
 
     @SuppressWarnings("hiding")
     @Override
-    public List<B> transcribeForward(final List<A> fromSequence)
+    public B transcribeForward(final A fromSequence)
     {
-        List<B> answer = null;
+        B answer = null;
 
         this.fromSequence = fromSequence;
 
         if (CollectionUtils.isNotEmpty(fromSequence))
         {
             final int size = fromSequence.size();
-            answer = new ArrayList<B>();
+            answer = bListFactory.create();
 
             for (int i = 0; i < size; i++)
             {
-                final List<A> inputSubList = fromSequence.subList(i, size);
-                final Entry<List<A>, List<B>> entry = getEntryForward(inputSubList);
+                @SuppressWarnings("unchecked")
+                final A inputSubList = (A)fromSequence.subList(i, size);
+                final Entry<A, B> entry = getEntryForward(inputSubList);
 
                 if (entry != null)
                 {
-                    final List<A> fromElements = entry.getKey();
-                    final List<B> toElements = entry.getValue();
+                    final A fromElements = entry.getKey();
+                    final B toElements = entry.getValue();
                     answer.addAll(toElements);
                     i += fromElements.size() - 1;
                 }
@@ -114,26 +135,27 @@ public final class DefaultTranscriber<A, B> implements Transcriber<A, B>
 
     @SuppressWarnings("hiding")
     @Override
-    public List<A> transcribeReverse(final List<B> toSequence)
+    public A transcribeReverse(final B toSequence)
     {
-        List<A> answer = null;
+        A answer = null;
 
         this.toSequence = toSequence;
 
         if (CollectionUtils.isNotEmpty(toSequence))
         {
             final int size = toSequence.size();
-            answer = new ArrayList<A>();
+            answer = aListFactory.create();
 
             for (int i = 0; i < size; i++)
             {
-                final List<B> inputSubList = toSequence.subList(i, size);
-                final Entry<List<B>, List<A>> entry = getEntryReverse(inputSubList);
+                @SuppressWarnings("unchecked")
+                final B inputSubList = (B)toSequence.subList(i, size);
+                final Entry<B, A> entry = getEntryReverse(inputSubList);
 
                 if (entry != null)
                 {
-                    final List<B> fromElements = entry.getKey();
-                    final List<A> toElements = entry.getValue();
+                    final B fromElements = entry.getKey();
+                    final A toElements = entry.getValue();
                     answer.addAll(toElements);
                     i += fromElements.size() - 1;
                 }
@@ -154,17 +176,17 @@ public final class DefaultTranscriber<A, B> implements Transcriber<A, B>
      * @return the map entry for the given parameter.
      */
     @SuppressWarnings("hiding")
-    protected Entry<List<A>, List<B>> getEntryForward(final List<A> fromSequence)
+    protected Entry<A, B> getEntryForward(final A fromSequence)
     {
-        Entry<List<A>, List<B>> answer = null;
+        Entry<A, B> answer = null;
 
-        for (final Entry<List<A>, List<B>> entry : forwardMap.entrySet())
+        for (final Entry<A, B> entry : forwardMap.entrySet())
         {
             final int end = entry.getKey().size();
 
             if (end <= fromSequence.size())
             {
-                final List<A> inputSequence = new ArrayList<A>(fromSequence.subList(0, end));
+                final A inputSequence = aListFactory.create(fromSequence.subList(0, end));
 
                 if (entry.getKey().equals(inputSequence))
                 {
@@ -183,17 +205,17 @@ public final class DefaultTranscriber<A, B> implements Transcriber<A, B>
      * @return the map entry for the given parameter.
      */
     @SuppressWarnings("hiding")
-    protected Entry<List<B>, List<A>> getEntryReverse(final List<B> toSequence)
+    protected Entry<B, A> getEntryReverse(final B toSequence)
     {
-        Entry<List<B>, List<A>> answer = null;
+        Entry<B, A> answer = null;
 
-        for (final Entry<List<B>, List<A>> entry : reverseMap.entrySet())
+        for (final Entry<B, A> entry : reverseMap.entrySet())
         {
             final int end = entry.getKey().size();
 
             if (end <= toSequence.size())
             {
-                final List<B> inputSequence = new ArrayList<B>(toSequence.subList(0, end));
+                final B inputSequence = bListFactory.create(toSequence.subList(0, end));
 
                 if (entry.getKey().equals(inputSequence))
                 {

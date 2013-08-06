@@ -1,8 +1,5 @@
 package org.runetranscriber.core;
 
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Provides default functionality for a phoneme to rune transcriber.
  * 
@@ -11,75 +8,84 @@ import java.util.List;
 public final class DefaultRuneTranscriber<R extends Rune> implements RuneTranscriber<R>
 {
     /** Delegate. */
-    private final DefaultTranscriber<Phoneme, R> delegate = new DefaultTranscriber<Phoneme, R>();
+    private final DefaultTranscriber<PhonemeList, Phoneme, RuneList<R>, R> delegate;
 
-    @Override
-    public List<Phoneme> getFromSequence()
+    /**
+     * Construct this object.
+     */
+    public DefaultRuneTranscriber()
     {
-        return delegate.getFromSequence();
+        delegate = new DefaultTranscriber<PhonemeList, Phoneme, RuneList<R>, R>(new PhonemeListFactory(),
+                new RuneListFactory<R>());
     }
 
     @Override
-    public List<R> getToSequence()
+    public PhonemeList getFromSequence()
     {
-        return delegate.getToSequence();
+        return new PhonemeList(delegate.getFromSequence());
     }
 
     @Override
-    public void put(final List<Phoneme> fromSequence, final List<R> toSequence)
+    public RuneList<R> getToSequence()
     {
-        delegate.put(fromSequence, toSequence);
+        return new RuneList<R>(delegate.getToSequence());
     }
 
     @Override
     public void put(final Phoneme phoneme, final R rune)
     {
-        final List<Phoneme> fromSequence = Collections.singletonList(phoneme);
-        final List<R> toSequence = Collections.singletonList(rune);
+        final PhonemeList fromSequence = new PhonemeList(phoneme);
+        final RuneList<R> toSequence = new RuneList<R>(rune);
 
         putForward(fromSequence, toSequence);
         putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final List<Phoneme> fromSequence, final List<R> toSequence)
+    public void put(final PhonemeList fromSequence, final RuneList<R> toSequence)
     {
-        delegate.putForward(fromSequence, toSequence);
+        delegate.put(fromSequence, toSequence);
     }
 
     @Override
     public void putForward(final Phoneme phoneme, final R rune)
     {
-        final List<Phoneme> fromSequence = Collections.singletonList(phoneme);
-        final List<R> toSequence = Collections.singletonList(rune);
+        final PhonemeList fromSequence = new PhonemeList(phoneme);
+        final RuneList<R> toSequence = new RuneList<R>(rune);
 
         putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final List<Phoneme> fromSequence, final List<R> toSequence)
+    public void putForward(final PhonemeList fromSequence, final RuneList<R> toSequence)
     {
-        delegate.putReverse(fromSequence, toSequence);
+        delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
     public void putReverse(final Phoneme phoneme, final R rune)
     {
-        final List<Phoneme> fromSequence = Collections.singletonList(phoneme);
-        final List<R> toSequence = Collections.singletonList(rune);
+        final PhonemeList fromSequence = new PhonemeList(phoneme);
+        final RuneList<R> toSequence = new RuneList<R>(rune);
 
         putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public List<R> transcribeForward(final List<Phoneme> fromSequence)
+    public void putReverse(final PhonemeList fromSequence, final RuneList<R> toSequence)
     {
-        return delegate.transcribeForward(fromSequence);
+        delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public List<Phoneme> transcribeReverse(final List<R> toSequence)
+    public RuneList<R> transcribeForward(final PhonemeList fromSequence)
     {
-        return delegate.transcribeReverse(toSequence);
+        return new RuneList<R>(delegate.transcribeForward(fromSequence));
+    }
+
+    @Override
+    public PhonemeList transcribeReverse(final RuneList<R> toSequence)
+    {
+        return new PhonemeList(delegate.transcribeReverse(toSequence));
     }
 }
