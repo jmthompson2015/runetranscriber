@@ -1,9 +1,9 @@
 package org.runetranscriber.core.viking;
 
-import java.util.List;
-
 import org.runetranscriber.core.DefaultPhoneticTranscriber;
+import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
+import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.PhoneticTranscriber;
 
 /**
@@ -72,19 +72,19 @@ public final class EnglishAngloSaxonPhoneticTranscriber implements PhoneticTrans
     }
 
     @Override
-    public List<String> getFromSequence()
+    public LanguageLetterList getFromSequence()
     {
         return delegate.getFromSequence();
     }
 
     @Override
-    public List<Phoneme> getToSequence()
+    public PhonemeList getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void put(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
@@ -96,7 +96,7 @@ public final class EnglishAngloSaxonPhoneticTranscriber implements PhoneticTrans
     }
 
     @Override
-    public void putForward(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void putForward(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
@@ -108,7 +108,7 @@ public final class EnglishAngloSaxonPhoneticTranscriber implements PhoneticTrans
     }
 
     @Override
-    public void putReverse(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void putReverse(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
@@ -120,13 +120,13 @@ public final class EnglishAngloSaxonPhoneticTranscriber implements PhoneticTrans
     }
 
     @Override
-    public List<Phoneme> transcribeForward(final List<String> input)
+    public PhonemeList transcribeForward(final LanguageLetterList input)
     {
         return delegate.transcribeForward(input);
     }
 
     @Override
-    public List<String> transcribeReverse(final List<Phoneme> input)
+    public LanguageLetterList transcribeReverse(final PhonemeList input)
     {
         return delegate.transcribeReverse(input);
     }
