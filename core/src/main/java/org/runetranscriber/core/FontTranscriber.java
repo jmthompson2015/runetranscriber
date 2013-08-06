@@ -3,11 +3,11 @@ package org.runetranscriber.core;
 import java.awt.Font;
 
 /**
- * Defines methods required by a rune to font character transcriber.
+ * Defines methods required by a rune to font letter transcriber.
  * 
  * @param <R> Rune type parameter.
  */
-public interface FontTranscriber<R extends Rune> extends Transcriber<R, String>
+public interface FontTranscriber<R extends Rune> extends Transcriber<RuneList<R>, R, FontLetterList, String>
 {
     /**
      * @return the default font size.

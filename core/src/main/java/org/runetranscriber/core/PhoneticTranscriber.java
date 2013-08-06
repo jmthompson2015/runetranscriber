@@ -1,9 +1,9 @@
 package org.runetranscriber.core;
 
 /**
- * Defines methods required by a language to phonetic transcriber.
+ * Defines methods required by a language letter to phonetic transcriber.
  */
-public interface PhoneticTranscriber extends Transcriber<String, Phoneme>
+public interface PhoneticTranscriber extends Transcriber<LanguageLetterList, String, PhonemeList, Phoneme>
 {
     /**
      * @param fromString From string.
