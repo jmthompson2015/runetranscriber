@@ -7,9 +7,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
-import java.util.List;
-
 import org.junit.Test;
+import org.runetranscriber.core.RuneList;
 
 /**
  * Provides tests for the <code>AngloSaxonRune</code> class.
@@ -63,7 +62,7 @@ public final class AngloSaxonRuneTest
     @Test
     public void values()
     {
-        final List<AngloSaxonRune> values = AngloSaxonRune.values();
+        final RuneList<AngloSaxonRune> values = AngloSaxonRune.values();
 
         assertNotNull(values);
         assertThat(values.size(), is(33));
