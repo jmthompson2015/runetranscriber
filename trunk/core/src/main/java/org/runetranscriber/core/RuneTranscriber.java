@@ -5,7 +5,7 @@ package org.runetranscriber.core;
  * 
  * @param <R> Rune type parameter.
  */
-public interface RuneTranscriber<R extends Rune> extends Transcriber<Phoneme, R>
+public interface RuneTranscriber<R extends Rune> extends Transcriber<PhonemeList, Phoneme, RuneList<R>, R>
 {
     /**
      * @param phoneme From phoneme.
