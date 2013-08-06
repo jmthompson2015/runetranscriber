@@ -1,11 +1,9 @@
 package org.runetranscriber.core;
 
-import java.util.List;
-
 /**
  * Provides a test implementation of a phonetic transcriber.
  */
-public class MyTestPhoneticTranscriber implements PhoneticTranscriber
+public final class MyTestPhoneticTranscriber implements PhoneticTranscriber
 {
     /** Delegate. */
     private final DefaultPhoneticTranscriber delegate = new DefaultPhoneticTranscriber();
@@ -15,6 +13,8 @@ public class MyTestPhoneticTranscriber implements PhoneticTranscriber
      */
     public MyTestPhoneticTranscriber()
     {
+        super();
+
         put("th", Phoneme.TH);
 
         put("e", Phoneme.E);
@@ -39,19 +39,19 @@ public class MyTestPhoneticTranscriber implements PhoneticTranscriber
     }
 
     @Override
-    public List<String> getFromSequence()
+    public LanguageLetterList getFromSequence()
     {
         return delegate.getFromSequence();
     }
 
     @Override
-    public List<Phoneme> getToSequence()
+    public PhonemeList getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void put(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
@@ -63,7 +63,7 @@ public class MyTestPhoneticTranscriber implements PhoneticTranscriber
     }
 
     @Override
-    public void putForward(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void putForward(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
@@ -75,7 +75,7 @@ public class MyTestPhoneticTranscriber implements PhoneticTranscriber
     }
 
     @Override
-    public void putReverse(final List<String> fromSequence, final List<Phoneme> toSequence)
+    public void putReverse(final LanguageLetterList fromSequence, final PhonemeList toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
@@ -87,13 +87,13 @@ public class MyTestPhoneticTranscriber implements PhoneticTranscriber
     }
 
     @Override
-    public List<Phoneme> transcribeForward(final List<String> input)
+    public PhonemeList transcribeForward(final LanguageLetterList input)
     {
         return delegate.transcribeForward(input);
     }
 
     @Override
-    public List<String> transcribeReverse(final List<Phoneme> input)
+    public LanguageLetterList transcribeReverse(final PhonemeList input)
     {
         return delegate.transcribeReverse(input);
     }

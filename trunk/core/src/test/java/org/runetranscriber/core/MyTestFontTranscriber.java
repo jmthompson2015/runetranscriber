@@ -1,12 +1,11 @@
 package org.runetranscriber.core;
 
 import java.awt.Font;
-import java.util.List;
 
 /**
  * Provides a test implementation of a font transcriber.
  */
-public class MyTestFontTranscriber implements FontTranscriber<MyTestRune>
+public final class MyTestFontTranscriber implements FontTranscriber<MyTestRune>
 {
     /** Delegate. */
     private final DefaultFontTranscriber<MyTestRune> delegate = new DefaultFontTranscriber<MyTestRune>("");
@@ -54,21 +53,15 @@ public class MyTestFontTranscriber implements FontTranscriber<MyTestRune>
     }
 
     @Override
-    public List<MyTestRune> getFromSequence()
+    public RuneList<MyTestRune> getFromSequence()
     {
         return delegate.getFromSequence();
     }
 
     @Override
-    public List<String> getToSequence()
+    public FontLetterList getToSequence()
     {
         return delegate.getToSequence();
-    }
-
-    @Override
-    public void put(final List<MyTestRune> fromSequence, final List<String> toSequence)
-    {
-        delegate.put(fromSequence, toSequence);
     }
 
     @Override
@@ -78,25 +71,31 @@ public class MyTestFontTranscriber implements FontTranscriber<MyTestRune>
     }
 
     @Override
-    public void putForward(final List<MyTestRune> fromSequence, final List<String> toSequence)
+    public void put(final RuneList<MyTestRune> fromSequence, final FontLetterList toSequence)
+    {
+        delegate.put(fromSequence, toSequence);
+    }
+
+    @Override
+    public void putForward(final RuneList<MyTestRune> fromSequence, final FontLetterList toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final List<MyTestRune> fromSequence, final List<String> toSequence)
+    public void putReverse(final RuneList<MyTestRune> fromSequence, final FontLetterList toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public List<String> transcribeForward(final List<MyTestRune> fromSequence)
+    public FontLetterList transcribeForward(final RuneList<MyTestRune> fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public List<MyTestRune> transcribeReverse(final List<String> toSequence)
+    public RuneList<MyTestRune> transcribeReverse(final FontLetterList toSequence)
     {
         return delegate.transcribeReverse(toSequence);
     }
