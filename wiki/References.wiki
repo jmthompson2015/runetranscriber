@@ -2,12 +2,19 @@
 
 = References =
 
-Add your content here.
+== Books ==
+  # Tolkien, J.R.R., [http://www.amazon.com/gp/product/0395873460/ref=oh_details_o02_s00_i00?ie=UTF8&psc=1 The Hobbit]. New York: Houghton Mifflin Company, 1997. Print.
+  # Tolkien, J.R.R., [http://www.amazon.com/gp/product/0618037667/ref=oh_details_o02_s00_i02?ie=UTF8&psc=1 The Lord Of The Rings]. New York: Houghton Mifflin Company, 1994. Print.
+  # Tolkien, J.R.R., [http://www.amazon.com/Silmarillion-J-R-R-Tolkien/dp/0618126988/ref=sr_1_1?s=books&ie=UTF8&qid=1372797563&sr=1-1&keywords=the+silmarillion The Silmarillion]. New York: Houghton Mifflin Company, 2001. Print.
 
+== Fonts ==
+  # [http://junicode.sourceforge.net/" Junicode (Viking)]
+  # [http://www.fontspace.com/bruce-kvam/angerthas" Angerthas (Cirth)]
+  # [http://www.acondia.com/fonts/tengwar/" Tengwar]
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Wikipedia ==
+  # [http://en.wikipedia.org/wiki/Anglo-Saxon_runes" Anglo-Saxon Runes]
+  # [http://en.wikipedia.org/wiki/Cirth" Cirth]
+  # [http://en.wikipedia.org/wiki/International_Phonetic_Alphabet" International Phonetic Alphabet]
+  # [http://en.wikipedia.org/wiki/Runes" Runes]
+  # [http://en.wikipedia.org/wiki/Tengwar" Tengwar]
