@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Provides utility methods to convert between a String and a List.
  */
-public final class ListUtilities
+final class ListUtilities
 {
     /**
      * @param list List.
