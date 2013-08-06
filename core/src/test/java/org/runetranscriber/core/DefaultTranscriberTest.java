@@ -53,7 +53,9 @@ public class DefaultTranscriberTest
     protected void verifyLanguageLetters(final LanguageLetterList result, final LanguageLetterList expected,
             final boolean isVerbose)
     {
-        final String expectedString = expected.toString();
+        // Capital letters and apostrophes are lost in transcription.
+        String expectedString = expected.toString().toLowerCase();
+        expectedString = expectedString.replaceAll("[']", "");
         final String resultString = result.toString();
 
         if (isVerbose)
