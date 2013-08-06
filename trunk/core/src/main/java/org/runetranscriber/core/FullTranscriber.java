@@ -1,13 +1,12 @@
 package org.runetranscriber.core;
 
-import java.util.List;
-
 /**
- * Provides a full transcriber from language to font letters.
+ * Provides a full transcriber from language letters to font letters.
  * 
  * @param <R> Rune type parameter.
  */
-public final class FullTranscriber<R extends Rune> implements Transcriber<String, String>
+public final class FullTranscriber<R extends Rune> implements
+        Transcriber<LanguageLetterList, String, FontLetterList, String>
 {
     /** Description. */
     private final String description;
@@ -16,22 +15,22 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     private final String displayName;
 
     /** Font letters. */
-    private List<String> fontLetters;
+    private FontLetterList fontLetters;
 
     /** Font transcriber. */
     private final FontTranscriber<R> fontTranscriber;
 
     /** Language letters. */
-    private List<String> languageLetters;
+    private LanguageLetterList languageLetters;
 
     /** Phonemes. */
-    private List<Phoneme> phonemes;
+    private PhonemeList phonemes;
 
     /** Phonetic transcriber. */
     private final PhoneticTranscriber phoneticTranscriber;
 
     /** Runes. */
-    private List<R> runes;
+    private RuneList<R> runes;
 
     /** Rune transcriber. */
     private final RuneTranscriber<R> runeTranscriber;
@@ -76,7 +75,7 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     /**
      * @return the fontLetters
      */
-    public List<String> getFontLetters()
+    public FontLetterList getFontLetters()
     {
         return fontLetters;
     }
@@ -90,15 +89,15 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     }
 
     @Override
-    public List<String> getFromSequence()
+    public LanguageLetterList getFromSequence()
     {
-        throw new RuntimeException("method not implemented");
+        return languageLetters;
     }
 
     /**
      * @return the languageLetters
      */
-    public List<String> getLanguageLetters()
+    public LanguageLetterList getLanguageLetters()
     {
         return languageLetters;
     }
@@ -106,7 +105,7 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     /**
      * @return the phonemes
      */
-    public List<Phoneme> getPhonemes()
+    public PhonemeList getPhonemes()
     {
         return phonemes;
     }
@@ -122,7 +121,7 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     /**
      * @return the runes
      */
-    public List<R> getRunes()
+    public RuneList<R> getRunes()
     {
         return runes;
     }
@@ -136,34 +135,33 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     }
 
     @Override
-    public List<String> getToSequence()
+    public FontLetterList getToSequence()
+    {
+        return fontLetters;
+    }
+
+    @Override
+    public void put(final LanguageLetterList fromSequence, final FontLetterList toSequence)
     {
         throw new RuntimeException("method not implemented");
     }
 
     @Override
-    public void put(final List<String> fromSequence, final List<String> toSequence)
-    {
-        throw new RuntimeException("method not implemented");
-
-    }
-
-    @Override
-    public void putForward(final List<String> fromSequence, final List<String> toSequence)
+    public void putForward(final LanguageLetterList fromSequence, final FontLetterList toSequence)
     {
         throw new RuntimeException("method not implemented");
     }
 
     @Override
-    public void putReverse(final List<String> fromSequence, final List<String> toSequence)
+    public void putReverse(final LanguageLetterList fromSequence, final FontLetterList toSequence)
     {
         throw new RuntimeException("method not implemented");
     }
 
     @Override
-    public List<String> transcribeForward(final List<String> input)
+    public FontLetterList transcribeForward(final LanguageLetterList fromSequence)
     {
-        languageLetters = input;
+        languageLetters = fromSequence;
         phonemes = phoneticTranscriber.transcribeForward(languageLetters);
         runes = runeTranscriber.transcribeForward(phonemes);
         fontLetters = fontTranscriber.transcribeForward(runes);
@@ -172,9 +170,9 @@ public final class FullTranscriber<R extends Rune> implements Transcriber<String
     }
 
     @Override
-    public List<String> transcribeReverse(final List<String> input)
+    public LanguageLetterList transcribeReverse(final FontLetterList toSequence)
     {
-        fontLetters = input;
+        fontLetters = toSequence;
         runes = fontTranscriber.transcribeReverse(fontLetters);
         phonemes = runeTranscriber.transcribeReverse(runes);
         languageLetters = phoneticTranscriber.transcribeReverse(phonemes);
