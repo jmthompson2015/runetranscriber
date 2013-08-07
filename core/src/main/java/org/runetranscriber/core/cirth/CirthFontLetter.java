@@ -12,6 +12,7 @@ public final class CirthFontLetter
 
     /** Font letter. */
     public static final String C2 = "b";
+
     /** Font letter. */
     public static final String C3 = "f";
 
