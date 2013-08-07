@@ -10,49 +10,49 @@ import org.runetranscriber.core.RuneList;
 public final class Certh implements Rune
 {
     /** Rune. */
-    public static final Certh C1 = new Certh("P");
+    public static final Certh C1 = new Certh("C1");
 
     /** Rune. */
-    public static final Certh C2 = new Certh("B");
+    public static final Certh C2 = new Certh("C2");
 
     /** Rune. */
-    public static final Certh C3 = new Certh("F");
+    public static final Certh C3 = new Certh("C3");
 
     /** Rune. */
-    public static final Certh C4 = new Certh("V");
+    public static final Certh C4 = new Certh("C4");
 
     /** Rune. */
-    public static final Certh C5 = new Certh("HW");
+    public static final Certh C5 = new Certh("C5");
 
     /** Rune. */
-    public static final Certh C6 = new Certh("M");
+    public static final Certh C6 = new Certh("C6");
 
     /** Rune. */
-    public static final Certh C7 = new Certh("MB");
+    public static final Certh C7 = new Certh("C7");
 
     /** Rune. */
-    public static final Certh C8 = new Certh("T");
+    public static final Certh C8 = new Certh("C8");
 
     /** Rune. */
-    public static final Certh C9 = new Certh("D");
+    public static final Certh C9 = new Certh("C9");
 
     /** Rune. */
-    public static final Certh C10 = new Certh("TH");
+    public static final Certh C10 = new Certh("C10");
 
     /** Rune. */
-    public static final Certh C11 = new Certh("DH");
+    public static final Certh C11 = new Certh("C11");
 
     /** Rune. */
     public static final Certh C12 = new Certh("C12");
 
     /** Rune. */
-    public static final Certh C13 = new Certh("CH");
+    public static final Certh C13 = new Certh("C13");
 
     /** Rune. */
     public static final Certh C14 = new Certh("C14");
 
     /** Rune. */
-    public static final Certh C15 = new Certh("SH");
+    public static final Certh C15 = new Certh("C15");
 
     /** Rune. */
     public static final Certh C16 = new Certh("C16");
@@ -61,37 +61,37 @@ public final class Certh implements Rune
     public static final Certh C17 = new Certh("C17");
 
     /** Rune. */
-    public static final Certh C18 = new Certh("K");
+    public static final Certh C18 = new Certh("C18");
 
     /** Rune. */
-    public static final Certh C19 = new Certh("G");
+    public static final Certh C19 = new Certh("C19");
 
     /** Rune. */
-    public static final Certh C20 = new Certh("KH");
+    public static final Certh C20 = new Certh("C20");
 
     /** Rune. */
-    public static final Certh C21 = new Certh("GH");
+    public static final Certh C21 = new Certh("C21");
 
     /** Rune. */
     public static final Certh C22 = new Certh("C22");
 
     /** Rune. */
-    public static final Certh C23 = new Certh("KW");
+    public static final Certh C23 = new Certh("C23");
 
     /** Rune. */
-    public static final Certh C24 = new Certh("GW");
+    public static final Certh C24 = new Certh("C24");
 
     /** Rune. */
-    public static final Certh C25 = new Certh("KHW");
+    public static final Certh C25 = new Certh("C25");
 
     /** Rune. */
-    public static final Certh C26 = new Certh("GHW");
+    public static final Certh C26 = new Certh("C26");
 
     /** Rune. */
-    public static final Certh C27 = new Certh("NGW");
+    public static final Certh C27 = new Certh("C27");
 
     /** Rune. */
-    public static final Certh C28 = new Certh("NW");
+    public static final Certh C28 = new Certh("C28");
 
     /** Rune. */
     public static final Certh C29 = new Certh("C29");
@@ -100,7 +100,7 @@ public final class Certh implements Rune
     public static final Certh C30 = new Certh("C30");
 
     /** 31-45 */
-    public static final Certh C31 = new Certh("L");
+    public static final Certh C31 = new Certh("C31");
 
     /** Rune. */
     public static final Certh C32 = new Certh("C32");
@@ -109,7 +109,7 @@ public final class Certh implements Rune
     public static final Certh C33 = new Certh("C33");
 
     /** Rune. */
-    public static final Certh C34 = new Certh("H");
+    public static final Certh C34 = new Certh("C34");
 
     /** Rune. */
     public static final Certh C35 = new Certh("C35");
@@ -124,7 +124,7 @@ public final class Certh implements Rune
     public static final Certh C38 = new Certh("C38");
 
     /** Rune. */
-    public static final Certh C39 = new Certh("I");
+    public static final Certh C39 = new Certh("C39");
 
     /** Rune. */
     public static final Certh C40 = new Certh("C40");
@@ -133,37 +133,37 @@ public final class Certh implements Rune
     public static final Certh C41 = new Certh("C41");
 
     /** Rune. */
-    public static final Certh C42 = new Certh("U");
+    public static final Certh C42 = new Certh("C42");
 
     /** Rune. */
     public static final Certh C43 = new Certh("C43");
 
     /** Rune. */
-    public static final Certh C44 = new Certh("W");
+    public static final Certh C44 = new Certh("C44");
 
     /** Rune. */
-    public static final Certh C45 = new Certh("UE");
+    public static final Certh C45 = new Certh("C45");
 
     /** Rune. */
-    public static final Certh C46 = new Certh("E");
+    public static final Certh C46 = new Certh("C46");
 
     /** Rune. */
-    public static final Certh C47 = new Certh("EE");
+    public static final Certh C47 = new Certh("C47");
 
     /** Rune. */
-    public static final Certh C48 = new Certh("A");
+    public static final Certh C48 = new Certh("C48");
 
     /** Rune. */
-    public static final Certh C49 = new Certh("AA");
+    public static final Certh C49 = new Certh("C49");
 
     /** Rune. */
-    public static final Certh C50 = new Certh("O");
+    public static final Certh C50 = new Certh("C50");
 
     /** Rune. */
-    public static final Certh C51 = new Certh("OO");
+    public static final Certh C51 = new Certh("C51");
 
     /** Rune. */
-    public static final Certh C52 = new Certh("OE");
+    public static final Certh C52 = new Certh("C52");
 
     /** Rune. */
     public static final Certh C53 = new Certh("C53");
