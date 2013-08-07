@@ -1,13 +1,13 @@
 package org.runetranscriber.core.cirth.example;
 
 import org.runetranscriber.core.AbstractExample;
-import org.runetranscriber.core.Constants;
 import org.runetranscriber.core.FontLetterList;
 import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.CirthFontLetter;
 
 /**
  * <a href="http://ring-lord.tripod.com/cirth/ex_lotr.htm">From the title page, upper inscription, Lord of the Rings</a>
@@ -17,10 +17,45 @@ public final class CirthEreborExample1 extends AbstractExample<Certh>
     @Override
     protected FontLetterList createFontLetters()
     {
-        final String answer = Constants.SMALL_LETTER_ETH + "‘.lord.ov." + Constants.SMALL_LETTER_ETH
-                + "‘.riNs.translat‘d.from." + Constants.SMALL_LETTER_ETH + "‘.red.bOk";
+        final String[] myLetters = {
+                // the
+                CirthFontLetter.C11,
+                CirthFontLetter.C55,
+                CirthFontLetter.SPACE,
+                // lord
+                CirthFontLetter.C31,
+                CirthFontLetter.C50,
+                CirthFontLetter.C12,
+                CirthFontLetter.C9,
+                CirthFontLetter.SPACE,
+                // of
+                CirthFontLetter.C50,
+                CirthFontLetter.C4,
+                CirthFontLetter.SPACE,
+                // the
+                CirthFontLetter.C11,
+                CirthFontLetter.C55,
+                CirthFontLetter.SPACE,
+                // rings
+                CirthFontLetter.C12, CirthFontLetter.C39,
+                CirthFontLetter.C36,
+                CirthFontLetter.C35,
+                CirthFontLetter.SPACE,
+                // translated
+                CirthFontLetter.C8, CirthFontLetter.C12, CirthFontLetter.C48, CirthFontLetter.C22, CirthFontLetter.C35,
+                CirthFontLetter.C31, CirthFontLetter.C48, CirthFontLetter.C8, CirthFontLetter.C55, CirthFontLetter.C9,
+                CirthFontLetter.SPACE,
+                // from
+                CirthFontLetter.C3, CirthFontLetter.C12, CirthFontLetter.C50, CirthFontLetter.C6,
+                CirthFontLetter.SPACE,
+                // the
+                CirthFontLetter.C11, CirthFontLetter.C55, CirthFontLetter.SPACE,
+                // red
+                CirthFontLetter.C12, CirthFontLetter.C46, CirthFontLetter.C9, CirthFontLetter.SPACE,
+                // book
+                CirthFontLetter.C2, CirthFontLetter.C51, CirthFontLetter.C18, };
 
-        return new FontLetterList(answer);
+        return new FontLetterList(myLetters);
     }
 
     @Override
@@ -63,11 +98,28 @@ public final class CirthEreborExample1 extends AbstractExample<Certh>
     @Override
     protected RuneList<Certh> createRunes()
     {
-        final Certh[] myRunes = { Certh.DH, Certh.C55, Certh.SPACE, Certh.L, Certh.O, Certh.C12, Certh.D, Certh.SPACE,
-                Certh.O, Certh.V, Certh.SPACE, Certh.DH, Certh.C55, Certh.SPACE, Certh.C12, Certh.I, Certh.C36,
-                Certh.C35, Certh.SPACE, Certh.T, Certh.C12, Certh.A, Certh.C22, Certh.C35, Certh.L, Certh.A, Certh.T,
-                Certh.C55, Certh.D, Certh.SPACE, Certh.F, Certh.C12, Certh.O, Certh.M, Certh.SPACE, Certh.DH,
-                Certh.C55, Certh.SPACE, Certh.C12, Certh.E, Certh.D, Certh.SPACE, Certh.B, Certh.OO, Certh.K, };
+        final Certh[] myRunes = {
+                // the
+                Certh.C11, Certh.C55, Certh.SPACE,
+                // lord
+                Certh.C31, Certh.C50, Certh.C12, Certh.C9, Certh.SPACE,
+                // of
+                Certh.C50, Certh.C4, Certh.SPACE,
+                // the
+                Certh.C11, Certh.C55, Certh.SPACE,
+                // rings
+                Certh.C12, Certh.C39, Certh.C36, Certh.C35, Certh.SPACE,
+                // translated
+                Certh.C8, Certh.C12, Certh.C48, Certh.C22, Certh.C35, Certh.C31, Certh.C48, Certh.C8, Certh.C55,
+                Certh.C9, Certh.SPACE,
+                // from
+                Certh.C3, Certh.C12, Certh.C50, Certh.C6, Certh.SPACE,
+                // the
+                Certh.C11, Certh.C55, Certh.SPACE,
+                // red
+                Certh.C12, Certh.C46, Certh.C9, Certh.SPACE,
+                // book
+                Certh.C2, Certh.C51, Certh.C18, };
 
         return new RuneList<Certh>(myRunes);
     }

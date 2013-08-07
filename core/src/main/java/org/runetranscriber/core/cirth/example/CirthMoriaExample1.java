@@ -8,6 +8,7 @@ import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.CirthFontLetter;
 
 /**
  * Khuzdul (Dwarvish) to Cirth Moria.
@@ -19,15 +20,31 @@ public final class CirthMoriaExample1 extends AbstractExample<Certh>
     @Override
     protected FontLetterList createFontLetters()
     {
-        final String answer = "balin.fuDinul.uzbadk|azaddUmu";
+        final String[] myLetters = {
+                // balin
+                CirthFontLetter.C2, CirthFontLetter.C48,
+                CirthFontLetter.C31,
+                CirthFontLetter.C39,
+                CirthFontLetter.C22,
+                CirthFontLetter.NEWLINE,
+                // fundinul
+                CirthFontLetter.C3, CirthFontLetter.C42, CirthFontLetter.C33, CirthFontLetter.C39, CirthFontLetter.C22,
+                CirthFontLetter.C42,
+                CirthFontLetter.C31,
+                CirthFontLetter.NEWLINE,
+                // uzbadkhazaddumu
+                CirthFontLetter.C42, CirthFontLetter.C17, CirthFontLetter.C2, CirthFontLetter.C48, CirthFontLetter.C9,
+                CirthFontLetter.C18, CirthFontLetter.C59, CirthFontLetter.C48, CirthFontLetter.C17,
+                CirthFontLetter.C48, CirthFontLetter.C9, CirthFontLetter.C9, CirthFontLetter.C43, CirthFontLetter.C6,
+                CirthFontLetter.C42, };
 
-        return new FontLetterList(answer);
+        return new FontLetterList(myLetters);
     }
 
     @Override
     protected LanguageLetterList createLanguageLetters()
     {
-        final String text = "balin fundinul uzbadkhazadd" + Constants.U_MACRON + "mu";
+        final String text = "balin\nfundinul\nuzbadkhazadd" + Constants.U_MACRON + "mu";
 
         return new LanguageLetterList(text);
     }
@@ -35,10 +52,14 @@ public final class CirthMoriaExample1 extends AbstractExample<Certh>
     @Override
     protected PhonemeList createPhonemes()
     {
-        final Phoneme[] myPhonemes = { Phoneme.B, Phoneme.A, Phoneme.L, Phoneme.I, Phoneme.N, Phoneme.SPACE, Phoneme.F,
-                Phoneme.U, Phoneme.ND, Phoneme.I, Phoneme.N, Phoneme.U, Phoneme.L, Phoneme.SPACE, Phoneme.U, Phoneme.Z,
-                Phoneme.B, Phoneme.A, Phoneme.D, Phoneme.K, Phoneme.PLUS_H, Phoneme.A, Phoneme.Z, Phoneme.A, Phoneme.D,
-                Phoneme.D, Phoneme.UU, Phoneme.M, Phoneme.U, };
+        final Phoneme[] myPhonemes = {
+                // balin
+                Phoneme.B, Phoneme.A, Phoneme.L, Phoneme.I, Phoneme.N, Phoneme.NEWLINE,
+                // fundinul
+                Phoneme.F, Phoneme.U, Phoneme.ND, Phoneme.I, Phoneme.N, Phoneme.U, Phoneme.L, Phoneme.NEWLINE,
+                // uzbadkhazaddumu
+                Phoneme.U, Phoneme.Z, Phoneme.B, Phoneme.A, Phoneme.D, Phoneme.K, Phoneme.PLUS_H, Phoneme.A, Phoneme.Z,
+                Phoneme.A, Phoneme.D, Phoneme.D, Phoneme.UU, Phoneme.M, Phoneme.U, };
 
         return new PhonemeList(myPhonemes);
     }
@@ -46,10 +67,14 @@ public final class CirthMoriaExample1 extends AbstractExample<Certh>
     @Override
     protected RuneList<Certh> createRunes()
     {
-        final Certh[] myRunes = { Certh.B, Certh.A, Certh.L, Certh.I, Certh.C22, Certh.SPACE, Certh.F, Certh.U,
-                Certh.C33, Certh.I, Certh.C22, Certh.U, Certh.L, Certh.SPACE, Certh.U, Certh.C17, Certh.B, Certh.A,
-                Certh.D, Certh.K, Certh.C59, Certh.A, Certh.C17, Certh.A, Certh.D, Certh.D, Certh.C43, Certh.M,
-                Certh.U, };
+        final Certh[] myRunes = {
+                // balin
+                Certh.C2, Certh.C48, Certh.C31, Certh.C39, Certh.C22, Certh.NEWLINE,
+                // fundinul
+                Certh.C3, Certh.C42, Certh.C33, Certh.C39, Certh.C22, Certh.C42, Certh.C31, Certh.NEWLINE,
+                // uzbadkhazaddumu
+                Certh.C42, Certh.C17, Certh.C2, Certh.C48, Certh.C9, Certh.C18, Certh.C59, Certh.C48, Certh.C17,
+                Certh.C48, Certh.C9, Certh.C9, Certh.C43, Certh.C6, Certh.C42, };
 
         return new RuneList<Certh>(myRunes);
     }
