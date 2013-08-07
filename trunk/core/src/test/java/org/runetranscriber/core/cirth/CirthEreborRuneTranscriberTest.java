@@ -97,20 +97,4 @@ public final class CirthEreborRuneTranscriberTest extends DefaultRuneTranscriber
             assertThat(result.get(i) + " != " + expected.get(i), result.get(i), is(expected.get(i)));
         }
     }
-
-    /**
-     * @param result Result.
-     * @param expected Expected.
-     */
-    // @Override
-    // protected void verify(final RuneList<Certh> result, final RuneList<Certh> expected)
-    // {
-    // if (IS_VERBOSE)
-    // {
-    // System.out.println("expectedFinal = [" + Certh.toString(expected) + "]");
-    // System.out.println("finalResult   = [" + Certh.toString(result) + "]");
-    // }
-    //
-    // super.verify(result, expected);
-    // }
 }
