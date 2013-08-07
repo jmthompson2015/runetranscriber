@@ -39,11 +39,11 @@ public final class CirthEreborExample1 extends AbstractExample<Certh>
                 // rings
                 CirthFontLetter.C12, CirthFontLetter.C39,
                 CirthFontLetter.C36,
-                CirthFontLetter.C35,
+                CirthFontLetter.C34,
                 CirthFontLetter.SPACE,
                 // translated
-                CirthFontLetter.C8, CirthFontLetter.C12, CirthFontLetter.C48, CirthFontLetter.C22, CirthFontLetter.C35,
-                CirthFontLetter.C31, CirthFontLetter.C48, CirthFontLetter.C8, CirthFontLetter.C55, CirthFontLetter.C9,
+                CirthFontLetter.C8, CirthFontLetter.C12, CirthFontLetter.C48, CirthFontLetter.C53, CirthFontLetter.C34,
+                CirthFontLetter.C31, CirthFontLetter.C48, CirthFontLetter.C8, CirthFontLetter.C56, CirthFontLetter.C9,
                 CirthFontLetter.SPACE,
                 // from
                 CirthFontLetter.C3, CirthFontLetter.C12, CirthFontLetter.C50, CirthFontLetter.C6,
@@ -108,9 +108,9 @@ public final class CirthEreborExample1 extends AbstractExample<Certh>
                 // the
                 Certh.C11, Certh.C55, Certh.SPACE,
                 // rings
-                Certh.C12, Certh.C39, Certh.C36, Certh.C35, Certh.SPACE,
+                Certh.C12, Certh.C39, Certh.C36, Certh.C34, Certh.SPACE,
                 // translated
-                Certh.C8, Certh.C12, Certh.C48, Certh.C22, Certh.C35, Certh.C31, Certh.C48, Certh.C8, Certh.C55,
+                Certh.C8, Certh.C12, Certh.C48, Certh.C53, Certh.C34, Certh.C31, Certh.C48, Certh.C8, Certh.C56,
                 Certh.C9, Certh.SPACE,
                 // from
                 Certh.C3, Certh.C12, Certh.C50, Certh.C6, Certh.SPACE,
