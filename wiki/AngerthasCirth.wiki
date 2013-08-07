@@ -11,3 +11,12 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+
+== The Hobbit, Chapter III ==
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitGlamdring.html Glamdring]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitOrcrist.html Orcrist]
+
+== The Lord Of The Rings ==
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombUpper.html Balin's Tomb, upper inscription]
