@@ -20,39 +20,39 @@ public final class CirthMoriaRuneTranscriber implements RuneTranscriber<Certh>
      */
     public CirthMoriaRuneTranscriber()
     {
-        put(Phoneme.P, Certh.P);
-        put(Phoneme.B, Certh.B);
-        put(Phoneme.F, Certh.F);
-        put(Phoneme.V, Certh.V);
-        put(Phoneme.HW, Certh.HW);
-        put(Phoneme.M, Certh.M);
-        put(Phoneme.MB, Certh.MB);
-        put(Phoneme.T, Certh.T);
-        put(Phoneme.D, Certh.D);
-        put(Phoneme.TH, Certh.TH);
-        put(Phoneme.DH, Certh.DH);
+        put(Phoneme.P, Certh.C1);
+        put(Phoneme.B, Certh.C2);
+        put(Phoneme.F, Certh.C3);
+        put(Phoneme.V, Certh.C4);
+        put(Phoneme.HW, Certh.C5);
+        put(Phoneme.M, Certh.C6);
+        put(Phoneme.MB, Certh.C7);
+        put(Phoneme.T, Certh.C8);
+        put(Phoneme.D, Certh.C9);
+        put(Phoneme.TH, Certh.C10);
+        put(Phoneme.DH, Certh.C11);
         put(Phoneme.R, Certh.C12);
-        put(Phoneme.CH, Certh.CH); // h or s, according to 35
+        put(Phoneme.CH, Certh.C13);
         // Abandoned 14
-        put(Phoneme.SH, Certh.SH); // h or s, according to 35
+        put(Phoneme.SH, Certh.C15);
 
         // Abandoned 16
         put(Phoneme.Z, Certh.C17);
-        put(Phoneme.K, Certh.K);
-        put(Phoneme.G, Certh.G);
-        put(Phoneme.KH, Certh.KH);
-        put(Phoneme.GH, Certh.GH);
+        put(Phoneme.K, Certh.C18);
+        put(Phoneme.G, Certh.C19);
+        put(Phoneme.KH, Certh.C20);
+        put(Phoneme.GH, Certh.C21);
         put(Phoneme.N, Certh.C22);
-        put(Phoneme.KW, Certh.KW);
-        put(Phoneme.GW, Certh.GW);
-        put(Phoneme.KHW, Certh.KHW);
-        put(Phoneme.GHW, Certh.GHW);
-        put(Phoneme.NGW, Certh.NGW);
-        put(Phoneme.NW, Certh.NW);
+        put(Phoneme.KW, Certh.C23);
+        put(Phoneme.GW, Certh.C24);
+        put(Phoneme.KHW, Certh.C25);
+        put(Phoneme.GHW, Certh.C26);
+        put(Phoneme.NGW, Certh.C27);
+        put(Phoneme.NW, Certh.C28);
         put(Phoneme.J, Certh.C29);
         put(Phoneme.ZH, Certh.C30);
 
-        put(Phoneme.L, Certh.L);
+        put(Phoneme.L, Certh.C31);
         put(Phoneme.LH, Certh.C32);
         put(Phoneme.ND, Certh.C33);
         put(Phoneme.H, Certh.C34);
@@ -60,23 +60,23 @@ public final class CirthMoriaRuneTranscriber implements RuneTranscriber<Certh>
         put(Phoneme.NG2, Certh.C36);
         put(Phoneme.NG, Certh.C37);
         put(Phoneme.NJ, Certh.C38);
-        put(Phoneme.I, Certh.I); // vowel
+        put(Phoneme.I, Certh.C39); // vowel
         put(Phoneme.Y, Certh.C40);
         put(Phoneme.HY, Certh.C41);
-        put(Phoneme.U, Certh.U); // vowel
+        put(Phoneme.U, Certh.C42); // vowel
         put(Phoneme.UU, Certh.C43);
-        put(Phoneme.W, Certh.W);
-        put(Phoneme.UE, Certh.UE);
+        put(Phoneme.W, Certh.C44);
+        put(Phoneme.UE, Certh.C45);
 
-        put(Phoneme.E, Certh.E); // vowel
-        put(Phoneme.EE, Certh.EE);
-        put(Phoneme.A, Certh.A);
-        put(Phoneme.AA, Certh.AA);
-        put(Phoneme.O, Certh.O); // vowel
-        put(Phoneme.OO, Certh.OO);
-        put(Phoneme.O_DIARESIS, Certh.OE);
+        put(Phoneme.E, Certh.C46); // vowel
+        put(Phoneme.EE, Certh.C47);
+        put(Phoneme.A, Certh.C48);
+        put(Phoneme.AA, Certh.C49);
+        put(Phoneme.O, Certh.C50); // vowel
+        put(Phoneme.OO, Certh.C51);
+        put(Phoneme.O_DIARESIS, Certh.C52);
         // This overwrites N/C22 above
-        // put(Phoneme.N, Certh.N);
+        // put(Phoneme.N, Certh.53);
         put(Phoneme.S, Certh.C54);
         put(Phoneme.SCHWA, Certh.C55);
         put(Phoneme.SCHWA2, Certh.C56);
