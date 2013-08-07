@@ -10,7 +10,7 @@ import org.runetranscriber.core.PhoneticTranscriber;
 import org.runetranscriber.core.viking.example.Examples;
 
 /**
- * Provides tests for the <code>EnglishAngloSaxonPhoneticTranscriber2</code> class.
+ * Provides tests for the <code>EnglishAngloSaxonPhoneticTranscriber</code> class.
  */
 public final class EnglishAngloSaxonPhoneticTranscriberTest extends DefaultPhoneticTranscriberTest
 {

@@ -13,7 +13,7 @@ import org.runetranscriber.core.RuneTranscriber;
 import org.runetranscriber.core.viking.example.Examples;
 
 /**
- * Provides tests for the <code>CirthDaeronTranscriber</code> class.
+ * Provides tests for the <code>AngloSaxonRuneTranscriber</code> class.
  */
 public final class AngloSaxonRuneTranscriberTest extends DefaultRuneTranscriberTest
 {
