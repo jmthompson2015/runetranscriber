@@ -15,3 +15,8 @@
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface1.html Preface #1]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface2.html Preface #2]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface3.html Preface #3]
+
+== Chapter III ==
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitGlamdring.html Glamdring]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitOrcrist.html Orcrist]
