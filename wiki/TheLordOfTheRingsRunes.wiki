@@ -1,0 +1,7 @@
+#summary Runes examples from The Lord Of The Rings.
+
+= The Lord Of The Rings =
+
+== Book Two, Page 138 ==
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombUpper.html Balin's Tomb, upper inscription]
