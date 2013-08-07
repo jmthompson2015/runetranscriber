@@ -20,16 +20,16 @@ public final class CirthEreborExample2 extends AbstractExample<Certh>
         final String[] myLetters = {
                 // balin
                 CirthFontLetter.C2, CirthFontLetter.C48, CirthFontLetter.C31, CirthFontLetter.C39,
-                CirthFontLetter.C22,
+                CirthFontLetter.C53,
                 CirthFontLetter.SPACE,
                 // son
-                CirthFontLetter.C35, CirthFontLetter.C56, CirthFontLetter.C22,
+                CirthFontLetter.C34, CirthFontLetter.C56, CirthFontLetter.C53,
                 CirthFontLetter.SPACE,
                 // of
                 CirthFontLetter.C50, CirthFontLetter.C4,
                 CirthFontLetter.SPACE,
                 // fundin
-                CirthFontLetter.C3, CirthFontLetter.C42, CirthFontLetter.C33, CirthFontLetter.C39, CirthFontLetter.C22,
+                CirthFontLetter.C3, CirthFontLetter.C42, CirthFontLetter.C33, CirthFontLetter.C39, CirthFontLetter.C53,
                 CirthFontLetter.SPACE,
                 // lord
                 CirthFontLetter.C31, CirthFontLetter.C50, CirthFontLetter.C12, CirthFontLetter.C9,
@@ -77,13 +77,13 @@ public final class CirthEreborExample2 extends AbstractExample<Certh>
     {
         final Certh[] myRunes = {
                 // balin
-                Certh.C2, Certh.C48, Certh.C31, Certh.C39, Certh.C22, Certh.SPACE,
+                Certh.C2, Certh.C48, Certh.C31, Certh.C39, Certh.C53, Certh.SPACE,
                 // son
-                Certh.C35, Certh.C56, Certh.C22, Certh.SPACE,
+                Certh.C34, Certh.C56, Certh.C53, Certh.SPACE,
                 // of
                 Certh.C50, Certh.C4, Certh.SPACE,
                 // fundin
-                Certh.C3, Certh.C42, Certh.C33, Certh.C39, Certh.C22, Certh.SPACE,
+                Certh.C3, Certh.C42, Certh.C33, Certh.C39, Certh.C53, Certh.SPACE,
                 // lord
                 Certh.C31, Certh.C50, Certh.C12, Certh.C9, Certh.SPACE,
                 // of
