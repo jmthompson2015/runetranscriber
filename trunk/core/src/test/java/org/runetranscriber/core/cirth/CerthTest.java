@@ -16,12 +16,12 @@ public final class CerthTest
     @Test
     public void valueOfNumber()
     {
-        assertThat(Certh.valueOfNumber(1), is(Certh.P));
-        assertThat(Certh.valueOfNumber(10), is(Certh.TH));
-        assertThat(Certh.valueOfNumber(20), is(Certh.KH));
+        assertThat(Certh.valueOfNumber(1), is(Certh.C1));
+        assertThat(Certh.valueOfNumber(10), is(Certh.C10));
+        assertThat(Certh.valueOfNumber(20), is(Certh.C20));
         assertThat(Certh.valueOfNumber(30), is(Certh.C30));
         assertThat(Certh.valueOfNumber(40), is(Certh.C40));
-        assertThat(Certh.valueOfNumber(50), is(Certh.O));
+        assertThat(Certh.valueOfNumber(50), is(Certh.C50));
         assertThat(Certh.valueOfNumber(60), is(Certh.C60));
     }
 }
