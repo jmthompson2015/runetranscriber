@@ -9,10 +9,10 @@ import org.junit.Test;
 /**
  * Provides tests for the <code>FullTranscriber</code> class.
  */
-public final class FullTranscriberTest
+public final class DefaultFullTranscriberTest
 {
     /** Transcriber. */
-    private final FullTranscriber<MyTestRune> transcriber = new FullTranscriber<MyTestRune>("MyTestRune",
+    private final FullTranscriber<MyTestRune> transcriber = new DefaultFullTranscriber<MyTestRune>("MyTestRune",
             "MyTestRune runes.", new MyTestPhoneticTranscriber(), new MyTestRuneTranscriber(),
             new MyTestFontTranscriber()/* , MyTestRune.class */);
 
