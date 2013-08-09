@@ -5,11 +5,19 @@
 http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/lordoftherings/TLOTR_Appendices_CirthTable.png
 
 = Examples =
+
 == The Hobbit, Chapter III ==
 
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitGlamdring.html Glamdring]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitOrcrist.html Orcrist]
 
-== The Lord Of The Rings, Book Two, Page 138 ==
+== The Lord Of The Rings ==
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombUpper.html Balin's Tomb, upper inscription]
+=== Title Page ===
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrTitlePageUpper.html Title Page (upper inscription)]
+
+=== Book Two, Page 138 ===
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombUpper.html Balin's Tomb (upper inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombLower.html Balin's Tomb (lower inscription)]
