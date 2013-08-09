@@ -2,7 +2,7 @@
 
 = Angerthas Cirth Runes =
 
-http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/TLOTR_Appendices_CirthTable.png
+http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/lordoftherings/TLOTR_Appendices_CirthTable.png
 
 = Examples =
 == The Hobbit, Chapter III ==
