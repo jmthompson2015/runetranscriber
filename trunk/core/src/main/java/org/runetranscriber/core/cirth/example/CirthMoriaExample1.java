@@ -8,37 +8,37 @@ import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.cirth.Certh;
-import org.runetranscriber.core.cirth.CirthFontLetter;
+import org.runetranscriber.core.cirth.CerthFontLetter;
 
 /**
  * Khuzdul (Dwarvish) to Cirth Moria.
  * 
  * <a href="http://ring-lord.tripod.com/cirth/ex_moria1.htm">Balin's Tomb, upper inscription</a>
  */
-public final class CirthMoriaExample1 extends AbstractExample<Certh>
+public final class CirthMoriaExample1 extends AbstractExample<Certh, CerthFontLetter>
 {
     @Override
-    protected FontLetterList createFontLetters()
+    protected FontLetterList<CerthFontLetter> createFontLetters()
     {
-        final String[] myLetters = {
+        final CerthFontLetter[] myLetters = {
                 // balin
-                CirthFontLetter.C2, CirthFontLetter.C48,
-                CirthFontLetter.C31,
-                CirthFontLetter.C39,
-                CirthFontLetter.C22,
-                CirthFontLetter.NEWLINE,
+                CerthFontLetter.C2, CerthFontLetter.C48,
+                CerthFontLetter.C31,
+                CerthFontLetter.C39,
+                CerthFontLetter.C22,
+                CerthFontLetter.NEWLINE,
                 // fundinul
-                CirthFontLetter.C3, CirthFontLetter.C42, CirthFontLetter.C33, CirthFontLetter.C39, CirthFontLetter.C22,
-                CirthFontLetter.C42,
-                CirthFontLetter.C31,
-                CirthFontLetter.NEWLINE,
+                CerthFontLetter.C3, CerthFontLetter.C42, CerthFontLetter.C33, CerthFontLetter.C39, CerthFontLetter.C22,
+                CerthFontLetter.C42,
+                CerthFontLetter.C31,
+                CerthFontLetter.NEWLINE,
                 // uzbadkhazaddumu
-                CirthFontLetter.C42, CirthFontLetter.C17, CirthFontLetter.C2, CirthFontLetter.C48, CirthFontLetter.C9,
-                CirthFontLetter.C18, CirthFontLetter.C59, CirthFontLetter.C48, CirthFontLetter.C17,
-                CirthFontLetter.C48, CirthFontLetter.C9, CirthFontLetter.C9, CirthFontLetter.C43, CirthFontLetter.C6,
-                CirthFontLetter.C42, };
+                CerthFontLetter.C42, CerthFontLetter.C17, CerthFontLetter.C2, CerthFontLetter.C48, CerthFontLetter.C9,
+                CerthFontLetter.C18, CerthFontLetter.C59, CerthFontLetter.C48, CerthFontLetter.C17,
+                CerthFontLetter.C48, CerthFontLetter.C9, CerthFontLetter.C9, CerthFontLetter.C43, CerthFontLetter.C6,
+                CerthFontLetter.C42, };
 
-        return new FontLetterList(myLetters);
+        return new FontLetterList<CerthFontLetter>(myLetters);
     }
 
     @Override
