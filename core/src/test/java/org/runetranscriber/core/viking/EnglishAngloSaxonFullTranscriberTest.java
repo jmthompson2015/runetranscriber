@@ -46,7 +46,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeForward3()
     {
-        verifyTranscribeForward(examples.getAngloSaxon2());
+        verifyTranscribeForward(examples.getAngloSaxon3());
     }
 
     /**
@@ -55,7 +55,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeForward4()
     {
-        verifyTranscribeForward(examples.getAngloSaxon2());
+        verifyTranscribeForward(examples.getAngloSaxon4());
     }
 
     /**
@@ -64,7 +64,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeForward5()
     {
-        verifyTranscribeForward(examples.getAngloSaxon2());
+        verifyTranscribeForward(examples.getAngloSaxon5());
     }
 
     /**
@@ -73,7 +73,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeForward6()
     {
-        verifyTranscribeForward(examples.getAngloSaxon2());
+        verifyTranscribeForward(examples.getAngloSaxon6());
     }
 
     /**
@@ -82,7 +82,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeForward7()
     {
-        verifyTranscribeForward(examples.getAngloSaxon2());
+        verifyTranscribeForward(examples.getAngloSaxon7());
     }
 
     /**
@@ -109,7 +109,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeReverse3()
     {
-        verifyTranscribeReverse(examples.getAngloSaxon2());
+        verifyTranscribeReverse(examples.getAngloSaxon3());
     }
 
     /**
@@ -118,7 +118,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeReverse4()
     {
-        verifyTranscribeReverse(examples.getAngloSaxon2());
+        verifyTranscribeReverse(examples.getAngloSaxon4());
     }
 
     /**
@@ -127,7 +127,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeReverse5()
     {
-        verifyTranscribeReverse(examples.getAngloSaxon2());
+        verifyTranscribeReverse(examples.getAngloSaxon5());
     }
 
     /**
@@ -136,7 +136,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeReverse6()
     {
-        verifyTranscribeReverse(examples.getAngloSaxon2());
+        verifyTranscribeReverse(examples.getAngloSaxon6());
     }
 
     /**
@@ -145,7 +145,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeReverse7()
     {
-        verifyTranscribeReverse(examples.getAngloSaxon2());
+        verifyTranscribeReverse(examples.getAngloSaxon7());
     }
 
     /**
@@ -160,6 +160,7 @@ public final class EnglishAngloSaxonFullTranscriberTest
 
         answer = answer.replaceAll("[']", "");
         answer = answer.replaceAll("j", "i");
+        answer = answer.replaceAll("v", "u");
 
         return answer;
     }
