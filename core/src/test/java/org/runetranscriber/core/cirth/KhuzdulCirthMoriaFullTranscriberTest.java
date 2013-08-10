@@ -20,7 +20,7 @@ public final class KhuzdulCirthMoriaFullTranscriberTest
     private final Examples examples = new Examples();
 
     /** Transcriber. */
-    private final FullTranscriber<Certh, CerthFontLetter> transcriber = new KhuzdulCirthMoriaFullTranscriber();
+    private final FullTranscriber<CerthRune, CerthFontLetter> transcriber = new KhuzdulCirthMoriaFullTranscriber();
 
     /**
      * Test the <code>transcribeForward()</code> method.
@@ -62,7 +62,7 @@ public final class KhuzdulCirthMoriaFullTranscriberTest
      * 
      * @param example Example.
      */
-    private void verifyTranscribeForward(final Example<Certh, CerthFontLetter> example)
+    private void verifyTranscribeForward(final Example<CerthRune, CerthFontLetter> example)
     {
         final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(example.getLanguageLetters());
 
@@ -75,7 +75,7 @@ public final class KhuzdulCirthMoriaFullTranscriberTest
      * 
      * @param example Example.
      */
-    private void verifyTranscribeReverse(final Example<Certh, CerthFontLetter> example)
+    private void verifyTranscribeReverse(final Example<CerthRune, CerthFontLetter> example)
     {
         final LanguageLetterList result = transcriber.transcribeReverse(example.getFontLetters());
 

@@ -23,7 +23,7 @@ public final class CirthDaeronRuneTranscriberTest extends DefaultRuneTranscriber
     private final Examples examples = new Examples();
 
     /** Transcriber. */
-    private RuneTranscriber<Certh> transcriber = new CirthDaeronRuneTranscriber();
+    private RuneTranscriber<CerthRune> transcriber = new CirthDaeronRuneTranscriber();
 
     /**
      * Test the <code>transcribeForward()</code> method.
@@ -32,8 +32,8 @@ public final class CirthDaeronRuneTranscriberTest extends DefaultRuneTranscriber
     public void transcribeForward1()
     {
         final PhonemeList phonemes = examples.getCirthDaeron1().getPhonemes();
-        final RuneList<Certh> result = transcriber.transcribeForward(phonemes);
-        final RuneList<Certh> expected = examples.getCirthDaeron1().getRunes();
+        final RuneList<CerthRune> result = transcriber.transcribeForward(phonemes);
+        final RuneList<CerthRune> expected = examples.getCirthDaeron1().getRunes();
 
         verifyRunes(result, expected);
     }
@@ -45,8 +45,8 @@ public final class CirthDaeronRuneTranscriberTest extends DefaultRuneTranscriber
     public void transcribeForward2()
     {
         final PhonemeList phonemes = examples.getCirthDaeron2().getPhonemes();
-        final RuneList<Certh> result = transcriber.transcribeForward(phonemes);
-        final RuneList<Certh> expected = examples.getCirthDaeron2().getRunes();
+        final RuneList<CerthRune> result = transcriber.transcribeForward(phonemes);
+        final RuneList<CerthRune> expected = examples.getCirthDaeron2().getRunes();
 
         verifyRunes(result, expected);
     }
@@ -57,7 +57,7 @@ public final class CirthDaeronRuneTranscriberTest extends DefaultRuneTranscriber
     @Test
     public void transcribeReverse1()
     {
-        final RuneList<Certh> runes = examples.getCirthDaeron1().getRunes();
+        final RuneList<CerthRune> runes = examples.getCirthDaeron1().getRunes();
         final PhonemeList result = transcriber.transcribeReverse(runes);
         final PhonemeList expected = examples.getCirthDaeron1().getPhonemes();
 
@@ -70,7 +70,7 @@ public final class CirthDaeronRuneTranscriberTest extends DefaultRuneTranscriber
     @Test
     public void transcribeReverse2()
     {
-        final RuneList<Certh> runes = examples.getCirthDaeron2().getRunes();
+        final RuneList<CerthRune> runes = examples.getCirthDaeron2().getRunes();
         final PhonemeList result = transcriber.transcribeReverse(runes);
         final PhonemeList expected = examples.getCirthDaeron2().getPhonemes();
 
@@ -81,7 +81,7 @@ public final class CirthDaeronRuneTranscriberTest extends DefaultRuneTranscriber
      * @param result Result.
      * @param expected Expected.
      */
-    protected void verifyRunes(final RuneList<Certh> result, final RuneList<Certh> expected)
+    protected void verifyRunes(final RuneList<CerthRune> result, final RuneList<CerthRune> expected)
     {
         if (IS_VERBOSE)
         {
