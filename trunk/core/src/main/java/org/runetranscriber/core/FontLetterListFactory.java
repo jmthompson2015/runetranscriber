@@ -4,18 +4,20 @@ import java.util.List;
 
 /**
  * Provides a factory to create a font letter list.
+ * 
+ * @param <F> Font letter type parameter.
  */
-public final class FontLetterListFactory implements ListFactory<FontLetterList, String>
+public final class FontLetterListFactory<F extends FontLetter> implements ListFactory<FontLetterList<F>, F>
 {
     @Override
-    public FontLetterList create()
+    public FontLetterList<F> create()
     {
-        return new FontLetterList();
+        return new FontLetterList<F>();
     }
 
     @Override
-    public FontLetterList create(final List<String> list)
+    public FontLetterList<F> create(final List<F> list)
     {
-        return new FontLetterList(list);
+        return new FontLetterList<F>(list);
     }
 }

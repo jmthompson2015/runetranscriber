@@ -9,11 +9,12 @@ import java.io.InputStream;
  * Provides default functionality for a rune to font character transcriber.
  * 
  * @param <R> Rune type parameter.
+ * @param <F> Font letter type parameter.
  */
-public final class DefaultFontTranscriber<R extends Rune> implements FontTranscriber<R>
+public final class DefaultFontTranscriber<R extends Rune, F extends FontLetter> implements FontTranscriber<R, F>
 {
     /** Delegate. */
-    private final DefaultTranscriber<RuneList<R>, R, FontLetterList, String> delegate;
+    private final DefaultTranscriber<RuneList<R>, R, FontLetterList<F>, F> delegate;
 
     /** Original font. */
     private Font originalFont;
@@ -32,8 +33,8 @@ public final class DefaultFontTranscriber<R extends Rune> implements FontTranscr
     @SuppressWarnings("hiding")
     public DefaultFontTranscriber(final String fontFilename)
     {
-        delegate = new DefaultTranscriber<RuneList<R>, R, FontLetterList, String>(new RuneListFactory<R>(),
-                new FontLetterListFactory());
+        delegate = new DefaultTranscriber<RuneList<R>, R, FontLetterList<F>, F>(new RuneListFactory<R>(),
+                new FontLetterListFactory<F>());
         this.fontFilename = fontFilename;
     }
 
@@ -74,9 +75,9 @@ public final class DefaultFontTranscriber<R extends Rune> implements FontTranscr
     }
 
     @Override
-    public FontLetterList getToSequence()
+    public FontLetterList<F> getToSequence()
     {
-        return new FontLetterList(delegate.getToSequence());
+        return new FontLetterList<F>(delegate.getToSequence());
     }
 
     /**
@@ -84,41 +85,41 @@ public final class DefaultFontTranscriber<R extends Rune> implements FontTranscr
      * @param fontLetter To font letter.
      */
     @Override
-    public void put(final R rune, final String fontLetter)
+    public void put(final R rune, final F fontLetter)
     {
         final RuneList<R> fromSequence = new RuneList<R>(rune);
-        final FontLetterList toSequence = new FontLetterList(fontLetter);
+        final FontLetterList<F> toSequence = new FontLetterList<F>(fontLetter);
 
         putForward(fromSequence, toSequence);
         putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public void put(final RuneList<R> fromSequence, final FontLetterList toSequence)
+    public void put(final RuneList<R> fromSequence, final FontLetterList<F> toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final RuneList<R> fromSequence, final FontLetterList toSequence)
+    public void putForward(final RuneList<R> fromSequence, final FontLetterList<F> toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final RuneList<R> fromSequence, final FontLetterList toSequence)
+    public void putReverse(final RuneList<R> fromSequence, final FontLetterList<F> toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public FontLetterList transcribeForward(final RuneList<R> fromSequence)
+    public FontLetterList<F> transcribeForward(final RuneList<R> fromSequence)
     {
-        return new FontLetterList(delegate.transcribeForward(fromSequence));
+        return new FontLetterList<F>(delegate.transcribeForward(fromSequence));
     }
 
     @Override
-    public RuneList<R> transcribeReverse(final FontLetterList toSequence)
+    public RuneList<R> transcribeReverse(final FontLetterList<F> toSequence)
     {
         return new RuneList<R>(delegate.transcribeReverse(toSequence));
     }
