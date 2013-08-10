@@ -18,12 +18,12 @@ public class DefaultFontTranscriberTest extends DefaultTranscriberTest
     public void transcribeForward()
     {
         final RuneList<MyTestRune> fromSequence = createFromSequence();
-        final FontTranscriber<MyTestRune> transcriber = new MyTestFontTranscriber();
+        final FontTranscriber<MyTestRune, MyTestFontLetter> transcriber = new MyTestFontTranscriber();
 
-        final FontLetterList result = transcriber.transcribeForward(fromSequence);
+        final FontLetterList<MyTestFontLetter> result = transcriber.transcribeForward(fromSequence);
 
         assertNotNull(result);
-        final FontLetterList expected = createToSequence();
+        final FontLetterList<MyTestFontLetter> expected = createToSequence();
         assertThat(result, is(expected));
     }
 
@@ -33,8 +33,8 @@ public class DefaultFontTranscriberTest extends DefaultTranscriberTest
     @Test
     public void transcribeReverse()
     {
-        final FontLetterList toSequence = createToSequence();
-        final FontTranscriber<MyTestRune> transcriber = new MyTestFontTranscriber();
+        final FontLetterList<MyTestFontLetter> toSequence = createToSequence();
+        final FontTranscriber<MyTestRune, MyTestFontLetter> transcriber = new MyTestFontTranscriber();
 
         final RuneList<MyTestRune> result = transcriber.transcribeReverse(toSequence);
 
@@ -94,8 +94,17 @@ public class DefaultFontTranscriberTest extends DefaultTranscriberTest
     /**
      * @return a new to sequence.
      */
-    private FontLetterList createToSequence()
+    private FontLetterList<MyTestFontLetter> createToSequence()
     {
-        return new FontLetterList("the hobbit,\nor there and bakk again.");
+        // "the hobbit,\nor there and bakk again."
+        return new FontLetterList<MyTestFontLetter>(new MyTestFontLetter[] { MyTestFontLetter.T, MyTestFontLetter.H,
+                MyTestFontLetter.E, MyTestFontLetter.SPACE, MyTestFontLetter.H, MyTestFontLetter.O, MyTestFontLetter.B,
+                MyTestFontLetter.B, MyTestFontLetter.I, MyTestFontLetter.T, MyTestFontLetter.COMMA,
+                MyTestFontLetter.NEWLINE, MyTestFontLetter.O, MyTestFontLetter.R, MyTestFontLetter.SPACE,
+                MyTestFontLetter.T, MyTestFontLetter.H, MyTestFontLetter.E, MyTestFontLetter.R, MyTestFontLetter.E,
+                MyTestFontLetter.SPACE, MyTestFontLetter.A, MyTestFontLetter.N, MyTestFontLetter.D,
+                MyTestFontLetter.SPACE, MyTestFontLetter.B, MyTestFontLetter.A, MyTestFontLetter.K, MyTestFontLetter.K,
+                MyTestFontLetter.SPACE, MyTestFontLetter.A, MyTestFontLetter.G, MyTestFontLetter.A, MyTestFontLetter.I,
+                MyTestFontLetter.N, MyTestFontLetter.PERIOD, });
     }
 }

@@ -5,33 +5,34 @@ import java.awt.Font;
 /**
  * Provides a test implementation of a font transcriber.
  */
-public final class MyTestFontTranscriber implements FontTranscriber<MyTestRune>
+public final class MyTestFontTranscriber implements FontTranscriber<MyTestRune, MyTestFontLetter>
 {
     /** Delegate. */
-    private final DefaultFontTranscriber<MyTestRune> delegate = new DefaultFontTranscriber<MyTestRune>("");
+    private final DefaultFontTranscriber<MyTestRune, MyTestFontLetter> delegate = new DefaultFontTranscriber<MyTestRune, MyTestFontLetter>(
+            "");
 
     /**
      * Construct this object.
      */
     public MyTestFontTranscriber()
     {
-        put(MyTestRune.T, "t");
-        put(MyTestRune.H, "h");
-        put(MyTestRune.E, "e");
-        put(MyTestRune.O, "o");
-        put(MyTestRune.B, "b");
-        put(MyTestRune.I, "i");
-        put(MyTestRune.R, "r");
-        put(MyTestRune.A, "a");
-        put(MyTestRune.N, "n");
-        put(MyTestRune.D, "d");
-        put(MyTestRune.K, "k");
-        put(MyTestRune.G, "g");
+        put(MyTestRune.T, MyTestFontLetter.T);
+        put(MyTestRune.H, MyTestFontLetter.H);
+        put(MyTestRune.E, MyTestFontLetter.E);
+        put(MyTestRune.O, MyTestFontLetter.O);
+        put(MyTestRune.B, MyTestFontLetter.B);
+        put(MyTestRune.I, MyTestFontLetter.I);
+        put(MyTestRune.R, MyTestFontLetter.R);
+        put(MyTestRune.A, MyTestFontLetter.A);
+        put(MyTestRune.N, MyTestFontLetter.N);
+        put(MyTestRune.D, MyTestFontLetter.D);
+        put(MyTestRune.K, MyTestFontLetter.K);
+        put(MyTestRune.G, MyTestFontLetter.G);
 
-        put(MyTestRune.SPACE, " ");
-        put(MyTestRune.COMMA, ",");
-        put(MyTestRune.PERIOD, ".");
-        put(MyTestRune.NEWLINE, "\n");
+        put(MyTestRune.SPACE, MyTestFontLetter.SPACE);
+        put(MyTestRune.COMMA, MyTestFontLetter.COMMA);
+        put(MyTestRune.PERIOD, MyTestFontLetter.PERIOD);
+        put(MyTestRune.NEWLINE, MyTestFontLetter.NEWLINE);
     }
 
     @Override
@@ -59,43 +60,43 @@ public final class MyTestFontTranscriber implements FontTranscriber<MyTestRune>
     }
 
     @Override
-    public FontLetterList getToSequence()
+    public FontLetterList<MyTestFontLetter> getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final MyTestRune rune, final String fontLetter)
+    public void put(final MyTestRune rune, final MyTestFontLetter fontLetter)
     {
         delegate.put(rune, fontLetter);
     }
 
     @Override
-    public void put(final RuneList<MyTestRune> fromSequence, final FontLetterList toSequence)
+    public void put(final RuneList<MyTestRune> fromSequence, final FontLetterList<MyTestFontLetter> toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final RuneList<MyTestRune> fromSequence, final FontLetterList toSequence)
+    public void putForward(final RuneList<MyTestRune> fromSequence, final FontLetterList<MyTestFontLetter> toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final RuneList<MyTestRune> fromSequence, final FontLetterList toSequence)
+    public void putReverse(final RuneList<MyTestRune> fromSequence, final FontLetterList<MyTestFontLetter> toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public FontLetterList transcribeForward(final RuneList<MyTestRune> fromSequence)
+    public FontLetterList<MyTestFontLetter> transcribeForward(final RuneList<MyTestRune> fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public RuneList<MyTestRune> transcribeReverse(final FontLetterList toSequence)
+    public RuneList<MyTestRune> transcribeReverse(final FontLetterList<MyTestFontLetter> toSequence)
     {
         return delegate.transcribeReverse(toSequence);
     }
