@@ -20,7 +20,7 @@ public class EnglishAngloSaxonFullTranscriberTest
     private final Examples examples = new Examples();
 
     /** Transcriber. */
-    private final FullTranscriber<AngloSaxonRune> transcriber = new EnglishAngloSaxonFullTranscriber();
+    private final FullTranscriber<AngloSaxonRune, AngloSaxonFontLetter> transcriber = new EnglishAngloSaxonFullTranscriber();
 
     /**
      * Test the <code>transcribeForward()</code> method.
@@ -169,9 +169,9 @@ public class EnglishAngloSaxonFullTranscriberTest
      * 
      * @param example Example.
      */
-    private void verifyTranscribeForward(final Example<AngloSaxonRune> example)
+    private void verifyTranscribeForward(final Example<AngloSaxonRune, AngloSaxonFontLetter> example)
     {
-        final FontLetterList result = transcriber.transcribeForward(example.getLanguageLetters());
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(example.getLanguageLetters());
 
         assertNotNull(result);
         assertThat(result, is(example.getFontLetters()));
@@ -182,7 +182,7 @@ public class EnglishAngloSaxonFullTranscriberTest
      * 
      * @param example Example.
      */
-    private void verifyTranscribeReverse(final Example<AngloSaxonRune> example)
+    private void verifyTranscribeReverse(final Example<AngloSaxonRune, AngloSaxonFontLetter> example)
     {
         final LanguageLetterList result = transcriber.transcribeReverse(example.getFontLetters());
 
