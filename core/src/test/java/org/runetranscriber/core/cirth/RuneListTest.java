@@ -15,7 +15,7 @@ import org.runetranscriber.core.cirth.example.CirthEreborExample1;
 public final class RuneListTest
 {
     /** Example. */
-    private Example<Certh> example = new CirthEreborExample1();
+    private Example<Certh, CerthFontLetter> example = new CirthEreborExample1();
 
     /**
      * Test the <code>toString()</code> method.

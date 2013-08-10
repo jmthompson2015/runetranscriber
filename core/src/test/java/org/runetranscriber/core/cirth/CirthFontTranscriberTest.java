@@ -23,7 +23,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     private final Examples examples = new Examples();
 
     /** Transcriber. */
-    private FontTranscriber<Certh> transcriber = new CirthFontTranscriber();
+    private FontTranscriber<Certh, CerthFontLetter> transcriber = new CirthFontTranscriber();
 
     /**
      * Test the <code>transcribeForward()</code> method.
@@ -32,8 +32,8 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     public void transcribeForward1()
     {
         final RuneList<Certh> runes = examples.getCirthDaeron1().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getCirthDaeron1().getFontLetters();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthDaeron1().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -45,8 +45,8 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     public void transcribeForward2()
     {
         final RuneList<Certh> runes = examples.getCirthDaeron2().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getCirthDaeron2().getFontLetters();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthDaeron2().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -58,8 +58,8 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     public void transcribeForward3()
     {
         final RuneList<Certh> runes = examples.getCirthMoria1().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getCirthMoria1().getFontLetters();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthMoria1().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -71,8 +71,8 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     public void transcribeForward4()
     {
         final RuneList<Certh> runes = examples.getCirthErebor1().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getCirthErebor1().getFontLetters();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthErebor1().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -84,8 +84,8 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     public void transcribeForward5()
     {
         final RuneList<Certh> runes = examples.getCirthErebor2().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getCirthErebor2().getFontLetters();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthErebor2().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -96,7 +96,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     @Test
     public void transcribeReverse1()
     {
-        final FontLetterList fontLetters = examples.getCirthDaeron1().getFontLetters();
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthDaeron1().getFontLetters();
         final RuneList<Certh> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<Certh> expected = examples.getCirthDaeron1().getRunes();
 
@@ -115,7 +115,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     @Test
     public void transcribeReverse2()
     {
-        final FontLetterList fontLetters = examples.getCirthDaeron2().getFontLetters();
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthDaeron2().getFontLetters();
         final RuneList<Certh> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<Certh> expected = examples.getCirthDaeron2().getRunes();
 
@@ -134,7 +134,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     @Test
     public void transcribeReverse3()
     {
-        final FontLetterList fontLetters = examples.getCirthMoria1().getFontLetters();
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthMoria1().getFontLetters();
         final RuneList<Certh> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<Certh> expected = examples.getCirthMoria1().getRunes();
 
@@ -153,7 +153,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     @Test
     public void transcribeReverse4()
     {
-        final FontLetterList fontLetters = examples.getCirthErebor1().getFontLetters();
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthErebor1().getFontLetters();
         final RuneList<Certh> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<Certh> expected = examples.getCirthErebor1().getRunes();
 
@@ -172,7 +172,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     @Test
     public void transcribeReverse5()
     {
-        final FontLetterList fontLetters = examples.getCirthErebor2().getFontLetters();
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthErebor2().getFontLetters();
         final RuneList<Certh> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<Certh> expected = examples.getCirthErebor2().getRunes();
 
