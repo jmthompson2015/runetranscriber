@@ -23,7 +23,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     private final Examples examples = new Examples();
 
     /** Transcriber. */
-    private FontTranscriber<AngloSaxonRune> transcriber = new AngloSaxonFontTranscriber();
+    private FontTranscriber<AngloSaxonRune, AngloSaxonFontLetter> transcriber = new AngloSaxonFontTranscriber();
 
     /**
      * Test the <code>transcribeForward()</code> method.
@@ -32,8 +32,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward1()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon1().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon1().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon1().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -45,8 +45,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward2()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon2().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon2().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon2().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -58,8 +58,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward3()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon3().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon3().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon3().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -71,8 +71,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward4()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon4().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon4().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon4().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -84,8 +84,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward5()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon5().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon5().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon5().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -97,8 +97,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward6()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon6().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon6().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon6().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -110,8 +110,8 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     public void transcribeForward7()
     {
         final RuneList<AngloSaxonRune> runes = examples.getAngloSaxon7().getRunes();
-        final FontLetterList result = transcriber.transcribeForward(runes);
-        final FontLetterList expected = examples.getAngloSaxon7().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<AngloSaxonFontLetter> expected = examples.getAngloSaxon7().getFontLetters();
 
         verifyFontLetters(result, expected, IS_VERBOSE);
     }
@@ -122,7 +122,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse1()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon1().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon1().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon1().getRunes();
 
@@ -141,7 +141,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse2()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon2().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon2().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon2().getRunes();
 
@@ -160,7 +160,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse3()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon3().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon3().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon3().getRunes();
 
@@ -179,7 +179,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse4()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon4().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon4().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon4().getRunes();
 
@@ -198,7 +198,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse5()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon5().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon5().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon5().getRunes();
 
@@ -217,7 +217,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse6()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon6().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon6().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon6().getRunes();
 
@@ -236,7 +236,7 @@ public final class AngloSaxonFontTranscriberTest extends DefaultFontTranscriberT
     @Test
     public void transcribeReverse7()
     {
-        final FontLetterList fontLetters = examples.getAngloSaxon7().getFontLetters();
+        final FontLetterList<AngloSaxonFontLetter> fontLetters = examples.getAngloSaxon7().getFontLetters();
         final RuneList<AngloSaxonRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<AngloSaxonRune> expected = examples.getAngloSaxon7().getRunes();
 
