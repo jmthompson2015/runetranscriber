@@ -15,7 +15,7 @@ import org.runetranscriber.core.cirth.example.CirthEreborExample1;
 public final class RuneListTest
 {
     /** Example. */
-    private Example<Certh, CerthFontLetter> example = new CirthEreborExample1();
+    private Example<CerthRune, CerthFontLetter> example = new CirthEreborExample1();
 
     /**
      * Test the <code>toString()</code> method.
@@ -23,7 +23,7 @@ public final class RuneListTest
     @Test
     public void testToString()
     {
-        final RuneList<Certh> cirth = example.getRunes();
+        final RuneList<CerthRune> cirth = example.getRunes();
         final String result = cirth.toString();
         assertNotNull(result);
         assertThat(

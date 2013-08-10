@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.CerthRune;
 import org.runetranscriber.core.cirth.CerthFontLetter;
 import org.runetranscriber.core.cirth.example.CirthEreborExample1;
 import org.runetranscriber.core.cirth.example.CirthEreborExample2;
@@ -33,10 +33,10 @@ public final class PhonemeListTest
     private final PhonemeList list2 = new PhonemeList(THE_HOBBIT);
 
     /** Example. */
-    private Example<Certh, CerthFontLetter> example1 = new CirthEreborExample1();
+    private Example<CerthRune, CerthFontLetter> example1 = new CirthEreborExample1();
 
     /** Example. */
-    private Example<Certh, CerthFontLetter> example2 = new CirthEreborExample2();
+    private Example<CerthRune, CerthFontLetter> example2 = new CirthEreborExample2();
 
     /**
      * Test the <code>PhonemeList()</code> method.
