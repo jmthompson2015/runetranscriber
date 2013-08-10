@@ -116,7 +116,7 @@ public final class PhonemeListTest
         assertNotNull(result);
 
         final String expected = "dh-e- -l-o-r-d- -o-v- -dh-e- -r-i-" + Constants.VELAR_NASAL
-                + "-s- -t-r-a-n-s-l-a-t-u-d- -f-r-o-m- -dh-e- -r-e-d- -b-" + Constants.O_MACRON + "-k";
+                + "-s- -t-r-a-n-s-l-a-t-e-d- -f-r-o-m- -dh-e- -r-e-d- -b-" + Constants.O_MACRON + "-k";
 
         assertThat(result, is(expected));
     }
