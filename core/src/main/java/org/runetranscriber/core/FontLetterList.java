@@ -118,9 +118,31 @@ public final class FontLetterList<F extends FontLetter> implements List<F>
     }
 
     @Override
-    public boolean equals(final Object o)
+    public boolean equals(final Object object)
     {
-        return delegate.equals(o);
+        boolean answer = false;
+
+        if (object == this)
+        {
+            answer = true;
+        }
+        else if (object == null)
+        {
+            answer = false;
+        }
+        else if (getClass() != object.getClass())
+        {
+            answer = false;
+        }
+        else
+        {
+            @SuppressWarnings("unchecked")
+            final FontLetterList<F> another = (FontLetterList<F>)object;
+
+            answer = (delegate == another.delegate) || delegate.equals(another.delegate);
+        }
+
+        return answer;
     }
 
     @Override
