@@ -6,13 +6,13 @@ import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
-import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.CerthRune;
 import org.runetranscriber.core.cirth.CerthFontLetter;
 
 /**
  * <a href="http://ring-lord.tripod.com/cirth/ex_lotr.htm">From the title page, upper inscription, Lord of the Rings</a>
  */
-public final class CirthEreborExample1 extends AbstractExample<Certh, CerthFontLetter>
+public final class CirthEreborExample1 extends AbstractExample<CerthRune, CerthFontLetter>
 {
     @Override
     protected FontLetterList<CerthFontLetter> createFontLetters()
@@ -96,31 +96,31 @@ public final class CirthEreborExample1 extends AbstractExample<Certh, CerthFontL
     }
 
     @Override
-    protected RuneList<Certh> createRunes()
+    protected RuneList<CerthRune> createRunes()
     {
-        final Certh[] myRunes = {
+        final CerthRune[] myRunes = {
                 // the
-                Certh.C11, Certh.C55, Certh.SPACE,
+                CerthRune.C11, CerthRune.C55, CerthRune.SPACE,
                 // lord
-                Certh.C31, Certh.C50, Certh.C12, Certh.C9, Certh.SPACE,
+                CerthRune.C31, CerthRune.C50, CerthRune.C12, CerthRune.C9, CerthRune.SPACE,
                 // of
-                Certh.C50, Certh.C4, Certh.SPACE,
+                CerthRune.C50, CerthRune.C4, CerthRune.SPACE,
                 // the
-                Certh.C11, Certh.C55, Certh.SPACE,
+                CerthRune.C11, CerthRune.C55, CerthRune.SPACE,
                 // rings
-                Certh.C12, Certh.C39, Certh.C36, Certh.C34, Certh.SPACE,
+                CerthRune.C12, CerthRune.C39, CerthRune.C36, CerthRune.C34, CerthRune.SPACE,
                 // translated
-                Certh.C8, Certh.C12, Certh.C48, Certh.C53, Certh.C34, Certh.C31, Certh.C48, Certh.C8, Certh.C55,
-                Certh.C9, Certh.SPACE,
+                CerthRune.C8, CerthRune.C12, CerthRune.C48, CerthRune.C53, CerthRune.C34, CerthRune.C31, CerthRune.C48, CerthRune.C8, CerthRune.C55,
+                CerthRune.C9, CerthRune.SPACE,
                 // from
-                Certh.C3, Certh.C12, Certh.C50, Certh.C6, Certh.SPACE,
+                CerthRune.C3, CerthRune.C12, CerthRune.C50, CerthRune.C6, CerthRune.SPACE,
                 // the
-                Certh.C11, Certh.C55, Certh.SPACE,
+                CerthRune.C11, CerthRune.C55, CerthRune.SPACE,
                 // red
-                Certh.C12, Certh.C46, Certh.C9, Certh.SPACE,
+                CerthRune.C12, CerthRune.C46, CerthRune.C9, CerthRune.SPACE,
                 // book
-                Certh.C2, Certh.C51, Certh.C18, };
+                CerthRune.C2, CerthRune.C51, CerthRune.C18, };
 
-        return new RuneList<Certh>(myRunes);
+        return new RuneList<CerthRune>(myRunes);
     }
 }

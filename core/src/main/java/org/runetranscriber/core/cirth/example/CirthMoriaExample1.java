@@ -7,7 +7,7 @@ import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
-import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.CerthRune;
 import org.runetranscriber.core.cirth.CerthFontLetter;
 
 /**
@@ -15,7 +15,7 @@ import org.runetranscriber.core.cirth.CerthFontLetter;
  * 
  * <a href="http://ring-lord.tripod.com/cirth/ex_moria1.htm">Balin's Tomb, upper inscription</a>
  */
-public final class CirthMoriaExample1 extends AbstractExample<Certh, CerthFontLetter>
+public final class CirthMoriaExample1 extends AbstractExample<CerthRune, CerthFontLetter>
 {
     @Override
     protected FontLetterList<CerthFontLetter> createFontLetters()
@@ -65,17 +65,17 @@ public final class CirthMoriaExample1 extends AbstractExample<Certh, CerthFontLe
     }
 
     @Override
-    protected RuneList<Certh> createRunes()
+    protected RuneList<CerthRune> createRunes()
     {
-        final Certh[] myRunes = {
+        final CerthRune[] myRunes = {
                 // balin
-                Certh.C2, Certh.C48, Certh.C31, Certh.C39, Certh.C22, Certh.NEWLINE,
+                CerthRune.C2, CerthRune.C48, CerthRune.C31, CerthRune.C39, CerthRune.C22, CerthRune.NEWLINE,
                 // fundinul
-                Certh.C3, Certh.C42, Certh.C33, Certh.C39, Certh.C22, Certh.C42, Certh.C31, Certh.NEWLINE,
+                CerthRune.C3, CerthRune.C42, CerthRune.C33, CerthRune.C39, CerthRune.C22, CerthRune.C42, CerthRune.C31, CerthRune.NEWLINE,
                 // uzbadkhazaddumu
-                Certh.C42, Certh.C17, Certh.C2, Certh.C48, Certh.C9, Certh.C18, Certh.C59, Certh.C48, Certh.C17,
-                Certh.C48, Certh.C9, Certh.C9, Certh.C43, Certh.C6, Certh.C42, };
+                CerthRune.C42, CerthRune.C17, CerthRune.C2, CerthRune.C48, CerthRune.C9, CerthRune.C18, CerthRune.C59, CerthRune.C48, CerthRune.C17,
+                CerthRune.C48, CerthRune.C9, CerthRune.C9, CerthRune.C43, CerthRune.C6, CerthRune.C42, };
 
-        return new RuneList<Certh>(myRunes);
+        return new RuneList<CerthRune>(myRunes);
     }
 }

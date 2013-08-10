@@ -6,13 +6,13 @@ import org.runetranscriber.core.LanguageLetterList;
 import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
-import org.runetranscriber.core.cirth.Certh;
+import org.runetranscriber.core.cirth.CerthRune;
 import org.runetranscriber.core.cirth.CerthFontLetter;
 
 /**
  * <a href="http://ring-lord.tripod.com/cirth/ex_moria2.htm">Balin's tomb, lower inscription</a>
  */
-public final class CirthEreborExample2 extends AbstractExample<Certh, CerthFontLetter>
+public final class CirthEreborExample2 extends AbstractExample<CerthRune, CerthFontLetter>
 {
     @Override
     protected FontLetterList<CerthFontLetter> createFontLetters()
@@ -73,24 +73,24 @@ public final class CirthEreborExample2 extends AbstractExample<Certh, CerthFontL
     }
 
     @Override
-    protected RuneList<Certh> createRunes()
+    protected RuneList<CerthRune> createRunes()
     {
-        final Certh[] myRunes = {
+        final CerthRune[] myRunes = {
                 // balin
-                Certh.C2, Certh.C48, Certh.C31, Certh.C39, Certh.C53, Certh.SPACE,
+                CerthRune.C2, CerthRune.C48, CerthRune.C31, CerthRune.C39, CerthRune.C53, CerthRune.SPACE,
                 // son
-                Certh.C34, Certh.C56, Certh.C53, Certh.SPACE,
+                CerthRune.C34, CerthRune.C56, CerthRune.C53, CerthRune.SPACE,
                 // of
-                Certh.C50, Certh.C4, Certh.SPACE,
+                CerthRune.C50, CerthRune.C4, CerthRune.SPACE,
                 // fundin
-                Certh.C3, Certh.C42, Certh.C33, Certh.C39, Certh.C53, Certh.SPACE,
+                CerthRune.C3, CerthRune.C42, CerthRune.C33, CerthRune.C39, CerthRune.C53, CerthRune.SPACE,
                 // lord
-                Certh.C31, Certh.C50, Certh.C12, Certh.C9, Certh.SPACE,
+                CerthRune.C31, CerthRune.C50, CerthRune.C12, CerthRune.C9, CerthRune.SPACE,
                 // of
-                Certh.C50, Certh.C4, Certh.SPACE,
+                CerthRune.C50, CerthRune.C4, CerthRune.SPACE,
                 // moria
-                Certh.C6, Certh.C50, Certh.C12, Certh.C39, Certh.C48, };
+                CerthRune.C6, CerthRune.C50, CerthRune.C12, CerthRune.C39, CerthRune.C48, };
 
-        return new RuneList<Certh>(myRunes);
+        return new RuneList<CerthRune>(myRunes);
     }
 }

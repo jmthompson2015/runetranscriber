@@ -13,10 +13,10 @@ import org.runetranscriber.core.RuneTranscriber;
 /**
  * Provides a full transcriber for English language to Cirth (Daeron) runes.
  */
-public final class EnglishCirthEreborFullTranscriber implements FullTranscriber<Certh, CerthFontLetter>
+public final class EnglishCirthEreborFullTranscriber implements FullTranscriber<CerthRune, CerthFontLetter>
 {
     /** Delegate. */
-    private final FullTranscriber<Certh, CerthFontLetter> delegate;
+    private final FullTranscriber<CerthRune, CerthFontLetter> delegate;
 
     /**
      * Construct this object.
@@ -26,10 +26,10 @@ public final class EnglishCirthEreborFullTranscriber implements FullTranscriber<
         final String displayName = "English to Cirth (Erebor) rune transcriber";
         final String description = "Transcribes English to Cirth (Erebor) runes and back.";
         final PhoneticTranscriber phoneticTranscriber = new EnglishCirthPhoneticTranscriber();
-        final RuneTranscriber<Certh> runeTranscriber = new CirthEreborRuneTranscriber();
-        final FontTranscriber<Certh, CerthFontLetter> fontTranscriber = new CirthFontTranscriber();
+        final RuneTranscriber<CerthRune> runeTranscriber = new CirthEreborRuneTranscriber();
+        final FontTranscriber<CerthRune, CerthFontLetter> fontTranscriber = new CirthFontTranscriber();
 
-        delegate = new DefaultFullTranscriber<Certh, CerthFontLetter>(displayName, description, phoneticTranscriber,
+        delegate = new DefaultFullTranscriber<CerthRune, CerthFontLetter>(displayName, description, phoneticTranscriber,
                 runeTranscriber, fontTranscriber);
     }
 
@@ -52,7 +52,7 @@ public final class EnglishCirthEreborFullTranscriber implements FullTranscriber<
     }
 
     @Override
-    public FontTranscriber<Certh, CerthFontLetter> getFontTranscriber()
+    public FontTranscriber<CerthRune, CerthFontLetter> getFontTranscriber()
     {
         return delegate.getFontTranscriber();
     }
@@ -82,13 +82,13 @@ public final class EnglishCirthEreborFullTranscriber implements FullTranscriber<
     }
 
     @Override
-    public RuneList<Certh> getRunes()
+    public RuneList<CerthRune> getRunes()
     {
         return delegate.getRunes();
     }
 
     @Override
-    public RuneTranscriber<Certh> getRuneTranscriber()
+    public RuneTranscriber<CerthRune> getRuneTranscriber()
     {
         return delegate.getRuneTranscriber();
     }
