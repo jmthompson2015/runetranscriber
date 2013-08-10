@@ -10,10 +10,10 @@ import org.runetranscriber.core.RuneList;
 /**
  * Provides a rune to font letter transcriber.
  */
-public final class AngloSaxonFontTranscriber implements FontTranscriber<AngloSaxonRune>
+public final class AngloSaxonFontTranscriber implements FontTranscriber<AngloSaxonRune, AngloSaxonFontLetter>
 {
     /** Delegate. */
-    private final DefaultFontTranscriber<AngloSaxonRune> delegate = new DefaultFontTranscriber<AngloSaxonRune>(
+    private final DefaultFontTranscriber<AngloSaxonRune, AngloSaxonFontLetter> delegate = new DefaultFontTranscriber<AngloSaxonRune, AngloSaxonFontLetter>(
             "/Junicode-Bold.ttf");
 
     /**
@@ -82,43 +82,45 @@ public final class AngloSaxonFontTranscriber implements FontTranscriber<AngloSax
     }
 
     @Override
-    public FontLetterList getToSequence()
+    public FontLetterList<AngloSaxonFontLetter> getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final AngloSaxonRune rune, final String fontLetter)
+    public void put(final AngloSaxonRune rune, final AngloSaxonFontLetter fontLetter)
     {
         delegate.put(rune, fontLetter);
     }
 
     @Override
-    public void put(final RuneList<AngloSaxonRune> fromSequence, final FontLetterList toSequence)
+    public void put(final RuneList<AngloSaxonRune> fromSequence, final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final RuneList<AngloSaxonRune> fromSequence, final FontLetterList toSequence)
+    public void putForward(final RuneList<AngloSaxonRune> fromSequence,
+            final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final RuneList<AngloSaxonRune> fromSequence, final FontLetterList toSequence)
+    public void putReverse(final RuneList<AngloSaxonRune> fromSequence,
+            final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public FontLetterList transcribeForward(final RuneList<AngloSaxonRune> fromSequence)
+    public FontLetterList<AngloSaxonFontLetter> transcribeForward(final RuneList<AngloSaxonRune> fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public RuneList<AngloSaxonRune> transcribeReverse(final FontLetterList toSequence)
+    public RuneList<AngloSaxonRune> transcribeReverse(final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         return new RuneList<AngloSaxonRune>(delegate.transcribeReverse(toSequence));
     }

@@ -13,10 +13,10 @@ import org.runetranscriber.core.RuneTranscriber;
 /**
  * Provides a full transcriber for English language to Anglo-Saxon runes.
  */
-public class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSaxonRune>
+public class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSaxonRune, AngloSaxonFontLetter>
 {
     /** Delegate. */
-    private final FullTranscriber<AngloSaxonRune> delegate;
+    private final FullTranscriber<AngloSaxonRune, AngloSaxonFontLetter> delegate;
 
     /**
      * Construct this object.
@@ -27,10 +27,10 @@ public class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSa
         final String description = "Transcribes English to Anglo-Saxon runes and back.";
         final PhoneticTranscriber phoneticTranscriber = new EnglishAngloSaxonPhoneticTranscriber();
         final RuneTranscriber<AngloSaxonRune> runeTranscriber = new AngloSaxonRuneTranscriber();
-        final FontTranscriber<AngloSaxonRune> fontTranscriber = new AngloSaxonFontTranscriber();
+        final FontTranscriber<AngloSaxonRune, AngloSaxonFontLetter> fontTranscriber = new AngloSaxonFontTranscriber();
 
-        delegate = new DefaultFullTranscriber<AngloSaxonRune>(displayName, description, phoneticTranscriber,
-                runeTranscriber, fontTranscriber);
+        delegate = new DefaultFullTranscriber<AngloSaxonRune, AngloSaxonFontLetter>(displayName, description,
+                phoneticTranscriber, runeTranscriber, fontTranscriber);
     }
 
     @Override
@@ -46,13 +46,13 @@ public class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSa
     }
 
     @Override
-    public FontLetterList getFontLetters()
+    public FontLetterList<AngloSaxonFontLetter> getFontLetters()
     {
         return delegate.getFontLetters();
     }
 
     @Override
-    public FontTranscriber<AngloSaxonRune> getFontTranscriber()
+    public FontTranscriber<AngloSaxonRune, AngloSaxonFontLetter> getFontTranscriber()
     {
         return delegate.getFontTranscriber();
     }
@@ -94,37 +94,37 @@ public class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSa
     }
 
     @Override
-    public FontLetterList getToSequence()
+    public FontLetterList<AngloSaxonFontLetter> getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final LanguageLetterList fromSequence, final FontLetterList toSequence)
+    public void put(final LanguageLetterList fromSequence, final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final LanguageLetterList fromSequence, final FontLetterList toSequence)
+    public void putForward(final LanguageLetterList fromSequence, final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final LanguageLetterList fromSequence, final FontLetterList toSequence)
+    public void putReverse(final LanguageLetterList fromSequence, final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public FontLetterList transcribeForward(final LanguageLetterList fromSequence)
+    public FontLetterList<AngloSaxonFontLetter> transcribeForward(final LanguageLetterList fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public LanguageLetterList transcribeReverse(final FontLetterList toSequence)
+    public LanguageLetterList transcribeReverse(final FontLetterList<AngloSaxonFontLetter> toSequence)
     {
         return delegate.transcribeReverse(toSequence);
     }
