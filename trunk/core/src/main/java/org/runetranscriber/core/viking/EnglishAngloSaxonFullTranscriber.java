@@ -13,7 +13,7 @@ import org.runetranscriber.core.RuneTranscriber;
 /**
  * Provides a full transcriber for English language to Anglo-Saxon runes.
  */
-public class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSaxonRune, AngloSaxonFontLetter>
+public final class EnglishAngloSaxonFullTranscriber implements FullTranscriber<AngloSaxonRune, AngloSaxonFontLetter>
 {
     /** Delegate. */
     private final FullTranscriber<AngloSaxonRune, AngloSaxonFontLetter> delegate;
