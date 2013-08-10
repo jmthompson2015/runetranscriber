@@ -10,85 +10,86 @@ import org.runetranscriber.core.RuneList;
 /**
  * Provides a rune to font character transcriber.
  */
-public final class CirthFontTranscriber implements FontTranscriber<Certh>
+public final class CirthFontTranscriber implements FontTranscriber<Certh, CerthFontLetter>
 {
     /** Delegate. */
-    private final DefaultFontTranscriber<Certh> delegate = new DefaultFontTranscriber<Certh>("/ANGERTH.TTF");
+    private final DefaultFontTranscriber<Certh, CerthFontLetter> delegate = new DefaultFontTranscriber<Certh, CerthFontLetter>(
+            "/ANGERTH.TTF");
 
     /**
      * Construct this object.
      */
     public CirthFontTranscriber()
     {
-        put(Certh.C1, CirthFontLetter.C1);
-        put(Certh.C2, CirthFontLetter.C2);
-        put(Certh.C3, CirthFontLetter.C3);
-        put(Certh.C4, CirthFontLetter.C4);
-        put(Certh.C5, CirthFontLetter.C5);
-        put(Certh.C6, CirthFontLetter.C6);
-        put(Certh.C7, CirthFontLetter.C7);
-        put(Certh.C8, CirthFontLetter.C8);
-        put(Certh.C9, CirthFontLetter.C9);
-        put(Certh.C10, CirthFontLetter.C10);
-        put(Certh.C11, CirthFontLetter.C11);
-        put(Certh.C12, CirthFontLetter.C12);
-        put(Certh.C13, CirthFontLetter.C13);
-        put(Certh.C14, CirthFontLetter.C14);
-        put(Certh.C15, CirthFontLetter.C15);
+        put(Certh.C1, CerthFontLetter.C1);
+        put(Certh.C2, CerthFontLetter.C2);
+        put(Certh.C3, CerthFontLetter.C3);
+        put(Certh.C4, CerthFontLetter.C4);
+        put(Certh.C5, CerthFontLetter.C5);
+        put(Certh.C6, CerthFontLetter.C6);
+        put(Certh.C7, CerthFontLetter.C7);
+        put(Certh.C8, CerthFontLetter.C8);
+        put(Certh.C9, CerthFontLetter.C9);
+        put(Certh.C10, CerthFontLetter.C10);
+        put(Certh.C11, CerthFontLetter.C11);
+        put(Certh.C12, CerthFontLetter.C12);
+        put(Certh.C13, CerthFontLetter.C13);
+        put(Certh.C14, CerthFontLetter.C14);
+        put(Certh.C15, CerthFontLetter.C15);
 
-        put(Certh.C16, CirthFontLetter.C16);
-        put(Certh.C17, CirthFontLetter.C17);
-        put(Certh.C18, CirthFontLetter.C18);
-        put(Certh.C19, CirthFontLetter.C19);
-        put(Certh.C20, CirthFontLetter.C20);
-        put(Certh.C21, CirthFontLetter.C21);
-        put(Certh.C22, CirthFontLetter.C22);
-        put(Certh.C23, CirthFontLetter.C23);
-        put(Certh.C24, CirthFontLetter.C24);
-        put(Certh.C25, CirthFontLetter.C25);
-        put(Certh.C26, CirthFontLetter.C26);
-        put(Certh.C27, CirthFontLetter.C27);
-        put(Certh.C28, CirthFontLetter.C28);
-        put(Certh.C29, CirthFontLetter.C29);
-        put(Certh.C30, CirthFontLetter.C30);
+        put(Certh.C16, CerthFontLetter.C16);
+        put(Certh.C17, CerthFontLetter.C17);
+        put(Certh.C18, CerthFontLetter.C18);
+        put(Certh.C19, CerthFontLetter.C19);
+        put(Certh.C20, CerthFontLetter.C20);
+        put(Certh.C21, CerthFontLetter.C21);
+        put(Certh.C22, CerthFontLetter.C22);
+        put(Certh.C23, CerthFontLetter.C23);
+        put(Certh.C24, CerthFontLetter.C24);
+        put(Certh.C25, CerthFontLetter.C25);
+        put(Certh.C26, CerthFontLetter.C26);
+        put(Certh.C27, CerthFontLetter.C27);
+        put(Certh.C28, CerthFontLetter.C28);
+        put(Certh.C29, CerthFontLetter.C29);
+        put(Certh.C30, CerthFontLetter.C30);
 
-        put(Certh.C31, CirthFontLetter.C31);
-        put(Certh.C32, CirthFontLetter.C32);
-        put(Certh.C33, CirthFontLetter.C33);
-        put(Certh.C34, CirthFontLetter.C34);
-        put(Certh.C35, CirthFontLetter.C35);
-        put(Certh.C36, CirthFontLetter.C36);
-        put(Certh.C37, CirthFontLetter.C37);
-        put(Certh.C38, CirthFontLetter.C38);
-        put(Certh.C39, CirthFontLetter.C39);
-        put(Certh.C40, CirthFontLetter.C40);
-        put(Certh.C41, CirthFontLetter.C41);
-        put(Certh.C42, CirthFontLetter.C42);
-        put(Certh.C43, CirthFontLetter.C43);
-        put(Certh.C44, CirthFontLetter.C44);
-        put(Certh.C45, CirthFontLetter.C45);
+        put(Certh.C31, CerthFontLetter.C31);
+        put(Certh.C32, CerthFontLetter.C32);
+        put(Certh.C33, CerthFontLetter.C33);
+        put(Certh.C34, CerthFontLetter.C34);
+        put(Certh.C35, CerthFontLetter.C35);
+        put(Certh.C36, CerthFontLetter.C36);
+        put(Certh.C37, CerthFontLetter.C37);
+        put(Certh.C38, CerthFontLetter.C38);
+        put(Certh.C39, CerthFontLetter.C39);
+        put(Certh.C40, CerthFontLetter.C40);
+        put(Certh.C41, CerthFontLetter.C41);
+        put(Certh.C42, CerthFontLetter.C42);
+        put(Certh.C43, CerthFontLetter.C43);
+        put(Certh.C44, CerthFontLetter.C44);
+        put(Certh.C45, CerthFontLetter.C45);
 
-        put(Certh.C46, CirthFontLetter.C46);
-        put(Certh.C47, CirthFontLetter.C47);
-        put(Certh.C48, CirthFontLetter.C48);
-        put(Certh.C49, CirthFontLetter.C49);
-        put(Certh.C50, CirthFontLetter.C50);
-        put(Certh.C51, CirthFontLetter.C51);
-        put(Certh.C52, CirthFontLetter.C52);
-        put(Certh.C53, CirthFontLetter.C53);
-        put(Certh.C54, CirthFontLetter.C54);
-        put(Certh.C55, CirthFontLetter.C55);
-        put(Certh.C56, CirthFontLetter.C56);
-        put(Certh.C57, CirthFontLetter.C57);
-        put(Certh.C58, CirthFontLetter.C58);
-        put(Certh.C59, CirthFontLetter.C59);
-        put(Certh.C60, CirthFontLetter.C60);
+        put(Certh.C46, CerthFontLetter.C46);
+        put(Certh.C47, CerthFontLetter.C47);
+        put(Certh.C48, CerthFontLetter.C48);
+        put(Certh.C49, CerthFontLetter.C49);
+        put(Certh.C50, CerthFontLetter.C50);
+        put(Certh.C51, CerthFontLetter.C51);
+        put(Certh.C52, CerthFontLetter.C52);
+        put(Certh.C53, CerthFontLetter.C53);
+        put(Certh.C54, CerthFontLetter.C54);
+        put(Certh.C55, CerthFontLetter.C55);
+        put(Certh.C56, CerthFontLetter.C56);
+        put(Certh.C57, CerthFontLetter.C57);
+        put(Certh.C58, CerthFontLetter.C58);
+        put(Certh.C59, CerthFontLetter.C59);
+        put(Certh.C60, CerthFontLetter.C60);
 
         /** Punctuation. */
-        put(Certh.SPACE, CirthFontLetter.SPACE);
-        put(Certh.COMMA, CirthFontLetter.COMMA);
-        put(Certh.PERIOD, CirthFontLetter.PERIOD);
-        put(Certh.NEWLINE, CirthFontLetter.NEWLINE);
+        put(Certh.SPACE, CerthFontLetter.SPACE);
+        put(Certh.COMMA, CerthFontLetter.COMMA);
+        put(Certh.PERIOD, CerthFontLetter.PERIOD);
+        put(Certh.NEWLINE, CerthFontLetter.NEWLINE);
     }
 
     @Override
@@ -116,43 +117,43 @@ public final class CirthFontTranscriber implements FontTranscriber<Certh>
     }
 
     @Override
-    public FontLetterList getToSequence()
+    public FontLetterList<CerthFontLetter> getToSequence()
     {
         return delegate.getToSequence();
     }
 
     @Override
-    public void put(final Certh rune, final String fontLetter)
+    public void put(final Certh rune, final CerthFontLetter fontLetter)
     {
         delegate.put(rune, fontLetter);
     }
 
     @Override
-    public void put(final RuneList<Certh> fromSequence, final FontLetterList toSequence)
+    public void put(final RuneList<Certh> fromSequence, final FontLetterList<CerthFontLetter> toSequence)
     {
         delegate.put(fromSequence, toSequence);
     }
 
     @Override
-    public void putForward(final RuneList<Certh> fromSequence, final FontLetterList toSequence)
+    public void putForward(final RuneList<Certh> fromSequence, final FontLetterList<CerthFontLetter> toSequence)
     {
         delegate.putForward(fromSequence, toSequence);
     }
 
     @Override
-    public void putReverse(final RuneList<Certh> fromSequence, final FontLetterList toSequence)
+    public void putReverse(final RuneList<Certh> fromSequence, final FontLetterList<CerthFontLetter> toSequence)
     {
         delegate.putReverse(fromSequence, toSequence);
     }
 
     @Override
-    public FontLetterList transcribeForward(final RuneList<Certh> fromSequence)
+    public FontLetterList<CerthFontLetter> transcribeForward(final RuneList<Certh> fromSequence)
     {
         return delegate.transcribeForward(fromSequence);
     }
 
     @Override
-    public RuneList<Certh> transcribeReverse(final FontLetterList toSequence)
+    public RuneList<Certh> transcribeReverse(final FontLetterList<CerthFontLetter> toSequence)
     {
         return delegate.transcribeReverse(toSequence);
     }

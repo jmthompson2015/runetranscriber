@@ -7,20 +7,20 @@ import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.cirth.Certh;
-import org.runetranscriber.core.cirth.CirthFontLetter;
+import org.runetranscriber.core.cirth.CerthFontLetter;
 
 /**
  * <a href="http://ring-lord.tripod.com/cirth/ex_swords.htm">Troll Hoard Sword Glamdring inscription</a>
  */
-public final class CirthDaeronExample1 extends AbstractExample<Certh>
+public final class CirthDaeronExample1 extends AbstractExample<Certh, CerthFontLetter>
 {
     @Override
-    protected FontLetterList createFontLetters()
+    protected FontLetterList<CerthFontLetter> createFontLetters()
     {
-        final String[] myLetters = { CirthFontLetter.C19, CirthFontLetter.C31, CirthFontLetter.C48, CirthFontLetter.C6,
-                CirthFontLetter.C9, CirthFontLetter.C29, CirthFontLetter.C39, CirthFontLetter.C22, };
+        final CerthFontLetter[] myLetters = { CerthFontLetter.C19, CerthFontLetter.C31, CerthFontLetter.C48,
+                CerthFontLetter.C6, CerthFontLetter.C9, CerthFontLetter.C29, CerthFontLetter.C39, CerthFontLetter.C22, };
 
-        return new FontLetterList(myLetters);
+        return new FontLetterList<CerthFontLetter>(myLetters);
     }
 
     @Override

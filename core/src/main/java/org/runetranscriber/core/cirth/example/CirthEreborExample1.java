@@ -7,55 +7,55 @@ import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.cirth.Certh;
-import org.runetranscriber.core.cirth.CirthFontLetter;
+import org.runetranscriber.core.cirth.CerthFontLetter;
 
 /**
  * <a href="http://ring-lord.tripod.com/cirth/ex_lotr.htm">From the title page, upper inscription, Lord of the Rings</a>
  */
-public final class CirthEreborExample1 extends AbstractExample<Certh>
+public final class CirthEreborExample1 extends AbstractExample<Certh, CerthFontLetter>
 {
     @Override
-    protected FontLetterList createFontLetters()
+    protected FontLetterList<CerthFontLetter> createFontLetters()
     {
-        final String[] myLetters = {
+        final CerthFontLetter[] myLetters = {
                 // the
-                CirthFontLetter.C11,
-                CirthFontLetter.C55,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C11,
+                CerthFontLetter.C55,
+                CerthFontLetter.SPACE,
                 // lord
-                CirthFontLetter.C31,
-                CirthFontLetter.C50,
-                CirthFontLetter.C12,
-                CirthFontLetter.C9,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C31,
+                CerthFontLetter.C50,
+                CerthFontLetter.C12,
+                CerthFontLetter.C9,
+                CerthFontLetter.SPACE,
                 // of
-                CirthFontLetter.C50,
-                CirthFontLetter.C4,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C50,
+                CerthFontLetter.C4,
+                CerthFontLetter.SPACE,
                 // the
-                CirthFontLetter.C11,
-                CirthFontLetter.C55,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C11,
+                CerthFontLetter.C55,
+                CerthFontLetter.SPACE,
                 // rings
-                CirthFontLetter.C12, CirthFontLetter.C39,
-                CirthFontLetter.C36,
-                CirthFontLetter.C34,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C12, CerthFontLetter.C39,
+                CerthFontLetter.C36,
+                CerthFontLetter.C34,
+                CerthFontLetter.SPACE,
                 // translated
-                CirthFontLetter.C8, CirthFontLetter.C12, CirthFontLetter.C48, CirthFontLetter.C53, CirthFontLetter.C34,
-                CirthFontLetter.C31, CirthFontLetter.C48, CirthFontLetter.C8, CirthFontLetter.C56, CirthFontLetter.C9,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C8, CerthFontLetter.C12, CerthFontLetter.C48, CerthFontLetter.C53, CerthFontLetter.C34,
+                CerthFontLetter.C31, CerthFontLetter.C48, CerthFontLetter.C8, CerthFontLetter.C56, CerthFontLetter.C9,
+                CerthFontLetter.SPACE,
                 // from
-                CirthFontLetter.C3, CirthFontLetter.C12, CirthFontLetter.C50, CirthFontLetter.C6,
-                CirthFontLetter.SPACE,
+                CerthFontLetter.C3, CerthFontLetter.C12, CerthFontLetter.C50, CerthFontLetter.C6,
+                CerthFontLetter.SPACE,
                 // the
-                CirthFontLetter.C11, CirthFontLetter.C55, CirthFontLetter.SPACE,
+                CerthFontLetter.C11, CerthFontLetter.C55, CerthFontLetter.SPACE,
                 // red
-                CirthFontLetter.C12, CirthFontLetter.C46, CirthFontLetter.C9, CirthFontLetter.SPACE,
+                CerthFontLetter.C12, CerthFontLetter.C46, CerthFontLetter.C9, CerthFontLetter.SPACE,
                 // book
-                CirthFontLetter.C2, CirthFontLetter.C51, CirthFontLetter.C18, };
+                CerthFontLetter.C2, CerthFontLetter.C51, CerthFontLetter.C18, };
 
-        return new FontLetterList(myLetters);
+        return new FontLetterList<CerthFontLetter>(myLetters);
     }
 
     @Override
