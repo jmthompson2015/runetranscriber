@@ -12,8 +12,8 @@ import org.junit.Test;
 public final class DefaultFullTranscriberTest
 {
     /** Transcriber. */
-    private final FullTranscriber<MyTestRune> transcriber = new DefaultFullTranscriber<MyTestRune>("MyTestRune",
-            "MyTestRune runes.", new MyTestPhoneticTranscriber(), new MyTestRuneTranscriber(),
+    private final FullTranscriber<MyTestRune, MyTestFontLetter> transcriber = new DefaultFullTranscriber<MyTestRune, MyTestFontLetter>(
+            "MyTestRune", "MyTestRune runes.", new MyTestPhoneticTranscriber(), new MyTestRuneTranscriber(),
             new MyTestFontTranscriber()/* , MyTestRune.class */);
 
     /**
@@ -24,11 +24,13 @@ public final class DefaultFullTranscriberTest
     {
         final LanguageLetterList languageLetters = new LanguageLetterList("the hobbit,\nor there and back again");
 
-        final FontLetterList result = transcriber.transcribeForward(languageLetters);
+        final FontLetterList<MyTestFontLetter> result = transcriber.transcribeForward(languageLetters);
 
         assertNotNull(result);
         assertThat(result.size(), is(35));
-        assertThat(result.toString(), is("the hobbit,\nor there and bakk again"));
+        assertThat(
+                result.toString(),
+                is("T-H-E-SPACE-H-O-B-B-I-T-COMMA-NEWLINE-O-R-SPACE-T-H-E-R-E-SPACE-A-N-D-SPACE-B-A-K-K-SPACE-A-G-A-I-N"));
     }
 
     /**
@@ -37,7 +39,17 @@ public final class DefaultFullTranscriberTest
     @Test
     public void transcribeReverse()
     {
-        final FontLetterList fontLetters = new FontLetterList("the hobbit,\nor there and bakk again");
+        // "the hobbit,\nor there and bakk again"
+        final FontLetterList<MyTestFontLetter> fontLetters = new FontLetterList<MyTestFontLetter>(
+                new MyTestFontLetter[] { MyTestFontLetter.T, MyTestFontLetter.H, MyTestFontLetter.E,
+                        MyTestFontLetter.SPACE, MyTestFontLetter.H, MyTestFontLetter.O, MyTestFontLetter.B,
+                        MyTestFontLetter.B, MyTestFontLetter.I, MyTestFontLetter.T, MyTestFontLetter.COMMA,
+                        MyTestFontLetter.NEWLINE, MyTestFontLetter.O, MyTestFontLetter.R, MyTestFontLetter.SPACE,
+                        MyTestFontLetter.T, MyTestFontLetter.H, MyTestFontLetter.E, MyTestFontLetter.R,
+                        MyTestFontLetter.E, MyTestFontLetter.SPACE, MyTestFontLetter.A, MyTestFontLetter.N,
+                        MyTestFontLetter.D, MyTestFontLetter.SPACE, MyTestFontLetter.B, MyTestFontLetter.A,
+                        MyTestFontLetter.K, MyTestFontLetter.K, MyTestFontLetter.SPACE, MyTestFontLetter.A,
+                        MyTestFontLetter.G, MyTestFontLetter.A, MyTestFontLetter.I, MyTestFontLetter.N, });
 
         final LanguageLetterList result = transcriber.transcribeReverse(fontLetters);
 

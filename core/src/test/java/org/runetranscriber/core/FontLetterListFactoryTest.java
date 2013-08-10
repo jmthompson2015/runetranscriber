@@ -17,7 +17,7 @@ import org.junit.Test;
 public final class FontLetterListFactoryTest
 {
     /** Factory. */
-    private final FontLetterListFactory factory = new FontLetterListFactory();
+    private final FontLetterListFactory<MyTestFontLetter> factory = new FontLetterListFactory<MyTestFontLetter>();
 
     /**
      * Test the <code>create()</code> method.
@@ -25,7 +25,7 @@ public final class FontLetterListFactoryTest
     @Test
     public void create0()
     {
-        final FontLetterList list = factory.create();
+        final FontLetterList<MyTestFontLetter> list = factory.create();
 
         assertTrue(list.isEmpty());
         assertThat(list.size(), is(0));
@@ -37,32 +37,32 @@ public final class FontLetterListFactoryTest
     @Test
     public void create1()
     {
-        final List<String> inputList = new ArrayList<String>();
-        inputList.add("t");
-        inputList.add("h");
-        inputList.add("e");
-        inputList.add(" ");
-        inputList.add("h");
-        inputList.add("o");
-        inputList.add("b");
-        inputList.add("b");
-        inputList.add("i");
-        inputList.add("t");
+        final List<MyTestFontLetter> inputList = new ArrayList<MyTestFontLetter>();
+        inputList.add(MyTestFontLetter.T);
+        inputList.add(MyTestFontLetter.H);
+        inputList.add(MyTestFontLetter.E);
+        inputList.add(MyTestFontLetter.SPACE);
+        inputList.add(MyTestFontLetter.H);
+        inputList.add(MyTestFontLetter.O);
+        inputList.add(MyTestFontLetter.B);
+        inputList.add(MyTestFontLetter.B);
+        inputList.add(MyTestFontLetter.I);
+        inputList.add(MyTestFontLetter.T);
 
-        final FontLetterList list = factory.create(inputList);
+        final FontLetterList<MyTestFontLetter> list = factory.create(inputList);
 
         assertNotNull(list);
         assertFalse(list.isEmpty());
         assertThat(list.size(), is(10));
-        assertThat(list.get(0), is("t"));
-        assertThat(list.get(1), is("h"));
-        assertThat(list.get(2), is("e"));
-        assertThat(list.get(3), is(" "));
-        assertThat(list.get(4), is("h"));
-        assertThat(list.get(5), is("o"));
-        assertThat(list.get(6), is("b"));
-        assertThat(list.get(7), is("b"));
-        assertThat(list.get(8), is("i"));
-        assertThat(list.get(9), is("t"));
+        assertThat(list.get(0), is(MyTestFontLetter.T));
+        assertThat(list.get(1), is(MyTestFontLetter.H));
+        assertThat(list.get(2), is(MyTestFontLetter.E));
+        assertThat(list.get(3), is(MyTestFontLetter.SPACE));
+        assertThat(list.get(4), is(MyTestFontLetter.H));
+        assertThat(list.get(5), is(MyTestFontLetter.O));
+        assertThat(list.get(6), is(MyTestFontLetter.B));
+        assertThat(list.get(7), is(MyTestFontLetter.B));
+        assertThat(list.get(8), is(MyTestFontLetter.I));
+        assertThat(list.get(9), is(MyTestFontLetter.T));
     }
 }

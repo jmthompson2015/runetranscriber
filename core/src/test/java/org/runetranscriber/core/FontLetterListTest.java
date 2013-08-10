@@ -13,13 +13,22 @@ import org.junit.Test;
 public final class FontLetterListTest
 {
     /** List. */
-    private final FontLetterList list0 = new FontLetterList("the hobbit");
+    private final FontLetterList<MyTestFontLetter> list0 = new FontLetterList<MyTestFontLetter>(new MyTestFontLetter[] {
+            MyTestFontLetter.T, MyTestFontLetter.H, MyTestFontLetter.E, MyTestFontLetter.SPACE, MyTestFontLetter.H,
+            MyTestFontLetter.O, MyTestFontLetter.B, MyTestFontLetter.B, MyTestFontLetter.I, MyTestFontLetter.T, });
 
     /** List. */
-    private final FontLetterList list1 = new FontLetterList("or there and back again");
+    private final FontLetterList<MyTestFontLetter> list1 = new FontLetterList<MyTestFontLetter>(new MyTestFontLetter[] {
+            MyTestFontLetter.O, MyTestFontLetter.R, MyTestFontLetter.SPACE, MyTestFontLetter.T, MyTestFontLetter.H,
+            MyTestFontLetter.E, MyTestFontLetter.R, MyTestFontLetter.E, MyTestFontLetter.SPACE, MyTestFontLetter.A,
+            MyTestFontLetter.N, MyTestFontLetter.D, MyTestFontLetter.SPACE, MyTestFontLetter.B, MyTestFontLetter.A,
+            MyTestFontLetter.C, MyTestFontLetter.K, MyTestFontLetter.SPACE, MyTestFontLetter.A, MyTestFontLetter.G,
+            MyTestFontLetter.A, MyTestFontLetter.I, MyTestFontLetter.N, });
 
     /** List. */
-    private final FontLetterList list2 = new FontLetterList("the hobbit");
+    private final FontLetterList<MyTestFontLetter> list2 = new FontLetterList<MyTestFontLetter>(new MyTestFontLetter[] {
+            MyTestFontLetter.T, MyTestFontLetter.H, MyTestFontLetter.E, MyTestFontLetter.SPACE, MyTestFontLetter.H,
+            MyTestFontLetter.O, MyTestFontLetter.B, MyTestFontLetter.B, MyTestFontLetter.I, MyTestFontLetter.T, });
 
     /**
      * Test the <code>FontLetterList()</code> method.
@@ -27,7 +36,7 @@ public final class FontLetterListTest
     @Test
     public void constructor0()
     {
-        final FontLetterList list = new FontLetterList();
+        final FontLetterList<MyTestFontLetter> list = new FontLetterList<MyTestFontLetter>();
 
         assertTrue(list.isEmpty());
     }
@@ -39,16 +48,16 @@ public final class FontLetterListTest
     public void constructor1()
     {
         assertThat(list0.size(), is(10));
-        assertThat(list0.get(0), is("t"));
-        assertThat(list0.get(1), is("h"));
-        assertThat(list0.get(2), is("e"));
-        assertThat(list0.get(3), is(" "));
-        assertThat(list0.get(4), is("h"));
-        assertThat(list0.get(5), is("o"));
-        assertThat(list0.get(6), is("b"));
-        assertThat(list0.get(7), is("b"));
-        assertThat(list0.get(8), is("i"));
-        assertThat(list0.get(9), is("t"));
+        assertThat(list0.get(0), is(MyTestFontLetter.T));
+        assertThat(list0.get(1), is(MyTestFontLetter.H));
+        assertThat(list0.get(2), is(MyTestFontLetter.E));
+        assertThat(list0.get(3), is(MyTestFontLetter.SPACE));
+        assertThat(list0.get(4), is(MyTestFontLetter.H));
+        assertThat(list0.get(5), is(MyTestFontLetter.O));
+        assertThat(list0.get(6), is(MyTestFontLetter.B));
+        assertThat(list0.get(7), is(MyTestFontLetter.B));
+        assertThat(list0.get(8), is(MyTestFontLetter.I));
+        assertThat(list0.get(9), is(MyTestFontLetter.T));
     }
 
     /**
@@ -57,7 +66,8 @@ public final class FontLetterListTest
     @Test
     public void constructor1Null()
     {
-        final FontLetterList list = new FontLetterList((FontLetterList)null);
+        final FontLetterList<MyTestFontLetter> list = new FontLetterList<MyTestFontLetter>(
+                (FontLetterList<MyTestFontLetter>)null);
         assertTrue(list.isEmpty());
     }
 
@@ -89,6 +99,6 @@ public final class FontLetterListTest
     @Test
     public void testToString()
     {
-        assertThat(list0.toString(), is("the hobbit"));
+        assertThat(list0.toString(), is("T-H-E-SPACE-H-O-B-B-I-T"));
     }
 }

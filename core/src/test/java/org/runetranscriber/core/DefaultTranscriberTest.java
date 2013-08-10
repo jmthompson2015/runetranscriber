@@ -30,7 +30,8 @@ public class DefaultTranscriberTest
      * @param expected Expected.
      * @param isVerbose Flag indicating if the output should be verbose.
      */
-    protected void verifyFontLetters(final FontLetterList result, final FontLetterList expected, final boolean isVerbose)
+    protected void verifyFontLetters(final FontLetterList<?> result, final FontLetterList<?> expected,
+            final boolean isVerbose)
     {
         final String expectedString = expected.toString();
         final String resultString = result.toString();
