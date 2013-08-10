@@ -14,7 +14,7 @@ import org.runetranscriber.core.viking.example.Examples;
 /**
  * Provides tests for the <code>EnglishAngloSaxonFullTranscriber</code> class.
  */
-public class EnglishAngloSaxonFullTranscriberTest
+public final class EnglishAngloSaxonFullTranscriberTest
 {
     /** Examples. */
     private final Examples examples = new Examples();
