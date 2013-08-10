@@ -1,7 +1,5 @@
 package org.runetranscriber.core.viking.example;
 
-import java.util.Arrays;
-
 import org.runetranscriber.core.AbstractExample;
 import org.runetranscriber.core.FontLetterList;
 import org.runetranscriber.core.LanguageLetterList;
@@ -14,12 +12,12 @@ import org.runetranscriber.core.viking.AngloSaxonRune;
 /**
  * Provides an example for Anglo-Saxon runes from The Hobbit, Preface #2.
  */
-public final class AngloSaxonExample6 extends AbstractExample<AngloSaxonRune>
+public final class AngloSaxonExample6 extends AbstractExample<AngloSaxonRune, AngloSaxonFontLetter>
 {
     @Override
-    protected FontLetterList createFontLetters()
+    protected FontLetterList<AngloSaxonFontLetter> createFontLetters()
     {
-        final String[] myFontLetters = {
+        final AngloSaxonFontLetter[] myFontLetters = {
                 // five
                 AngloSaxonFontLetter.FEOH,
                 AngloSaxonFontLetter.IS,
@@ -74,7 +72,7 @@ public final class AngloSaxonExample6 extends AbstractExample<AngloSaxonRune>
                 // th.
                 AngloSaxonFontLetter.THORN, AngloSaxonFontLetter.PERIOD, };
 
-        return new FontLetterList(Arrays.asList(myFontLetters));
+        return new FontLetterList<AngloSaxonFontLetter>(myFontLetters);
     }
 
     @Override
