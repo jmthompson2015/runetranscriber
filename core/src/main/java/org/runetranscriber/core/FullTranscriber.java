@@ -4,9 +4,10 @@ package org.runetranscriber.core;
  * Defines methods required by a full transcriber from language letters to font letters.
  * 
  * @param <R> Rune type parameter.
+ * @param <F> Font letter type parameter.
  */
-public interface FullTranscriber<R extends Rune> extends
-        Transcriber<LanguageLetterList, String, FontLetterList, String>
+public interface FullTranscriber<R extends Rune, F extends FontLetter> extends
+        Transcriber<LanguageLetterList, String, FontLetterList<F>, F>
 {
     /**
      * @return the description
@@ -21,12 +22,12 @@ public interface FullTranscriber<R extends Rune> extends
     /**
      * @return the fontLetters
      */
-    public FontLetterList getFontLetters();
+    public FontLetterList<F> getFontLetters();
 
     /**
      * @return the fontTranscriber
      */
-    public FontTranscriber<R> getFontTranscriber();
+    public FontTranscriber<R, F> getFontTranscriber();
 
     /**
      * @return the languageLetters

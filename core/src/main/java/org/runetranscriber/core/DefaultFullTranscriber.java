@@ -4,8 +4,9 @@ package org.runetranscriber.core;
  * Provides a full transcriber from language letters to font letters.
  * 
  * @param <R> Rune type parameter.
+ * @param <F> Font letter type parameter.
  */
-public final class DefaultFullTranscriber<R extends Rune> implements FullTranscriber<R>
+public final class DefaultFullTranscriber<R extends Rune, F extends FontLetter> implements FullTranscriber<R, F>
 {
     /** Description. */
     private final String description;
@@ -14,10 +15,10 @@ public final class DefaultFullTranscriber<R extends Rune> implements FullTranscr
     private final String displayName;
 
     /** Font letters. */
-    private FontLetterList fontLetters;
+    private FontLetterList<F> fontLetters;
 
     /** Font transcriber. */
-    private final FontTranscriber<R> fontTranscriber;
+    private final FontTranscriber<R, F> fontTranscriber;
 
     /** Language letters. */
     private LanguageLetterList languageLetters;
@@ -46,7 +47,7 @@ public final class DefaultFullTranscriber<R extends Rune> implements FullTranscr
     @SuppressWarnings("hiding")
     public DefaultFullTranscriber(final String displayName, final String description,
             final PhoneticTranscriber phoneticTranscriber, final RuneTranscriber<R> runeTranscriber,
-            final FontTranscriber<R> fontTranscriber)
+            final FontTranscriber<R, F> fontTranscriber)
     {
         this.displayName = displayName;
         this.description = description;
@@ -77,7 +78,7 @@ public final class DefaultFullTranscriber<R extends Rune> implements FullTranscr
      * @return the fontLetters
      */
     @Override
-    public FontLetterList getFontLetters()
+    public FontLetterList<F> getFontLetters()
     {
         return fontLetters;
     }
@@ -86,7 +87,7 @@ public final class DefaultFullTranscriber<R extends Rune> implements FullTranscr
      * @return the fontTranscriber
      */
     @Override
-    public FontTranscriber<R> getFontTranscriber()
+    public FontTranscriber<R, F> getFontTranscriber()
     {
         return fontTranscriber;
     }
@@ -143,31 +144,31 @@ public final class DefaultFullTranscriber<R extends Rune> implements FullTranscr
     }
 
     @Override
-    public FontLetterList getToSequence()
+    public FontLetterList<F> getToSequence()
     {
         return fontLetters;
     }
 
     @Override
-    public void put(final LanguageLetterList fromSequence, final FontLetterList toSequence)
+    public void put(final LanguageLetterList fromSequence, final FontLetterList<F> toSequence)
     {
         throw new RuntimeException("method not implemented");
     }
 
     @Override
-    public void putForward(final LanguageLetterList fromSequence, final FontLetterList toSequence)
+    public void putForward(final LanguageLetterList fromSequence, final FontLetterList<F> toSequence)
     {
         throw new RuntimeException("method not implemented");
     }
 
     @Override
-    public void putReverse(final LanguageLetterList fromSequence, final FontLetterList toSequence)
+    public void putReverse(final LanguageLetterList fromSequence, final FontLetterList<F> toSequence)
     {
         throw new RuntimeException("method not implemented");
     }
 
     @Override
-    public FontLetterList transcribeForward(final LanguageLetterList fromSequence)
+    public FontLetterList<F> transcribeForward(final LanguageLetterList fromSequence)
     {
         languageLetters = fromSequence;
         phonemes = phoneticTranscriber.transcribeForward(languageLetters);
@@ -178,7 +179,7 @@ public final class DefaultFullTranscriber<R extends Rune> implements FullTranscr
     }
 
     @Override
-    public LanguageLetterList transcribeReverse(final FontLetterList toSequence)
+    public LanguageLetterList transcribeReverse(final FontLetterList<F> toSequence)
     {
         fontLetters = toSequence;
         runes = fontTranscriber.transcribeReverse(fontLetters);
