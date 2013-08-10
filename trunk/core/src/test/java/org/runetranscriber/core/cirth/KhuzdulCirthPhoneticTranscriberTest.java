@@ -49,7 +49,7 @@ public final class KhuzdulCirthPhoneticTranscriberTest
     /**
      * @param example Example.
      */
-    private void verify(final Example<?> example)
+    private void verify(final Example<?, ?> example)
     {
         final LanguageLetterList text = example.getLanguageLetters();
         final PhonemeList result = transcriber.transcribeForward(text);
