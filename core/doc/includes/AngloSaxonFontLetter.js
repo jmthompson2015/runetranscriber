@@ -65,6 +65,12 @@ function IS()
 	document.write("&#5825;");
 }
 
+// 12
+function GER()
+{
+	document.write("&#5828;");
+}
+
 // 13
 function EOH()
 {
@@ -75,6 +81,12 @@ function EOH()
 function PEORD()
 {
 	document.write("&#5832;");
+}
+
+// 15
+function EOLH()
+{
+	document.write("&#5833;");
 }
 
 // 16
@@ -131,6 +143,12 @@ function DAEG()
 	document.write("&#5854;");
 }
 
+// 25
+function AC()
+{
+	document.write("&#5802;");
+}
+
 // 26
 function AESC()
 {
@@ -143,23 +161,38 @@ function YR()
 	document.write("&#5795;");
 }
 
+// 28
+function IOR()
+{
+	document.write("&#5820;");
+}
+
 // 29
 function EAR()
 {
 	document.write("&#5856;");
 }
 
+// 30
 function SPACE()
 {
 	document.write("&#5867;");
 }
 
+// 31
 function COMMA()
 {
 	document.write("&#5868;");
 }
 
+// 32
 function PERIOD()
 {
 	document.write("&#5010;");
+}
+
+// 33
+function NEWLINE()
+{
+	document.write("<br/>");
 }
