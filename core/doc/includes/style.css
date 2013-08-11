@@ -6,6 +6,7 @@ body {
 
 @font-face { font-family: Junicode-Bold; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf'); }
 @font-face { font-family: Angerthas; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF'); }
+@font-face { font-family: Tengwar; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf'); }
 
 .accent {
 	background-image: url('../images/GreenMarbleVerdeGuatemala.jpg');
@@ -91,6 +92,10 @@ body {
 
 .font-size-xx-small {
 	font-size: xx-small;
+}
+
+.font-tengwar{
+	font-family: Tengwar;
 }
 
 .font-weight-normal {
@@ -218,6 +223,14 @@ body {
 	border: 1px solid;
 	border-color: darkgreen;
 	font-family: Angerthas;
+	font-size: large;
+	padding: 5px;
+}
+
+.table-cell-tengwar {
+	border: 1px solid;
+	border-color: darkgreen;
+	font-family: Tengwar;
 	font-size: large;
 	padding: 5px;
 }
