@@ -209,6 +209,14 @@ public final class CerthFontLetter implements FontLetter
     /** Values. */
     private static FontLetterList<CerthFontLetter> VALUES;
 
+    /**
+     * @return a copy of the list of font letter values.
+     */
+    public static final FontLetterList<CerthFontLetter> values()
+    {
+        return new FontLetterList<CerthFontLetter>(VALUES);
+    }
+
     /** Delegate. */
     private final DefaultFontLetter delegate;
 
