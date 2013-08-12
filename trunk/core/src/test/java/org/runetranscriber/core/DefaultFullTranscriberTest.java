@@ -28,9 +28,7 @@ public final class DefaultFullTranscriberTest
 
         assertNotNull(result);
         assertThat(result.size(), is(35));
-        assertThat(
-                result.toString(),
-                is("T-H-E-SPACE-H-O-B-B-I-T-COMMA-NEWLINE-O-R-SPACE-T-H-E-R-E-SPACE-A-N-D-SPACE-B-A-K-K-SPACE-A-G-A-I-N"));
+        assertThat(result.toString(), is("the*hobbit,:or*there*and*bakk*again"));
     }
 
     /**
