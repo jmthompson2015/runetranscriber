@@ -247,8 +247,10 @@ public final class FontLetterList<F extends FontLetter> implements List<F>
         return delegate.toArray(a);
     }
 
-    @Override
-    public String toString()
+    /**
+     * @return a string representation of this object.
+     */
+    public String toDebugString()
     {
         final StringBuilder sb = new StringBuilder();
 
@@ -270,6 +272,31 @@ public final class FontLetterList<F extends FontLetter> implements List<F>
                 if (i < (size() - 1))
                 {
                     sb.append("-");
+                }
+            }
+        }
+
+        return sb.toString();
+    }
+
+    @Override
+    public String toString()
+    {
+        final StringBuilder sb = new StringBuilder();
+
+        if (!isEmpty())
+        {
+            for (int i = 0; i < size(); i++)
+            {
+                final F element = get(i);
+
+                if (element == null)
+                {
+                    sb.append("null");
+                }
+                else
+                {
+                    sb.append(element.value());
                 }
             }
         }
