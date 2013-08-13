@@ -1,3 +1,4 @@
+
 var U_MACRON = "\u016B";
 
 function NG()
@@ -5,7 +6,7 @@ function NG()
 	document.write("&#x014B;");
 }
 
-function U_MACRON()
+function UMACRON()
 {
 	document.write(U_MACRON);
 }
