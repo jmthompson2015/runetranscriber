@@ -20,3 +20,7 @@ http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/AngloSaxonFuthor
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface1.html Preface #1]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface2.html Preface #2]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/hobbitPreface3.html Preface #3]
+
+== LEGO 9473 The Mines Of Moria ==
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/lego9473-1.html Sticker #1]
