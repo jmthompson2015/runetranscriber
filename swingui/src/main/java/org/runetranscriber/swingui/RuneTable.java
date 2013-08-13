@@ -144,7 +144,7 @@ public class RuneTable<R extends Rune, F extends FontLetter> extends JPanel
     protected JComponent createRuneUI(final FontTranscriber<R, F> fontTranscriber, final R rune)
     {
         final FontLetterList<F> fontLetters = fontTranscriber.transcribeForward(new RuneList<R>(rune));
-        final String text = (CollectionUtils.isNotEmpty(fontLetters) ? fontLetters.get(0).toString() : "?");
+        final String text = (CollectionUtils.isNotEmpty(fontLetters) ? fontLetters.get(0).value() : "?");
         final JLabel answer = createLabel(text);
         answer.setFont(fontTranscriber.getFont());
 
