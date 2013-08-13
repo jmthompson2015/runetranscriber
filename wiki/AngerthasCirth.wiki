@@ -21,3 +21,8 @@ http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/lordoftherings/T
 
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombUpper.html Balin's Tomb (upper inscription)]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrBalinsTombLower.html Balin's Tomb (lower inscription)]
+
+== LEGO 9473 The Mines Of Moria ==
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/lego9473-2.html Sticker #2]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/lego9473-3.html Sticker #3]
