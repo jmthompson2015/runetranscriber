@@ -1,0 +1,5 @@
+#summary LEGO 9473 The Mines Of Moria stickers
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/lego9473-1.html Sticker #1]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/lego9473-2.html Sticker #2]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/lego9473-3.html Sticker #3]
