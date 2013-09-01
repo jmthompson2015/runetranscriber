@@ -31,6 +31,9 @@ public final class Examples
     /** Anglo-Saxon example. */
     private final AngloSaxonExample7 angloSaxon7 = new AngloSaxonExample7();
 
+    /** Anglo-Saxon example. */
+    private final AngloSaxonExample8 angloSaxon8 = new AngloSaxonExample8();
+
     /**
      * @return the angloSaxon1
      */
@@ -85,5 +88,13 @@ public final class Examples
     public AngloSaxonExample7 getAngloSaxon7()
     {
         return angloSaxon7;
+    }
+
+    /**
+     * @return the angloSaxon8
+     */
+    public AngloSaxonExample8 getAngloSaxon8()
+    {
+        return angloSaxon8;
     }
 }
