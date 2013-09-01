@@ -107,8 +107,7 @@ public final class AngloSaxonFontLetter implements FontLetter
     public static final AngloSaxonFontLetter PERIOD = new AngloSaxonFontLetter("PERIOD", 5010);
 
     /** Font letter. */
-    public static final AngloSaxonFontLetter NEWLINE = new AngloSaxonFontLetter("NEWLINE",
-            Character.getNumericValue("\n".charAt(0)));
+    public static final AngloSaxonFontLetter NEWLINE = new AngloSaxonFontLetter("NEWLINE", "\n");
 
     /** Ordinal count. */
     private static int ordinalCount = 0;
@@ -143,6 +142,27 @@ public final class AngloSaxonFontLetter implements FontLetter
 
         final String value = Character.toString((char)intValue);
         delegate = new DefaultFontLetter(ordinalCount, name, value);
+
+        if (VALUES == null)
+        {
+            VALUES = new FontLetterList<AngloSaxonFontLetter>();
+        }
+
+        VALUES.add(this);
+        ordinalCount++;
+    }
+
+    /**
+     * Construct this object.
+     * 
+     * @param name Name.
+     * @param value String value.
+     */
+    public AngloSaxonFontLetter(final String name, final String value)
+    {
+        delegate = new DefaultFontLetter(ordinalCount, name, value);
+
+        this.intValue = Character.getNumericValue("\n".charAt(0));
 
         if (VALUES == null)
         {
