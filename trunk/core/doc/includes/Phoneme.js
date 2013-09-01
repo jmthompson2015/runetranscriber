@@ -1,12 +1,15 @@
 
-var U_MACRON = "\u016B";
+function AE()
+{
+	document.write("\u00E6");
+}
 
 function NG()
 {
 	document.write("&#x014B;");
 }
 
-function UMACRON()
+function U_MACRON()
 {
-	document.write(U_MACRON);
+	document.write("\u016B");
 }
