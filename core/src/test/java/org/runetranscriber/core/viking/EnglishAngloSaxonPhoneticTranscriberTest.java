@@ -111,6 +111,18 @@ public final class EnglishAngloSaxonPhoneticTranscriberTest extends DefaultPhone
      * Test the <code>transcribeForward()</code> method.
      */
     @Test
+    public void transcribeForward8()
+    {
+        final PhonemeList result = transcriber.transcribeForward(examples.getAngloSaxon8().getLanguageLetters());
+        final PhonemeList expected = examples.getAngloSaxon8().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
     public void transcribeForwardNull()
     {
         final PhonemeList phonemes = transcriber.transcribeForward(null);
@@ -197,6 +209,18 @@ public final class EnglishAngloSaxonPhoneticTranscriberTest extends DefaultPhone
     {
         final LanguageLetterList result = transcriber.transcribeReverse(examples.getAngloSaxon7().getPhonemes());
         final LanguageLetterList expected = examples.getAngloSaxon7().getLanguageLetters();
+
+        verifyLanguageLetters(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse8()
+    {
+        final LanguageLetterList result = transcriber.transcribeReverse(examples.getAngloSaxon8().getPhonemes());
+        final LanguageLetterList expected = examples.getAngloSaxon8().getLanguageLetters();
 
         verifyLanguageLetters(result, expected, IS_VERBOSE);
     }
