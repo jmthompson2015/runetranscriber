@@ -108,7 +108,7 @@ public final class AngloSaxonExample3 extends AbstractExample<AngloSaxonRune, An
                 // may
                 Phoneme.M, Phoneme.AE, Phoneme.Y, Phoneme.NEWLINE,
                 // walk
-                Phoneme.W, Phoneme.O, Phoneme.L, Phoneme.K, Phoneme.SPACE,
+                Phoneme.W, Phoneme.AE, Phoneme.L, Phoneme.K, Phoneme.SPACE,
                 // abreast.
                 Phoneme.AE, Phoneme.B, Phoneme.R, Phoneme.E, Phoneme.NEWLINE, Phoneme.AE, Phoneme.S, Phoneme.T,
                 Phoneme.PERIOD,

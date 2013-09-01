@@ -19,6 +19,9 @@ public final class AngloSaxonRuneTranscriber implements RuneTranscriber<AngloSax
      */
     public AngloSaxonRuneTranscriber()
     {
+        putReverse(new PhonemeList(Phoneme.W, Phoneme.AE, Phoneme.L, Phoneme.K), new RuneList<AngloSaxonRune>(
+                AngloSaxonRune.WYNN, AngloSaxonRune.OS, AngloSaxonRune.LAGU, AngloSaxonRune.CEN));
+
         put(Phoneme.F, AngloSaxonRune.FEOH);
         put(Phoneme.U, AngloSaxonRune.UR);
         put(Phoneme.TH, AngloSaxonRune.THORN);

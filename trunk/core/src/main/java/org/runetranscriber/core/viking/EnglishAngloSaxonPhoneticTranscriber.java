@@ -25,7 +25,6 @@ public final class EnglishAngloSaxonPhoneticTranscriber implements PhoneticTrans
         putReverse("ck", Phoneme.K, Phoneme.K);
 
         put("last", Phoneme.L, Phoneme.A, Phoneme.S, Phoneme.T);
-        put("walk", Phoneme.W, Phoneme.O, Phoneme.L, Phoneme.K);
         put("when", Phoneme.H, Phoneme.W, Phoneme.E, Phoneme.N);
 
         put("ear", Phoneme.EA, Phoneme.R);
