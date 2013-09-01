@@ -60,7 +60,7 @@ public final class AngloSaxonExample6 extends AbstractExample<AngloSaxonRune, An
                 AngloSaxonFontLetter.YR,
                 AngloSaxonFontLetter.SPACE,
                 // walk
-                AngloSaxonFontLetter.WYNN, AngloSaxonFontLetter.OS, AngloSaxonFontLetter.LAGU,
+                AngloSaxonFontLetter.WYNN, AngloSaxonFontLetter.AESC, AngloSaxonFontLetter.LAGU,
                 AngloSaxonFontLetter.CEN,
                 AngloSaxonFontLetter.SPACE,
                 // abreast.
@@ -107,7 +107,7 @@ public final class AngloSaxonExample6 extends AbstractExample<AngloSaxonRune, An
                 // may
                 Phoneme.M, Phoneme.AE, Phoneme.Y, Phoneme.SPACE,
                 // walk
-                Phoneme.W, Phoneme.O, Phoneme.L, Phoneme.K, Phoneme.SPACE,
+                Phoneme.W, Phoneme.AE, Phoneme.L, Phoneme.K, Phoneme.SPACE,
                 // abreast.
                 Phoneme.AE, Phoneme.B, Phoneme.R, Phoneme.E, Phoneme.AE, Phoneme.S, Phoneme.T, Phoneme.PERIOD,
                 // th.
@@ -126,26 +126,35 @@ public final class AngloSaxonExample6 extends AbstractExample<AngloSaxonRune, An
     {
         final AngloSaxonRune[] myRunes = {
                 // five
-                AngloSaxonRune.FEOH, AngloSaxonRune.IS, AngloSaxonRune.UR, AngloSaxonRune.EH,
+                AngloSaxonRune.FEOH, AngloSaxonRune.IS, AngloSaxonRune.UR,
+                AngloSaxonRune.EH,
                 AngloSaxonRune.SPACE,
                 // feet
-                AngloSaxonRune.FEOH, AngloSaxonRune.EOEL, AngloSaxonRune.TIW,
+                AngloSaxonRune.FEOH, AngloSaxonRune.EOEL,
+                AngloSaxonRune.TIW,
                 AngloSaxonRune.SPACE,
                 // high
-                AngloSaxonRune.HAEGL, AngloSaxonRune.IS, AngloSaxonRune.GYFU, AngloSaxonRune.HAEGL,
+                AngloSaxonRune.HAEGL, AngloSaxonRune.IS, AngloSaxonRune.GYFU,
+                AngloSaxonRune.HAEGL,
                 AngloSaxonRune.SPACE,
                 // the
-                AngloSaxonRune.THORN, AngloSaxonRune.EH, AngloSaxonRune.SPACE,
+                AngloSaxonRune.THORN, AngloSaxonRune.EH,
+                AngloSaxonRune.SPACE,
                 // door
-                AngloSaxonRune.DAEG, AngloSaxonRune.OS, AngloSaxonRune.RAD, AngloSaxonRune.SPACE,
+                AngloSaxonRune.DAEG, AngloSaxonRune.OS, AngloSaxonRune.RAD,
+                AngloSaxonRune.SPACE,
                 // and
-                AngloSaxonRune.AESC, AngloSaxonRune.NYD, AngloSaxonRune.DAEG, AngloSaxonRune.SPACE,
+                AngloSaxonRune.AESC, AngloSaxonRune.NYD, AngloSaxonRune.DAEG,
+                AngloSaxonRune.SPACE,
                 // three
-                AngloSaxonRune.THORN, AngloSaxonRune.RAD, AngloSaxonRune.EOEL, AngloSaxonRune.SPACE,
+                AngloSaxonRune.THORN, AngloSaxonRune.RAD, AngloSaxonRune.EOEL,
+                AngloSaxonRune.SPACE,
                 // may
-                AngloSaxonRune.MANN, AngloSaxonRune.AESC, AngloSaxonRune.YR, AngloSaxonRune.SPACE,
+                AngloSaxonRune.MANN, AngloSaxonRune.AESC, AngloSaxonRune.YR,
+                AngloSaxonRune.SPACE,
                 // walk
-                AngloSaxonRune.WYNN, AngloSaxonRune.OS, AngloSaxonRune.LAGU, AngloSaxonRune.CEN, AngloSaxonRune.SPACE,
+                AngloSaxonRune.WYNN, AngloSaxonRune.AESC, AngloSaxonRune.LAGU, AngloSaxonRune.CEN,
+                AngloSaxonRune.SPACE,
                 // abreast.
                 AngloSaxonRune.AESC, AngloSaxonRune.BEORC, AngloSaxonRune.RAD, AngloSaxonRune.EH, AngloSaxonRune.AESC,
                 AngloSaxonRune.SIGEL, AngloSaxonRune.TIW, AngloSaxonRune.PERIOD,
