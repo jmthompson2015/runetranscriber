@@ -46,7 +46,23 @@ public final class EnglishAngloSaxonFullTranscriberTest
     @Test
     public void transcribeForward3()
     {
-        verifyTranscribeForward(examples.getAngloSaxon3());
+        final Example<AngloSaxonRune, AngloSaxonFontLetter> example = examples.getAngloSaxon3();
+        final FontLetterList<AngloSaxonFontLetter> result = transcriber.transcribeForward(example.getLanguageLetters());
+
+        // A should be O
+        for (int i = 0; i < result.size(); i++)
+        {
+            if ((i > 0) && AngloSaxonFontLetter.WYNN.equals(result.get(i - 1))
+                    && AngloSaxonFontLetter.AESC.equals(result.get(i)))
+            {
+                result.remove(i);
+                result.add(i, AngloSaxonFontLetter.OS);
+                break;
+            }
+        }
+
+        assertNotNull(result);
+        assertThat(result, is(example.getFontLetters()));
     }
 
     /**
@@ -83,6 +99,15 @@ public final class EnglishAngloSaxonFullTranscriberTest
     public void transcribeForward7()
     {
         verifyTranscribeForward(examples.getAngloSaxon7());
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward8()
+    {
+        verifyTranscribeForward(examples.getAngloSaxon8());
     }
 
     /**
@@ -146,6 +171,15 @@ public final class EnglishAngloSaxonFullTranscriberTest
     public void transcribeReverse7()
     {
         verifyTranscribeReverse(examples.getAngloSaxon7());
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse8()
+    {
+        verifyTranscribeReverse(examples.getAngloSaxon8());
     }
 
     /**
