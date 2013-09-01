@@ -99,6 +99,6 @@ public final class FontLetterListTest
     @Test
     public void testToString()
     {
-        assertThat(list0.toString(), is("T-H-E-SPACE-H-O-B-B-I-T"));
+        assertThat(list0.toString(), is("the*hobbit"));
     }
 }
