@@ -1,4 +1,4 @@
-#summary Information about the Angerthas Cirth runes.
+#summary Information about the Tengwar runes.
 
 = Tengwar Runes =
 
