@@ -2,6 +2,11 @@
 
 = References =
 
+== Articles ==
+  # [http://ring-lord.tripod.com/runes/index.htm Runes], Dan Smith
+  # [http://ring-lord.tripod.com/cirth/index.htm Cirth], Dan Smith
+  # [http://ring-lord.tripod.com/tengwar/index.htm Tengwar], Dan Smith
+
 == Books ==
   # Tolkien, J.R.R., [http://www.amazon.com/gp/product/0395873460/ref=oh_details_o02_s00_i00?ie=UTF8&psc=1 The Hobbit]. New York: Houghton Mifflin Company, 1997. Print.
   # Tolkien, J.R.R., [http://www.amazon.com/gp/product/0618037667/ref=oh_details_o02_s00_i02?ie=UTF8&psc=1 The Lord Of The Rings]. New York: Houghton Mifflin Company, 1994. Print.
