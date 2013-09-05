@@ -3,9 +3,15 @@
 = References =
 
 == Articles ==
-  # [http://ring-lord.tripod.com/runes/index.htm Runes], Dan Smith
+  # [http://en.wikipedia.org/wiki/Anglo-Saxon_runes Anglo-Saxon Runes], Wikipedia
   # [http://ring-lord.tripod.com/cirth/index.htm Cirth], Dan Smith
+  # [http://en.wikipedia.org/wiki/Cirth Cirth], Wikipedia
+  # [http://en.wikipedia.org/wiki/Diacritics Diacritic], Wikipedia
+  # [http://en.wikipedia.org/wiki/International_Phonetic_Alphabet International Phonetic Alphabet], Wikipedia
+  # [http://ring-lord.tripod.com/runes/index.htm Runes], Dan Smith
+  # [http://en.wikipedia.org/wiki/Runes Runes], Wikipedia
   # [http://ring-lord.tripod.com/tengwar/index.htm Tengwar], Dan Smith
+  # [http://en.wikipedia.org/wiki/Tengwar Tengwar], Wikipedia
 
 == Books ==
   # Tolkien, J.R.R., [http://www.amazon.com/gp/product/0395873460/ref=oh_details_o02_s00_i00?ie=UTF8&psc=1 The Hobbit]. New York: Houghton Mifflin Company, 1997. Print.
@@ -16,10 +22,3 @@
   # [http://junicode.sourceforge.net/ Junicode (Viking)]
   # [http://www.fontspace.com/bruce-kvam/angerthas Angerthas (Cirth)]
   # [http://www.acondia.com/fonts/tengwar/ Tengwar]
-
-== Wikipedia ==
-  # [http://en.wikipedia.org/wiki/Anglo-Saxon_runes Anglo-Saxon Runes]
-  # [http://en.wikipedia.org/wiki/Cirth Cirth]
-  # [http://en.wikipedia.org/wiki/International_Phonetic_Alphabet International Phonetic Alphabet]
-  # [http://en.wikipedia.org/wiki/Runes Runes]
-  # [http://en.wikipedia.org/wiki/Tengwar Tengwar]
