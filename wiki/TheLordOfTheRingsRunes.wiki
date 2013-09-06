@@ -5,6 +5,7 @@
 == Title Page ==
 
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrTitlePageUpper.html Title Page (upper inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrTitlePageLower.html Title Page (lower inscription)]
 
 == Book Two, Page 138 ==
 
