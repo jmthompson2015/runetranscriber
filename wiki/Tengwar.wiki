@@ -10,4 +10,4 @@
 
 === Title Page ===
 
-  * [http://code.google.com/p/runetranscriber/source/browse/trunk/core/doc/tlotrTitlePageLower.html Title Page (lower inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrTitlePageLower.html Title Page (lower inscription)]
