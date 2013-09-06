@@ -13,8 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.WindowConstants;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.runetranscriber.core.Phoneme;
 import org.runetranscriber.core.PhonemeList;
 import org.runetranscriber.core.RuneList;
 import org.runetranscriber.core.RuneTranscriber;
@@ -74,16 +72,14 @@ public final class CirthTableUI extends JScrollPane
             @Override
             protected JComponent createMeaningUI(final RuneTranscriber<CerthRune> transcriber, final CerthRune rune)
             {
-                // final Phoneme phoneme0 = TranscriberGroup3.CIRTH_DAERON.getRuneTranscriber().getPhoneme(rune);
-                // final Phoneme phoneme1 = TranscriberGroup3.CIRTH_MORIA.getRuneTranscriber().getPhoneme(rune);
-                // final Phoneme phoneme2 = TranscriberGroup3.CIRTH_EREBOR.getRuneTranscriber().getPhoneme(rune);
-                final Phoneme phoneme0 = getPhoneme(TranscriberGroup.CIRTH_DAERON.getRuneTranscriber(), rune);
-                final Phoneme phoneme1 = getPhoneme(TranscriberGroup.ENGLISH_CIRTH_MORIA.getRuneTranscriber(), rune);
-                final Phoneme phoneme2 = getPhoneme(TranscriberGroup.CIRTH_EREBOR.getRuneTranscriber(), rune);
+                final PhonemeList phonemes0 = getPhonemes(TranscriberGroup.CIRTH_DAERON.getRuneTranscriber(), rune);
+                final PhonemeList phonemes1 = getPhonemes(TranscriberGroup.ENGLISH_CIRTH_MORIA.getRuneTranscriber(),
+                        rune);
+                final PhonemeList phonemes2 = getPhonemes(TranscriberGroup.CIRTH_EREBOR.getRuneTranscriber(), rune);
 
-                final String meaning0 = determineMeaning(phoneme0);
-                final String meaning1 = determineMeaning(phoneme1);
-                final String meaning2 = determineMeaning(phoneme2);
+                final String meaning0 = determineMeaning(phonemes0);
+                final String meaning1 = determineMeaning(phonemes1);
+                final String meaning2 = determineMeaning(phonemes2);
 
                 final boolean isSame = meaning0.equals(meaning1) && meaning0.equals(meaning2);
 
@@ -107,17 +103,11 @@ public final class CirthTableUI extends JScrollPane
                 return answer;
             }
 
-            private Phoneme getPhoneme(final RuneTranscriber<CerthRune> transcriber, final CerthRune rune)
+            private PhonemeList getPhonemes(final RuneTranscriber<CerthRune> transcriber, final CerthRune rune)
             {
-                Phoneme phoneme = null;
                 final PhonemeList phonemes = transcriber.transcribeReverse(new RuneList<CerthRune>(rune));
 
-                if (CollectionUtils.isNotEmpty(phonemes))
-                {
-                    phoneme = phonemes.get(0);
-                }
-
-                return phoneme;
+                return phonemes;
             }
         };
 

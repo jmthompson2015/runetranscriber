@@ -122,15 +122,14 @@ public class RuneTable<R extends Rune, F extends FontLetter> extends JPanel
      */
     protected JComponent createMeaningUI(final RuneTranscriber<R> transcriber, final R rune)
     {
-        Phoneme phoneme = null;
         final PhonemeList phonemes = transcriber.transcribeReverse(new RuneList<R>(rune));
+
+        String meaning = "n/a";
 
         if (CollectionUtils.isNotEmpty(phonemes))
         {
-            phoneme = phonemes.get(0);
+            meaning = determineMeaning(phonemes);
         }
-
-        final String meaning = determineMeaning(phoneme);
 
         return createLabel(meaning);
     }
@@ -152,13 +151,20 @@ public class RuneTable<R extends Rune, F extends FontLetter> extends JPanel
     }
 
     /**
-     * @param phoneme Phoneme.
+     * @param phonemes Phonemes.
      * 
-     * @return the meaning of the given phoneme.
+     * @return the meaning of the given phonemes.
      */
-    protected String determineMeaning(final Phoneme phoneme)
+    protected String determineMeaning(final PhonemeList phonemes)
     {
-        return (phoneme == null ? "n/a" : phoneme.getMeaning());
+        final StringBuilder sb = new StringBuilder();
+
+        for (final Phoneme phoneme : phonemes)
+        {
+            sb.append(phoneme == null ? "" : phoneme.getMeaning());
+        }
+
+        return sb.toString();
     }
 
     /**
