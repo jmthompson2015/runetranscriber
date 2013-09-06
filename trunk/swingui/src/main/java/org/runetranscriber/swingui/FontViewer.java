@@ -61,6 +61,10 @@ public final class FontViewer<R extends Rune, F extends FontLetter> extends JPan
         DIACRITICS.add("0");
         DIACRITICS.add(":");
         DIACRITICS.add(";");
+        DIACRITICS.add("/");
+        DIACRITICS.add("?");
+        DIACRITICS.add("=");
+        DIACRITICS.add(">");
     }
 
     /** Page length. */
