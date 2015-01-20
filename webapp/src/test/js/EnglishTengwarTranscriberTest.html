@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EnglishTengwarTranscriberTest</title>
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/qunit/qunit-1.15.0.css">
+<script src="http://code.jquery.com/qunit/qunit-1.15.0.js"></script>
+
+<script src="../../main/js/util/Logger.js"></script>
+
+<script src="../../main/js/EnglishTengwarTranscriber.js"></script>
+<script src="../../main/js/TengwaRune.js"></script>
+<script src="../../main/js/TengwaRuneFormat.js"></script>
+
+<script src="../../main/js/example/TengwarExample1.js"></script>
+<script src="../../main/js/example/TengwarExample2.js"></script>
+
+<script>
+    var LOGGER = new Logger();
+
+    QUnit.test("getMaxForwardKeyLength()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber();
+
+        // Run.
+        var result = transcriber.getMaxForwardKeyLength();
+
+        // Verify.
+        assert.equal(result, 7);
+    });
+
+    QUnit.test("getMaxReverseKeyLength()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber();
+
+        // Run.
+        var result = transcriber.getMaxReverseKeyLength();
+
+        // Verify.
+        assert.equal(result, 8);
+    });
+
+    QUnit.test("Example1 transcribeForward()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber();
+        var fromSequence = TengwarExample1.LANGUAGE_LETTERS;
+
+        // Run.
+        var toSequence = transcriber.transcribeForward(fromSequence);
+
+        // Verify.
+        assert.ok(toSequence);
+        var expected = TengwarExample1.RUNES;
+        //        assert.equal(toSequence, expected);
+        assert.equal(toSequence.length, expected.length);
+
+        for (var i = 0; i < toSequence.length; i++)
+        {
+            assert.equal(toSequence[i], expected[i], "" + i);
+        }
+    });
+
+    QUnit.test("Example2 transcribeForward()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber();
+        var fromSequence = TengwarExample2.LANGUAGE_LETTERS;
+
+        // Run.
+        var toSequence = transcriber.transcribeForward(fromSequence);
+
+        // Verify.
+        assert.ok(toSequence);
+        var expected = TengwarExample2.RUNES;
+        assert.equal(toSequence.length, expected.length);
+
+        for (var i = 0; i < toSequence.length; i++)
+        {
+            assert.equal(toSequence[i], expected[i], "" + i);
+        }
+    });
+
+    QUnit.test("Example1 transcribeReverse()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber();
+        var toSequence = TengwarExample1.RUNES;
+
+        // Run.
+        var fromSequence = transcriber.transcribeReverse(toSequence);
+
+        // Verify.
+        assert.ok(fromSequence);
+        var expected = TengwarExample1.LANGUAGE_LETTERS;
+        assert.equal(fromSequence.length, expected.length);
+        assert.equal(fromSequence, expected);
+    });
+
+    QUnit.test("Example2 transcribeReverse()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber();
+        var toSequence = TengwarExample2.RUNES;
+
+        // Run.
+        var fromSequence = transcriber.transcribeReverse(toSequence);
+
+        // Verify.
+        assert.ok(fromSequence);
+        var expected = TengwarExample2.LANGUAGE_LETTERS;
+        assert.equal(fromSequence.length, expected.length);
+        assert.equal(fromSequence, expected);
+    });
+</script>
+</head>
+<body>
+	<div id="qunit"></div>
+</body>
+</html>
