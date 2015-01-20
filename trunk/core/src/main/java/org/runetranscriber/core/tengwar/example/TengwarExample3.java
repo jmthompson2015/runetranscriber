@@ -17,7 +17,128 @@ public final class TengwarExample3 extends AbstractExample<TengwaRune, TengwaFon
     @Override
     protected FontLetterList<TengwaFontLetter> createFontLetters()
     {
-        final TengwaFontLetter[] answer = {};
+        final TengwaFontLetter[] answer = {
+                // Line 1
+                // the
+                TengwaFontLetter.THE,
+                TengwaFontLetter.SPACE,
+                // tales
+                TengwaFontLetter.TINCO,
+                TengwaFontLetter.LAMBE,
+                TengwaFontLetter.THREE_DOTS2,
+                TengwaFontLetter.UNDER_DOT2,
+                TengwaFontLetter.SILME,
+                TengwaFontLetter.SPACE,
+                // of
+                TengwaFontLetter.OF,
+                TengwaFontLetter.SPACE,
+                // the
+                TengwaFontLetter.THE,
+                TengwaFontLetter.SPACE,
+                // first
+                TengwaFontLetter.FORMEN,
+                TengwaFontLetter.ORE,
+                TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.SILME,
+                TengwaFontLetter.TINCO,
+                TengwaFontLetter.SPACE,
+                // age
+                TengwaFontLetter.ANGA,
+                TengwaFontLetter.THREE_DOTS2,
+                TengwaFontLetter.UNDER_DOT2,
+                TengwaFontLetter.SPACE,
+                // when
+                TengwaFontLetter.HWESTA,
+                TengwaFontLetter.NUMEN,
+                TengwaFontLetter.DOT2,
+                TengwaFontLetter.SPACE,
+                // morgoth
+                TengwaFontLetter.MALTA,
+                TengwaFontLetter.ORE,
+                TengwaFontLetter.LEFT_CURL2,
+                TengwaFontLetter.UNGWE,
+                TengwaFontLetter.THULE,
+                TengwaFontLetter.LEFT_CURL2,
+                TengwaFontLetter.SPACE,
+                // dwelt
+                TengwaFontLetter.ANDO,
+                TengwaFontLetter.VALA,
+                TengwaFontLetter.LAMBE,
+                TengwaFontLetter.DOT2,
+                TengwaFontLetter.TINCO,
+                TengwaFontLetter.SPACE,
+                // in
+                TengwaFontLetter.NUMEN,
+                TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.SPACE,
+                // middle-earth
+                TengwaFontLetter.MALTA,
+                TengwaFontLetter.ANDO,
+                TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.LAMBE,
+                TengwaFontLetter.SPACE,
+                TengwaFontLetter.SHORT_CARRIER,
+                TengwaFontLetter.DOT2,
+                TengwaFontLetter.ORE,
+                TengwaFontLetter.THULE,
+                TengwaFontLetter.NEWLINE,
+
+                // Line 2
+                // and
+                TengwaFontLetter.ANDO,
+                TengwaFontLetter.SPACE,
+                // the
+                TengwaFontLetter.THE,
+                TengwaFontLetter.SPACE,
+                // elves
+                TengwaFontLetter.LAMBE,
+                TengwaFontLetter.DOT2,
+                TengwaFontLetter.AMPA,
+                TengwaFontLetter.UNDER_DOT2,
+                TengwaFontLetter.SILME,
+                TengwaFontLetter.SPACE,
+                // made
+                TengwaFontLetter.MALTA,
+                TengwaFontLetter.ANDO,
+                TengwaFontLetter.THREE_DOTS2,
+                TengwaFontLetter.UNDER_DOT2,
+                TengwaFontLetter.SPACE,
+                // war
+                TengwaFontLetter.VALA,
+                TengwaFontLetter.ORE,
+                TengwaFontLetter.LEFT_CURL2,
+                TengwaFontLetter.SPACE,
+                // upon
+                TengwaFontLetter.PARMA,
+                TengwaFontLetter.TOP_CURL2,
+                TengwaFontLetter.NUMEN,
+                TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.SPACE,
+                // him
+                TengwaFontLetter.HYARMEN,
+                TengwaFontLetter.MALTA,
+                TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.SPACE,
+                // for
+                TengwaFontLetter.FORMEN,
+                TengwaFontLetter.ORE,
+                TengwaFontLetter.LEFT_CURL2,
+                TengwaFontLetter.SPACE,
+                // the
+                TengwaFontLetter.THE,
+                TengwaFontLetter.SPACE,
+                // recovery
+                TengwaFontLetter.ROMEN, TengwaFontLetter.QUESSE, TengwaFontLetter.DOT2, TengwaFontLetter.AMPA,
+                TengwaFontLetter.LEFT_CURL2, TengwaFontLetter.ROMEN, TengwaFontLetter.DOT2,
+                TengwaFontLetter.LONG_CARRIER, TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.SPACE,
+                // of the
+                TengwaFontLetter.OF_THE,
+                TengwaFontLetter.SPACE,
+                // silmarils.
+                TengwaFontLetter.SILME, TengwaFontLetter.LAMBE, TengwaFontLetter.ACUTE2, TengwaFontLetter.MALTA,
+                TengwaFontLetter.ROMEN, TengwaFontLetter.THREE_DOTS2, TengwaFontLetter.LAMBE, TengwaFontLetter.ACUTE2,
+                TengwaFontLetter.SILME, TengwaFontLetter.PERIOD, };
 
         return new FontLetterList<TengwaFontLetter>(answer);
     }
@@ -97,61 +218,58 @@ public final class TengwarExample3 extends AbstractExample<TengwaRune, TengwaFon
         final TengwaRune[] myRunes = {
                 // Line 1
                 // the
-                TengwaRune.ANTO,
+                TengwaRune.THE,
                 TengwaRune.SPACE,
                 // tales
                 TengwaRune.TINCO,
-                TengwaRune.CIRCUMFLEX,
+                TengwaRune.THREE_DOTS,
                 TengwaRune.LAMBE,
-                TengwaRune.ACUTE,
+                TengwaRune.UNDER_DOT,
                 TengwaRune.SILME,
                 TengwaRune.SPACE,
                 // of
-                TengwaRune.LEFT_CURL,
-                TengwaRune.FORMEN,
+                TengwaRune.OF,
                 TengwaRune.SPACE,
                 // the
-                TengwaRune.ANTO,
+                TengwaRune.THE,
                 TengwaRune.SPACE,
                 // first
                 TengwaRune.FORMEN,
-                TengwaRune.DOT,
+                TengwaRune.ACUTE,
                 TengwaRune.ORE,
                 TengwaRune.SILME,
                 TengwaRune.TINCO,
                 TengwaRune.SPACE,
                 // age
-                TengwaRune.CIRCUMFLEX,
-                TengwaRune.UNGWE,
-                TengwaRune.ACUTE,
+                TengwaRune.THREE_DOTS,
+                TengwaRune.ANGA,
+                TengwaRune.UNDER_DOT,
                 TengwaRune.SPACE,
                 // when
-                TengwaRune.HWESTA_SINDARINWA,
+                TengwaRune.HWESTA,
                 TengwaRune.DOT,
                 TengwaRune.NUMEN,
                 TengwaRune.SPACE,
                 // morgoth
-                TengwaRune.MALTA,
-                TengwaRune.LEFT_CURL,
-                TengwaRune.ORE,
+                TengwaRune.MALTA, TengwaRune.LEFT_CURL, TengwaRune.ORE,
                 TengwaRune.UNGWE,
                 TengwaRune.LEFT_CURL,
                 TengwaRune.THULE,
                 TengwaRune.SPACE,
                 // dwelt
-                TengwaRune.ANDO,
-                TengwaRune.VALA,
-                TengwaRune.ACUTE,
+                TengwaRune.ANDO, TengwaRune.VALA,
+                TengwaRune.DOT,
                 TengwaRune.LAMBE,
                 TengwaRune.TINCO,
                 TengwaRune.SPACE,
                 // in
-                TengwaRune.DOT,
+                TengwaRune.ACUTE,
                 TengwaRune.NUMEN,
                 TengwaRune.SPACE,
                 // middle-earth
-                TengwaRune.MALTA, TengwaRune.DOT, TengwaRune.ANDO, TengwaRune.ANDO, TengwaRune.LAMBE,
-                TengwaRune.ACUTE,
+                TengwaRune.MALTA, TengwaRune.ACUTE,
+                TengwaRune.ANDO,
+                TengwaRune.LAMBE,
                 TengwaRune.SPACE,
                 TengwaRune.DOT,
                 TengwaRune.SHORT_CARRIER,
@@ -161,45 +279,41 @@ public final class TengwarExample3 extends AbstractExample<TengwaRune, TengwaFon
 
                 // Line 2
                 // and
-                TengwaRune.CIRCUMFLEX,
-                TengwaRune.NUMEN,
                 TengwaRune.ANDO,
                 TengwaRune.SPACE,
                 // the
-                TengwaRune.ANTO,
+                TengwaRune.THE,
                 TengwaRune.SPACE,
                 // elves
-                TengwaRune.ACUTE, TengwaRune.LAMBE, TengwaRune.AMPA, TengwaRune.ACUTE,
+                TengwaRune.DOT, TengwaRune.LAMBE, TengwaRune.AMPA, TengwaRune.UNDER_DOT,
                 TengwaRune.SILME,
                 TengwaRune.SPACE,
                 // made
-                TengwaRune.MALTA, TengwaRune.CIRCUMFLEX, TengwaRune.ANDO, TengwaRune.ACUTE,
+                TengwaRune.MALTA, TengwaRune.THREE_DOTS, TengwaRune.ANDO, TengwaRune.UNDER_DOT,
                 TengwaRune.SPACE,
                 // war
-                TengwaRune.VALA, TengwaRune.CIRCUMFLEX, TengwaRune.ORE,
+                TengwaRune.VALA, TengwaRune.LEFT_CURL, TengwaRune.ORE,
                 TengwaRune.SPACE,
                 // upon
-                TengwaRune.RIGHT_CURL, TengwaRune.PARMA, TengwaRune.LEFT_CURL, TengwaRune.NUMEN,
+                TengwaRune.TOP_CURL, TengwaRune.PARMA, TengwaRune.ACUTE, TengwaRune.NUMEN,
                 TengwaRune.SPACE,
                 // him
-                TengwaRune.HYARMEN, TengwaRune.DOT, TengwaRune.MALTA,
+                TengwaRune.HYARMEN, TengwaRune.ACUTE, TengwaRune.MALTA,
                 TengwaRune.SPACE,
                 // for
                 TengwaRune.FORMEN, TengwaRune.LEFT_CURL, TengwaRune.ORE,
                 TengwaRune.SPACE,
                 // the
-                TengwaRune.ANTO,
+                TengwaRune.THE,
                 TengwaRune.SPACE,
                 // recovery
-                TengwaRune.ROMEN, TengwaRune.ACUTE, TengwaRune.QUESSE, TengwaRune.LEFT_CURL, TengwaRune.AMPA,
-                TengwaRune.ACUTE, TengwaRune.ROMEN, TengwaRune.ACUTE, TengwaRune.LONG_CARRIER, TengwaRune.SPACE,
-                // of
-                TengwaRune.LEFT_CURL, TengwaRune.FORMEN, TengwaRune.SPACE,
-                // the
-                TengwaRune.ANTO, TengwaRune.SPACE,
+                TengwaRune.ROMEN, TengwaRune.DOT, TengwaRune.QUESSE, TengwaRune.LEFT_CURL, TengwaRune.AMPA,
+                TengwaRune.DOT, TengwaRune.ROMEN, TengwaRune.ACUTE, TengwaRune.LONG_CARRIER, TengwaRune.SPACE,
+                // of the
+                TengwaRune.OF_THE, TengwaRune.SPACE,
                 // silmarils.
-                TengwaRune.SILME, TengwaRune.DOT, TengwaRune.LAMBE, TengwaRune.MALTA, TengwaRune.CIRCUMFLEX,
-                TengwaRune.ROMEN, TengwaRune.DOT, TengwaRune.LAMBE, TengwaRune.SILME, TengwaRune.PERIOD, };
+                TengwaRune.SILME, TengwaRune.ACUTE, TengwaRune.LAMBE, TengwaRune.MALTA, TengwaRune.THREE_DOTS,
+                TengwaRune.ROMEN, TengwaRune.ACUTE, TengwaRune.LAMBE, TengwaRune.SILME, TengwaRune.PERIOD, };
 
         return new RuneList<TengwaRune>(myRunes);
     }
