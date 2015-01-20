@@ -1,0 +1,48 @@
+@font-face {
+    font-family: Junicode-Bold;
+    src:
+        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf');
+}
+
+@font-face {
+    font-family: Angerthas;
+    src:
+        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF');
+}
+
+@font-face {
+    font-family: Tengwar;
+    src:
+        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf');
+}
+
+.font-anglo-saxon {
+    font-family: Junicode-Bold;
+}
+
+.font-cirth {
+    font-family: Angerthas;
+}
+
+.font-tengwar {
+    font-family: Tengwar;
+}
+
+#inputArea, #outputArea {
+    font-size: large;
+}
+
+#inputArea, #buttonBar, #outputArea {
+    text-align: center;
+    width: 100%;
+}
+
+#buttonTable {
+    /** These center the table. */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#transcribeButton {
+    text-align: center;
+}
