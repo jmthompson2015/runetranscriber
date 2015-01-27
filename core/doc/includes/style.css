@@ -211,6 +211,13 @@ body {
 	padding: 5px;
 }
 
+.table-cell-rune-name {
+	border: 1px solid;
+	border-color: darkgreen;
+	font-size: x-small;
+	padding: 5px;
+}
+
 .table-cell-anglo-saxon {
 	border: 1px solid;
 	border-color: darkgreen;
