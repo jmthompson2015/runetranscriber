@@ -2,7 +2,7 @@
 
 = Tengwar Runes =
 
-<img src="http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/lordoftherings/TLOTR_Appendices_TengwarTable.png" height="500"/> <img src="http://runetranscriber.googlecode.com/svn/trunk/core/doc/images/Tengwar_alphabet.png" height="500"/>
+<img src="https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/lordoftherings/TLOTR_Appendices_TengwarTable.png" height="500"/> <img src="https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/Tengwar_alphabet.png" height="500"/>
 
 = Examples =
 
@@ -10,25 +10,25 @@
 
 === Title Page ===
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrTitlePageLower.html Title Page (lower inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/tlotrTitlePageLower.html Title Page (lower inscription)]
 
 == The Silmarillion ==
 
 === Title Page ===
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageUpper.html Title Page (upper inscription)]
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageLower.html Title Page (lower inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageUpper.html Title Page (upper inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageLower.html Title Page (lower inscription)]
 
 == The Return Of The Shadow ==
 
 === Title Page ===
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/trotsTitlePageUpper.html Title Page (upper inscription)]
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/trotsTitlePageLower.html Title Page (lower inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/trotsTitlePageUpper.html Title Page (upper inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/trotsTitlePageLower.html Title Page (lower inscription)]
 
 == The Treason Of Isengard ==
 
 === Title Page ===
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageUpper.html Title Page (upper inscription)]
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageLower.html Title Page (lower inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageUpper.html Title Page (upper inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageLower.html Title Page (lower inscription)]
