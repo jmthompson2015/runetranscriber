@@ -4,9 +4,9 @@ body {
 	font-size: medium;
 }
 
-@font-face { font-family: Junicode-Bold; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf'); }
-@font-face { font-family: Angerthas; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF'); }
-@font-face { font-family: Tengwar; src: url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf'); }
+@font-face { font-family: Junicode-Bold; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf'); }
+@font-face { font-family: Angerthas; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF'); }
+@font-face { font-family: Tengwar; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf'); }
 
 .accent {
 	background-image: url('../images/GreenMarbleVerdeGuatemala.jpg');
