@@ -18,3 +18,17 @@
 
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageUpper.html Title Page (upper inscription)]
   * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageLower.html Title Page (lower inscription)]
+
+== The Return Of The Shadow ==
+
+=== Title Page ===
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TROTSTitlePageUpper.html Title Page (upper inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TROTSTitlePageLower.html Title Page (lower inscription)]
+
+== The Treason Of Isengard ==
+
+=== Title Page ===
+
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TTOITitlePageUpper.html Title Page (upper inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TTOITitlePageLower.html Title Page (lower inscription)]
