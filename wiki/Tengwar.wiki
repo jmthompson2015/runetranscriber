@@ -23,12 +23,12 @@
 
 === Title Page ===
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TROTSTitlePageUpper.html Title Page (upper inscription)]
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TROTSTitlePageLower.html Title Page (lower inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/trotsTitlePageUpper.html Title Page (upper inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/trotsTitlePageLower.html Title Page (lower inscription)]
 
 == The Treason Of Isengard ==
 
 === Title Page ===
 
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TTOITitlePageUpper.html Title Page (upper inscription)]
-  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/TTOITitlePageLower.html Title Page (lower inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageUpper.html Title Page (upper inscription)]
+  * [http://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageLower.html Title Page (lower inscription)]
