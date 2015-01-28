@@ -32,3 +32,17 @@
 
   * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageUpper.html Title Page (upper inscription)]
   * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/ttoiTitlePageLower.html Title Page (lower inscription)]
+
+== The War Of The Ring ==
+
+=== Title Page ===
+
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/twotrTitlePageUpper.html Title Page (upper inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/twotrTitlePageLower.html Title Page (lower inscription)]
+
+== Sauron Defeated ==
+
+=== Title Page ===
+
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/sdTitlePageUpper.html Title Page (upper inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/sdTitlePageLower.html Title Page (lower inscription)]
