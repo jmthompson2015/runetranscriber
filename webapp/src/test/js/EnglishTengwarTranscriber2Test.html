@@ -1,0 +1,1056 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EnglishTengwarTranscriber2Test</title>
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/qunit/qunit-1.15.0.css">
+<script src="http://code.jquery.com/qunit/qunit-1.15.0.js"></script>
+
+<script src="../../main/js/util/Logger.js"></script>
+
+<script src="../../main/js/EnglishTengwarTranscriber2.js"></script>
+<script src="../../main/js/TengwaRune.js"></script>
+<script src="../../main/js/TengwaRuneFormat.js"></script>
+
+<script src="../../main/js/example/TengwarExampleTLOTR2.js"></script>
+
+<script src="../../main/js/example/TengwarExampleUTONAME1.js"></script>
+<script src="../../main/js/example/TengwarExampleUTONAME2.js"></script>
+
+<script src="../../main/js/example/TengwarExampleTROTS1.js"></script>
+<script src="../../main/js/example/TengwarExampleTROTS2.js"></script>
+
+<script src="../../main/js/example/TengwarExampleTTOI1.js"></script>
+<script src="../../main/js/example/TengwarExampleTTOI2.js"></script>
+
+<script src="../../main/js/example/TengwarExampleTWOTR1.js"></script>
+<script src="../../main/js/example/TengwarExampleTWOTR2.js"></script>
+
+<script src="../../main/js/example/TengwarExampleSD1.js"></script>
+<script src="../../main/js/example/TengwarExampleSD2.js"></script>
+
+<script>
+    var LOGGER = new Logger();
+
+    QUnit.test("runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = [ [ TengwaRune.ROMEN, TengwaRune.UNDER_DOT ],
+                [ TengwaRune.RIGHT_CURL, TengwaRune.ORE ] ];
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "7", "&#201;" ], [ "6", "&#225;" ] ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TLOTR2 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTLOTR2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "W", " ", "y", [ "8", "R" ], "1", "t", [ "6", "D" ],
+                "a", " ", "w", [ "~", "R" ], " ", "s", "9", [ "5", "Y" ], " ",
+                "7", [ "5", "Y" ], [ "j", "D" ], "2", " ", "7", [ "`", "R" ],
+                [ "`", "&#225;" ], [ "j", "R" ], " ", "1", [ "j", "Y" ], "z",
+                [ "`", "T" ], [ "5", "R" ], "-", "9", [ "7", "R", "&#201;" ],
+                [ "5", "T" ], " ", [ "k", "R" ], " ", "8", [ "1", "R" ], " ",
+                "e", [ "6", "Y" ], "3", "@", " ", "9", [ "8", "R" ], "1",
+                [ "7", "Y" ], [ "~", "R" ], " ", "W?", " ", "y", [ "6", "Y" ],
+                " ", "W?", " ", "7", [ "b", "T" ], " ", [ "2", "{" ], " ", "@",
+                " ", "7", [ "1", "T" ], [ "6", "J" ], "5", " ", "W?", " ", "z",
+                [ "b", "T" ], " ", [ ",", "D" ], " ", "8", [ "`", "T" ],
+                [ "`", "T" ], "5", " ", "w", [ "~", "R" ], " ", "@", " ", "9",
+                [ "w", "Y", "&#237;" ], [ "1", "T" ], "8", "-" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example UTONAME1 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleUTONAME1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "5", "R" ], " ", "4", [ "8", "R" ], " ", "w",
+                [ "~", "Y" ], "z", " ", "W", " ", [ "5", "&#225;" ], "e",
+                [ "5", "R" ], [ "d", "R" ], [ "2", "T" ], " ", "1",
+                [ "j", "D", "&#201;" ], "8", " ", "w", "h", " ", "s",
+                [ "`", "Y" ], "9", "5", " ", "7", [ "5", "Y" ], [ "j", "D" ],
+                "2", " ", "7", [ "`", "T" ], [ "`", "&#225;" ], [ "j", "T" ],
+                " ", "1", [ "j", "Y" ], "z", [ "`", "R" ], [ "5", "T" ], "o",
+                [ "a", "R" ], " ", [ "y", "&#209;" ], "8", " ", "w", "7",
+                [ ".", "Y" ], "x", "9", "1", " ", "1", [ "x", "Y" ],
+                [ "4", "T" ], [ "7", "T" ], " ", "w", "h", " ", "z", "7",
+                [ "8", "R" ], "1", [ "e", "Y" ], [ "7", "T" ], " ", "7",
+                [ "`", "T" ], [ "`", "&#225;" ], [ "j", "T" ], " ", "1",
+                [ "j", "Y" ], "z", [ "`", "R" ], [ "5", "T" ], " ", "9",
+                [ "8", "R" ], " ", "8", [ "5", "Y" ] ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example UTONAME2 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleUTONAME2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "7", "D", "&#201;" ], " ", "1", [ "j", "Y" ], "2",
+                " ", "t", [ "5", "D" ], "h", " ", "3", [ "b", "R" ], "8", " ",
+                "W", " ", "t", [ "5", "T" ], " ", [ "2", "{" ], " ",
+                [ "j", "T" ], [ "r", "&#201;" ], "8", " ", [ "5", "R" ], " ",
+                "5", [ "t", "&#225;" ], [ "5", "T" ], [ "7", "Y" ], " ",
+                [ "2", "{" ], " ", [ "5", "R" ], " ", "t",
+                [ "2", "R", "&#237;" ], [ "j", "&#201;" ],
+                [ "`", "T", "&#209;" ], "7", "3", " ", "e", "7", [ "t", "Y" ],
+                " ", "@", " ", [ "j", "T" ], "2", [ "7", "T" ], " ", "2",
+                [ "h", "D" ], "8", " ", [ "5", "R" ], " ", "w", [ "j", "T" ],
+                [ "7", "T" ], [ "`", "R" ], [ "5", "D" ], "2", " ", "1",
+                [ "`", "Y" ], " ", "@", " ", "y", [ "6", "D" ], " ", "W?", " ",
+                "7", [ "b", "R" ], " ", [ "2", "{" ], [ "5", "D" ], " ",
+                [ "z", "D", "&#237;" ], [ ".", "Y" ], "5", "1", " ",
+                [ "8", "R" ], " ", "x", [ "r", "R" ], [ "5", "T" ], " ", "W?",
+                " ", "2", "7", [ "`", "&#225;", "&#201;" ], "2", [ "l", "D" ],
+                [ "5", "R" ], " ", "@", " ", [ "8", "R" ], "1", [ "7", "D" ],
+                [ "`", "R" ], " ", [ "2", "{" ], " ", "@", " ", "q",
+                [ "j", "D" ], [ "5", "D" ], "1", [ "7", "R" ], [ "`", "R" ],
+                "-" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TROTS1 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTROTS1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "5", "R" ], " ", "@", " ", [ "7", "&#201;" ], "1",
+                [ "6", "&#225;" ], "5", " ", "W?", " ", "d", [ "2", "D" ],
+                [ "y", "Y" ], " ", [ "6", "D", "&#201;" ], " ", "1", "7",
+                [ "i", "D", "&#201;" ], "2", " ", "@", " ", "e", [ "6", "R" ],
+                "8", "1", " ", "e", [ "6", "Y" ], "t", "8", " ", "W?", " ",
+                "8", "1", [ "7", "Y" ], "h", " ", "W?", " ", "j", [ "6", "Y" ],
+                "2", "W?", " ", "7", [ "b", "R" ], "8", "-", "9",
+                [ "7", "T", "&#201;" ], [ "5", "R" ], " ", "@", " ", "s",
+                [ ".", "Y" ], "6", "5", [ "h", "T" ], " ", "W?", " ", "9",
+                [ "w", "Y" ], [ "1", "R" ], " ", "o", [ "`", "Y" ], " ", "w",
+                [ "7", "Y", "&#201;" ], " ", "@", " ", "x", "7",
+                [ "`", "T", "&#209;" ], "1", " ", "7", [ "b", "R" ], "&#183;",
+                [ "1", "D" ], " ", "e", [ "6", "R" ], "8", "1" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TROTS2 runesToFontLetters()",
+            function(assert)
+            {
+                // Setup.
+                var transcriber = new EnglishTengwarTranscriber2();
+                var runes = TengwarExampleTROTS2.RUNES;
+
+                // Run.
+                var result = transcriber.runesToFontLetters(runes);
+
+                // Verify.
+                assert.ok(result);
+                var expected = [ "5", [ "t", "D", "&#201;" ], "2", " ", "w",
+                        [ "b", "R" ], [ "`", "Y" ], " ", "w",
+                        [ "1", "&#225;" ], " ", [ "e", "D" ], "1",
+                        [ "6", "T" ], "y", [ "6", "D" ], "2", "8", " ", "e",
+                        "7", [ "2", "Y" ], [ "`", "Y" ], "&#183;",
+                        [ "8", "R" ], " ", "e", [ "j", "Y", "&#237;" ],
+                        [ "y", "Y", "&#201;" ], "2", " ", "e", "7",
+                        [ "t", "Y" ], " ", "9", [ "w", "Y", "&#237;" ],
+                        [ "1", "R" ], [ "5", "Y" ], " ", [ "5", "R" ], " ",
+                        "@", "d", [ "7", "R", "&#201;" ], " ", "3", "7",
+                        [ ".", "Y" ], "x", " ", "@", " ", [ "j", "Y" ], "2",
+                        " ", "e", [ "7", "Y" ], [ "8", "T" ], "1", " ", "1",
+                        [ "`", "Y" ], " ", "y", [ "`", "T", "&#209;" ], "4",
+                        [ "6", "T" ], "1", [ "q", "Y" ], " ",
+                        [ "5", "D", "2" ], " ", "7", [ "r", "R" ],
+                        [ "5", "T" ], "2", [ "j", "T", "&#237;" ], " ",
+                        [ "5", "D", "2" ], " ", [ "5", "T" ], "2", "8",
+                        [ "5", "R" ], " ", "4", [ "8", "R" ], " ", "r",
+                        [ "j", "Y" ], [ "t", "&#225;", "&#201;" ], " ",
+                        [ "w", "&#201;" ], "e", [ "6", "Y", "&#201;" ], " ",
+                        "@", " ", "1", [ "t", "Y" ], "w", " ", "W", " ", "w",
+                        [ "j", "D" ], [ "5", "R" ], " ", "@", " ", "2", "y",
+                        [ "6", "D" ], "e", "&#183;", "j", [ "6", "Y" ], "2",
+                        " ", "W", " ", "t", [ "7", "Y" ],
+                        [ "`", "R", "&#209;" ], "-" ];
+                assert.equal(result.length, expected.length);
+                // assert.equal(result, expected);
+
+                for (var i = 0; i < expected.length; i++)
+                {
+                    if (Array.isArray(expected[i]))
+                    {
+                        for (var j = 0; j < expected[i].length; j++)
+                        {
+                            assert.equal(result[i][j], expected[i][j]);
+                        }
+                    }
+                    else
+                    {
+                        assert.equal(result[i], expected[i]);
+                    }
+                }
+            });
+
+    QUnit.test("Example TTOI1 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTTOI1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "5", "R" ], " ", "@", " ", "1", "7",
+                [ "`", "T", "&#209;" ], "8", [ "5", "Y" ], " ", "W", " ",
+                [ "8", "R" ], [ "5", "T" ], "x", [ "6", "D" ], "2", " ", "@",
+                " ", "8", "1", [ "7", "Y" ], "h", " ", "W?", " ", "e",
+                [ "j", "T", "&#237;" ], [ "y", "Y" ], "d", [ "q", "R" ], " ",
+                "W?", " ", "7", [ "b", "R" ], " ", [ "8", "R" ], " ", "1", "7",
+                [ "i", "D", "&#201;" ], "2", "e", "7", [ "t", "Y" ], " ", "7",
+                [ "r", "R" ], [ "5", "T" ], "2", [ "j", "T", "&#237;" ], " ",
+                "3", "7", [ ".", "Y" ], "x", " ", "t", [ "7", "Y" ],
+                [ "`", "R", "&#209;" ], " ", [ "2", "{" ], " ", "@", " ", "j",
+                [ "5", "D" ], "2", " ", "W", " ", "j", [ "3", "Y" ], "j",
+                [ "7", "Y" ], [ "`", "R", "&#201;" ], "5", " ", "1",
+                [ "`", "Y" ], " ", "@", " ", "2", [ "h", "D" ], "8" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TTOI2 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTTOI2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "W", " ", [ "1", "R" ], "8", " ", [ "5", "T" ], "2",
+                [ "b", "R" ], " ", [ "1", "D" ], " ", "i", [ "j", "D" ],
+                [ "t", "T" ], "w", [ "j", "T" ], " ", [ "w", "&#201;" ], "8",
+                [ "2", "R", "&#201;" ], " ", [ "5", "D" ], "2", [ "l", "J" ],
+                "5", " ", "@", " ", "x", "7", [ "`", "T", "&#209;" ], "1", " ",
+                "7", [ "r", "R" ], [ "6", "T" ], "-", "3", [ "5", "T" ], " ",
+                [ "8", "R" ], "1", [ "j", "Y" ], "2", " ", "W?", " ",
+                [ "7", "&#201;" ], "1", [ "6", "&#225;" ], "5", " ", "W", " ",
+                "x", [ "5", "D" ], "2", [ "j", "D" ], "e", " ", "t",
+                [ "3", "R" ], "7", [ "5", "D" ], "2", [ "7", "R" ], "&#183;",
+                "W?", " ", "t", [ "1", "B", "T" ], [ "b", "R" ], " ", "W?",
+                " ", "9", [ "w", "Y", "&#237;" ], [ "1", "R" ], "8", " ", "y",
+                [ "3", "R" ], "e", [ "b", "D" ], [ "6", "Y" ], "5", "&#183;",
+                [ "2", "{" ], " ", "W?", " ", "y", [ "6", "D" ], " ",
+                [ "q", "&#225;" ], [ "5", "Y" ], " ", "@", " ", "7",
+                [ "2", "R" ], [ "6", "T" ], "8", " ", "W", " ", "7",
+                [ "`", "Y" ], "9", [ "5", "D" ], " ", "w", "h", " ", "@", " ",
+                "1", "7", [ "l", "D" ], "1", [ "6", "Y" ], " ", "8",
+                [ "7", "D" ], [ "t", "&#225;" ], [ "5", "D" ], "-" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TWOTR1 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTWOTR1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "5", "R" ], " ", "@", " ", "y", [ "6", "D" ], " ",
+                "W?", " ", "7", [ "b", "R" ], " ", [ "8", "R" ], " ", "1", "7",
+                [ "i", "D", "&#201;" ], "2", " ", "@", " ", "8", "1",
+                [ "7", "Y" ], "h", " ", "W?", " ", "r", [ "i", "R" ], "1",
+                [ "7", "Y" ], "h", " ", [ "1", "D" ], " ", "9", [ "j", "T" ],
+                "t", "8", " ", "2", [ "q", "B", "T" ], [ "2", "{" ], " ", "@",
+                " ", "2", "7", [ "y", "Y" ], "5", [ "b", "R" ], " ", "W", " ",
+                [ "8", "R" ], [ "5", "T" ], "x", [ "6", "D" ], "2", " ", "w",
+                "h", " ", "@", " ", [ "5", "T" ], "1", "8", "&#183;", "4",
+                [ "5", "T" ], " ", [ "8", "R" ], " ", "1", [ "j", "Y" ], "2",
+                " ", "W?" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TWOTR2 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTWOTR2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "s", [ ".", "Y" ], "6", "5", [ "h", "T" ], " ", "W",
+                " ", "e", "7", [ "2", "Y" ], [ "`", "Y" ], " ", "y",
+                [ "4", "R" ], " ", "8", [ "t", "D" ], "y",
+                [ "8", "R", "&#201;" ], " ", [ "2", "{" ], " ", "x",
+                [ "j", "Y", "&#237;" ], [ "t", "&#225;" ], " ", "1",
+                [ "`", "Y" ], " ", "@", " ", "t", [ "7", "Y" ],
+                [ "5", "D", "&#237;" ], [ "5", "Y" ], "&#183;", "W?", "t",
+                [ "1", "B", "T" ], [ "b", "R" ], " ", "y", [ "4", "R" ], " ",
+                "e", [ "7", "D" ], [ "t", "D" ], [ "7", "R" ], "&#183;",
+                [ "2", "{" ], " ", "@", " ", "8", "1", [ "l", "D" ], "6", "8",
+                " ", "W", " ", "z", [ "7", "R" ], [ "3", "R" ], " ",
+                [ "b", "&#225;" ], [ "j", "Y" ], "&#183;", "W?", " ", "w",
+                [ "1", "D", "&#237;" ], [ "j", "&#201;" ], " ", "W?", "q",
+                [ "j", "T" ], [ "5", "T", "&#237;" ], [ "6", "Y" ], " ", "e",
+                [ "`", "R", "&#201;" ], "j", "2", "8", "&#183;", [ "2", "{" ],
+                " ", "W?", " ", "i", [ "t", "Y" ], [ "b", "R" ], " ", "W", " ",
+                [ "7", "D" ], [ "x", "D" ], [ "6", "Y" ], "5", " ",
+                [ "5", "R" ], " ", "@", " ", "e", "j", [ "1", "B", "T" ], " ",
+                "W", " ", [ "t", "&#225;" ], "w", [ "6", "D" ], "-" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example SD1 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleSD1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "5", "R" ], " ", "4", [ "8", "R" ], " ", "w",
+                [ "~", "Y" ], "z", " ", [ "8", "R" ], " ", "1", "7",
+                [ "i", "D", "&#201;" ], "2", " ", "e", [ "6", "R" ], "8", "1",
+                " ", "@", " ", "8", "1", [ "7", "Y" ], "h", " ", "W?", " ",
+                "2", [ "8", "T" ], "1", "7", [ "z", "&#225;" ], "1",
+                [ "`", "R" ], [ "5", "Y" ], " ", "W?", [ "5", "Y", "&#201;" ],
+                " ", "7", [ "b", "R" ], " ", [ "2", "{" ], " ", "@", " ", "2",
+                [ "y", "Y" ], "5", "e", [ "j", "D" ], " ", "W", " ", "8",
+                [ "`", "D" ], [ "7", "&#225;" ], [ "5", "Y" ], " ",
+                [ "1", "D" ], " ", "@", " ", [ "5", "T" ], "2", " ", "W?", " ",
+                "3", [ "6", "R" ], "2", " ", [ "s", "D", "&#201;" ], "-" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example SD2 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleSD1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "5", "R" ], " ", "4", [ "8", "R" ], " ", "w",
+                [ "~", "Y" ], "z", " ", [ "8", "R" ], " ", "1", "7",
+                [ "i", "D", "&#201;" ], "2", " ", "e", [ "6", "R" ], "8", "1",
+                " ", "@", " ", "8", "1", [ "7", "Y" ], "h", " ", "W?", " ",
+                "2", [ "8", "T" ], "1", "7", [ "z", "&#225;" ], "1",
+                [ "`", "R" ], [ "5", "Y" ], " ", "W?", [ "5", "Y", "&#201;" ],
+                " ", "7", [ "b", "R" ], " ", [ "2", "{" ], " ", "@", " ", "2",
+                [ "y", "Y" ], "5", "e", [ "j", "D", "&#237;" ], " ", "W", " ",
+                "8", [ "`", "D" ], [ "7", "&#225;" ], [ "5", "Y" ], " ",
+                [ "1", "D" ], " ", "@", " ", [ "5", "T" ], "2", " ", "W?", " ",
+                "3", [ "6", "R" ], "2", " ", [ "s", "D", "&#201;" ], "-" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TLOTR2 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTLOTR2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "of", " ", "w", [ "i", "s" ], "t", "m", [ "a", "r" ],
+                "ch", " ", "b", "y", " ", "j", "h", [ "o", "n" ], " ", "r",
+                [ "o", "n" ], [ "a", "l" ], "d", " ", "r", "i", "u",
+                [ "i", "l" ], " ", "t", [ "o", "l" ], "k", "e", [ "i", "n" ],
+                ".", "h", [ "i", "r", "e" ], [ "e", "n" ], " ", [ "i", "z" ],
+                " ", "s", [ "i", "t" ], " ", "f", [ "o", "r" ], "th", "the",
+                " ", "h", [ "i", "s" ], "t", [ "o", "r" ], "y", " ", "of the",
+                " ", "w", [ "o", "r" ], " ", "of the", " ", "r", [ "e", "ng" ],
+                " ", "and", " ", "the", " ", "r", [ "e", "t" ], [ "u", "r" ],
+                "n", " ", "of the", " ", "k", [ "e", "ng" ], " ", [ "a", "z" ],
+                " ", "s", "e", "e", "n", " ", "b", "y", " ", "the", " ", "h",
+                [ "o", "b", "b" ], [ "e", "t" ], "s", "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example UTONAME1 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleUTONAME1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "i", "n" ], " ", "th", [ "i", "s" ], " ", "b", "oo",
+                "k", " ", "of", " ", [ "u", "n" ], "f", [ "i", "n" ],
+                [ "i", "sh" ], [ "e", "d" ], " ", "t", [ "a", "l", "e" ], "s",
+                " ", "b", "y", " ", "j", "o", "h", "n", " ", "r", [ "o", "n" ],
+                [ "a", "l" ], "d", " ", "r", "e", "u", [ "e", "l" ], " ", "t",
+                [ "o", "l" ], "k", "i", [ "e", "n" ], "wh", [ "i", "ch" ], " ",
+                [ "w", "a" ], "s", " ", "b", "r", [ "o", "u" ], "g", "h", "t",
+                " ", "t", [ "o", "g" ], [ "e", "th" ], [ "e", "r" ], " ", "b",
+                "y", " ", "k", "r", [ "i", "s" ], "t", [ "o", "f" ],
+                [ "e", "r" ], " ", "r", "e", "u", [ "e", "l" ], " ", "t",
+                [ "o", "l" ], "k", "i", [ "e", "n" ], " ", "h", [ "i", "s" ],
+                " ", "s", [ "o", "n" ] ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example UTONAME2 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleUTONAME2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "a", "r", "e" ], " ", "t", [ "o", "l" ], "d", " ",
+                "m", [ "a", "n" ], "y", " ", "th", [ "i", "ng" ], "s", " ",
+                "of", " ", "m", [ "e", "n" ], " ", "and", " ", [ "e", "l" ],
+                [ "v", "e" ], "s", " ", [ "i", "n" ], " ", "n", [ "u", "m" ],
+                [ "e", "n" ], [ "o", "r" ], " ", "and", " ", [ "i", "n" ], " ",
+                "m", [ "i", "d", "d" ], [ "l", "e" ], "ea", "r", "th", " ",
+                "f", "r", [ "o", "m" ], " ", "the", " ", [ "e", "l" ], "d",
+                [ "e", "r" ], " ", "d", [ "a", "y" ], "s", " ", [ "i", "n" ],
+                " ", "b", [ "e", "l" ], [ "e", "r" ], "i", [ "a", "n" ], "d",
+                " ", "t", "o", " ", "the", " ", "w", [ "a", "r" ], " ",
+                "of the", " ", "r", [ "i", "ng" ], " ", "and", [ "a", "n" ],
+                " ", [ "a", "k", "k" ], [ "o", "u" ], "n", "t", " ",
+                [ "i", "s" ], " ", "g", [ "i", "v" ], [ "e", "n" ], " ",
+                "of the", " ", "d", "r", "ue", "d", "ai", [ "i", "n" ], " ",
+                "the", " ", [ "i", "s" ], "t", [ "a", "r" ], "i", " ", "and",
+                " ", "the", " ", "p", [ "a", "l" ], [ "a", "n" ], "t",
+                [ "i", "r" ], "i", "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TROTS1 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTROTS1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "i", "n" ], " ", "the", " ", [ "r", "e" ], "t",
+                [ "u", "r" ], "n", " ", "of the", " ", "sh", [ "a", "d" ],
+                [ "o", "w" ], " ", [ "a", "r", "e" ], " ", "t", "r",
+                [ "a", "c", "e" ], "d", " ", "the", " ", "f", [ "i", "r" ],
+                "s", "t", " ", "f", [ "o", "r" ], "m", "s", " ", "of the", " ",
+                "s", "t", [ "o", "r" ], "y", " ", "of the", " ", "l",
+                [ "o", "r" ], "d", "of the", " ", "r", [ "i", "ng" ], "s", ".",
+                "h", [ "e", "r", "e" ], [ "i", "n" ], " ", "the", " ", "j",
+                [ "o", "u" ], "r", "n", [ "e", "y" ], " ", "of the", " ", "h",
+                [ "o", "b" ], [ "i", "t" ], " ", "wh", "o", " ", "b",
+                [ "o", "r", "e" ], " ", "the", " ", "g", "r", "ea", "t", " ",
+                "r", [ "i", "ng" ], ",", [ "a", "t" ], " ", "f", [ "i", "r" ],
+                "s", "t" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TROTS2 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTROTS2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "n", [ "a", "m", "e" ], "d", " ", "b", [ "i", "ng" ],
+                "o", " ", "b", [ "u", "t" ], " ", [ "a", "f" ], "t",
+                [ "e", "r" ], "w", [ "a", "r" ], "d", "s", " ", "f", "r",
+                [ "o", "d" ], "o", ",", [ "i", "s" ], " ", "f",
+                [ "o", "l", "l" ], [ "o", "w", "e" ], "d", " ", "f", "r",
+                [ "o", "m" ], " ", "h", [ "o", "b", "b" ], [ "i", "t" ],
+                [ "o", "n" ], " ", [ "i", "n" ], " ", "the", "sh",
+                [ "i", "r", "e" ], " ", "th", "r", [ "o", "u" ], "g", " ",
+                "the", " ", [ "o", "l" ], "d", " ", "f", [ "o", "r" ],
+                [ "e", "s" ], "t", " ", "t", "o", " ", "w", "ea", "th",
+                [ "e", "r" ], "t", [ "o", "p" ], " ", [ "a", "n", "d" ], " ",
+                "r", [ "i", "v" ], [ "e", "n" ], "d", [ "e", "l", "l" ], " ",
+                [ "a", "n", "d" ], " ", [ "e", "n" ], "d", "s", [ "i", "n" ],
+                " ", "th", [ "i", "s" ], " ", "v", [ "o", "l" ],
+                [ "u", "m", "e" ], " ", [ "b", "e" ], "f", [ "o", "r", "e" ],
+                " ", "the", " ", "t", [ "o", "m" ], "b", " ", "of", " ", "b",
+                [ "a", "l" ], [ "i", "n" ], " ", "the", " ", "d", "w",
+                [ "a", "r" ], "f", "-", "l", [ "o", "r" ], "d", " ", "of", " ",
+                "m", [ "o", "r" ], "ia", "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TTOI1 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTTOI1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "i", "n" ], " ", "the", " ", "t", "r", "ea", "s",
+                [ "o", "n" ], " ", "of", " ", [ "i", "s" ], [ "e", "n" ], "g",
+                [ "a", "r" ], "d", " ", "the", " ", "s", "t", [ "o", "r" ],
+                "y", " ", "of the", " ", "f", [ "e", "l", "l" ], [ "o", "w" ],
+                "sh", [ "i", "p" ], " ", "of the", " ", "r", [ "i", "ng" ],
+                " ", [ "i", "s" ], " ", "t", "r", [ "a", "c", "e" ], "d", "f",
+                "r", [ "o", "m" ], " ", "r", [ "i", "v" ], [ "e", "n" ], "d",
+                [ "e", "l", "l" ], " ", "th", "r", [ "o", "u" ], "g", " ", "m",
+                [ "o", "r" ], "ia", " ", "and", " ", "the", " ", "l",
+                [ "a", "n" ], "d", " ", "of", " ", "l", [ "o", "th" ], "l",
+                [ "o", "r" ], "ie", "n", " ", "t", "o", " ", "the", " ", "d",
+                [ "a", "y" ], "s" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TTOI2 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTTOI2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "of", " ", [ "i", "t" ], "s", " ", [ "e", "n" ], "d",
+                [ "i", "ng" ], " ", [ "a", "t" ], " ", "c", [ "a", "l" ],
+                [ "e", "m" ], "b", [ "e", "l" ], " ", [ "b", "e" ], "s",
+                [ "i", "d", "e" ], " ", [ "a", "n" ], "d", [ "u", "i" ], "n",
+                " ", "the", " ", "g", "r", "ea", "t", " ", "r", [ "i", "v" ],
+                [ "e", "r" ], ".", "th", [ "e", "n" ], " ", [ "i", "s" ], "t",
+                [ "o", "l" ], "d", " ", "of the", " ", [ "r", "e" ], "t",
+                [ "u", "r" ], "n", " ", "of", " ", "g", [ "a", "n" ], "d",
+                [ "a", "l" ], "f", " ", "m", [ "i", "th" ], "r", [ "a", "n" ],
+                "d", [ "i", "r" ], ",", "of the", " ", "m", [ "e", "e", "t" ],
+                [ "i", "ng" ], " ", "of the", " ", "h", [ "o", "b", "b" ],
+                [ "i", "t" ], "s", " ", "w", [ "i", "th" ], "f", [ "a", "ng" ],
+                [ "o", "r" ], "n", ",", "and", " ", "of the", " ", "w",
+                [ "a", "r" ], " ", [ "u", "p" ], [ "o", "n" ], " ", "the", " ",
+                "r", [ "i", "d" ], [ "e", "r" ], "s", " ", "of", " ", "r", "o",
+                "h", [ "a", "n" ], " ", "b", "y", " ", "the", " ", "t", "r",
+                "ai", "t", [ "o", "r" ], " ", "s", [ "a", "r" ], [ "u", "m" ],
+                [ "a", "n" ], "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TWOTR1 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTWOTR1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "i", "n" ], " ", "the", " ", "w", [ "a", "r" ], " ",
+                "of the", " ", "r", [ "i", "ng" ], " ", [ "i", "s" ], " ", "t",
+                "r", [ "a", "c", "e" ], "d", " ", "the", " ", "s", "t",
+                [ "o", "r" ], "y", " ", "of the", " ", "v", [ "i", "c" ], "t",
+                [ "o", "r" ], "y", " ", [ "a", "t" ], " ", "h", [ "e", "l" ],
+                "m", "s", " ", "d", [ "e", "e", "p" ], "and", " ", "the", " ",
+                "d", "r", [ "o", "w" ], "n", [ "i", "ng" ], " ", "of", " ",
+                [ "i", "s" ], [ "e", "n" ], "g", [ "a", "r" ], "d", " ", "b",
+                "y", " ", "the", " ", [ "e", "n" ], "t", "s", ",", "th",
+                [ "e", "n" ], " ", [ "i", "s" ], " ", "t", [ "o", "l" ], "d",
+                " ", "of the" ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example TWOTR2 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleTWOTR2.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ "j", [ "o", "u" ], "r", "n", [ "e", "y" ], " ", "of",
+                " ", "f", "r", [ "o", "d" ], "o", " ", "w", [ "i", "th" ], " ",
+                "s", [ "a", "m" ], "w", [ "i", "s", "e" ], " ", "and", " ",
+                "g", [ "o", "l", "l" ], [ "u", "m" ], " ", "t", "o", " ",
+                "the", " ", "m", [ "o", "r" ], [ "a", "n", "n" ], [ "o", "n" ],
+                ",", "of the", "m", [ "e", "e", "t" ], [ "i", "ng" ], " ", "w",
+                [ "i", "th" ], " ", "f", [ "a", "r" ], [ "a", "m" ],
+                [ "i", "r" ], ",", "and", " ", "the", " ", "s", "t", "ai", "r",
+                "s", " ", "of", " ", "k", [ "i", "r" ], [ "i", "th" ], " ",
+                [ "u", "ng" ], [ "o", "l" ], ",", "of the", " ", "b",
+                [ "a", "t", "t" ], [ "l", "e" ], " ", "of the", "p",
+                [ "e", "l" ], [ "e", "n", "n" ], [ "o", "r" ], " ", "f", "ie",
+                "l", "d", "s", ",", "and", " ", "of the", " ", "c",
+                [ "o", "m" ], [ "i", "ng" ], " ", "of", " ", [ "a", "r" ],
+                [ "a", "g" ], [ "o", "r" ], "n", " ", [ "i", "n" ], " ", "the",
+                " ", "f", "l", [ "e", "e", "t" ], " ", "of", " ", [ "u", "m" ],
+                "b", [ "a", "r" ], "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example SD1 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleSD1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "i", "n" ], " ", "th", [ "i", "s" ], " ", "b", "oo",
+                "k", " ", [ "i", "s" ], " ", "t", "r", [ "a", "c", "e" ], "d",
+                " ", "f", [ "i", "r" ], "s", "t", " ", "the", " ", "s", "t",
+                [ "o", "r" ], "y", " ", "of the", " ", "d", [ "e", "s" ], "t",
+                "r", [ "u", "k" ], "t", "i", [ "o", "n" ], " ", "of the",
+                [ "o", "n", "e" ], " ", "r", [ "i", "ng" ], " ", "and", " ",
+                "the", " ", "d", [ "o", "w" ], "n", "f", [ "a", "l" ], " ",
+                "of", " ", "s", "a", [ "u", "r" ], [ "o", "n" ], " ",
+                [ "a", "t" ], " ", "the", " ", [ "e", "n" ], "d", " ",
+                "of the", " ", "th", [ "i", "r" ], "d", " ", [ "a", "j", "e" ],
+                "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+
+    QUnit.test("Example SD2 runesToLanguageLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishTengwarTranscriber2();
+        var runes = TengwarExampleSD1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToLanguageLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = [ [ "i", "n" ], " ", "th", [ "i", "s" ], " ", "b", "oo",
+                "k", " ", [ "i", "s" ], " ", "t", "r", [ "a", "c", "e" ], "d",
+                " ", "f", [ "i", "r" ], "s", "t", " ", "the", " ", "s", "t",
+                [ "o", "r" ], "y", " ", "of the", " ", "d", [ "e", "s" ], "t",
+                "r", [ "u", "k" ], "t", "i", [ "o", "n" ], " ", "of the",
+                [ "o", "n", "e" ], " ", "r", [ "i", "ng" ], " ", "and", " ",
+                "the", " ", "d", [ "o", "w" ], "n", "f", [ "a", "l", "l" ],
+                " ", "of", " ", "s", "a", [ "u", "r" ], [ "o", "n" ], " ",
+                [ "a", "t" ], " ", "the", " ", [ "e", "n" ], "d", " ",
+                "of the", " ", "th", [ "i", "r" ], "d", " ", [ "a", "j", "e" ],
+                "." ];
+        assert.equal(result.length, expected.length);
+        // assert.equal(result, expected);
+
+        for (var i = 0; i < expected.length; i++)
+        {
+            if (Array.isArray(expected[i]))
+            {
+                for (var j = 0; j < expected[i].length; j++)
+                {
+                    assert.equal(result[i][j], expected[i][j]);
+                }
+            }
+            else
+            {
+                assert.equal(result[i], expected[i]);
+            }
+        }
+    });
+</script>
+</head>
+<body>
+	<div id="qunit"></div>
+</body>
+</html>
