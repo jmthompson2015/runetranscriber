@@ -297,7 +297,7 @@ public final class TengwaFontLetter implements FontLetter
         TEHTAR.add(CIRCUMFLEX2);
         TEHTAR.add(ACUTE2);
         TEHTAR.add(DOT2);
-        TEHTAR.add(UNDER_DOT2);
+        // TEHTAR.add(UNDER_DOT2);
         TEHTAR.add(LEFT_CURL2);
         TEHTAR.add(LEFT_UNDER_CURL2);
         TEHTAR.add(TOP_CURL2);
