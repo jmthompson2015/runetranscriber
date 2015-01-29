@@ -6,8 +6,7 @@ var TengwarExampleTTOI1 =
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/treasonofisengard/TTOI_TitlePage1.jpg",
 
     LANGUAGE_LETTERS: "In the Treason of Isengard the story of the Fellowship of the Ring is traced\n"
-            + "from Rivendell through Moria and the Land of Lothlorien to the days\n"
-            + "of its ending at Salembel beside Anduin the Great river, then is told of the return of Gandalf Mithrandir, of the meeting of the hobbits with Fangorn and of the war upon the Riders of Rohan by the traitor Saruman.",
+            + "from Rivendell through Moria and the Land of Lothlorien to the days",
 
     RUNES: [
             // Line 1
