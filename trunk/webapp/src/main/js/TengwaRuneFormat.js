@@ -9,7 +9,14 @@ var TengwaRuneFormat =
         for (var i = 0; i < runes.length; i++)
         {
             var rune = runes[i];
+
+            if (!rune)
+            {
+                LOGGER.error("Missing rune at position " + i+"; runes.length = "+runes.length+" runes = "+runes);
+            }
+
             answer += properties[rune].name;
+
             if (i < runes.length - 1)
             {
                 answer += "-";
