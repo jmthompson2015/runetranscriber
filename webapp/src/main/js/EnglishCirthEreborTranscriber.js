@@ -129,7 +129,7 @@ EnglishCirthEreborTranscriber.prototype.transcribeForward = function(
     {
         for (var j = Math.min(end - i, maxKeyLength); j > 0; j--)
         {
-            var word = fromSequence.slice(i, i + j);
+            var word = fromSequence.slice(i, i + j).toLowerCase();
             // LOGGER.trace(i + "," + j + " word = '" + word + "'");
 
             if (forwardMap[word] != null)
