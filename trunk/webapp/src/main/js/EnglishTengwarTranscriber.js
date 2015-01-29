@@ -4,68 +4,68 @@ var EnglishTengwarTranscriber = function()
     var reverseMap = {};
 
     // Consonants.
-    put("ch", [ TengwaRune.CALMA ]);
-
     put("b", [ TengwaRune.UMBAR ]);
+    put("c", [ TengwaRune.SILME_NUQUERNA ]);
+    put("ch", [ TengwaRune.CALMA ]);
     put("d", [ TengwaRune.ANDO ]);
     put("f", [ TengwaRune.FORMEN ]);
+    put("g", [ TengwaRune.ANGA ]);
     put("h", [ TengwaRune.HYARMEN ]);
     put("k", [ TengwaRune.QUESSE ]);
     put("l", [ TengwaRune.LAMBE ]);
     put("m", [ TengwaRune.MALTA ]);
     put("n", [ TengwaRune.NUMEN ]);
-    put("ng", [ TengwaRune.NGWALME, ]);
+    put("ng", [ TengwaRune.NGWALME ]);
+    put("p", [ TengwaRune.PARMA ]);
     put("r", [ TengwaRune.ROMEN ]);
-    put("s", [ TengwaRune.ESSE ]);
     put("s", [ TengwaRune.SILME ]);
+    put("sh", [ TengwaRune.HARMA ]);
     put("t", [ TengwaRune.TINCO ]);
+    put("th", [ TengwaRune.THULE ])
+    put("v", [ TengwaRune.AMPA ]);
     put("w", [ TengwaRune.VALA ]);
+    put("wh", [ TengwaRune.HWESTA ]);
+    put("z", [ TengwaRune.ESSE_NUQUERNA ]);
+
+    putReverse("g", [ TengwaRune.UNGWE ]);
+    putReverse("r", [ TengwaRune.ORE ]);
+    putReverse("s", [ TengwaRune.ESSE ]);
+    putReverse("th", [ TengwaRune.ANTO ]);
+    putReverse("wh", [ TengwaRune.HWESTA_SINDARINWA ]);
 
     // Vowels.
     put("a", [ TengwaRune.THREE_DOTS ]);
-    put("e", [ TengwaRune.ACUTE ]);
-    put("i", [ TengwaRune.DOT ]);
+    put("e", [ TengwaRune.DOT ]);
+    put("i", [ TengwaRune.ACUTE ]);
     put("o", [ TengwaRune.LEFT_CURL ]);
+    put("u", [ TengwaRune.TOP_CURL ]);
     put("y", [ TengwaRune.ACUTE, TengwaRune.LONG_CARRIER ]);
+
+    putReverse("e", [ TengwaRune.UNDER_DOT ]);
+    putReverse("e", [ TengwaRune.SHORT_CARRIER ]);
+    putReverse("e", [ TengwaRune.DOT, TengwaRune.LONG_CARRIER ]);
+    putReverse("ea", [ TengwaRune.DOT, TengwaRune.SHORT_CARRIER,
+            TengwaRune.THREE_UNDER_DOTS ]);
+    putReverse("i", [ TengwaRune.YANTA ]);
+    putReverse("i", [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER ]);
+    putReverse("o", [ TengwaRune.LEFT_UNDER_CURL ]);
+    putReverse("u", [ TengwaRune.TOP_CURL, TengwaRune.SHORT_CARRIER ]);
+    putReverse("u", [ TengwaRune.URE ]);
+    putReverse("y", [ TengwaRune.ANNA ]);
 
     // Punctuation.
     put(" ", [ TengwaRune.SPACE ]);
+    put(",", [ TengwaRune.COMMA ]);
     put(".", [ TengwaRune.PERIOD ]);
     put("\n", [ TengwaRune.NEWLINE ]);
 
-    put("of the ", [ TengwaRune.OF_THE, TengwaRune.SPACE, ]);
-    put("march ", [ TengwaRune.MALTA, TengwaRune.THREE_DOTS, TengwaRune.ORE,
-            TengwaRune.CALMA, TengwaRune.SPACE, ]);
-    put("the ", [ TengwaRune.THE, TengwaRune.SPACE, ]);
-    put("of ", [ TengwaRune.OF, TengwaRune.SPACE, ]);
-    put("ur", [ TengwaRune.TOP_CURL, TengwaRune.ORE, ]);
-    put("ee", [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER, TengwaRune.ACUTE,
-            TengwaRune.SHORT_CARRIER, ]);
-    put("by ", [ TengwaRune.UMBAR, TengwaRune.CHEVRON, TengwaRune.LONG_CARRIER,
-            TengwaRune.SPACE, ]);
-    put("john ", [ TengwaRune.ANGA, TengwaRune.HYARMEN, TengwaRune.LEFT_CURL,
-            TengwaRune.NUMEN, TengwaRune.SPACE, ]);
-    put("reuel ", [ TengwaRune.ROMEN, TengwaRune.ACUTE,
-            TengwaRune.SHORT_CARRIER, TengwaRune.RIGHT_CURL,
-            TengwaRune.SHORT_CARRIER, TengwaRune.ACUTE, TengwaRune.LAMBE,
-            TengwaRune.SPACE ]);
-    put("ien.", [ TengwaRune.DOT, TengwaRune.SHORT_CARRIER, TengwaRune.ACUTE,
-            TengwaRune.NUMEN, TengwaRune.PERIOD, ]);
-    put("herein ", [ TengwaRune.HYARMEN, TengwaRune.ACUTE, TengwaRune.ROMEN,
-            TengwaRune.DOT, TengwaRune.NUMEN, TengwaRune.SPACE, ]);
-    put("is ", [ TengwaRune.DOT, TengwaRune.ESSE, TengwaRune.SPACE, ]);
-    put("and ", [ TengwaRune.UNDER_DOT, TengwaRune.ANDO, TengwaRune.SPACE, ]);
-    put("as ", [ TengwaRune.THREE_DOTS, TengwaRune.ESSE_NUQUERNA,
-            TengwaRune.SPACE, ]);
-    put("forth", [ TengwaRune.FORMEN, TengwaRune.LEFT_CURL, TengwaRune.ORE,
-            TengwaRune.THULE, ]);
-    put("war", [ TengwaRune.VALA, TengwaRune.THREE_DOTS, TengwaRune.ORE, ]);
-    put("hobbit", [ TengwaRune.HYARMEN, TengwaRune.LEFT_CURL, TengwaRune.UMBAR,
-            TengwaRune.DOT, TengwaRune.TINCO ]);
-    put("tengwar", [ TengwaRune.TINCO, TengwaRune.ACUTE, TengwaRune.UNGWE,
-            TengwaRune.THREE_DOTS, TengwaRune.ORE, ]);
+    putForward("-", [ TengwaRune.SPACE ]);
 
-    putReverse("r", [ TengwaRune.ORE ]);
+    // Abbreviations.
+    put("of the", [ TengwaRune.OF_THE ]);
+    put("the", [ TengwaRune.THE ]);
+    put("of", [ TengwaRune.OF ]);
+    put("and", [ TengwaRune.LONG_CARRIER, TengwaRune.ANDO ]);
 
     var maxForwardKeyLength = determineMaxForwardKeyLength();
     var maxReverseKeyLength = determineMaxReverseKeyLength();
@@ -165,7 +165,7 @@ EnglishTengwarTranscriber.prototype.transcribeForward = function(fromSequence)
     {
         for (var j = Math.min(end - i, maxKeyLength); j > 0; j--)
         {
-            var word = fromSequence.slice(i, i + j);
+            var word = fromSequence.slice(i, i + j).toLowerCase();
             // LOGGER.trace(i + "," + j + " word = '" + word + "'");
 
             if (forwardMap[word] != null)
@@ -225,5 +225,49 @@ EnglishTengwarTranscriber.prototype.transcribeReverse = function(toSequence)
         }
     }
 
+    // answer = this.postProcessReverse(answer);
+
     return answer;
+}
+
+EnglishTengwarTranscriber.prototype.postProcessReverse = function(toSequence)
+{
+    // LOGGER.debug("toSequence = "+toSequence);
+
+    var answer = toSequence;
+
+    // The Lord Of The Rings
+    // Christopher reversed 'e' and 'i' from J.R.R.?
+    answer = answer.replace("wistmarch", "westmarch");
+    answer = answer.replace("ghon", "john");
+    answer = answer.replace("riuil", "reuel");
+    answer = answer.replace("tolkein", "tolkien");
+    answer = answer.replace("hiren", "herein");
+    answer = answer.replace(" es ", " is ");
+    answer = answer.replace("sit", "set");
+    answer = answer.replace("hestory", "history");
+    answer = answer.replace("reng", "ring");
+    answer = answer.replace("riturn", "return");
+    answer = answer.replace("keng", "king");
+    answer = answer.replace("az", "as");
+    answer = answer.replace("siin", "seen");
+    answer = answer.replace("hobets", "hobbits");
+
+    // The Silmarillion
+    answer = answer.replace("midle erth", "middle-earth");
+    answer = answer.replace("wor", "war");
+    answer = answer.replace("rekovery", "recovery");
+    answer = answer.replace("apended", "appended");
+    answer = answer.replace("downfal", "downfall");
+    answer = answer.replace("powr", "power");
+    answer = answer.replace("kome", "come");
+
+    // The Return Of The Shadow
+    answer = answer.replace(".", ". ");
+    answer = answer.replace("gourney", "journey");
+    answer = answer.replace("hobit", "hobbit");
+    answer = answer.replace("whi ", "who ");
+    answer = answer.replace(",", ", ");
+
+    return answer.trim();
 }
