@@ -190,7 +190,7 @@ public final class TengwaRune implements Rune
         TEHTAR.add(CIRCUMFLEX);
         TEHTAR.add(ACUTE);
         TEHTAR.add(DOT);
-        TEHTAR.add(UNDER_DOT);
+        // TEHTAR.add(UNDER_DOT);
         TEHTAR.add(LEFT_CURL);
         TEHTAR.add(LEFT_UNDER_CURL);
         TEHTAR.add(TOP_CURL);
