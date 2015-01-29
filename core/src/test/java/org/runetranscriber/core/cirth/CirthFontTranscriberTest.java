@@ -29,7 +29,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeForward()</code> method.
      */
     @Test
-    public void transcribeForward1()
+    public void transcribeForwardDaeron1()
     {
         final RuneList<CerthRune> runes = examples.getCirthDaeron1().getRunes();
         final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
@@ -42,7 +42,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeForward()</code> method.
      */
     @Test
-    public void transcribeForward2()
+    public void transcribeForwardDaeron2()
     {
         final RuneList<CerthRune> runes = examples.getCirthDaeron2().getRunes();
         final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
@@ -55,20 +55,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeForward()</code> method.
      */
     @Test
-    public void transcribeForward3()
-    {
-        final RuneList<CerthRune> runes = examples.getCirthMoria1().getRunes();
-        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
-        final FontLetterList<CerthFontLetter> expected = examples.getCirthMoria1().getFontLetters();
-
-        verifyFontLetters(result, expected, IS_VERBOSE);
-    }
-
-    /**
-     * Test the <code>transcribeForward()</code> method.
-     */
-    @Test
-    public void transcribeForward4()
+    public void transcribeForwardErebor1()
     {
         final RuneList<CerthRune> runes = examples.getCirthErebor1().getRunes();
         final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
@@ -81,7 +68,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeForward()</code> method.
      */
     @Test
-    public void transcribeForward5()
+    public void transcribeForwardErebor2()
     {
         final RuneList<CerthRune> runes = examples.getCirthErebor2().getRunes();
         final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
@@ -91,10 +78,49 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
     }
 
     /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForwardMoria1()
+    {
+        final RuneList<CerthRune> runes = examples.getCirthMoria1().getRunes();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthMoria1().getFontLetters();
+
+        verifyFontLetters(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForwardMoria2()
+    {
+        final RuneList<CerthRune> runes = examples.getCirthMoria2().getRunes();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthMoria2().getFontLetters();
+
+        verifyFontLetters(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForwardMoria3()
+    {
+        final RuneList<CerthRune> runes = examples.getCirthMoria3().getRunes();
+        final FontLetterList<CerthFontLetter> result = transcriber.transcribeForward(runes);
+        final FontLetterList<CerthFontLetter> expected = examples.getCirthMoria3().getFontLetters();
+
+        verifyFontLetters(result, expected, IS_VERBOSE);
+    }
+
+    /**
      * Test the <code>transcribeReverse()</code> method.
      */
     @Test
-    public void transcribeReverse1()
+    public void transcribeReverseDaeron1()
     {
         final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthDaeron1().getFontLetters();
         final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
@@ -113,7 +139,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeReverse()</code> method.
      */
     @Test
-    public void transcribeReverse2()
+    public void transcribeReverseDaeron2()
     {
         final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthDaeron2().getFontLetters();
         final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
@@ -132,26 +158,7 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeReverse()</code> method.
      */
     @Test
-    public void transcribeReverse3()
-    {
-        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthMoria1().getFontLetters();
-        final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
-        final RuneList<CerthRune> expected = examples.getCirthMoria1().getRunes();
-
-        if (IS_VERBOSE)
-        {
-            System.out.println("expected = [" + expected.toString() + "]");
-            System.out.println("result   = [" + result.toString() + "]");
-        }
-
-        verifyRunes(result, expected);
-    }
-
-    /**
-     * Test the <code>transcribeReverse()</code> method.
-     */
-    @Test
-    public void transcribeReverse4()
+    public void transcribeReverseErebor1()
     {
         final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthErebor1().getFontLetters();
         final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
@@ -170,11 +177,68 @@ public final class CirthFontTranscriberTest extends DefaultFontTranscriberTest
      * Test the <code>transcribeReverse()</code> method.
      */
     @Test
-    public void transcribeReverse5()
+    public void transcribeReverseErebor2()
     {
         final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthErebor2().getFontLetters();
         final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
         final RuneList<CerthRune> expected = examples.getCirthErebor2().getRunes();
+
+        if (IS_VERBOSE)
+        {
+            System.out.println("expected = [" + expected.toString() + "]");
+            System.out.println("result   = [" + result.toString() + "]");
+        }
+
+        verifyRunes(result, expected);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverseMoria1()
+    {
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthMoria1().getFontLetters();
+        final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
+        final RuneList<CerthRune> expected = examples.getCirthMoria1().getRunes();
+
+        if (IS_VERBOSE)
+        {
+            System.out.println("expected = [" + expected.toString() + "]");
+            System.out.println("result   = [" + result.toString() + "]");
+        }
+
+        verifyRunes(result, expected);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverseMoria2()
+    {
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthMoria2().getFontLetters();
+        final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
+        final RuneList<CerthRune> expected = examples.getCirthMoria2().getRunes();
+
+        if (IS_VERBOSE)
+        {
+            System.out.println("expected = [" + expected.toString() + "]");
+            System.out.println("result   = [" + result.toString() + "]");
+        }
+
+        verifyRunes(result, expected);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverseMoria3()
+    {
+        final FontLetterList<CerthFontLetter> fontLetters = examples.getCirthMoria3().getFontLetters();
+        final RuneList<CerthRune> result = transcriber.transcribeReverse(fontLetters);
+        final RuneList<CerthRune> expected = examples.getCirthMoria3().getRunes();
 
         if (IS_VERBOSE)
         {
