@@ -22,7 +22,7 @@ import org.runetranscriber.core.Rune;
 
 /**
  * Provides a font viewer.
- * 
+ *
  * @param <R> Rune type parameter.
  * @param <F> Font letter type parameter.
  */
@@ -65,6 +65,8 @@ public final class FontViewer<R extends Rune, F extends FontLetter> extends JPan
         DIACRITICS.add("?");
         DIACRITICS.add("=");
         DIACRITICS.add(">");
+        DIACRITICS.add("\"");
+        DIACRITICS.add("'");
     }
 
     /** Page length. */
@@ -84,7 +86,7 @@ public final class FontViewer<R extends Rune, F extends FontLetter> extends JPan
 
     /**
      * Construct this object.
-     * 
+     *
      * @param fontTranscriber Font transcriber.
      * @param initialPageNumber Initial page number.
      */
@@ -143,7 +145,7 @@ public final class FontViewer<R extends Rune, F extends FontLetter> extends JPan
 
     /**
      * @param text Text.
-     * 
+     *
      * @return a new label.
      */
     private JLabel createLabel(final String text)
@@ -183,7 +185,7 @@ public final class FontViewer<R extends Rune, F extends FontLetter> extends JPan
     /**
      * @param start Start index.
      * @param length Length.
-     * 
+     *
      * @return a new panel.
      */
     private JPanel createSubpanel(final int start, final int length)
