@@ -55,6 +55,9 @@ var TengwaRune =
     TOP_CURL: "topCurl",
     RIGHT_CURL: "rightCurl",
     CHEVRON: "chevron",
+    BAR: "bar",
+    UNDER_BAR: "underBar",
+    HYPHEN: "hyphen",
     SPACE: "space",
     COMMA: "comma",
     PERIOD: "period",
@@ -360,7 +363,7 @@ var TengwaRune =
             name: "THREE_UNDER_DOTS",
             displayName: "three_under_dots",
             nameMeaning: "three under dots",
-            fontLetter: "Ñ",
+            fontLetter: "&#209;",
         },
         "circumflex":
         {
@@ -374,21 +377,21 @@ var TengwaRune =
             name: "ACUTE",
             displayName: "acute",
             nameMeaning: "acute",
-            fontLetter: "F",
+            fontLetter: "R",
         },
         "dot":
         {
             name: "DOT",
             displayName: "dot",
             nameMeaning: "dot",
-            fontLetter: "G",
+            fontLetter: "T",
         },
         "underDot":
         {
             name: "UNDER_DOT",
             displayName: "under_dot",
             nameMeaning: "under dot",
-            fontLetter: "É",
+            fontLetter: "&#201;",
         },
         "leftCurl":
         {
@@ -416,7 +419,7 @@ var TengwaRune =
             name: "RIGHT_CURL",
             displayName: "right_curl",
             nameMeaning: "right curl",
-            fontLetter: "á",
+            fontLetter: "&#225;",
         },
         "chevron":
         {
@@ -424,6 +427,27 @@ var TengwaRune =
             displayName: "chevron",
             nameMeaning: "chevron",
             fontLetter: "Ù",
+        },
+        "bar":
+        {
+            name: "BAR",
+            displayName: "bar",
+            nameMeaning: "bar",
+            fontLetter: "{",
+        },
+        "underBar":
+        {
+            name: "UNDER_BAR",
+            displayName: "underBar",
+            nameMeaning: "underBar",
+            fontLetter: "&#237;",
+        },
+        "hyphen":
+        {
+            name: "HYPHEN",
+            displayName: "hyphen",
+            nameMeaning: "hyphen",
+            fontLetter: "&#183;",
         },
         "space":
         {
@@ -437,7 +461,7 @@ var TengwaRune =
             name: "COMMA",
             displayName: "comma",
             nameMeaning: "comma",
-            fontLetter: "·",
+            fontLetter: "&#183;",
         },
         "period":
         {
@@ -462,8 +486,12 @@ var TengwaRune =
             "hwestaSindarinwa", "yanta", "ure", "the", "of", "ofThe",
             "shortCarrier", "longCarrier", "threeDots", "threeUnderDots",
             "circumflex", "acute", "dot", "underDot", "leftCurl",
-            "leftUnderCurl", "topCurl", "rightCurl", "chevron", "space",
-            "comma", "period", "newline", ],
+            "leftUnderCurl", "topCurl", "rightCurl", "chevron", "bar",
+            "underBar", "space", "comma", "period", "newline", ],
+
+    // Tehtar (diacritic marks)
+    tehtar: [ "threeDots", "circumflex", "acute", "dot", "leftCurl", "topCurl",
+            "rightCurl", "chevron", "bar" ],
 }
 
 if (Object.freeze)
