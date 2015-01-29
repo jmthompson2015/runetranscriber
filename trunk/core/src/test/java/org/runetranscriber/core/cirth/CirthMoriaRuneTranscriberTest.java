@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.runetranscriber.core.DefaultRuneTranscriberTest;
 import org.runetranscriber.core.PhonemeList;
@@ -39,6 +40,33 @@ public final class CirthMoriaRuneTranscriberTest extends DefaultRuneTranscriberT
     }
 
     /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Test
+    public void transcribeForward2()
+    {
+        final PhonemeList phonemes = examples.getCirthMoria2().getPhonemes();
+        final RuneList<CerthRune> result = transcriber.transcribeForward(phonemes);
+        final RuneList<CerthRune> expected = examples.getCirthMoria2().getRunes();
+
+        verifyRunes(result, expected);
+    }
+
+    /**
+     * Test the <code>transcribeForward()</code> method.
+     */
+    @Ignore
+    @Test
+    public void transcribeForward3()
+    {
+        final PhonemeList phonemes = examples.getCirthMoria3().getPhonemes();
+        final RuneList<CerthRune> result = transcriber.transcribeForward(phonemes);
+        final RuneList<CerthRune> expected = examples.getCirthMoria3().getRunes();
+
+        verifyRunes(result, expected);
+    }
+
+    /**
      * Test the <code>transcribeReverse()</code> method.
      */
     @Test
@@ -47,6 +75,33 @@ public final class CirthMoriaRuneTranscriberTest extends DefaultRuneTranscriberT
         final RuneList<CerthRune> runes = examples.getCirthMoria1().getRunes();
         final PhonemeList result = transcriber.transcribeReverse(runes);
         final PhonemeList expected = examples.getCirthMoria1().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Test
+    public void transcribeReverse2()
+    {
+        final RuneList<CerthRune> runes = examples.getCirthMoria2().getRunes();
+        final PhonemeList result = transcriber.transcribeReverse(runes);
+        final PhonemeList expected = examples.getCirthMoria2().getPhonemes();
+
+        verifyPhonemes(result, expected, IS_VERBOSE);
+    }
+
+    /**
+     * Test the <code>transcribeReverse()</code> method.
+     */
+    @Ignore
+    @Test
+    public void transcribeReverse3()
+    {
+        final RuneList<CerthRune> runes = examples.getCirthMoria3().getRunes();
+        final PhonemeList result = transcriber.transcribeReverse(runes);
+        final PhonemeList expected = examples.getCirthMoria3().getPhonemes();
 
         verifyPhonemes(result, expected, IS_VERBOSE);
     }

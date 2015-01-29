@@ -37,6 +37,12 @@ public final class Examples
     private final CirthMoriaExample1 cirthMoria1 = new CirthMoriaExample1();
 
     /** Cirth example. */
+    private final CirthMoriaExample2 cirthMoria2 = new CirthMoriaExample2();
+
+    /** Cirth example. */
+    private final CirthMoriaExample3 cirthMoria3 = new CirthMoriaExample3();
+
+    /** Cirth example. */
     private final CirthEreborExample1 cirthErebor1 = new CirthEreborExample1();
 
     /** Cirth example. */
@@ -80,5 +86,21 @@ public final class Examples
     public CirthMoriaExample1 getCirthMoria1()
     {
         return cirthMoria1;
+    }
+
+    /**
+     * @return the cirthMoria2
+     */
+    public CirthMoriaExample2 getCirthMoria2()
+    {
+        return cirthMoria2;
+    }
+
+    /**
+     * @return the cirthMoria3
+     */
+    public CirthMoriaExample3 getCirthMoria3()
+    {
+        return cirthMoria3;
     }
 }
