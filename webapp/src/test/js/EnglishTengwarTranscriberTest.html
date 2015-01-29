@@ -16,106 +16,303 @@
 
 <script src="../../main/js/example/TengwarExample1.js"></script>
 <script src="../../main/js/example/TengwarExample2.js"></script>
+<script src="../../main/js/example/TengwarExampleTS1.js"></script>
+<script src="../../main/js/example/TengwarExampleTS2.js"></script>
+<script src="../../main/js/example/TengwarExampleTROTS1.js"></script>
 
 <script>
     var LOGGER = new Logger();
+    /* 
+     QUnit.test("getMaxForwardKeyLength()", function(assert)
+     {
+     // Setup.
+     var transcriber = new EnglishTengwarTranscriber();
 
-    QUnit.test("getMaxForwardKeyLength()", function(assert)
+     // Run.
+     var result = transcriber.getMaxForwardKeyLength();
+
+     // Verify.
+     assert.equal(result, 7);
+     });
+     */
+    /*  
+     QUnit.test("getMaxReverseKeyLength()", function(assert)
+     {
+     // Setup.
+     var transcriber = new EnglishTengwarTranscriber();
+
+     // Run.
+     var result = transcriber.getMaxReverseKeyLength();
+
+     // Verify.
+     assert.equal(result, 8);
+     });
+     */
+
+    QUnit.test("Example2 postProcessReverse()", function(assert)
     {
         // Setup.
         var transcriber = new EnglishTengwarTranscriber();
+        var toSequence = transcriber.transcribeReverse(TengwarExample2.RUNES);
 
         // Run.
-        var result = transcriber.getMaxForwardKeyLength();
-
-        // Verify.
-        assert.equal(result, 7);
-    });
-
-    QUnit.test("getMaxReverseKeyLength()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishTengwarTranscriber();
-
-        // Run.
-        var result = transcriber.getMaxReverseKeyLength();
-
-        // Verify.
-        assert.equal(result, 8);
-    });
-
-    QUnit.test("Example1 transcribeForward()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishTengwarTranscriber();
-        var fromSequence = TengwarExample1.LANGUAGE_LETTERS;
-
-        // Run.
-        var toSequence = transcriber.transcribeForward(fromSequence);
-
-        // Verify.
-        assert.ok(toSequence);
-        var expected = TengwarExample1.RUNES;
-        //        assert.equal(toSequence, expected);
-        assert.equal(toSequence.length, expected.length);
-
-        for (var i = 0; i < toSequence.length; i++)
-        {
-            assert.equal(toSequence[i], expected[i], "" + i);
-        }
-    });
-
-    QUnit.test("Example2 transcribeForward()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishTengwarTranscriber();
-        var fromSequence = TengwarExample2.LANGUAGE_LETTERS;
-
-        // Run.
-        var toSequence = transcriber.transcribeForward(fromSequence);
-
-        // Verify.
-        assert.ok(toSequence);
-        var expected = TengwarExample2.RUNES;
-        assert.equal(toSequence.length, expected.length);
-
-        for (var i = 0; i < toSequence.length; i++)
-        {
-            assert.equal(toSequence[i], expected[i], "" + i);
-        }
-    });
-
-    QUnit.test("Example1 transcribeReverse()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishTengwarTranscriber();
-        var toSequence = TengwarExample1.RUNES;
-
-        // Run.
-        var fromSequence = transcriber.transcribeReverse(toSequence);
+        var fromSequence = transcriber.postProcessReverse(toSequence);
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = TengwarExample1.LANGUAGE_LETTERS;
+        var expected = TengwarExample2.LANGUAGE_LETTERS.toLowerCase();
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example2 transcribeReverse()", function(assert)
+    QUnit
+            .test("Example TS1 postProcessReverse()",
+                    function(assert)
+                    {
+                        // Setup.
+                        var transcriber = new EnglishTengwarTranscriber();
+                        var toSequence = transcriber
+                                .transcribeReverse(TengwarExampleTS1.RUNES);
+
+                        // Run.
+                        var fromSequence = transcriber
+                                .postProcessReverse(toSequence);
+
+                        // Verify.
+                        assert.ok(fromSequence);
+                        var expected = TengwarExampleTS1.LANGUAGE_LETTERS
+                                .toLowerCase();
+                        assert.equal(fromSequence.length, expected.length);
+                        assert.equal(fromSequence, expected);
+                    });
+
+    QUnit
+            .test("Example TS2 postProcessReverse()",
+                    function(assert)
+                    {
+                        // Setup.
+                        var transcriber = new EnglishTengwarTranscriber();
+                        var toSequence = transcriber
+                                .transcribeReverse(TengwarExampleTS2.RUNES);
+
+                        // Run.
+                        var fromSequence = transcriber
+                                .postProcessReverse(toSequence);
+
+                        // Verify.
+                        assert.ok(fromSequence);
+                        var expected = TengwarExampleTS2.LANGUAGE_LETTERS
+                                .toLowerCase();
+                        assert.equal(fromSequence.length, expected.length);
+                        assert.equal(fromSequence, expected);
+                    });
+
+    QUnit.test("Example TROTS1 postProcessReverse()", function(assert)
     {
         // Setup.
         var transcriber = new EnglishTengwarTranscriber();
-        var toSequence = TengwarExample2.RUNES;
+        var toSequence = transcriber
+                .transcribeReverse(TengwarExampleTROTS1.RUNES);
 
         // Run.
-        var fromSequence = transcriber.transcribeReverse(toSequence);
+        var fromSequence = transcriber.postProcessReverse(toSequence);
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = TengwarExample2.LANGUAGE_LETTERS;
+        var expected = TengwarExampleTROTS1.LANGUAGE_LETTERS.toLowerCase();
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
+    /* 
+                   QUnit.test("Example1 transcribeForward()", function(assert)
+                   {
+                       // Setup.
+                       var transcriber = new EnglishTengwarTranscriber();
+                       var fromSequence = TengwarExample1.LANGUAGE_LETTERS;
+
+                       // Run.
+                       var toSequence = transcriber.transcribeForward(fromSequence);
+
+                       // Verify.
+                       assert.ok(toSequence);
+                       var expected = TengwarExample1.RUNES;
+                       //        assert.equal(toSequence, expected);
+                       assert.equal(toSequence.length, expected.length);
+
+                       for (var i = 0; i < toSequence.length; i++)
+                       {
+                           assert.equal(toSequence[i], expected[i], "" + i);
+                       }
+                   });
+     *//* 
+                                    QUnit.test("Example2 transcribeForward()", function(assert)
+                                    {
+                                        // Setup.
+                                        var transcriber = new EnglishTengwarTranscriber();
+                                        var fromSequence = TengwarExample2.LANGUAGE_LETTERS;
+
+                                        // Run.
+                                        var toSequence = transcriber.transcribeForward(fromSequence);
+
+                                        // Verify.
+                                        assert.ok(toSequence);
+                                        var expected = TengwarExample2.RUNES;
+                                        assert.equal(toSequence.length, expected.length);
+
+                                        for (var i = 0; i < toSequence.length; i++)
+                                        {
+                                            assert.equal(toSequence[i], expected[i], "" + i);
+                                        }
+                                    });
+     */
+    /* 
+     QUnit.test("Example3 transcribeForward()", function(assert)
+     {
+     // Setup.
+     var transcriber = new EnglishTengwarTranscriber();
+     var fromSequence = TengwarExample3.LANGUAGE_LETTERS;
+
+     // Run.
+     var toSequence = transcriber.transcribeForward(fromSequence);
+
+     // Verify.
+     assert.ok(toSequence);
+     var expected = TengwarExample3.RUNES;
+     var toSequenceString = TengwaRuneFormat.format(toSequence).replace(
+     /-/g, " ");
+     var expectedString = TengwaRuneFormat.format(expected).replace(/-/g,
+     " ");
+     assert.equal(toSequenceString, expectedString);
+     //        assert.equal(toSequence.length, expected.length);
+
+     //        for (var i = 0; i < toSequence.length; i++)
+     //        {
+     //            assert.equal(toSequence[i], expected[i], "" + i);
+     //        }
+     });
+     */
+    /*     QUnit.test("Example4 transcribeForward()", function(assert)
+     {
+     // Setup.
+     var transcriber = new EnglishTengwarTranscriber();
+     var fromSequence = TengwarExample4.LANGUAGE_LETTERS;
+
+     // Run.
+     var toSequence = transcriber.transcribeForward(fromSequence);
+
+     // Verify.
+     assert.ok(toSequence);
+     var expected = TengwarExample4.RUNES;
+     assert.equal(toSequence, expected);
+     assert.equal(toSequence.length, expected.length);
+
+     for (var i = 0; i < toSequence.length; i++)
+     {
+     assert.equal(toSequence[i], expected[i], "" + i);
+     }
+     });
+     */
+    /*  
+     QUnit.test("Example1 transcribeReverse()", function(assert)
+     {
+     // Setup.
+     var transcriber = new EnglishTengwarTranscriber();
+     var toSequence = TengwarExample1.RUNES;
+
+     // Run.
+     var fromSequence = transcriber.transcribeReverse(toSequence);
+
+     // Verify.
+     assert.ok(fromSequence);
+     var expected = TengwarExample1.LANGUAGE_LETTERS;
+     assert.equal(fromSequence.length, expected.length);
+     assert.equal(fromSequence, expected);
+     });
+     */
+
+    QUnit
+            .test(
+                    "Example2 transcribeReverse()",
+                    function(assert)
+                    {
+                        // Setup.
+                        var transcriber = new EnglishTengwarTranscriber();
+                        var toSequence = TengwarExample2.RUNES;
+
+                        // Run.
+                        var fromSequence = transcriber
+                                .transcribeReverse(toSequence);
+
+                        // Verify.
+                        assert.ok(fromSequence);
+                        var expected = "of wistmarch by ghon ronald riuil tolkein.hiren es sit forth\n"
+                                + "the hestory of the war of the reng and the riturn of the keng az siin by the hobets.";
+                        assert.equal(fromSequence.length, expected.length);
+                        assert.equal(fromSequence, expected);
+                    });
+
+    QUnit
+            .test(
+                    "Example TS1 transcribeReverse()",
+                    function(assert)
+                    {
+                        // Setup.
+                        var transcriber = new EnglishTengwarTranscriber();
+                        var toSequence = TengwarExampleTS1.RUNES;
+
+                        // Run.
+                        var fromSequence = transcriber
+                                .transcribeReverse(toSequence);
+
+                        // Verify.
+                        assert.ok(fromSequence);
+                        var expected = "the tales of the first age when morgoth dwelt in midle erth\n"
+                                + "and the elves made wor upon him for the rekovery of the silmarils.";
+                        assert.equal(fromSequence.length, expected.length);
+                        assert.equal(fromSequence, expected);
+                    });
+
+    QUnit
+            .test(
+                    "Example TS2 transcribeReverse()",
+                    function(assert)
+                    {
+                        // Setup.
+                        var transcriber = new EnglishTengwarTranscriber();
+                        var toSequence = TengwarExampleTS2.RUNES;
+
+                        // Run.
+                        var fromSequence = transcriber
+                                .transcribeReverse(toSequence);
+
+                        // Verify.
+                        assert.ok(fromSequence);
+                        var expected = "to which are apended the downfal of numenor and the history of the\n"
+                                + "rings of powr and the third age in which these tales kome to their end.";
+                        assert.equal(fromSequence.length, expected.length);
+                        assert.equal(fromSequence, expected);
+                    });
+
+    QUnit
+            .test(
+                    "Example TROTS1 transcribeReverse()",
+                    function(assert)
+                    {
+                        // Setup.
+                        var transcriber = new EnglishTengwarTranscriber();
+                        var toSequence = TengwarExampleTROTS1.RUNES;
+
+                        // Run.
+                        var fromSequence = transcriber
+                                .transcribeReverse(toSequence);
+
+                        // Verify.
+                        assert.ok(fromSequence);
+                        var expected = "in the return of the shadow are traced the first forms of the story of the lord\n"
+                                + "of the rings.herein the gourney of the hobit whi bore the great ring,at first";
+                        assert.equal(fromSequence.length, expected.length);
+                        assert.equal(fromSequence, expected);
+                    });
 </script>
 </head>
 <body>
