@@ -405,7 +405,7 @@ var TengwaRune =
             name: "LEFT_UNDER_CURL",
             displayName: "left_under_curl",
             nameMeaning: "left under curl",
-            fontLetter: "å",
+            fontLetter: "&#229;",
         },
         "topCurl":
         {
