@@ -56,7 +56,6 @@ public final class TengwarFontTranscriberTest extends DefaultFontTranscriberTest
     /**
      * Test the <code>transcribeForward()</code> method.
      */
-    @Ignore
     @Test
     public void transcribeForward3()
     {
@@ -70,7 +69,6 @@ public final class TengwarFontTranscriberTest extends DefaultFontTranscriberTest
     /**
      * Test the <code>transcribeForward()</code> method.
      */
-    @Ignore
     @Test
     public void transcribeForward4()
     {
@@ -123,7 +121,6 @@ public final class TengwarFontTranscriberTest extends DefaultFontTranscriberTest
     /**
      * Test the <code>transcribeReverse()</code> method.
      */
-    @Ignore
     @Test
     public void transcribeReverse3()
     {
@@ -143,7 +140,6 @@ public final class TengwarFontTranscriberTest extends DefaultFontTranscriberTest
     /**
      * Test the <code>transcribeReverse()</code> method.
      */
-    @Ignore
     @Test
     public void transcribeReverse4()
     {
