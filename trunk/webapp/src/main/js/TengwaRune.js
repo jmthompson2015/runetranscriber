@@ -490,8 +490,13 @@ var TengwaRune =
             "underBar", "space", "comma", "period", "newline", ],
 
     // Tehtar (diacritic marks)
-    tehtar: [ "threeDots", "circumflex", "acute", "dot", "leftCurl", "topCurl",
-            "rightCurl", "chevron", "bar" ],
+    tehtar: [ "threeDots", "threeUnderDots", "bar", // a
+    "dot", "underDot", // e
+    "acute", // i
+    "leftCurl", "leftUnderCurl", // o
+    "rightCurl", "topCurl", // u
+    "underBar", "circumflex", "chevron" // other
+    ],
 }
 
 if (Object.freeze)
