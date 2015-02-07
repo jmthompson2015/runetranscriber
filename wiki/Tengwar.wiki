@@ -19,6 +19,13 @@
   * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageUpper.html Title Page (upper inscription)]
   * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/silmarillionTitlePageLower.html Title Page (lower inscription)]
 
+== Unfinished Tales Of Numenor And Middle-Earth ==
+
+=== Title Page ===
+
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/utonameTitlePageUpper.html Title Page (upper inscription)]
+  * [https://runetranscriber.googlecode.com/svn/trunk/core/doc/utonameTitlePageLower.html Title Page (lower inscription)]
+
 == The Return Of The Shadow ==
 
 === Title Page ===
