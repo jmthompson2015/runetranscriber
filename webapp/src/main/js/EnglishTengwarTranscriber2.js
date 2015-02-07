@@ -1,80 +1,13 @@
 var EnglishTengwarTranscriber2 = function()
 {
-    var runeToLanguageMap = {};
-
-    // Runes.
-    runeToLanguageMap[TengwaRune.THREE_DOTS] = "a";
-    runeToLanguageMap[TengwaRune.THREE_UNDER_DOTS] = "a";
-    runeToLanguageMap[TengwaRune.UMBAR] = "b";
-    runeToLanguageMap[TengwaRune.SILME_NUQUERNA] = "c";
-    runeToLanguageMap[TengwaRune.CALMA] = "ch";
-    runeToLanguageMap[TengwaRune.ANDO] = "d";
-    runeToLanguageMap[TengwaRune.DOT] = "e";
-    runeToLanguageMap[TengwaRune.UNDER_DOT] = "e";
-    runeToLanguageMap[TengwaRune.FORMEN] = "f";
-    runeToLanguageMap[TengwaRune.UNGWE] = "g";
-    runeToLanguageMap[TengwaRune.HYARMEN] = "h";
-    runeToLanguageMap[TengwaRune.ACUTE] = "i";
-    runeToLanguageMap[TengwaRune.YANTA] = "i";
-    runeToLanguageMap[TengwaRune.ANGA] = "j";
-    runeToLanguageMap[TengwaRune.QUESSE] = "k";
-    runeToLanguageMap[TengwaRune.LAMBE] = "l";
-    runeToLanguageMap[TengwaRune.MALTA] = "m";
-    runeToLanguageMap[TengwaRune.NUMEN] = "n";
-    runeToLanguageMap[TengwaRune.NGWALME] = "ng";
-    runeToLanguageMap[TengwaRune.LEFT_CURL] = "o";
-    runeToLanguageMap[TengwaRune.LEFT_UNDER_CURL] = "o";
-    runeToLanguageMap[TengwaRune.OF] = "of";
-    runeToLanguageMap[TengwaRune.OF_THE] = "of the";
-    runeToLanguageMap[TengwaRune.PARMA] = "p";
-    runeToLanguageMap[TengwaRune.ORE] = "r";
-    runeToLanguageMap[TengwaRune.ROMEN] = "r";
-    runeToLanguageMap[TengwaRune.SILME] = "s";
-    runeToLanguageMap[TengwaRune.HARMA] = "sh";
-    runeToLanguageMap[TengwaRune.TINCO] = "t";
-    runeToLanguageMap[TengwaRune.ANTO] = "th";
-    runeToLanguageMap[TengwaRune.THULE] = "th";
-    runeToLanguageMap[TengwaRune.THE] = "the";
-    runeToLanguageMap[TengwaRune.RIGHT_CURL] = "u";
-    runeToLanguageMap[TengwaRune.URE] = "u";
-    runeToLanguageMap[TengwaRune.TOP_CURL] = "u";
-    runeToLanguageMap[TengwaRune.AMPA] = "v";
-    runeToLanguageMap[TengwaRune.VALA] = "w";
-    runeToLanguageMap[TengwaRune.HWESTA_SINDARINWA] = "wh";
-    runeToLanguageMap[TengwaRune.ANNA] = "y";
-    runeToLanguageMap[TengwaRune.ESSE] = "z";
-    runeToLanguageMap[TengwaRune.ESSE_NUQUERNA] = "z";
-
-    // runeToLanguageMap[TengwaRune.HWESTA] = "?";
-    // runeToLanguageMap[TengwaRune.ANCA] = "?";
-    // runeToLanguageMap[TengwaRune.UNQUE] = "?";
-    // runeToLanguageMap[TengwaRune.NGOLDO] = "?";
-    // runeToLanguageMap[TengwaRune.VILYA] = "?";
-    // runeToLanguageMap[TengwaRune.ARDA] = "?";
-    // runeToLanguageMap[TengwaRune.ALDA] = "?";
-    // runeToLanguageMap[TengwaRune.ESSE_NUQUERNA] = "?";
-    // runeToLanguageMap[TengwaRune.CIRCUMFLEX] = "?";
-    // runeToLanguageMap[TengwaRune.CHEVRON] = "?";
-    // runeToLanguageMap[TengwaRune.BAR] = "?";
-    // runeToLanguageMap[TengwaRune.UNDER_BAR] = "?";
-    // runeToLanguageMap[TengwaRune.SHORT_CARRIER] = "?";
-    // runeToLanguageMap[TengwaRune.LONG_CARRIER] = "?";
-
-    // Punctuation.
-    runeToLanguageMap[TengwaRune.HYPHEN] = "-";
-    runeToLanguageMap[TengwaRune.SPACE] = " ";
-    runeToLanguageMap[TengwaRune.COMMA] = ",";
-    runeToLanguageMap[TengwaRune.PERIOD] = ".";
-    runeToLanguageMap[TengwaRune.NEWLINE] = "\n";
+    var runeToPhonemeMap = {};
 
     // Combinations.
-    runeToLanguageMap[[ TengwaRune.THREE_DOTS, TengwaRune.YANTA ]] = "ai";
-    runeToLanguageMap[[ TengwaRune.BAR, TengwaRune.ANDO ]] = "and";
-    runeToLanguageMap[[ TengwaRune.DOT, TengwaRune.DOT ]] = "ee";
-    runeToLanguageMap[[ TengwaRune.LEFT_CURL, TengwaRune.LONG_CARRIER ]] = "oo";
-    runeToLanguageMap[[ TengwaRune.LEFT_CURL, TengwaRune.QUESSE,
-            TengwaRune.LEFT_UNDER_CURL ]] = "ox";
-    runeToLanguageMap[[ TengwaRune.ACUTE, TengwaRune.LONG_CARRIER ]] = "y";
+    runeToPhonemeMap[[ TengwaRune.THREE_DOTS, TengwaRune.YANTA ]] = "ai";
+    runeToPhonemeMap[[ TengwaRune.BAR, TengwaRune.ANDO ]] = "and";
+    runeToPhonemeMap[[ TengwaRune.DOT, TengwaRune.DOT ]] = "ee";
+    runeToPhonemeMap[[ TengwaRune.LEFT_CURL, TengwaRune.LONG_CARRIER ]] = "oo";
+    runeToPhonemeMap[[ TengwaRune.ACUTE, TengwaRune.LONG_CARRIER ]] = "y";
 
     // Check for missing entries.
     // {
@@ -85,7 +18,7 @@ var EnglishTengwarTranscriber2 = function()
     // {
     // var rune = values[i];
     //
-    // if (!runeToLanguageMap[rune])
+    // if (!runeToPhonemeMap[rune])
     // {
     // LOGGER.error("Missing language letter for "
     // + properties[rune].name);
@@ -93,10 +26,57 @@ var EnglishTengwarTranscriber2 = function()
     // }
     // }
 
-    this.getRuneToLanguageMap = function()
+    var phonemeToLanguageMap = {};
+
+    phonemeToLanguageMap["akkount"] = "account";
+    phonemeToLanguageMap["akownt"] = "account";
+    phonemeToLanguageMap["aje"] = "age";
+    phonemeToLanguageMap["az"] = "as";
+    phonemeToLanguageMap["kataklysm"] = "cataclysm";
+    phonemeToLanguageMap["certan"] = "certain";
+    phonemeToLanguageMap["kristofer"] = "christopher";
+    phonemeToLanguageMap["kome"] = "come";
+    phonemeToLanguageMap["druedaiin"] = "druedain";
+    phonemeToLanguageMap["hireen"] = "herein";
+    phonemeToLanguageMap["hobbets"] = "hobbits";
+    phonemeToLanguageMap["iz"] = "is";
+    phonemeToLanguageMap["jhon"] = "john";
+    phonemeToLanguageMap["keng"] = "king";
+    phonemeToLanguageMap["destruktion"] = "destruction";
+    phonemeToLanguageMap["oksford"] = "oxford";
+    phonemeToLanguageMap["powr"] = "power";
+    phonemeToLanguageMap["rekovery"] = "recovery";
+    phonemeToLanguageMap["riuil"] = "reuel";
+    phonemeToLanguageMap["reng"] = "ring";
+    phonemeToLanguageMap["skolars"] = "scholars";
+    phonemeToLanguageMap["sit"] = "set";
+    phonemeToLanguageMap["tolkein"] = "tolkien";
+    phonemeToLanguageMap["wor"] = "war";
+    phonemeToLanguageMap["wistmarch"] = "westmarch";
+
+    this.getPhonemeToLanguageMap = function()
     {
-        return runeToLanguageMap;
+        return phonemeToLanguageMap;
     }
+
+    this.getRuneToPhonemeMap = function()
+    {
+        return runeToPhonemeMap;
+    }
+}
+
+EnglishTengwarTranscriber2.prototype.convertWord = function(word)
+{
+    var answer = word;
+    var map = this.getPhonemeToLanguageMap();
+    var word2 = map[word];
+
+    if (word2)
+    {
+        answer = word2;
+    }
+
+    return answer;
 }
 
 EnglishTengwarTranscriber2.prototype.determineFontLetter = function(rune)
@@ -160,51 +140,77 @@ EnglishTengwarTranscriber2.prototype.determineFontLetter = function(rune)
     return answer;
 }
 
-EnglishTengwarTranscriber2.prototype.determineLanguageLetter = function(rune)
+EnglishTengwarTranscriber2.prototype.determineLanguageLetter = function(phoneme)
 {
     var answer;
 
-    var map = this.getRuneToLanguageMap();
+    if (Array.isArray(phoneme))
+    {
+        answer = "";
+
+        for (var i = 0; i < phoneme.length; i++)
+        {
+            answer += this.determineLanguageLetter(phoneme[i]);
+        }
+    }
+    else
+    {
+        answer = phoneme;
+    }
+
+    return answer;
+}
+
+EnglishTengwarTranscriber2.prototype.determinePhoneme = function(rune)
+{
+    var answer = "?";
+
+    var map = this.getRuneToPhonemeMap();
     var letter = map[rune];
 
     if (letter)
     {
         answer = letter;
     }
-    else if (Array.isArray(rune))
+    else
     {
-        answer = [];
+        if (Array.isArray(rune))
+        {
+            answer = [];
 
-        if (rune.length === 2 && rune[1] == "shortCarrier")
-        {
-            answer[answer.length] = this.determineLanguageLetter(rune[0]);
-        }
-        else if (rune.length === 3 && rune[1] == "shortCarrier")
-        {
-            answer[answer.length] = this.determineLanguageLetter(rune[0]);
-            answer[answer.length] = this.determineLanguageLetter(rune[2]);
-        }
-        else
-        {
-            for (var i = 0; i < rune.length; i++)
+            if (rune.length === 2 && rune[1] == "shortCarrier")
             {
-                if (rune[i] === "underBar" && i - 1 >= 0)
+                answer[answer.length] = this.determinePhoneme(rune[0]);
+            }
+            else if (rune.length === 3 && rune[1] == "shortCarrier")
+            {
+                answer[answer.length] = this.determinePhoneme(rune[0]);
+                answer[answer.length] = this.determinePhoneme(rune[2]);
+            }
+            else
+            {
+                for (var i = 0; i < rune.length; i++)
                 {
-                    // Repeat the previous letter.
-                    answer[answer.length] = this
-                            .determineLanguageLetter(rune[i - 1]);
-                }
-                else
-                {
-                    answer[answer.length] = this
-                            .determineLanguageLetter(rune[i]);
+                    if (rune[i] === "underBar" && i - 1 >= 0)
+                    {
+                        // Repeat the previous letter.
+                        answer[answer.length] = this
+                                .determinePhoneme(rune[i - 1]);
+                    }
+                    else
+                    {
+                        answer[answer.length] = this.determinePhoneme(rune[i]);
+                    }
                 }
             }
         }
-    }
-    else
-    {
-        answer = "?";
+        else
+        {
+            var properties = TengwaRune.properties;
+            var phoneme = properties[rune].phoneme;
+
+            answer = phoneme;
+        }
     }
 
     return answer;
@@ -215,6 +221,38 @@ EnglishTengwarTranscriber2.prototype.isPreVowel = function(rune)
     return rune === "acute" || rune === "bar" || rune === "dot"
             || rune === "leftCurl" || rune === "rightCurl"
             || rune === "threeDots" || rune === "topCurl";
+}
+
+EnglishTengwarTranscriber2.prototype.phonemesToLanguageWords = function(
+        phonemes)
+{
+    var answer = [];
+
+    var word = "";
+
+    for (var i = 0; i < phonemes.length; i++)
+    {
+        var phoneme = phonemes[i];
+
+        if (phoneme === " " || phoneme === "," || phoneme === "."
+                || phoneme === "\n")
+        {
+            answer[answer.length] = this.convertWord(word);
+            answer[answer.length] = phoneme;
+            word = "";
+        }
+        else if (i === phonemes.length - 1)
+        {
+            word += this.determineLanguageLetter(phoneme);
+            answer[answer.length] = this.convertWord(word);
+        }
+        else
+        {
+            word += this.determineLanguageLetter(phoneme);
+        }
+    }
+
+    return answer;
 }
 
 EnglishTengwarTranscriber2.prototype.runesToFontLetters = function(runes)
@@ -237,7 +275,15 @@ EnglishTengwarTranscriber2.prototype.runesToFontLetters = function(runes)
     return answer;
 }
 
-EnglishTengwarTranscriber2.prototype.runesToLanguageLetters = function(runes)
+EnglishTengwarTranscriber2.prototype.runesToLanguageWords = function(runes)
+{
+    var phonemes = this.runesToPhonemes(runes);
+    var answer = this.phonemesToLanguageWords(phonemes);
+
+    return answer;
+}
+
+EnglishTengwarTranscriber2.prototype.runesToPhonemes = function(runes)
 {
     var answer = [];
 
@@ -245,17 +291,14 @@ EnglishTengwarTranscriber2.prototype.runesToLanguageLetters = function(runes)
     {
         var rune = runes[i];
 
-        if (rune !== "newline")
+        if (rune === "underBar" && i - 1 >= 0)
         {
-            if (rune === "underBar" && i - 1 >= 0)
-            {
-                // Repeat the previous letter.
-                answer[answer.length] = runes[i - 1];
-            }
-            else
-            {
-                answer[answer.length] = this.determineLanguageLetter(rune);
-            }
+            // Repeat the previous letter.
+            answer[answer.length] = runes[i - 1];
+        }
+        else
+        {
+            answer[answer.length] = this.determinePhoneme(rune);
         }
     }
 
