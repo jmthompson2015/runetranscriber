@@ -70,6 +70,7 @@ var TengwaRune =
             displayName: "tinco",
             nameMeaning: "metal",
             fontLetter: "1",
+            phoneme: "t",
         },
         "parma":
         {
@@ -77,6 +78,7 @@ var TengwaRune =
             displayName: "parma",
             nameMeaning: "book",
             fontLetter: "q",
+            phoneme: "p",
         },
         "calma":
         {
@@ -84,6 +86,7 @@ var TengwaRune =
             displayName: "calma",
             nameMeaning: "lamp",
             fontLetter: "a",
+            phoneme: "ch",
         },
         "quesse":
         {
@@ -91,6 +94,7 @@ var TengwaRune =
             displayName: "quesse",
             nameMeaning: "feather",
             fontLetter: "z",
+            phoneme: "k",
         },
         "ando":
         {
@@ -98,6 +102,7 @@ var TengwaRune =
             displayName: "ando",
             nameMeaning: "gate",
             fontLetter: "2",
+            phoneme: "d",
         },
         "umbar":
         {
@@ -105,6 +110,7 @@ var TengwaRune =
             displayName: "umbar",
             nameMeaning: "fate",
             fontLetter: "w",
+            phoneme: "b",
         },
         "anga":
         {
@@ -112,6 +118,7 @@ var TengwaRune =
             displayName: "anga",
             nameMeaning: "iron",
             fontLetter: "s",
+            phoneme: "j",
         },
         "ungwe":
         {
@@ -119,6 +126,7 @@ var TengwaRune =
             displayName: "ungwe",
             nameMeaning: "spider's web",
             fontLetter: "x",
+            phoneme: "g",
         },
         "thule":
         {
@@ -126,6 +134,7 @@ var TengwaRune =
             displayName: "thule",
             nameMeaning: "spirit or wind",
             fontLetter: "3",
+            phoneme: "th",
         },
         "formen":
         {
@@ -133,6 +142,7 @@ var TengwaRune =
             displayName: "formen",
             nameMeaning: "north",
             fontLetter: "e",
+            phoneme: "f",
         },
         "harma":
         {
@@ -140,6 +150,7 @@ var TengwaRune =
             displayName: "harma",
             nameMeaning: "treasure or rage",
             fontLetter: "d",
+            phoneme: "sh",
         },
         "hwesta":
         {
@@ -154,6 +165,7 @@ var TengwaRune =
             displayName: "anto",
             nameMeaning: "mouth",
             fontLetter: "4",
+            phoneme: "th",
         },
         "ampa":
         {
@@ -161,6 +173,7 @@ var TengwaRune =
             displayName: "ampa",
             nameMeaning: "hook",
             fontLetter: "r",
+            phoneme: "v",
         },
         "anca":
         {
@@ -182,6 +195,7 @@ var TengwaRune =
             displayName: "numen",
             nameMeaning: "west",
             fontLetter: "5",
+            phoneme: "n",
         },
         "malta":
         {
@@ -189,6 +203,7 @@ var TengwaRune =
             displayName: "malta",
             nameMeaning: "gold",
             fontLetter: "t",
+            phoneme: "m",
         },
         "ngoldo":
         {
@@ -203,6 +218,7 @@ var TengwaRune =
             displayName: "ngwalme",
             nameMeaning: "torment",
             fontLetter: "b",
+            phoneme: "ng",
         },
         "ore":
         {
@@ -210,6 +226,7 @@ var TengwaRune =
             displayName: "ore",
             nameMeaning: "heart or inner mind",
             fontLetter: "6",
+            phoneme: "r",
         },
         "vala":
         {
@@ -217,6 +234,7 @@ var TengwaRune =
             displayName: "vala",
             nameMeaning: "angelic power",
             fontLetter: "y",
+            phoneme: "w",
         },
         "anna":
         {
@@ -224,6 +242,7 @@ var TengwaRune =
             displayName: "anna",
             nameMeaning: "gift",
             fontLetter: "h",
+            phoneme: "y",
         },
         "vilya":
         {
@@ -238,6 +257,7 @@ var TengwaRune =
             displayName: "romen",
             nameMeaning: "east",
             fontLetter: "7",
+            phoneme: "r",
         },
         "arda":
         {
@@ -252,6 +272,7 @@ var TengwaRune =
             displayName: "lambe",
             nameMeaning: "tongue",
             fontLetter: "j",
+            phoneme: "l",
         },
         "alda":
         {
@@ -266,6 +287,7 @@ var TengwaRune =
             displayName: "silme",
             nameMeaning: "starlight",
             fontLetter: "8",
+            phoneme: "s",
         },
         "silmeNuquerna":
         {
@@ -273,6 +295,7 @@ var TengwaRune =
             displayName: "silme_nuquerna",
             nameMeaning: "silme reversed",
             fontLetter: "i",
+            phoneme: "c",
         },
         "esse":
         {
@@ -280,6 +303,7 @@ var TengwaRune =
             displayName: "esse",
             nameMeaning: "sunlight or name",
             fontLetter: "k",
+            phoneme: "z",
         },
         "esseNuquerna":
         {
@@ -287,6 +311,7 @@ var TengwaRune =
             displayName: "esse_nuquerna",
             nameMeaning: "aze reversed",
             fontLetter: ",",
+            phoneme: "z",
         },
         "hyarmen":
         {
@@ -294,6 +319,7 @@ var TengwaRune =
             displayName: "hyarmen",
             nameMeaning: "south",
             fontLetter: "9",
+            phoneme: "h",
         },
         "hwestaSindarinwa":
         {
@@ -301,6 +327,7 @@ var TengwaRune =
             displayName: "hwesta_sindarinwa",
             nameMeaning: "sindarin hwesta",
             fontLetter: "o",
+            phoneme: "wh",
         },
         "yanta":
         {
@@ -308,6 +335,7 @@ var TengwaRune =
             displayName: "yanta",
             nameMeaning: "bridge",
             fontLetter: "l",
+            phoneme: "i",
         },
         "ure":
         {
@@ -315,6 +343,7 @@ var TengwaRune =
             displayName: "ure",
             nameMeaning: "heat",
             fontLetter: ".",
+            phoneme: "u",
         },
         "the":
         {
@@ -322,6 +351,7 @@ var TengwaRune =
             displayName: "the",
             nameMeaning: "the",
             fontLetter: "@",
+            phoneme: "the",
         },
         "of":
         {
@@ -329,6 +359,7 @@ var TengwaRune =
             displayName: "of",
             nameMeaning: "of",
             fontLetter: "W",
+            phoneme: "of",
         },
         "ofThe":
         {
@@ -336,6 +367,7 @@ var TengwaRune =
             displayName: "of_the",
             nameMeaning: "of the",
             fontLetter: "W?",
+            phoneme: "of the",
         },
         "shortCarrier":
         {
@@ -357,6 +389,7 @@ var TengwaRune =
             displayName: "three_dots",
             nameMeaning: "three dots",
             fontLetter: "D",
+            phoneme: "a",
         },
         "threeUnderDots":
         {
@@ -364,6 +397,7 @@ var TengwaRune =
             displayName: "three_under_dots",
             nameMeaning: "three under dots",
             fontLetter: "&#209;",
+            phoneme: "a",
         },
         "circumflex":
         {
@@ -378,6 +412,7 @@ var TengwaRune =
             displayName: "acute",
             nameMeaning: "acute",
             fontLetter: "R",
+            phoneme: "i",
         },
         "dot":
         {
@@ -385,6 +420,7 @@ var TengwaRune =
             displayName: "dot",
             nameMeaning: "dot",
             fontLetter: "T",
+            phoneme: "e",
         },
         "underDot":
         {
@@ -392,6 +428,7 @@ var TengwaRune =
             displayName: "under_dot",
             nameMeaning: "under dot",
             fontLetter: "&#201;",
+            phoneme: "e",
         },
         "leftCurl":
         {
@@ -399,6 +436,7 @@ var TengwaRune =
             displayName: "left_curl",
             nameMeaning: "left curl",
             fontLetter: "Y",
+            phoneme: "o",
         },
         "leftUnderCurl":
         {
@@ -406,6 +444,7 @@ var TengwaRune =
             displayName: "left_under_curl",
             nameMeaning: "left under curl",
             fontLetter: "&#229;",
+            phoneme: "o",
         },
         "topCurl":
         {
@@ -413,6 +452,7 @@ var TengwaRune =
             displayName: "top_curl",
             nameMeaning: "top curl",
             fontLetter: "J",
+            phoneme: "u",
         },
         "rightCurl":
         {
@@ -420,6 +460,7 @@ var TengwaRune =
             displayName: "right_curl",
             nameMeaning: "right curl",
             fontLetter: "&#225;",
+            phoneme: "u",
         },
         "chevron":
         {
@@ -434,6 +475,7 @@ var TengwaRune =
             displayName: "bar",
             nameMeaning: "bar",
             fontLetter: "{",
+            phoneme: "a",
         },
         "underBar":
         {
@@ -448,6 +490,7 @@ var TengwaRune =
             displayName: "hyphen",
             nameMeaning: "hyphen",
             fontLetter: "&#183;",
+            phoneme: "-",
         },
         "space":
         {
@@ -455,6 +498,7 @@ var TengwaRune =
             displayName: "space",
             nameMeaning: "space",
             fontLetter: " ",
+            phoneme: " ",
         },
         "comma":
         {
@@ -462,6 +506,7 @@ var TengwaRune =
             displayName: "comma",
             nameMeaning: "comma",
             fontLetter: "&#183;",
+            phoneme: ",",
         },
         "period":
         {
@@ -469,6 +514,7 @@ var TengwaRune =
             displayName: "period",
             nameMeaning: "period",
             fontLetter: "-",
+            phoneme: ".",
         },
         "newline":
         {
@@ -476,6 +522,7 @@ var TengwaRune =
             displayName: "newline",
             nameMeaning: "newline",
             fontLetter: "\n",
+            phoneme: "\n",
         },
     },
     values: [ "tinco", "parma", "calma", "quesse", "ando", "umbar", "anga",
