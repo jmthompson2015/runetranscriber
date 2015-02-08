@@ -7,9 +7,9 @@ Add your content here.
 
 = Details =
 
-|| *Entity* || *Function* ||
-|| Font Letters || runesToFontLetters() ||
-|| Runes || _entry point_ ||
-|| Phonemes || runesToPhonemes() ||
-|| Language Words || phonemesToLanguageWords() ||
-|| Language String || languageStringToWords(), languageWordsToString(), _entry point_ ||
+|| *Stage* || *Upward Transition Function* || *Downward Transition Function* ||
+|| Font Letters || || ||
+|| Runes || runesToFontLetters() || runesToPhonemes() ||
+|| Phonemes || phonemesToRunes() || phonemesToLanguageWords() ||
+|| Language Words || languageWordsToPhonemes() || languageWordsToString() ||
+|| Language String || languageStringToWords() || ||
