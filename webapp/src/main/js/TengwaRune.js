@@ -42,6 +42,7 @@ var TengwaRune =
     THE: "the",
     OF: "of",
     OF_THE: "ofThe",
+    GH: "gh",
     SHORT_CARRIER: "shortCarrier",
     LONG_CARRIER: "longCarrier",
     THREE_DOTS: "threeDots",
@@ -368,6 +369,14 @@ var TengwaRune =
             nameMeaning: "of the",
             fontLetter: "W?",
             phoneme: "of the",
+        },
+        "gh":
+        {
+            name: "GH",
+            displayName: "gh",
+            nameMeaning: "gh",
+            fontLetter: "X",
+            phoneme: "gh",
         },
         "shortCarrier":
         {
