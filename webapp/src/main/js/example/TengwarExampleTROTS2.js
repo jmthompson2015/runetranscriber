@@ -5,9 +5,37 @@ var TengwarExampleTROTS2 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/returnoftheshadow/TROTS_TitlePage2.jpg",
 
-    LANGUAGE_LETTERS: "named Bingo but afterwards Frodo, is followed from Hobbiton in the\n"
+    LANGUAGE_STRING: "named Bingo but afterwards Frodo, is followed from Hobbiton in the\n"
             + "Shire through the Old Forest to Weathertop and Rivendell, and ends\n"
             + "in this volume before the tomb of Balin the Dwarf-Lord of Moria.",
+
+    LANGUAGE_WORDS: [ "named", " ", "bingo", " ", "but", " ", "afterwards",
+            " ", "frodo", ",", "is", " ", "followed", " ", "from", " ",
+            "hobbiton", " ", "in", " ", "the", "\n", "shire", " ", "through",
+            " ", "the", " ", "old", " ", "forest", " ", "to", " ",
+            "weathertop", " ", "and", " ", "rivendell", " ", "and", " ",
+            "ends", "\n", "in", " ", "this", " ", "volume", " ", "before", " ",
+            "the", " ", "tomb", " ", "of", " ", "balin", " ", "the", " ",
+            "dwarf-lord", " ", "of", " ", "moria", "." ],
+
+    PHONEMES: [ "n", [ "a", "m", "e" ], "d", " ", "b", [ "i", "ng" ], "o", " ",
+            "b", [ "u", "t" ], " ", [ "a", "f" ], "t", [ "e", "r" ], "w",
+            [ "a", "r" ], "d", "s", " ", "f", "r", [ "o", "d" ], "o", ",",
+            [ "i", "s" ], " ", "f", [ "o", "l", "l" ], [ "o", "w", "e" ], "d",
+            " ", "f", "r", [ "o", "m" ], " ", "h", [ "o", "b", "b" ],
+            [ "i", "t" ], [ "o", "n" ], " ", [ "i", "n" ], " ", "the", "\n",
+            "sh", [ "i", "r", "e" ], " ", "th", "r", [ "o", "u" ], "gh", " ",
+            "the", " ", [ "o", "l" ], "d", " ", "f", [ "o", "r" ],
+            [ "e", "s" ], "t", " ", "t", "o", " ", "w", [ "e", "a" ], "th",
+            [ "e", "r" ], "t", [ "o", "p" ], " ", [ "a", "n", "d" ], " ", "r",
+            [ "i", "v" ], [ "e", "n" ], "d", [ "e", "l", "l" ], " ",
+            [ "a", "n", "d" ], " ", [ "e", "n" ], "d", "s", "\n", [ "i", "n" ],
+            " ", "th", [ "i", "s" ], " ", "v", [ "o", "l" ], [ "u", "m", "e" ],
+            " ", [ "b", "e" ], "f", [ "o", "r", "e" ], " ", "the", " ", "t",
+            [ "o", "m" ], "b", " ", "of", " ", "b", [ "a", "l" ], [ "i", "n" ],
+            " ", "the", " ", "d", "w", [ "a", "r" ], "f", "-", "l",
+            [ "o", "r" ], "d", " ", "of", " ", "m", [ "o", "r" ], [ "i", "a" ],
+            "." ],
 
     RUNES: [
             // Line 1
@@ -179,6 +207,26 @@ var TengwarExampleTROTS2 =
             [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
             [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER,
                     TengwaRune.THREE_UNDER_DOTS ], TengwaRune.PERIOD, ],
+
+    FONT_LETTERS: [ "5", [ "t", "D", "&#201;" ], "2", " ", "w", [ "b", "R" ],
+            [ "`", "Y" ], " ", "w", [ "1", "&#225;" ], " ", [ "e", "D" ], "1",
+            [ "6", "T" ], "y", [ "6", "D" ], "2", "8", " ", "e", "7",
+            [ "2", "Y" ], [ "`", "Y" ], "&#183;", [ "8", "R" ], " ", "e",
+            [ "j", "Y", "&#237;" ], [ "y", "Y", "&#201;" ], "2", " ", "e", "7",
+            [ "t", "Y" ], " ", "9", [ "w", "Y", "&#237;" ], [ "1", "R" ],
+            [ "5", "Y" ], " ", [ "5", "R" ], " ", "@", "d",
+            [ "7", "R", "&#201;" ], " ", "3", "7", [ ".", "Y" ], "X", " ", "@",
+            " ", [ "j", "Y" ], "2", " ", "e", [ "7", "Y" ], [ "8", "T" ], "1",
+            " ", "1", [ "`", "Y" ], " ", "y", [ "`", "T", "&#209;" ], "4",
+            [ "6", "T" ], "1", [ "q", "Y" ], " ", [ "5", "D", "2" ], " ", "7",
+            [ "r", "R" ], [ "5", "T" ], "2", [ "j", "T", "&#237;" ], " ",
+            [ "5", "D", "2" ], " ", [ "5", "T" ], "2", "8", [ "5", "R" ], " ",
+            "4", [ "8", "R" ], " ", "r", [ "j", "Y" ],
+            [ "t", "&#225;", "&#201;" ], " ", [ "w", "&#201;" ], "e",
+            [ "6", "Y", "&#201;" ], " ", "@", " ", "1", [ "t", "Y" ], "w", " ",
+            "W", " ", "w", [ "j", "D" ], [ "5", "R" ], " ", "@", " ", "2", "y",
+            [ "6", "D" ], "e", "&#183;", "j", [ "6", "Y" ], "2", " ", "W", " ",
+            "t", [ "7", "Y" ], [ "`", "R", "&#209;" ], "-" ],
 }
 
 if (Object.freeze)

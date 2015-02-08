@@ -5,8 +5,26 @@ var TengwarExampleTWOTR1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/warofthering/TWOTR_TitlePage1.jpg",
 
-    LANGUAGE_LETTERS: "In the War of the Ring is traced the story of the victory at Helm's Deep\n"
+    LANGUAGE_STRING: "In the War of the Ring is traced the story of the victory at Helm's Deep\n"
             + "and the drowning of Isengard by the Ents, then is told of the",
+
+    LANGUAGE_WORDS: [ "in", " ", "the", " ", "war", " ", "of the", " ", "ring",
+            " ", "is", " ", "traced", " ", "the", " ", "story", " ", "of the",
+            " ", "victory", " ", "at", " ", "helms", " ", "deep", "\n", "and",
+            " ", "the", " ", "drowning", " ", "of", " ", "isengard", " ", "by",
+            " ", "the", " ", "ents", ",", "then", " ", "is", " ", "told", " ",
+            "of the" ],
+
+    PHONEMES: [ [ "i", "n" ], " ", "the", " ", "w", [ "a", "r" ], " ",
+            "of the", " ", "r", [ "i", "ng" ], " ", [ "i", "s" ], " ", "t",
+            "r", [ "a", "c", "e" ], "d", " ", "the", " ", "s", "t",
+            [ "o", "r" ], "y", " ", "of the", " ", "v", [ "i", "c" ], "t",
+            [ "o", "r" ], "y", " ", [ "a", "t" ], " ", "h", [ "e", "l" ], "m",
+            "s", " ", "d", [ "e", "e", "p" ], "\n", "and", " ", "the", " ",
+            "d", "r", [ "o", "w" ], "n", [ "i", "ng" ], " ", "of", " ",
+            [ "i", "s" ], [ "e", "n" ], "g", [ "a", "r" ], "d", " ", "b", "y",
+            " ", "the", " ", [ "e", "n" ], "t", "s", ",", "th", [ "e", "n" ],
+            " ", [ "i", "s" ], " ", "t", [ "o", "l" ], "d", " ", "of the" ],
 
     RUNES: [
             // Line 1
@@ -90,6 +108,17 @@ var TengwarExampleTWOTR1 =
             TengwaRune.ANDO, TengwaRune.SPACE,
             // of the
             TengwaRune.OF_THE, ],
+
+    FONT_LETTERS: [ [ "5", "R" ], " ", "@", " ", "y", [ "6", "D" ], " ", "W?",
+            " ", "7", [ "b", "R" ], " ", [ "8", "R" ], " ", "1", "7",
+            [ "i", "D", "&#201;" ], "2", " ", "@", " ", "8", "1", [ "7", "Y" ],
+            "h", " ", "W?", " ", "r", [ "i", "R" ], "1", [ "7", "Y" ], "h",
+            " ", [ "1", "D" ], " ", "9", [ "j", "T" ], "t", "8", " ", "2",
+            [ "q", "B", "T" ], [ "2", "{" ], " ", "@", " ", "2", "7",
+            [ "y", "Y" ], "5", [ "b", "R" ], " ", "W", " ", [ "8", "R" ],
+            [ "5", "T" ], "x", [ "6", "D" ], "2", " ", "w", "h", " ", "@", " ",
+            [ "5", "T" ], "1", "8", "&#183;", "4", [ "5", "T" ], " ",
+            [ "8", "R" ], " ", "1", [ "j", "Y" ], "2", " ", "W?" ],
 }
 
 if (Object.freeze)

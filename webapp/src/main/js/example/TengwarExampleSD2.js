@@ -5,9 +5,33 @@ var TengwarExampleSD2 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/saurondefeated/SD_TitlePage2.jpg",
 
-    LANGUAGE_LETTERS: "Then follows an account of the intrusion of the Cataclysm of the West\n"
+    LANGUAGE_STRING: "Then follows an account of the intrusion of the Cataclysm of the West\n"
             + "into the deliberations of certain scholars of Oxford and\n"
             + "the Fall of Sauron named Zigur in the Drowning of Anadune.",
+
+    LANGUAGE_WORDS: [ "then", " ", "follows", " ", "an", " ", "account", " ",
+            "of the", " ", "intrusion", " ", "of the", " ", "cataclysm", " ",
+            "of the", " ", "west", "\n", "into", " ", "the", " ",
+            "deliberations", " ", "of", " ", "certain", " ", "scholars", " ",
+            "of", " ", "oxford", " ", "and", "\n", "the", " ", "fall", " ",
+            "of", " ", "sauron", " ", "named", " ", "zigur", " ", "in", " ",
+            "the", " ", "drowning", " ", "of", " ", "anadune", "." ],
+
+    PHONEMES: [ "th", [ "e", "n" ], " ", "f", [ "o", "l", "l" ], [ "o", "w" ],
+            "s", " ", [ "a", "n" ], " ", [ "a", "k" ], [ "o", "w" ], "n", "t",
+            " ", "of the", " ", [ "i", "n" ], "t", "r", [ "u", "s" ], [ "i" ],
+            [ "o", "n" ], " ", "of the", " ", "k", [ "a", "t" ], [ "a", "k" ],
+            "l", "y", "s", "m", " ", "of the", " ", "w", [ "e", "s" ], "t",
+            "\n", [ "i", "n" ], "t", [ "o" ], " ", "the", " ", "d",
+            [ "e", "l" ], [ "i", "b" ], [ "e", "r" ], [ "a" ], "t", [ "i" ],
+            [ "o", "n" ], "s", " ", "of", " ", "c", [ "e", "r" ], "t", [ "a" ],
+            "n", " ", "s", "k", [ "o", "l" ], [ "a", "r" ], "s", " ", "of",
+            " ", [ "o", "k" ], "s", "f", [ "o", "r" ], "d", " ", "and", "\n",
+            "the", " ", "f", [ "a", "l", "l" ], " ", "of", " ", "s", [ "a" ],
+            [ "u", "r" ], [ "o", "n" ], " ", "n", [ "a", "m" ], [ "e", "d" ],
+            " ", "z", [ "i", "g" ], [ "u", "r" ], " ", [ "i", "n" ], " ",
+            "the", " ", "d", "r", [ "o", "w" ], "n", [ "i", "ng" ], " ", "of",
+            " ", [ "a", "n" ], [ "a", "d" ], [ "u", "n", "e" ], "." ],
 
     RUNES: [
     // Line 1
@@ -115,6 +139,24 @@ var TengwarExampleSD2 =
             [ TengwaRune.THREE_DOTS, TengwaRune.ANDO ],
             [ TengwaRune.RIGHT_CURL, TengwaRune.NUMEN, TengwaRune.UNDER_DOT ],
             TengwaRune.PERIOD, ],
+
+    FONT_LETTERS: [ "4", [ "5", "T" ], " ", "e", [ "j", "Y", "&#237;" ],
+            [ "y", "Y" ], "8", " ", [ "5", "D" ], " ", [ "z", "D" ],
+            [ "y", "Y" ], "5", "1", " ", "W?", " ", [ "5", "R" ], "1", "7",
+            [ "8", "&#225;" ], [ "`", "R" ], [ "5", "Y" ], " ", "W?", " ", "z",
+            [ "1", "D" ], [ "z", "D" ], "j", "h", "8", "t", " ", "W?", " ",
+            "y", [ "8", "T" ], "1", [ "5", "R" ], "1", [ "`", "Y" ], " ", "@",
+            " ", "2", [ "j", "T" ], [ "w", "R" ], [ "6", "T" ], [ "`", "D" ],
+            "1", [ "`", "R" ], [ "5", "Y" ], "8", " ", "W", " ", "i",
+            [ "6", "T" ], "1", [ "`", "D" ], "5", " ", "8", "z", [ "j", "Y" ],
+            [ "6", "D" ], "8", " ", "W", " ", [ "z", "Y" ], "8", "e",
+            [ "6", "Y" ], "2", " ", [ "2", "{" ], "@", " ", "e",
+            [ "j", "D", "&#237;" ], " ", "W", " ", "8", [ "`", "D" ],
+            [ "7", "&#225;" ], [ "5", "Y" ], " ", "5", [ "t", "D" ],
+            [ "2", "T" ], " ", "k", [ "x", "R" ], [ "7", "&#225;" ], " ",
+            [ "5", "R" ], " ", "@", " ", "2", "7", [ "y", "Y" ], "5",
+            [ "b", "R" ], " ", "W", " ", [ "5", "D" ], [ "2", "D" ],
+            [ "5", "&#225;", "&#201;" ], "-" ],
 }
 
 if (Object.freeze)

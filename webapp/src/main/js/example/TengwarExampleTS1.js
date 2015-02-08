@@ -5,8 +5,26 @@ var TengwarExampleTS1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/silmarillion/TheSilmarillion_TitlePage1.png",
 
-    LANGUAGE_LETTERS: "The Tales of the First Age when Morgoth dwelt in Middle-earth\n"
+    LANGUAGE_STRING: "The Tales of the First Age when Morgoth dwelt in Middle-earth\n"
             + "and the Elves made war upon him for the recovery of the Silmarils.",
+
+    LANGUAGE_WORDS: [ "the", " ", "tales", " ", "of", " ", "the", " ", "first",
+            " ", "age", " ", "when", " ", "morgoth", " ", "dwelt", " ", "in",
+            " ", "middle", " ", "earth", "\n", "and", " ", "the", " ", "elves",
+            " ", "made", " ", "war", " ", "upon", " ", "him", " ", "for", " ",
+            "the", " ", "recovery", " ", "of the", " ", "silmarils", "." ],
+
+    PHONEMES: [ "the", " ", "t", [ "a", "l", "e" ], "s", " ", "of", " ", "the",
+            " ", "f", [ "i", "r" ], "s", "t", " ", [ "a", "j", "e" ], " ",
+            "wh", [ "e", "n" ], " ", "m", [ "o", "r" ], "g", [ "o", "th" ],
+            " ", "d", "w", [ "e", "l" ], "t", " ", [ "i", "n" ], " ", "m",
+            [ "i", "d", "d" ], [ "l", "e" ], " ", [ "e", "a" ], "r", "th",
+            "\n", "and", " ", "the", " ", [ "e", "l" ], [ "v", "e" ], "s", " ",
+            "m", [ "a", "d", "e" ], " ", "w", [ "o", "r" ], " ", [ "u", "p" ],
+            [ "o", "n" ], " ", "h", [ "i", "m" ], " ", "f", [ "o", "r" ], " ",
+            "the", " ", "r", [ "e", "k" ], [ "o", "v" ], [ "e", "r" ], "y",
+            " ", "of the", " ", "s", [ "i", "l" ], "m", [ "a", "r" ],
+            [ "i", "l" ], "s", "." ],
 
     RUNES: [ // Line 1
             // the
@@ -100,6 +118,19 @@ var TengwarExampleTS1 =
             TengwaRune.MALTA, [ TengwaRune.THREE_DOTS, TengwaRune.ROMEN ],
             [ TengwaRune.ACUTE, TengwaRune.LAMBE ], TengwaRune.SILME,
             TengwaRune.PERIOD ],
+
+    FONT_LETTERS: [ "@", " ", "1", [ "j", "D", "&#201;" ], "8", " ", "W", " ",
+            "@", " ", "e", [ "6", "R" ], "8", "1", " ", [ "s", "D", "&#201;" ],
+            " ", "o", [ "5", "T" ], " ", "t", [ "6", "Y" ], "x", [ "3", "Y" ],
+            " ", "2", "y", [ "j", "T" ], "1", " ", [ "5", "R" ], " ", "t",
+            [ "2", "R", "&#237;" ], [ "j", "&#201;" ], " ",
+            [ "`", "T", "&#209;" ], "6", "3", [ "2", "{" ], " ", "@", " ",
+            [ "j", "T" ], [ "r", "&#201;" ], "8", " ", "t",
+            [ "2", "D", "&#201;" ], " ", "y", [ "6", "Y" ], " ",
+            [ "q", "&#225;" ], [ "5", "Y" ], " ", "9", [ "t", "R" ], " ", "e",
+            [ "6", "Y" ], " ", "@", " ", "7", [ "z", "T" ], [ "r", "Y" ],
+            [ "7", "T" ], [ "~", "R" ], " ", "W?", " ", "8", [ "j", "R" ], "t",
+            [ "7", "D" ], [ "j", "R" ], "8", "-" ],
 }
 
 if (Object.freeze)

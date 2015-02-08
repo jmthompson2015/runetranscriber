@@ -5,9 +5,37 @@ var TengwarExampleTTOI2 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/treasonofisengard/TTOI_TitlePage2.jpg",
 
-    LANGUAGE_LETTERS: "of its ending at Calembel beside Anduin the Great river, then is\n"
+    LANGUAGE_STRING: "of its ending at Calembel beside Anduin the Great river, then is\n"
             + "told of the return of Gandalf Mithrandir, of the meeting of the hobbits with\n"
             + "Fangorn and of the war upon the Riders of Rohan by the traitor Saruman.",
+
+    LANGUAGE_WORDS: [ "of", " ", "its", " ", "ending", " ", "at", " ",
+            "calembel", " ", "beside", " ", "anduin", " ", "the", " ", "great",
+            " ", "river", ".", "then", " ", "is", "\n", "told", " ", "of the",
+            " ", "return", " ", "of", " ", "gandalf", " ", "mithrandir", ",",
+            "of the", " ", "meeting", " ", "of the", " ", "hobbits", " ",
+            "with", "\n", "fangorn", ",", "and", " ", "of the", " ", "war",
+            " ", "upon", " ", "the", " ", "riders", " ", "of", " ", "rohan",
+            " ", "by", " ", "the", " ", "traitor", " ", "saruman", "." ],
+
+    PHONEMES: [ "of", " ", [ "i", "t" ], "s", " ", [ "e", "n" ], "d",
+            [ "i", "ng" ], " ", [ "a", "t" ], " ", "c", [ "a", "l" ],
+            [ "e", "m" ], "b", [ "e", "l" ], " ", [ "b", "e" ], "s",
+            [ "i", "d", "e" ], " ", [ "a", "n" ], "d", [ "u", "i" ], "n", " ",
+            "the", " ", "g", "r", [ "e", "a" ], "t", " ", "r", [ "i", "v" ],
+            [ "e", "r" ], ".", "th", [ "e", "n" ], " ", [ "i", "s" ], "\n",
+            "t", [ "o", "l" ], "d", " ", "of the", " ", [ "r", "e" ], "t",
+            [ "u", "r" ], "n", " ", "of", " ", "g", [ "a", "n" ], "d",
+            [ "a", "l" ], "f", " ", "m", [ "i", "th" ], "r", [ "a", "n" ], "d",
+            [ "i", "r" ], ",", "of the", " ", "m", [ "e", "e", "t" ],
+            [ "i", "ng" ], " ", "of the", " ", "h", [ "o", "b", "b" ],
+            [ "i", "t" ], "s", " ", "w", [ "i", "th" ], "\n", "f",
+            [ "a", "ng" ], [ "o", "r" ], "n", ",", "and", " ", "of the", " ",
+            "w", [ "a", "r" ], " ", [ "u", "p" ], [ "o", "n" ], " ", "the",
+            " ", "r", [ "i", "d" ], [ "e", "r" ], "s", " ", "of", " ", "r",
+            "o", "h", [ "a", "n" ], " ", "b", "y", " ", "the", " ", "t", "r",
+            "ai", "t", [ "o", "r" ], " ", "s", [ "a", "r" ], [ "u", "m" ],
+            [ "a", "n" ], "." ],
 
     RUNES: [
             // Line 1
@@ -140,6 +168,25 @@ var TengwarExampleTTOI2 =
             TengwaRune.SILME, [ TengwaRune.THREE_DOTS, TengwaRune.ROMEN ],
             [ TengwaRune.RIGHT_CURL, TengwaRune.MALTA ],
             [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ], TengwaRune.PERIOD ],
+
+    FONT_LETTERS: [ "W", " ", [ "1", "R" ], "8", " ", [ "5", "T" ], "2",
+            [ "b", "R" ], " ", [ "1", "D" ], " ", "i", [ "j", "D" ],
+            [ "t", "T" ], "w", [ "j", "T" ], " ", [ "w", "&#201;" ], "8",
+            [ "2", "R", "&#201;" ], " ", [ "5", "D" ], "2", [ "l", "J" ], "5",
+            " ", "@", " ", "x", "7", [ "`", "T", "&#209;" ], "1", " ", "7",
+            [ "r", "R" ], [ "6", "T" ], "-", "3", [ "5", "T" ], " ",
+            [ "8", "R" ], "1", [ "j", "Y" ], "2", " ", "W?", " ",
+            [ "7", "&#201;" ], "1", [ "6", "&#225;" ], "5", " ", "W", " ", "x",
+            [ "5", "D" ], "2", [ "j", "D" ], "e", " ", "t", [ "3", "R" ], "7",
+            [ "5", "D" ], "2", [ "7", "R" ], "&#183;", "W?", " ", "t",
+            [ "1", "B", "T" ], [ "b", "R" ], " ", "W?", " ", "9",
+            [ "w", "Y", "&#237;" ], [ "1", "R" ], "8", " ", "y", [ "3", "R" ],
+            "e", [ "b", "D" ], [ "6", "Y" ], "5", "&#183;", [ "2", "{" ], " ",
+            "W?", " ", "y", [ "6", "D" ], " ", [ "q", "&#225;" ], [ "5", "Y" ],
+            " ", "@", " ", "7", [ "2", "R" ], [ "6", "T" ], "8", " ", "W", " ",
+            "7", [ "`", "Y" ], "9", [ "5", "D" ], " ", "w", "h", " ", "@", " ",
+            "1", "7", [ "l", "D" ], "1", [ "6", "Y" ], " ", "8", [ "7", "D" ],
+            [ "t", "&#225;" ], [ "5", "D" ], "-" ],
 }
 
 if (Object.freeze)
