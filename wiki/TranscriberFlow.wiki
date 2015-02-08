@@ -8,8 +8,8 @@ Add your content here.
 = Details =
 
 || *Stage* || *Upward Transition Function* || *Downward Transition Function* ||
-|| Font Letters || || ||
+|| Font Letters || _n/a_ || _not supported_ ||
 || Runes || runesToFontLetters() || runesToPhonemes() ||
-|| Phonemes || phonemesToRunes() || phonemesToLanguageWords() ||
-|| Language Words || languageWordsToPhonemes() || languageWordsToString() ||
-|| Language String || languageStringToWords() || ||
+|| Phonemes || <font color='red'>phonemesToRunes()</font> || phonemesToLanguageWords() ||
+|| Language Words || <font color='red'>languageWordsToPhonemes()</font> || <font color='red'>languageWordsToString()</font> ||
+|| Language String || <font color='red'>languageStringToWords()</font> || _n/a_ ||
