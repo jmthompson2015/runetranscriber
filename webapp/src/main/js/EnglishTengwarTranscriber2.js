@@ -28,31 +28,39 @@ var EnglishTengwarTranscriber2 = function()
 
     var phonemeToLanguageMap = {};
 
-    phonemeToLanguageMap["akkount"] = "account";
-    phonemeToLanguageMap["akownt"] = "account";
-    phonemeToLanguageMap["aje"] = "age";
+    // The Lord Of The Rings
+    // Christopher reversed 'e' and 'i' from J.R.R.?
     phonemeToLanguageMap["az"] = "as";
-    phonemeToLanguageMap["kataklysm"] = "cataclysm";
-    phonemeToLanguageMap["certan"] = "certain";
-    phonemeToLanguageMap["kristofer"] = "christopher";
-    phonemeToLanguageMap["kome"] = "come";
-    phonemeToLanguageMap["druedaiin"] = "druedain";
     phonemeToLanguageMap["hireen"] = "herein";
     phonemeToLanguageMap["hobbets"] = "hobbits";
     phonemeToLanguageMap["iz"] = "is";
     phonemeToLanguageMap["jhon"] = "john";
     phonemeToLanguageMap["keng"] = "king";
-    phonemeToLanguageMap["destruktion"] = "destruction";
-    phonemeToLanguageMap["oksford"] = "oxford";
-    phonemeToLanguageMap["powr"] = "power";
-    phonemeToLanguageMap["rekovery"] = "recovery";
     phonemeToLanguageMap["riuil"] = "reuel";
     phonemeToLanguageMap["reng"] = "ring";
-    phonemeToLanguageMap["skolars"] = "scholars";
     phonemeToLanguageMap["sit"] = "set";
     phonemeToLanguageMap["tolkein"] = "tolkien";
     phonemeToLanguageMap["wor"] = "war";
     phonemeToLanguageMap["wistmarch"] = "westmarch";
+
+    // The Silmarillion
+    phonemeToLanguageMap["aje"] = "age";
+    phonemeToLanguageMap["kome"] = "come";
+    phonemeToLanguageMap["powr"] = "power";
+    phonemeToLanguageMap["rekovery"] = "recovery";
+
+    // Unfinished Tales Of Numenor And Middle-Earth
+    phonemeToLanguageMap["akkount"] = "account";
+    phonemeToLanguageMap["kristofer"] = "christopher";
+    phonemeToLanguageMap["druedaiin"] = "druedain";
+
+    // Sauron Defeated
+    phonemeToLanguageMap["akownt"] = "account";
+    phonemeToLanguageMap["kataklysm"] = "cataclysm";
+    phonemeToLanguageMap["certan"] = "certain";
+    phonemeToLanguageMap["destruktion"] = "destruction";
+    phonemeToLanguageMap["oksford"] = "oxford";
+    phonemeToLanguageMap["skolars"] = "scholars";
 
     this.getPhonemeToLanguageMap = function()
     {
