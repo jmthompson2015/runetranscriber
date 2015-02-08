@@ -87,8 +87,8 @@ var TengwarExampleTTOI1 =
             // through
             TengwaRune.THULE,
             TengwaRune.ROMEN,
-            [TengwaRune.LEFT_CURL,TengwaRune.URE],
-            TengwaRune.UNGWE,
+            [ TengwaRune.LEFT_CURL, TengwaRune.URE ],
+            TengwaRune.GH,
             TengwaRune.SPACE,
             // moria
             TengwaRune.MALTA,
@@ -124,7 +124,8 @@ var TengwarExampleTTOI1 =
             // the
             TengwaRune.THE, TengwaRune.SPACE,
             // days
-            TengwaRune.ANDO, [ TengwaRune.THREE_DOTS, TengwaRune.ANNA ],TengwaRune.SILME ],
+            TengwaRune.ANDO, [ TengwaRune.THREE_DOTS, TengwaRune.ANNA ],
+            TengwaRune.SILME ],
 }
 
 if (Object.freeze)

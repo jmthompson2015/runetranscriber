@@ -76,7 +76,7 @@ var TengwarExampleTROTS2 =
             TengwaRune.THULE,
             TengwaRune.ROMEN,
             [ TengwaRune.LEFT_CURL, TengwaRune.URE ],
-            TengwaRune.UNGWE,
+            TengwaRune.GH,
             TengwaRune.SPACE,
             // the
             TengwaRune.THE,

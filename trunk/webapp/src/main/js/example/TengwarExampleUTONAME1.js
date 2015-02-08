@@ -56,8 +56,8 @@ var TengwarExampleUTONAME1 =
             TengwaRune.SPACE,
             // brought
             TengwaRune.UMBAR, TengwaRune.ROMEN,
-            [ TengwaRune.LEFT_CURL, TengwaRune.URE ], TengwaRune.UNGWE,
-            TengwaRune.HYARMEN, TengwaRune.TINCO, TengwaRune.SPACE,
+            [ TengwaRune.LEFT_CURL, TengwaRune.URE ], TengwaRune.GH,
+            TengwaRune.TINCO, TengwaRune.SPACE,
             // together
             TengwaRune.TINCO, [ TengwaRune.LEFT_CURL, TengwaRune.UNGWE ],
             [ TengwaRune.DOT, TengwaRune.ANTO ],
