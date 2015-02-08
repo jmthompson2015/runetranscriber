@@ -102,12 +102,12 @@ TengwarExampleToHtml.prototype.generateRuneRows = function()
     return answer;
 }
 
-TengwarExampleToHtml.prototype.generateLanguageRows = function()
+TengwarExampleToHtml.prototype.generatePhonemeRows = function()
 {
-    var letters = this.getTranscriber().runesToLanguageLetters(this.getRunes());
+    var letters = this.getTranscriber().runesToPhonemes(this.getRunes());
 
     var answer = "<tr>\n";
-    answer += "<td class=\"table-header-cell-details\">Language</td>\n";
+    answer += "<td class=\"table-header-cell-details\">Phoneme</td>\n";
 
     for (var i = 0; i < letters.length; i++)
     {
@@ -137,4 +137,64 @@ TengwarExampleToHtml.prototype.generateLanguageRows = function()
     answer += "</tr>\n";
 
     return answer;
+}
+
+TengwarExampleToHtml.prototype.generateLanguageRows = function()
+{
+    var runes = this.getRunes();
+    var words = this.getTranscriber().runesToLanguageWords(runes);
+
+    var answer = "<tr>\n";
+    answer += "<td class=\"table-header-cell-details\">Language</td>\n";
+    var start = 0;
+
+    for (var i = 0; i < words.length; i++)
+    {
+        var word = words[i];
+        var colspan = 1;
+
+        if (this.isPunctuation(word))
+        {
+            for (var j = start; j < runes.length; j++)
+            {
+                if (this.isPunctuation(runes[j]))
+                {
+                    colspan = j - start;
+                    start = j + 1;
+                    break;
+                }
+            }
+
+            answer += "<td class=\"table-cell-details\" colspan=\"";
+            answer += colspan;
+            answer += "\">";
+            answer += words[i - 1];
+            answer += "</td>\n";
+
+            answer += "<td class=\"table-cell-details\">";
+            answer += word;
+            answer += "</td>\n";
+        }
+        else if (i === words.length - 1)
+        {
+            colspan = runes.length - start;
+
+            answer += "<td class=\"table-cell-details\" colspan=\"";
+            answer += colspan;
+            answer += "\">";
+            answer += word;
+            answer += "</td>\n";
+        }
+    }
+
+    answer += "</tr>\n";
+
+    return answer;
+}
+
+TengwarExampleToHtml.prototype.isPunctuation = function(word)
+{
+    return word === TengwaRune.SPACE || word === TengwaRune.COMMA
+            || word === TengwaRune.PERIOD || word === TengwaRune.NEWLINE
+            || word === " " || word === "," || word === "." || word === "\n";
 }
