@@ -5,8 +5,26 @@ var TengwarExampleSD1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/saurondefeated/SD_TitlePage1.jpg",
 
-    LANGUAGE_LETTERS: "In this book is traced first the story of the destruction of the\n"
+    LANGUAGE_STRING: "In this book is traced first the story of the destruction of the\n"
             + "One Ring and the Downfall of Sauron at the End of the Third Age.",
+
+    LANGUAGE_WORDS: [ "in", " ", "this", " ", "book", " ", "is", " ", "traced",
+            " ", "first", " ", "the", " ", "story", " ", "of the", " ",
+            "destruction", " ", "of the", "\n", "one", " ", "ring", " ", "and",
+            " ", "the", " ", "downfall", " ", "of", " ", "sauron", " ", "at",
+            " ", "the", " ", "end", " ", "of the", " ", "third", " ", "age",
+            "." ],
+
+    PHONEMES: [ [ "i", "n" ], " ", "th", [ "i", "s" ], " ", "b", "oo", "k",
+            " ", [ "i", "s" ], " ", "t", "r", [ "a", "c", "e" ], "d", " ", "f",
+            [ "i", "r" ], "s", "t", " ", "the", " ", "s", "t", [ "o", "r" ],
+            "y", " ", "of the", " ", "d", [ "e", "s" ], "t", "r", [ "u", "k" ],
+            "t", "i", [ "o", "n" ], " ", "of the", "\n", [ "o", "n", "e" ],
+            " ", "r", [ "i", "ng" ], " ", "and", " ", "the", " ", "d",
+            [ "o", "w" ], "n", "f", [ "a", "l", "l" ], " ", "of", " ", "s",
+            "a", [ "u", "r" ], [ "o", "n" ], " ", [ "a", "t" ], " ", "the",
+            " ", [ "e", "n" ], "d", " ", "of the", " ", "th", [ "i", "r" ],
+            "d", " ", [ "a", "j", "e" ], "." ],
 
     RUNES: [
             // Line 1
@@ -88,6 +106,18 @@ var TengwarExampleSD1 =
             // age.
             [ TengwaRune.THREE_DOTS, TengwaRune.ANGA, TengwaRune.UNDER_DOT ],
             TengwaRune.PERIOD, ],
+
+    FONT_LETTERS: [ [ "5", "R" ], " ", "4", [ "8", "R" ], " ", "w",
+            [ "~", "Y" ], "z", " ", [ "8", "R" ], " ", "1", "7",
+            [ "i", "D", "&#201;" ], "2", " ", "e", [ "6", "R" ], "8", "1", " ",
+            "@", " ", "8", "1", [ "7", "Y" ], "h", " ", "W?", " ", "2",
+            [ "8", "T" ], "1", "7", [ "z", "&#225;" ], "1", [ "`", "R" ],
+            [ "5", "Y" ], " ", "W?", [ "5", "Y", "&#201;" ], " ", "7",
+            [ "b", "R" ], " ", [ "2", "{" ], " ", "@", " ", "2", [ "y", "Y" ],
+            "5", "e", [ "j", "D", "&#237;" ], " ", "W", " ", "8", [ "`", "D" ],
+            [ "7", "&#225;" ], [ "5", "Y" ], " ", [ "1", "D" ], " ", "@", " ",
+            [ "5", "T" ], "2", " ", "W?", " ", "3", [ "6", "R" ], "2", " ",
+            [ "s", "D", "&#201;" ], "-" ],
 }
 
 if (Object.freeze)

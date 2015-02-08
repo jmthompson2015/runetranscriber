@@ -5,8 +5,28 @@ var TengwarExampleTS2 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/silmarillion/TheSilmarillion_TitlePage2.png",
 
-    LANGUAGE_LETTERS: "To which are appended the Downfall of Numenor and the history of the\n"
+    LANGUAGE_STRING: "To which are appended the Downfall of Numenor and the history of the\n"
             + "Rings of Power and the Third Age in which these tales come to their end.",
+
+    LANGUAGE_WORDS: [ "to", " ", "which", " ", "are", " ", "appended", " ",
+            "the", " ", "downfall", " ", "of", " ", "numenor", " ", "and", " ",
+            "the", " ", "history", " ", "of the", "\n", "rings", " ", "of",
+            " ", "power", " ", "and", " ", "the", " ", "third", " ", "age",
+            " ", "in", " ", "which", " ", "these", " ", "tales", " ", "come",
+            " ", "to", " ", "their", " ", "end", "." ],
+
+    PHONEMES: [ [ "t", "o" ], " ", "wh", [ "i", "ch" ], " ", [ "a", "r", "e" ],
+            " ", [ "a", "p", "p" ], [ "e", "n" ], "d", [ "e", "d" ], " ",
+            "the", " ", "d", [ "o", "w" ], "n", "f", [ "a", "l", "l" ], " ",
+            "of", " ", "n", [ "u", "m" ], [ "e", "n" ], [ "o", "r" ], " ",
+            "and", " ", "the", " ", "h", [ "i", "s" ], "t", [ "o", "r" ], "y",
+            " ", "of the", "\n", "r", [ "i", "ng" ], "s", " ", "of", " ", "p",
+            [ "o", "w" ], "r", " ", "and", " ", "the", " ", "th", [ "i", "r" ],
+            "d", " ", [ "a", "j", "e" ], " ", [ "i", "n" ], " ", "wh",
+            [ "i", "ch" ], " ", "th", [ "e", "s", "e" ], " ", "t",
+            [ "a", "l", "e" ], "s", " ", "k", [ "o", "m", "e" ], " ",
+            [ "t", "o" ], " ", "th", [ "e", "i" ], "r", " ", [ "e", "n" ], "d",
+            "." ],
 
     RUNES: [
     // Line 1
@@ -90,6 +110,19 @@ var TengwarExampleTS2 =
             // end.
             [ TengwaRune.DOT, TengwaRune.NUMEN ], TengwaRune.ANDO,
             TengwaRune.PERIOD ],
+
+    FONT_LETTERS: [ [ "1", "&#229;" ], " ", "o", [ "a", "R" ], " ",
+            [ "6", "D", "&#201;" ], " ", [ "q", "D", "&#237;" ], [ "5", "T" ],
+            "2", [ "2", "T" ], " ", "@", " ", "2", [ "y", "Y" ], "5", "e",
+            [ "j", "D", "&#237;" ], " ", "W", " ", "5", [ "t", "&#225;" ],
+            [ "5", "T" ], [ "6", "Y" ], " ", [ "2", "{" ], " ", "@", " ", "9",
+            [ "8", "R" ], "1", [ "7", "Y" ], [ "~", "R" ], " ", "W?", "7",
+            [ "b", "R" ], "8", " ", "W", " ", "q", [ "y", "Y" ], "6", " ",
+            [ "2", "{" ], " ", "@", " ", "3", [ "6", "R" ], "2", " ",
+            [ "s", "D", "&#201;" ], " ", [ "5", "R" ], " ", "o", [ "a", "R" ],
+            " ", "4", [ "8", "T", "&#201;" ], " ", "1", [ "j", "D", "&#201;" ],
+            "8", " ", "z", [ "t", "Y", "&#201;" ], " ", [ "1", "&#229;" ], " ",
+            "4", [ "l", "T" ], "6", " ", [ "5", "T" ], "2", "-" ],
 }
 
 if (Object.freeze)

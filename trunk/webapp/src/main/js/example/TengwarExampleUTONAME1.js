@@ -5,8 +5,26 @@ var TengwarExampleUTONAME1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/unfinishedtales/UTONAME_TitlePage1.jpg",
 
-    LANGUAGE_LETTERS: "In this book of Unfinished Tales by John Ronald Reuel Tolkien\n"
+    LANGUAGE_STRING: "In this book of Unfinished Tales by John Ronald Reuel Tolkien\n"
             + "which was brought together by Christopher Reuel Tolkien his son",
+
+    LANGUAGE_WORDS: [ "in", " ", "this", " ", "book", " ", "of", " ",
+            "unfinished", " ", "tales", " ", "by", " ", "john", " ", "ronald",
+            " ", "reuel", " ", "tolkien", "\n", "which", " ", "was", " ",
+            "brought", " ", "together", " ", "by", " ", "christopher", " ",
+            "reuel", " ", "tolkien", " ", "his", " ", "son" ],
+
+    PHONEMES: [ [ "i", "n" ], " ", "th", [ "i", "s" ], " ", "b", "oo", "k",
+            " ", "of", " ", [ "u", "n" ], "f", [ "i", "n" ], [ "i", "sh" ],
+            [ "e", "d" ], " ", "t", [ "a", "l", "e" ], "s", " ", "b", "y", " ",
+            "j", "o", "h", "n", " ", "r", [ "o", "n" ], [ "a", "l" ], "d", " ",
+            "r", "e", "u", [ "e", "l" ], " ", "t", [ "o", "l" ], "k", "i",
+            [ "e", "n" ], "\n", "wh", [ "i", "ch" ], " ", [ "w", "a" ], "s",
+            " ", "b", "r", [ "o", "u" ], "gh", "t", " ", "t", [ "o", "g" ],
+            [ "e", "th" ], [ "e", "r" ], " ", "b", "y", " ", "k", "r",
+            [ "i", "s" ], "t", [ "o", "f" ], [ "e", "r" ], " ", "r", "e", "u",
+            [ "e", "l" ], " ", "t", [ "o", "l" ], "k", "i", [ "e", "n" ], " ",
+            "h", [ "i", "s" ], " ", "s", [ "o", "n" ] ],
 
     RUNES: [
     // Line 1
@@ -82,6 +100,20 @@ var TengwarExampleUTONAME1 =
             TengwaRune.SPACE,
             // son
             TengwaRune.SILME, [ TengwaRune.LEFT_CURL, TengwaRune.NUMEN ] ],
+
+    FONT_LETTERS: [ [ "5", "R" ], " ", "4", [ "8", "R" ], " ", "w",
+            [ "~", "Y" ], "z", " ", "W", " ", [ "5", "&#225;" ], "e",
+            [ "5", "R" ], [ "d", "R" ], [ "2", "T" ], " ", "1",
+            [ "j", "D", "&#201;" ], "8", " ", "w", "h", " ", "s", [ "`", "Y" ],
+            "9", "5", " ", "7", [ "5", "Y" ], [ "j", "D" ], "2", " ", "7",
+            [ "`", "T" ], [ "`", "&#225;" ], [ "j", "T" ], " ", "1",
+            [ "j", "Y" ], "z", [ "`", "R" ], [ "5", "T" ], "o", [ "a", "R" ],
+            " ", [ "y", "&#209;" ], "8", " ", "w", "7", [ ".", "Y" ], "X", "1",
+            " ", "1", [ "x", "Y" ], [ "4", "T" ], [ "7", "T" ], " ", "w", "h",
+            " ", "z", "7", [ "8", "R" ], "1", [ "e", "Y" ], [ "7", "T" ], " ",
+            "7", [ "`", "T" ], [ "`", "&#225;" ], [ "j", "T" ], " ", "1",
+            [ "j", "Y" ], "z", [ "`", "R" ], [ "5", "T" ], " ", "9",
+            [ "8", "R" ], " ", "8", [ "5", "Y" ] ],
 }
 
 if (Object.freeze)

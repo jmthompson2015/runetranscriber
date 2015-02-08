@@ -5,8 +5,28 @@ var TengwarExampleTTOI1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/treasonofisengard/TTOI_TitlePage1.jpg",
 
-    LANGUAGE_LETTERS: "In the Treason of Isengard the story of the Fellowship of the Ring is traced\n"
+    LANGUAGE_STRING: "In the Treason of Isengard the story of the Fellowship of the Ring is traced\n"
             + "from Rivendell through Moria and the Land of Lothlorien to the days",
+
+    LANGUAGE_WORDS: [ "in", " ", "the", " ", "treason", " ", "of", " ",
+            "isengard", " ", "the", " ", "story", " ", "of the", " ",
+            "fellowship", " ", "of the", " ", "ring", " ", "is", " ", "traced",
+            "\n", "from", " ", "rivendell", " ", "through", " ", "moria", " ",
+            "and", " ", "the", " ", "land", " ", "of", " ", "lothlorien", " ",
+            "to", " ", "the", " ", "days" ],
+
+    PHONEMES: [ [ "i", "n" ], " ", "the", " ", "t", "r", [ "e", "a" ], "s",
+            [ "o", "n" ], " ", "of", " ", [ "i", "s" ], [ "e", "n" ], "g",
+            [ "a", "r" ], "d", " ", "the", " ", "s", "t", [ "o", "r" ], "y",
+            " ", "of the", " ", "f", [ "e", "l", "l" ], [ "o", "w" ], "sh",
+            [ "i", "p" ], " ", "of the", " ", "r", [ "i", "ng" ], " ",
+            [ "i", "s" ], " ", "t", "r", [ "a", "c", "e" ], "d", "\n", "f",
+            "r", [ "o", "m" ], " ", "r", [ "i", "v" ], [ "e", "n" ], "d",
+            [ "e", "l", "l" ], " ", "th", "r", [ "o", "u" ], "gh", " ", "m",
+            [ "o", "r" ], [ "i", "a" ], " ", "and", " ", "the", " ", "l",
+            [ "a", "n" ], "d", " ", "of", " ", "l", [ "o", "th" ], "l",
+            [ "o", "r" ], [ "i", "e" ], "n", " ", "t", "o", " ", "the", " ",
+            "d", [ "a", "y" ], "s" ],
 
     RUNES: [
             // Line 1
@@ -126,6 +146,20 @@ var TengwarExampleTTOI1 =
             // days
             TengwaRune.ANDO, [ TengwaRune.THREE_DOTS, TengwaRune.ANNA ],
             TengwaRune.SILME ],
+
+    FONT_LETTERS: [ [ "5", "R" ], " ", "@", " ", "1", "7",
+            [ "`", "T", "&#209;" ], "8", [ "5", "Y" ], " ", "W", " ",
+            [ "8", "R" ], [ "5", "T" ], "x", [ "6", "D" ], "2", " ", "@", " ",
+            "8", "1", [ "7", "Y" ], "h", " ", "W?", " ", "e",
+            [ "j", "T", "&#237;" ], [ "y", "Y" ], "d", [ "q", "R" ], " ", "W?",
+            " ", "7", [ "b", "R" ], " ", [ "8", "R" ], " ", "1", "7",
+            [ "i", "D", "&#201;" ], "2", "e", "7", [ "t", "Y" ], " ", "7",
+            [ "r", "R" ], [ "5", "T" ], "2", [ "j", "T", "&#237;" ], " ", "3",
+            "7", [ ".", "Y" ], "X", " ", "t", [ "7", "Y" ],
+            [ "`", "R", "&#209;" ], " ", [ "2", "{" ], " ", "@", " ", "j",
+            [ "5", "D" ], "2", " ", "W", " ", "j", [ "3", "Y" ], "j",
+            [ "7", "Y" ], [ "`", "R", "&#201;" ], "5", " ", "1", [ "`", "Y" ],
+            " ", "@", " ", "2", [ "h", "D" ], "8" ],
 }
 
 if (Object.freeze)
