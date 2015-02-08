@@ -7,7 +7,7 @@ Add your content here.
 
 = Details =
 
-|| *Stage* || *Upward Transition Function* || *Downward Transition Function* ||
+|| *State* || *Upward Transition* || *Downward Transition* ||
 || Font Letters || _n/a_ || _not supported_ ||
 || Runes || runesToFontLetters() || runesToPhonemes() ||
 || Phonemes || <font color='red'>phonemesToRunes()</font> || phonemesToLanguageWords() ||
