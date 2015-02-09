@@ -11,5 +11,5 @@ Add your content here.
 || Font Letters || _n/a_ || _not supported_ ||
 || Runes || runesToFontLetters() || runesToPhonemes() ||
 || Phonemes || <font color='red'>phonemesToRunes()</font> || phonemesToLanguageWords() ||
-|| Language Words || <font color='red'>languageWordsToPhonemes()</font> || <font color='red'>languageWordsToString()</font> ||
-|| Language String || <font color='red'>languageStringToWords()</font> || _n/a_ ||
+|| Language Words || <font color='red'>languageWordsToPhonemes()</font> || languageWordsToString() ||
+|| Language String || languageStringToWords() || _n/a_ ||
