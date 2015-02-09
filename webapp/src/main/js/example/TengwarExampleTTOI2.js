@@ -5,9 +5,9 @@ var TengwarExampleTTOI2 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/treasonofisengard/TTOI_TitlePage2.jpg",
 
-    LANGUAGE_STRING: "of its ending at Calembel beside Anduin the Great river, then is\n"
+    LANGUAGE_STRING: "of its ending at Calembel beside Anduin the Great river. Then is\n"
             + "told of the return of Gandalf Mithrandir, of the meeting of the hobbits with\n"
-            + "Fangorn and of the war upon the Riders of Rohan by the traitor Saruman.",
+            + "Fangorn, and of the war upon the Riders of Rohan by the traitor Saruman.",
 
     LANGUAGE_WORDS: [ "of", " ", "its", " ", "ending", " ", "at", " ",
             "calembel", " ", "beside", " ", "anduin", " ", "the", " ", "great",
