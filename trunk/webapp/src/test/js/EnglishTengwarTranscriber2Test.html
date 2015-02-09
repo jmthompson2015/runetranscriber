@@ -211,6 +211,88 @@
     });
 
     /**************************************************************************
+     * phonemesToLanguageWords()
+     */
+
+    QUnit.test("Example TLOTR2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTLOTR2.PHONEMES,
+                TengwarExampleTLOTR2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TS1 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTS1.PHONEMES,
+                TengwarExampleTS1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TS2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTS2.PHONEMES,
+                TengwarExampleTS2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example UTONAME1 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleUTONAME1.PHONEMES,
+                TengwarExampleUTONAME1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example UTONAME2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleUTONAME2.PHONEMES,
+                TengwarExampleUTONAME2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TROTS1 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTROTS1.PHONEMES,
+                TengwarExampleTROTS1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TROTS2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTROTS2.PHONEMES,
+                TengwarExampleTROTS2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TTOI1 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTTOI1.PHONEMES,
+                TengwarExampleTTOI1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TTOI2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTTOI2.PHONEMES,
+                TengwarExampleTTOI2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TWOTR1 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTWOTR1.PHONEMES,
+                TengwarExampleTWOTR1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TWOTR2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleTWOTR2.PHONEMES,
+                TengwarExampleTWOTR2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example SD1 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleSD1.PHONEMES,
+                TengwarExampleSD1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example SD2 phonemesToLanguageWords()", function(assert)
+    {
+        testPhonemesToLanguageWords(assert, TengwarExampleSD2.PHONEMES,
+                TengwarExampleSD2.LANGUAGE_WORDS);
+    });
+
+    /**************************************************************************
      * runesToFontLetters()
      */
 
@@ -451,88 +533,6 @@
     {
         testRunesToPhonemes(assert, TengwarExampleSD2.RUNES,
                 TengwarExampleSD2.PHONEMES);
-    });
-
-    /**************************************************************************
-     * phonemesToLanguageWords()
-     */
-
-    QUnit.test("Example TLOTR2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTLOTR2.PHONEMES,
-                TengwarExampleTLOTR2.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TS1 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTS1.PHONEMES,
-                TengwarExampleTS1.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TS2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTS2.PHONEMES,
-                TengwarExampleTS2.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example UTONAME1 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleUTONAME1.PHONEMES,
-                TengwarExampleUTONAME1.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example UTONAME2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleUTONAME2.PHONEMES,
-                TengwarExampleUTONAME2.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TROTS1 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTROTS1.PHONEMES,
-                TengwarExampleTROTS1.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TROTS2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTROTS2.PHONEMES,
-                TengwarExampleTROTS2.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TTOI1 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTTOI1.PHONEMES,
-                TengwarExampleTTOI1.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TTOI2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTTOI2.PHONEMES,
-                TengwarExampleTTOI2.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TWOTR1 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTWOTR1.PHONEMES,
-                TengwarExampleTWOTR1.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example TWOTR2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleTWOTR2.PHONEMES,
-                TengwarExampleTWOTR2.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example SD1 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleSD1.PHONEMES,
-                TengwarExampleSD1.LANGUAGE_WORDS);
-    });
-
-    QUnit.test("Example SD2 phonemesToLanguageWords()", function(assert)
-    {
-        testPhonemesToLanguageWords(assert, TengwarExampleSD2.PHONEMES,
-                TengwarExampleSD2.LANGUAGE_WORDS);
     });
 
     /**************************************************************************
