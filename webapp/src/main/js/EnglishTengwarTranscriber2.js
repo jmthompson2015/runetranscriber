@@ -54,6 +54,9 @@ var EnglishTengwarTranscriber2 = function()
     phonemeToLanguageMap["kristofer"] = "christopher";
     phonemeToLanguageMap["druedaiin"] = "druedain";
 
+    // The War Of The Ring
+    phonemeToLanguageMap["kirith"] = "cirith";
+
     // Sauron Defeated
     phonemeToLanguageMap["akownt"] = "account";
     phonemeToLanguageMap["kataklysm"] = "cataclysm";
@@ -229,6 +232,69 @@ EnglishTengwarTranscriber2.prototype.isPreVowel = function(rune)
     return rune === "acute" || rune === "bar" || rune === "dot"
             || rune === "leftCurl" || rune === "rightCurl"
             || rune === "threeDots" || rune === "topCurl";
+}
+
+EnglishTengwarTranscriber2.prototype.languageStringToWords = function(string)
+{
+    var answer = [];
+    var word = "";
+
+    for (var i = 0; i < string.length; i++)
+    {
+        var letter = string.charAt(i);
+
+        if (word === "of" && string.substring(i, i + 4) === " the")
+        {
+            answer[answer.length] = "of the";
+            i += 4;
+
+            if (i < string.length)
+            {
+                letter = string.charAt(i);
+                answer[answer.length] = letter;
+                word = "";
+            }
+        }
+        else if (letter === " " || letter === "," || letter === "."
+                || letter === "\n")
+        {
+            if (word !== "")
+            {
+                answer[answer.length] = word;
+                answer[answer.length] = letter;
+                word = "";
+            }
+        }
+        else if (i === string.length - 1 && word !== "")
+        {
+            word += letter;
+            answer[answer.length] = word;
+        }
+        else
+        {
+            word += letter;
+        }
+    }
+
+    return answer;
+}
+
+EnglishTengwarTranscriber2.prototype.languageWordsToString = function(words)
+{
+    var answer = "";
+
+    for (var i = 0; i < words.length; i++)
+    {
+        var word = words[i];
+        answer += word;
+
+        if ((word === "," || word === ".") && i < words.length - 1)
+        {
+            answer += " ";
+        }
+    }
+
+    return answer;
 }
 
 EnglishTengwarTranscriber2.prototype.phonemesToLanguageWords = function(

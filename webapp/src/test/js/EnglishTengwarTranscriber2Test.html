@@ -38,6 +38,179 @@
     var LOGGER = new Logger();
 
     /**************************************************************************
+     * languageStringToWords()
+     */
+
+    QUnit.test("Example TLOTR2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTLOTR2.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTLOTR2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TS1 languageStringToWords()", function(assert)
+    {
+        // Replace "of", " ", "the" with "of the"
+        var expected = TengwarExampleTS1.LANGUAGE_WORDS.slice(0, 5).concat(
+                TengwarExampleTS1.LANGUAGE_WORDS.slice(7));
+        expected[4] = "of the";
+
+        testLanguageStringToWords(assert, TengwarExampleTS1.LANGUAGE_STRING
+                .toLowerCase(), expected);
+    });
+
+    QUnit.test("Example TS2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTS2.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTS2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example UTONAME1 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert,
+                TengwarExampleUTONAME1.LANGUAGE_STRING.toLowerCase(),
+                TengwarExampleUTONAME1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example UTONAME2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert,
+                TengwarExampleUTONAME2.LANGUAGE_STRING.toLowerCase(),
+                TengwarExampleUTONAME2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TROTS1 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTROTS1.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTROTS1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TROTS2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTROTS2.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTROTS2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TTOI1 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTTOI1.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTTOI1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TTOI2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTTOI2.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTTOI2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TWOTR1 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTWOTR1.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTWOTR1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example TWOTR2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleTWOTR2.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleTWOTR2.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example SD1 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleSD1.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleSD1.LANGUAGE_WORDS);
+    });
+
+    QUnit.test("Example SD2 languageStringToWords()", function(assert)
+    {
+        testLanguageStringToWords(assert, TengwarExampleSD2.LANGUAGE_STRING
+                .toLowerCase(), TengwarExampleSD2.LANGUAGE_WORDS);
+    });
+
+    /**************************************************************************
+     * languageWordsToString()
+     */
+
+    QUnit.test("Example TLOTR2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTLOTR2.LANGUAGE_WORDS,
+                TengwarExampleTLOTR2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TS1 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTS1.LANGUAGE_WORDS,
+                TengwarExampleTS1.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TS2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTS2.LANGUAGE_WORDS,
+                TengwarExampleTS2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example UTONAME1 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert,
+                TengwarExampleUTONAME1.LANGUAGE_WORDS,
+                TengwarExampleUTONAME1.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example UTONAME2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert,
+                TengwarExampleUTONAME2.LANGUAGE_WORDS,
+                TengwarExampleUTONAME2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TROTS1 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTROTS1.LANGUAGE_WORDS,
+                TengwarExampleTROTS1.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TROTS2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTROTS2.LANGUAGE_WORDS,
+                TengwarExampleTROTS2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TTOI1 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTTOI1.LANGUAGE_WORDS,
+                TengwarExampleTTOI1.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TTOI2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTTOI2.LANGUAGE_WORDS,
+                TengwarExampleTTOI2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TWOTR1 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTWOTR1.LANGUAGE_WORDS,
+                TengwarExampleTWOTR1.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example TWOTR2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleTWOTR2.LANGUAGE_WORDS,
+                TengwarExampleTWOTR2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example SD1 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleSD1.LANGUAGE_WORDS,
+                TengwarExampleSD1.LANGUAGE_STRING.toLowerCase());
+    });
+
+    QUnit.test("Example SD2 languageWordsToString()", function(assert)
+    {
+        testLanguageWordsToString(assert, TengwarExampleSD2.LANGUAGE_WORDS,
+                TengwarExampleSD2.LANGUAGE_STRING.toLowerCase());
+    });
+
+    /**************************************************************************
      * runesToFontLetters()
      */
 
@@ -362,9 +535,39 @@
                 TengwarExampleSD2.LANGUAGE_WORDS);
     });
 
+    /**************************************************************************
+     * Utility functions.
+     */
+
     function createTranscriber()
     {
         return new EnglishTengwarTranscriber2();
+    }
+
+    function testLanguageStringToWords(assert, string, expected, useComparison)
+    {
+        // Setup.
+        var transcriber = createTranscriber();
+
+        // Run.
+        var result = transcriber.languageStringToWords(string);
+
+        // Verify.
+        verify(assert, result, expected, useComparison);
+    }
+
+    function testLanguageWordsToString(assert, words, expected)
+    {
+        // Setup.
+        var transcriber = createTranscriber();
+
+        // Run.
+        var result = transcriber.languageWordsToString(words);
+
+        // Verify.
+        assert.ok(result);
+        assert.equal(result.length, expected.length);
+        assert.equal(result, expected);
     }
 
     function testRunesToFontLetters(assert, runes, expected)
@@ -403,11 +606,15 @@
         verify(assert, result, expected);
     }
 
-    function verify(assert, result, expected)
+    function verify(assert, result, expected, useComparison)
     {
         assert.ok(result);
         assert.equal(result.length, expected.length);
-        // assert.equal(result, expected);
+
+        if (useComparison)
+        {
+            assert.equal(result, expected);
+        }
 
         for (var i = 0; i < expected.length; i++)
         {
