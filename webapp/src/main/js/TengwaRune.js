@@ -534,16 +534,24 @@ var TengwaRune =
             phoneme: "\n",
         },
     },
-    values: [ "tinco", "parma", "calma", "quesse", "ando", "umbar", "anga",
-            "ungwe", "thule", "formen", "harma", "hwesta", "anto", "ampa",
-            "anca", "unque", "numen", "malta", "ngoldo", "ngwalme", "ore",
-            "vala", "anna", "vilya", "romen", "arda", "lambe", "alda", "silme",
-            "silmeNuquerna", "esse", "esseNuquerna", "hyarmen",
-            "hwestaSindarinwa", "yanta", "ure", "the", "of", "ofThe",
-            "shortCarrier", "longCarrier", "threeDots", "threeUnderDots",
-            "circumflex", "acute", "dot", "underDot", "leftCurl",
-            "leftUnderCurl", "topCurl", "rightCurl", "chevron", "bar",
-            "underBar", "space", "comma", "period", "newline", ],
+    values: [ // values
+    "tinco", "parma", "calma", "quesse", // 1
+    "ando", "umbar", "anga", "ungwe", // 2
+    "thule", "formen", "harma", "hwesta", // 3
+    "anto", "ampa", "anca", "unque", // 4
+    "numen", "malta", "ngoldo", "ngwalme", // 5
+    "ore", "vala", "anna", "vilya", // 6
+    "romen", "arda", "lambe", "alda", // (7)
+    "silme", "silmeNuquerna", "esse", "esseNuquerna", // (8)
+    "hyarmen", "hwestaSindarinwa", "yanta", "ure", // (9)
+
+    "shortCarrier", "longCarrier", "threeDots", "threeUnderDots", "circumflex",
+            "acute", "dot", "underDot", "leftCurl", "leftUnderCurl", "topCurl",
+            "rightCurl", "chevron", "bar", "underBar", // vowels
+
+            "the", "of", "ofThe", "gh", // abreviations
+            "hyphen", "space", "comma", "period", "newline", // punctuation
+    ],
 
     // Tehtar (diacritic marks)
     tehtar: [ "threeDots", "threeUnderDots", "bar", // a
