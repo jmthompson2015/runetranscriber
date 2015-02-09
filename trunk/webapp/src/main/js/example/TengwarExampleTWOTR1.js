@@ -5,7 +5,7 @@ var TengwarExampleTWOTR1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/warofthering/TWOTR_TitlePage1.jpg",
 
-    LANGUAGE_STRING: "In the War of the Ring is traced the story of the victory at Helm's Deep\n"
+    LANGUAGE_STRING: "In the War of the Ring is traced the story of the victory at Helms Deep\n"
             + "and the drowning of Isengard by the Ents, then is told of the",
 
     LANGUAGE_WORDS: [ "in", " ", "the", " ", "war", " ", "of the", " ", "ring",

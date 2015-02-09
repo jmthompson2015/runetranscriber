@@ -5,7 +5,7 @@ var TengwarExampleTS1 =
 {
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/silmarillion/TheSilmarillion_TitlePage1.png",
 
-    LANGUAGE_STRING: "The Tales of the First Age when Morgoth dwelt in Middle-earth\n"
+    LANGUAGE_STRING: "The Tales of the First Age when Morgoth dwelt in Middle earth\n"
             + "and the Elves made war upon him for the recovery of the Silmarils.",
 
     LANGUAGE_WORDS: [ "the", " ", "tales", " ", "of", " ", "the", " ", "first",

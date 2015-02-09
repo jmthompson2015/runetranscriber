@@ -6,14 +6,14 @@ var TengwarExampleTWOTR2 =
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/warofthering/TWOTR_TitlePage2.jpg",
 
     LANGUAGE_STRING: "journey of Frodo with Samwise and Gollum to the Morannon, of the\n"
-            + "meeting with Faramir and the stairs of Cirith Ungol, of the Battle of the\n"
-            + "Pelennor Fields and of the coming of Aragorn in the fleet of Umbar.",
+            + "meeting with Faramir, and the stairs of Cirith Ungol, of the Battle of the\n"
+            + "Pelennor Fields, and of the coming of Aragorn in the fleet of Umbar.",
 
     LANGUAGE_WORDS: [ "journey", " ", "of", " ", "frodo", " ", "with", " ",
             "samwise", " ", "and", " ", "gollum", " ", "to", " ", "the", " ",
             "morannon", ",", "of the", "\n", "meeting", " ", "with", " ",
             "faramir", ",", "and", " ", "the", " ", "stairs", " ", "of", " ",
-            "kirith", " ", "ungol", ",", "of the", " ", "battle", " ",
+            "cirith", " ", "ungol", ",", "of the", " ", "battle", " ",
             "of the", "\n", "pelennor", " ", "fields", ",", "and", " ",
             "of the", " ", "coming", " ", "of", " ", "aragorn", " ", "in", " ",
             "the", " ", "fleet", " ", "of", " ", "umbar", "." ],

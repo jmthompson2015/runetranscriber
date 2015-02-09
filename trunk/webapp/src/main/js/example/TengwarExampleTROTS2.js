@@ -6,7 +6,7 @@ var TengwarExampleTROTS2 =
     IMAGE: "https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/returnoftheshadow/TROTS_TitlePage2.jpg",
 
     LANGUAGE_STRING: "named Bingo but afterwards Frodo, is followed from Hobbiton in the\n"
-            + "Shire through the Old Forest to Weathertop and Rivendell, and ends\n"
+            + "Shire through the Old Forest to Weathertop and Rivendell and ends\n"
             + "in this volume before the tomb of Balin the Dwarf-Lord of Moria.",
 
     LANGUAGE_WORDS: [ "named", " ", "bingo", " ", "but", " ", "afterwards",
