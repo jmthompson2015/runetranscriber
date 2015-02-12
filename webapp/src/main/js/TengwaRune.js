@@ -561,6 +561,26 @@ var TengwaRune =
     "rightCurl", "topCurl", // u
     "underBar", "circumflex", "chevron" // other
     ],
+
+    findRuneByPhoneme: function(phoneme)
+    {
+        var answer;
+        var values = TengwaRune.values;
+        var properties = TengwaRune.properties;
+
+        for (var j = 0; j < values.length; j++)
+        {
+            rune = values[j];
+
+            if (properties[rune].phoneme === phoneme)
+            {
+                answer = rune;
+                break;
+            }
+        }
+
+        return answer;
+    },
 }
 
 if (Object.freeze)
