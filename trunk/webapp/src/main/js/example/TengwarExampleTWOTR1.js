@@ -61,7 +61,7 @@ var TengwarExampleTWOTR1 =
             TengwaRune.SPACE,
             // of the
             TengwaRune.OF_THE, TengwaRune.SPACE,
-            // history
+            // victory
             TengwaRune.AMPA, [ TengwaRune.ACUTE, TengwaRune.SILME_NUQUERNA ],
             TengwaRune.TINCO, [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
             TengwaRune.ANNA, TengwaRune.SPACE,

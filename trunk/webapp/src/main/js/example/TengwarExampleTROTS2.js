@@ -113,7 +113,7 @@ var TengwarExampleTROTS2 =
             [ TengwaRune.LEFT_CURL, TengwaRune.LAMBE ],
             TengwaRune.ANDO,
             TengwaRune.SPACE,
-            // forrest
+            // forest
             TengwaRune.FORMEN,
             [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
             [ TengwaRune.DOT, TengwaRune.SILME ],
