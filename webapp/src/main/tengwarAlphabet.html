@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rune Transcriber: Tengwar Alphabet</title>
+<meta charset="utf-8">
+<link rel="stylesheet"
+	href="https://runetranscriber.googlecode.com/svn/trunk/core/doc/includes/style.css">
+
+<script src="js/util/Logger.js"></script>
+<script src="js/util/ArrayAugments.js"></script>
+<script src="js/util/HtmlUtilities.js"></script>
+
+<script src="js/EnglishTengwarTranscriber2.js"></script>
+<script src="js/TengwaRune.js"></script>
+
+<script src="js/ui/TengwarPanel.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+	<div id="displayArea"></div>
+	<script>
+        "use strict";
+        var LOGGER = new Logger();
+        LOGGER.setTraceEnabled(false);
+
+        document.getElementById("displayArea").innerHTML = TengwarPanel
+                .createHtml();
+    </script>
+</body>
+</html>
