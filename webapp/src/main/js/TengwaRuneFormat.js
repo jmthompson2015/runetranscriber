@@ -12,7 +12,9 @@ var TengwaRuneFormat =
 
             if (!rune)
             {
-                LOGGER.error("Missing rune at position " + i+"; runes.length = "+runes.length+" runes = "+runes);
+                LOGGER.error("Missing rune at position " + i
+                        + "; runes.length = " + runes.length + " runes = "
+                        + runes);
             }
 
             answer += properties[rune].name;
@@ -47,12 +49,26 @@ var TengwaRuneFormat =
     {
         var answer = "";
 
+        var transcriber = new PhoneticToTengwarTranscriber();
         var properties = TengwaRune.properties;
 
         for (var i = 0; i < runes.length; i++)
         {
             var rune = runes[i];
-            answer += properties[rune].fontLetter;
+
+            var letter = transcriber.determineFontLetter(rune);
+
+            if (Array.isArray(letter))
+            {
+                for (var j = 0; j < letter.length; j++)
+                {
+                    answer += letter[j];
+                }
+            }
+            else
+            {
+                answer += letter;
+            }
         }
 
         return answer;
