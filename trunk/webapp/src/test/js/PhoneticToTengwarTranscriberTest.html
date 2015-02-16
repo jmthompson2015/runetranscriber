@@ -138,9 +138,75 @@
         assert.ok(result);
     });
 
+    QUnit.test("isConsonant()", function(assert)
+    {
+        // Setup.
+        var transcriber = createTranscriber();
+
+        // Run / Verify.
+        assert.ok(!transcriber.isConsonant("a"));
+        assert.ok(!transcriber.isConsonant("e"));
+        assert.ok(!transcriber.isConsonant("i"));
+        assert.ok(!transcriber.isConsonant("o"));
+        assert.ok(!transcriber.isConsonant("u"));
+
+        assert.ok(!transcriber.isConsonant(" "));
+        assert.ok(!transcriber.isConsonant(","));
+        assert.ok(!transcriber.isConsonant("."));
+
+        assert.ok(transcriber.isConsonant("b"));
+        assert.ok(transcriber.isConsonant("c"));
+        assert.ok(transcriber.isConsonant("d"));
+        assert.ok(transcriber.isConsonant("f"));
+        assert.ok(transcriber.isConsonant("g"));
+        assert.ok(transcriber.isConsonant("h"));
+    });
+
+    QUnit.test("isVowel()", function(assert)
+    {
+        // Setup.
+        var transcriber = createTranscriber();
+
+        // Run / Verify.
+        assert.ok(transcriber.isVowel("a"));
+        assert.ok(transcriber.isVowel("e"));
+        assert.ok(transcriber.isVowel("i"));
+        assert.ok(transcriber.isVowel("o"));
+        assert.ok(transcriber.isVowel("u"));
+
+        assert.ok(!transcriber.isVowel(" "));
+        assert.ok(!transcriber.isVowel(","));
+        assert.ok(!transcriber.isVowel("."));
+
+        assert.ok(!transcriber.isVowel("b"));
+        assert.ok(!transcriber.isVowel("c"));
+        assert.ok(!transcriber.isVowel("d"));
+        assert.ok(!transcriber.isVowel("f"));
+        assert.ok(!transcriber.isVowel("g"));
+        assert.ok(!transcriber.isVowel("h"));
+    });
+
     /**************************************************************************
      * phonemesToRunes()
      */
+
+    QUnit.test("JMT phonemesToRunes()", function(assert)
+    {
+        var input = [ "j", [ "e", "f", "f" ], "r", [ "e", "y" ], " ", "m",
+                [ "i", "c" ], "h", "a", [ "e", "l" ], " ", "t", "h",
+                [ "o", "m" ], "p", "s", [ "o", "n" ] ];
+        var expected = [ "anga", [ "dot", "formen", "underBar" ], "romen",
+                [ "dot", "anna" ], "space",
+
+                "malta", [ "acute", "calma" ], [ "threeDots", "shortCarrier" ],
+                [ "dot", "lambe" ], "space",
+
+                "tinco", "hyarmen", [ "leftCurl", "malta" ], "parma", "silme",
+                [ "leftCurl", "numen" ] ];
+
+        testPhonemesToRunes(assert, input, expected);
+    });
+
     QUnit.test("Example TLOTR2 phonemesToRunes()", function(assert)
     {
         // Change 'by'
@@ -290,6 +356,25 @@
     /**************************************************************************
      * runesToFontLetters()
      */
+
+    QUnit.test("JMT runesToFontLetters()", function(assert)
+    {
+        var input = [ "anga", [ "dot", "formen", "underBar" ], "romen",
+                [ "dot", "anna" ], "space",
+
+                "malta", [ "acute", "calma" ], [ "threeDots", "shortCarrier" ],
+                [ "dot", "lambe" ], "space",
+
+                "tinco", "hyarmen", [ "leftCurl", "malta" ], "parma", "silme",
+                [ "leftCurl", "numen" ] ];
+        var expected = [ "s", [ "e", "T", "&#237;" ], "7", [ "h", "T" ], " ",
+
+        "t", [ "a", "R" ], [ "`", "D" ], [ "j", "T" ], " ",
+
+        "1", "9", [ "t", "Y" ], "q", "8", [ "5", "Y" ] ];
+
+        testRunesToFontLetters(assert, input, expected, true);
+    });
 
     QUnit.test("runesToFontLetters()", function(assert)
     {

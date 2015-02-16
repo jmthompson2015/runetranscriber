@@ -20,10 +20,8 @@ var PhoneticToTengwarTranscriber = function()
     phonemeToRuneMap[[ "a", "g" ]] = [ "threeDots", "ungwe" ];
     phonemeToRuneMap[[ "a", "j", "e" ]] = [ "threeDots", "anga", "underDot" ];
     phonemeToRuneMap[[ "a", "k" ]] = [ "threeDots", "quesse" ];
-    phonemeToRuneMap[[ "a", "k", "k" ]] = [ "threeDots", "quesse", "underBar" ];
     phonemeToRuneMap[[ "a", "l" ]] = [ "threeDots", "lambe" ];
     phonemeToRuneMap[[ "a", "l", "e" ]] = [ "threeDots", "lambe", "underDot" ];
-    phonemeToRuneMap[[ "a", "l", "l" ]] = [ "threeDots", "lambe", "underBar" ];
     phonemeToRuneMap[[ "a", "m" ]] = [ "threeDots", "malta" ];
     phonemeToRuneMap[[ "a", "m", "e" ]] = [ "threeDots", "malta", "underDot" ];
     phonemeToRuneMap[[ "a", "n" ]] = [ "threeDots", "numen" ];
@@ -33,16 +31,13 @@ var PhoneticToTengwarTranscriber = function()
             "formen" ];
     phonemeToRuneMap[[ "a", "n", "d", "u", "i", "n" ]] = [
             [ "threeDots", "numen" ], "ando", [ "topCurl", "yanta" ], "numen" ];
-    phonemeToRuneMap[[ "a", "n", "n" ]] = [ "threeDots", "numen", "underBar" ];
     phonemeToRuneMap[[ "a", "n", "t", "i", "r", "i" ]] = [
             [ "threeDots", "numen" ], "tinco", [ "acute", "romen" ],
             [ "acute", "shortCarrier" ] ];
     phonemeToRuneMap[[ "a", "ng" ]] = [ "threeDots", "ngwalme" ];
-    phonemeToRuneMap[[ "a", "p", "p" ]] = [ "threeDots", "parma", "underBar" ];
     phonemeToRuneMap[[ "a", "r" ]] = [ "threeDots", "romen" ];
     phonemeToRuneMap[[ "a", "r", "e" ]] = [ "threeDots", "ore", "underDot" ];
     phonemeToRuneMap[[ "a", "t" ]] = [ "threeDots", "tinco" ];
-    phonemeToRuneMap[[ "a", "t", "t" ]] = [ "threeDots", "tinco", "underBar" ];
     phonemeToRuneMap[[ "a", "y" ]] = [ "threeDots", "anna" ];
     phonemeToRuneMap[[ "a", "z" ]] = [ "threeDots", "esseNuquerna" ];
     phonemeToRuneMap["ai"] = [ "threeDots", "yanta" ];
@@ -72,12 +67,10 @@ var PhoneticToTengwarTranscriber = function()
             [ "dot", "quesse" ], [ "leftCurl", "ampa" ], [ "dot", "romen" ],
             [ "acute", "longCarrier" ] ];
     phonemeToRuneMap[[ "e", "l" ]] = [ "dot", "lambe" ];
-    phonemeToRuneMap[[ "e", "l", "l" ]] = [ "dot", "lambe", "underBar" ];
     phonemeToRuneMap[[ "e", "m" ]] = [ "dot", "malta" ];
     phonemeToRuneMap[[ "e", "n" ]] = [ "dot", "numen" ];
     phonemeToRuneMap[[ "e", "n", "g", "a", "r", "d" ]] = [ [ "dot", "numen" ],
             "ungwe", [ "threeDots", "ore" ], "ando" ];
-    phonemeToRuneMap[[ "e", "n", "n" ]] = [ "dot", "numen", "underBar" ];
     phonemeToRuneMap[[ "e", "ng" ]] = [ "dot", "ngwalme" ];
     phonemeToRuneMap[[ "e", "r" ]] = [ "dot", "romen" ];
     phonemeToRuneMap[[ "e", "r", "e" ]] = [ "dot", "romen", "underDot" ];
@@ -107,6 +100,7 @@ var PhoneticToTengwarTranscriber = function()
             [ "acute", "umbar" ], [ "dot", "ore" ],
             [ "threeDots", "shortCarrier" ], "tinco" ];
     phonemeToRuneMap[[ "i", "c" ]] = [ "acute", "silmeNuquerna" ];
+    phonemeToRuneMap[[ "i", "c", "h" ]] = [ [ "acute", "calma" ] ];
     phonemeToRuneMap[[ "i", "c", "t", "o", "r", "y" ]] = [
             [ "acute", "silmeNuquerna" ], "tinco", [ "leftCurl", "romen" ],
             "anna" ];
@@ -160,13 +154,11 @@ var PhoneticToTengwarTranscriber = function()
             [ "rightCurl", "malta" ], [ "dot", "numen" ],
             [ "leftCurl", "romen" ] ];
     phonemeToRuneMap["o"] = [ "leftCurl", "shortCarrier" ];
-    phonemeToRuneMap[[ "o", "b", "b" ]] = [ "leftCurl", "umbar", "underBar" ];
     phonemeToRuneMap[[ "o", "d" ]] = [ "leftCurl", "ando" ];
     phonemeToRuneMap[[ "o", "f" ]] = [ "leftCurl", "formen" ];
     phonemeToRuneMap[[ "o", "g" ]] = [ "leftCurl", "ungwe" ];
     phonemeToRuneMap[[ "o", "k" ]] = [ "leftCurl", "quesse" ];
     phonemeToRuneMap[[ "o", "l" ]] = [ "leftCurl", "lambe" ];
-    phonemeToRuneMap[[ "o", "l", "l" ]] = [ "leftCurl", "lambe", "underBar" ];
     phonemeToRuneMap[[ "o", "m" ]] = [ "leftCurl", "malta" ];
     phonemeToRuneMap[[ "o", "m", "e" ]] = [ "leftCurl", "malta", "underDot" ];
     phonemeToRuneMap[[ "o", "n" ]] = [ "leftCurl", "numen" ];
@@ -652,6 +644,11 @@ PhoneticToTengwarTranscriber.prototype.determineFontLetter = function(rune)
     return answer;
 }
 
+PhoneticToTengwarTranscriber.prototype.isConsonant = function(letter)
+{
+    return !this.isPunctuation(letter) && !this.isVowel(letter);
+}
+
 PhoneticToTengwarTranscriber.prototype.isPreVowel = function(rune)
 {
     return rune === "acute" || rune === "bar" || rune === "dot"
@@ -661,10 +658,17 @@ PhoneticToTengwarTranscriber.prototype.isPreVowel = function(rune)
 
 PhoneticToTengwarTranscriber.prototype.isPunctuation = function(letter)
 {
-    var PUNCTUATION = [ TengwaRune.SPACE, TengwaRune.COMMA, TengwaRune.PERIOD,
-            TengwaRune.NEWLINE ];
+    var PUNCTUATION = [ " ", ",", ".", "\n", TengwaRune.SPACE,
+            TengwaRune.COMMA, TengwaRune.PERIOD, TengwaRune.NEWLINE ];
 
     return PUNCTUATION.contains(letter);
+}
+
+PhoneticToTengwarTranscriber.prototype.isVowel = function(letter)
+{
+    var VOWELS = [ "a", "e", "i", "o", "u" ];
+
+    return VOWELS.contains(letter);
 }
 
 PhoneticToTengwarTranscriber.prototype.phonemesToRunes = function(phonemes)
@@ -714,14 +718,38 @@ PhoneticToTengwarTranscriber.prototype.phonemesToRunes = function(phonemes)
             }
             else
             {
-                // Search for the rune with the given phoneme.
-                rune = TengwaRune.findRuneByPhoneme(phoneme);
-
-                if (rune !== undefined)
+                if (Array.isArray(phoneme))
                 {
-                    answer[answer.length] = rune;
-                    i += j;
-                    j = -1;
+                    if (phoneme.length === 3)
+                    {
+                        var letter0 = phoneme[0];
+                        var letter1 = phoneme[1];
+                        var letter2 = phoneme[2];
+
+                        if (this.isVowel(letter0) && this.isConsonant(letter1)
+                                && letter1 === letter2)
+                        {
+                            var rune0 = TengwaRune.findRuneByPhoneme(letter0);
+                            var rune1 = TengwaRune.findRuneByPhoneme(letter1);
+
+                            answer[answer.length] = [ rune0, rune1,
+                                    TengwaRune.UNDER_BAR ];
+                            i += j;
+                            j = -1;
+                        }
+                    }
+                }
+                else
+                {
+                    // Search for the rune with the given phoneme.
+                    rune = TengwaRune.findRuneByPhoneme(phoneme);
+
+                    if (rune !== undefined)
+                    {
+                        answer[answer.length] = rune;
+                        i += j;
+                        j = -1;
+                    }
                 }
             }
         }
