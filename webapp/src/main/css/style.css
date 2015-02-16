@@ -1,3 +1,11 @@
+body {
+    background-image:
+        url('https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/yellowGradient.png');
+    background-repeat: no-repeat;
+    font-family: Arial, Verdana, Helvetica, Sans-Serif;
+    font-size: medium;
+}
+
 @font-face {
     font-family: Junicode-Bold;
     src:
@@ -29,12 +37,17 @@
 }
 
 #inputArea, #outputArea {
+    background-color: white;
     font-size: large;
 }
 
 #inputArea, #buttonBar, #outputArea {
     text-align: center;
     width: 100%;
+}
+
+.left {
+    text-align: left;
 }
 
 #buttonTable {
