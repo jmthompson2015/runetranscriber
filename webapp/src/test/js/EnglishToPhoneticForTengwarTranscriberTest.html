@@ -155,6 +155,14 @@
      * languageStringToWords()
      */
 
+    QUnit.test("JMT languageStringToWords()", function(assert)
+    {
+        var input = "Jeffrey Michael Thompson";
+        var expected = [ "Jeffrey", " ", "Michael", " ", "Thompson" ];
+
+        testLanguageStringToWords(assert, input, expected);
+    });
+
     QUnit.test("Example TLOTR2 languageStringToWords()", function(assert)
     {
         testLanguageStringToWords(assert, TengwarExampleTLOTR2.LANGUAGE_STRING
@@ -243,6 +251,17 @@
     /***************************************************************************
      * languageWordsToPhonemes()
      */
+
+    QUnit.test("JMT languageWordsToPhonemes()", function(assert)
+    {
+        var input = [ "Jeffrey", " ", "Michael", " ", "Thompson" ];
+        var expected = [ "j", [ "e", "f", "f" ], "r", [ "e", "y" ], " ", "m",
+                [ "i", "c" ], "h", "a", [ "e", "l" ], " ", "t", "h",
+                [ "o", "m" ], "p", "s", [ "o", "n" ] ];
+
+        testLanguageWordsToPhonemes(assert, input, expected, true);
+    });
+
     QUnit.test("Example TLOTR2 languageWordsToPhonemes()", function(assert)
     {
         // Change 'john' and reverse 'e' and 'i' mostly
