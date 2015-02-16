@@ -31,19 +31,34 @@
 <body>
 	<table>
 		<tr>
+			<td>Input</td>
+		</tr>
+		<tr>
 			<td><textarea id="inputArea" rows="4" cols="60">the lord of the rings</textarea>
 			</td>
+		</tr>
+		<tr>
+			<td>Output Runes</td>
 		</tr>
 		<tr>
 			<td id="buttonBar">
 				<table id="buttonTable">
 					<tr>
-						<td><input name="outputRune" type="radio"
-							onclick="setAngloSaxon()">Anglo Saxon</input></td>
-						<td><input name="outputRune" type="radio"
-							onclick="setCirth()">Cirth</input></td>
-						<td><input checked name="outputRune" type="radio"
-							onclick="setTengwar()">Tengwar</input></td>
+						<td class="left" colspan="2"><input name="outputRune"
+							type="radio" onclick="setAngloSaxon()" />Anglo Saxon</td>
+					</tr>
+					<tr>
+						<td class="left" colspan="2"><input name="outputRune"
+							type="radio" onclick="setCirth()" />Cirth</td>
+					</tr>
+					<tr>
+						<td class="left" colspan="2"><input checked name="outputRune"
+							type="radio" onclick="setTengwar()" />Tengwar</td>
+					</tr>
+					<tr>
+						<td>
+							<button id="clearButton" onclick="clearActionPerformed()">Clear</button>
+						</td>
 						<td>
 							<button id="transcribeButton"
 								onclick="transcribeActionPerformed()">Transcribe</button>
@@ -53,20 +68,69 @@
 			</td>
 		</tr>
 		<tr>
-			<td><textarea id="outputArea" rows="4" cols="60"
-					class="font-tengwar"></textarea></td>
+			<td>Output</td>
+		</tr>
+		<tr>
+			<td><div id="outputArea" class="font-tengwar"></div></td>
 		</tr>
 	</table>
 	<script>
         "use strict";
         var LOGGER = new Logger();
         LOGGER.setTraceEnabled(false);
-        //        LOGGER.setDebugEnabled(false);
 
         var easTranscriber = new EnglishAngloSaxonTranscriber();
         var eceTranscriber = new EnglishCirthEreborTranscriber();
         var etTranscriber = new EnglishTengwarTranscriber();
-        var transcriber = etTranscriber;
+        var transcriber;
+
+        function clearActionPerformed()
+        {
+            clearInputArea();
+            clearOutputArea();
+        }
+
+        function clearInputArea()
+        {
+            var inputArea = document.getElementById("inputArea");
+            inputArea.value = "";
+        }
+
+        function clearOutputArea()
+        {
+            var outputArea = document.getElementById("outputArea");
+            outputArea.innerHTML = "";
+            HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
+            HtmlUtilities.removeClass(outputArea, "font-cirth");
+            HtmlUtilities.removeClass(outputArea, "font-tengwar");
+        }
+
+        function setAngloSaxon()
+        {
+            clearOutputArea();
+            transcriber = easTranscriber;
+            var outputArea = document.getElementById("outputArea");
+            HtmlUtilities.addClass(outputArea, "font-anglo-saxon");
+            transcribeActionPerformed();
+        }
+
+        function setCirth()
+        {
+            clearOutputArea();
+            transcriber = eceTranscriber;
+            var outputArea = document.getElementById("outputArea");
+            HtmlUtilities.addClass(outputArea, "font-cirth");
+            transcribeActionPerformed();
+        }
+
+        function setTengwar()
+        {
+            clearOutputArea();
+            transcriber = etTranscriber;
+            var outputArea = document.getElementById("outputArea");
+            HtmlUtilities.addClass(outputArea, "font-tengwar");
+            transcribeActionPerformed();
+        }
 
         function transcribeActionPerformed()
         {
@@ -79,40 +143,7 @@
             var fontLetters = formatter.getFontLetters(toSequence);
             LOGGER.debug("fontLetters = " + fontLetters);
             var outputArea = document.getElementById("outputArea");
-            outputArea.value = fontLetters;
-        }
-
-        function setAngloSaxon()
-        {
-            transcriber = easTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            outputArea.value = "";
-            HtmlUtilities.removeClass(outputArea, "font-tengwar");
-            HtmlUtilities.removeClass(outputArea, "font-cirth");
-            HtmlUtilities.addClass(outputArea, "font-anglo-saxon");
-            transcribeActionPerformed();
-        }
-
-        function setCirth()
-        {
-            transcriber = eceTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            outputArea.value = "";
-            HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
-            HtmlUtilities.removeClass(outputArea, "font-tengwar");
-            HtmlUtilities.addClass(outputArea, "font-cirth");
-            transcribeActionPerformed();
-        }
-
-        function setTengwar()
-        {
-            transcriber = etTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            outputArea.value = "";
-            HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
-            HtmlUtilities.removeClass(outputArea, "font-cirth");
-            HtmlUtilities.addClass(outputArea, "font-tengwar");
-            transcribeActionPerformed();
+            outputArea.innerHTML = fontLetters;
         }
 
         setTengwar();
