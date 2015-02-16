@@ -1,6 +1,6 @@
 var TengwarPanel =
 {
-    transcriber: new EnglishTengwarTranscriber2(),
+    transcriber: new TengwarToPhoneticTranscriber(),
 
     createCell: function(runes, languageLetter)
     {
