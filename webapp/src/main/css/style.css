@@ -46,6 +46,11 @@ body {
     width: 100%;
 }
 
+#outputArea {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .left {
     text-align: left;
 }
