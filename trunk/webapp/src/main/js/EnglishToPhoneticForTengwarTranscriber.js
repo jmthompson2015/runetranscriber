@@ -344,7 +344,7 @@ EnglishToPhoneticForTengwarTranscriber.prototype.languageWordsToPhonemes = funct
 
     for (var i = 0; i < words.length; i++)
     {
-        var word = words[i];
+        var word = words[i].toLowerCase();
 
         if (this.isPunctuation(word))
         {
