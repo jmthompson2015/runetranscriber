@@ -8,6 +8,7 @@ body {
 @font-face { font-family: Junicode-Bold; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf'); }
 @font-face { font-family: Angerthas; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF'); }
 @font-face { font-family: Tengwar; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf'); }
+@font-face { font-family: Aurebesh; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Aurek-Besh.ttf'); }
 
 .accent {
 	background-image: url('../images/GreenMarbleVerdeGuatemala.jpg');
@@ -61,6 +62,10 @@ body {
 
 .font-anglo-saxon{
 	font-family: Junicode-Bold;
+}
+
+.font-aurebesh{
+	font-family: Aurebesh;
 }
 
 .font-cirth{
@@ -224,6 +229,14 @@ body {
 	border-color: darkgreen;
 	font-family: Junicode-Bold;
 	font-size: x-large;
+	padding: 5px;
+}
+
+.table-cell-aurebesh {
+	border: 1px solid;
+	border-color: darkgreen;
+	font-family: Aurebesh;
+	font-size: large;
 	padding: 5px;
 }
 
