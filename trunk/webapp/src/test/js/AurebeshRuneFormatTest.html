@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AurebeshRuneFormatTest</title>
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/qunit/qunit-1.15.0.css">
+<script src="http://code.jquery.com/qunit/qunit-1.15.0.js"></script>
+
+<script src="../../main/js/util/Logger.js"></script>
+
+<script src="../../main/js/AurebeshRune.js"></script>
+<script src="../../main/js/AurebeshRuneFormat.js"></script>
+<script src="../../main/js/EnglishAurebeshTranscriber.js"></script>
+
+<script>
+    var LOGGER = new Logger();
+
+    QUnit.test("format()",
+            function(assert)
+            {
+                // Setup.
+                var runes = [ AurebeshRune.TRILL, AurebeshRune.DORN,
+                        AurebeshRune.THESH ];
+
+                // Run.
+                var result = AurebeshRuneFormat.format(runes);
+
+                // Verify.
+                assert.equal(result, "TRILL-DORN-THESH");
+            });
+
+    QUnit.test("parse()", function(assert)
+    {
+        // Setup.
+        var string = "TRILL-DORN-THESH";
+
+        // Run.
+        var result = AurebeshRuneFormat.parse(string);
+
+        // Verify.
+        var expected = [ AurebeshRune.TRILL, AurebeshRune.DORN,
+                AurebeshRune.THESH ];
+        assert.equal(result.length, 3);
+
+        for (var i = 0; i < result.length; i++)
+        {
+            assert.equal(result[i], expected[i], "" + i);
+        }
+    });
+
+    QUnit.test("getFontLetters()",
+            function(assert)
+            {
+                // Setup.
+                var runes = [ AurebeshRune.TRILL, AurebeshRune.DORN,
+                        AurebeshRune.THESH ];
+
+                // Run.
+                var result = AurebeshRuneFormat.getFontLetters(runes);
+
+                // Verify.
+                assert.equal(result, "td&#240;");
+            });
+</script>
+</head>
+<body>
+	<div id="qunit"></div>
+</body>
+</html>
