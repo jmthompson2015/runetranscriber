@@ -14,6 +14,10 @@
 <script src="../../main/js/AngloSaxonRuneFormat.js"></script>
 <script src="../../main/js/EnglishAngloSaxonTranscriber.js"></script>
 
+<script src="../../main/js/AurebeshRune.js"></script>
+<script src="../../main/js/AurebeshRuneFormat.js"></script>
+<script src="../../main/js/EnglishAurebeshTranscriber.js"></script>
+
 <script src="../../main/js/CerthRune.js"></script>
 <script src="../../main/js/CerthRuneFormat.js"></script>
 <script src="../../main/js/EnglishCirthEreborTranscriber.js"></script>
@@ -29,9 +33,11 @@
     {
         // Setup.
         var transcriber0 = new EnglishAngloSaxonTranscriber();
-        var transcriber1 = new EnglishCirthEreborTranscriber();
-        var transcriber2 = new EnglishTengwarTranscriber();
-        var transcribers = [ transcriber0, transcriber1, transcriber2 ];
+        var transcriber1 = new EnglishAurebeshTranscriber();
+        var transcriber2 = new EnglishCirthEreborTranscriber();
+        var transcriber3 = new EnglishTengwarTranscriber();
+        var transcribers = [ transcriber0, transcriber1, transcriber2,
+                transcriber3 ];
 
         // Run / Verify.
         for (var i = 0; i < transcribers.length; i++)
