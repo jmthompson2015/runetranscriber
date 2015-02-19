@@ -8,7 +8,7 @@ body {
 @font-face { font-family: Junicode-Bold; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf'); }
 @font-face { font-family: Angerthas; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF'); }
 @font-face { font-family: Tengwar; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf'); }
-@font-face { font-family: Aurebesh; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Aurek-Besh.ttf'); }
+@font-face { font-family: Aurebesh; src: url('https://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Aurebesh.ttf'); }
 
 .accent {
 	background-image: url('../images/GreenMarbleVerdeGuatemala.jpg');
