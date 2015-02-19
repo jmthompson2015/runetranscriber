@@ -11,9 +11,12 @@
 
 <script src="js/AngloSaxonRune.js"></script>
 <script src="js/AngloSaxonRuneFormat.js"></script>
+<script src="js/AurebeshRune.js"></script>
+<script src="js/AurebeshRuneFormat.js"></script>
 <script src="js/CerthRune.js"></script>
 <script src="js/CerthRuneFormat.js"></script>
 <script src="js/EnglishAngloSaxonTranscriber.js"></script>
+<script src="js/EnglishAurebeshTranscriber.js"></script>
 <script src="js/EnglishCirthEreborTranscriber.js"></script>
 <script src="js/EnglishTengwarTranscriber.js"></script>
 <script src="js/EnglishToPhoneticForTengwarTranscriber.js"></script>
@@ -48,6 +51,12 @@
 							type="radio" name="outputRune"
 							onclick="mode = 'angloSaxon'; transcribeActionPerformed();" /> <label
 							for="angloSaxon">Anglo Saxon</label></td>
+					</tr>
+					<tr>
+						<td class="left" colspan="2"><input id="aurebesh"
+							type="radio" name="outputRune"
+							onclick="mode = 'aurebesh'; transcribeActionPerformed();" /> <label
+							for="aurebesh">Aurebesh</label></td>
 					</tr>
 					<tr>
 						<td class="left" colspan="2"><input id="cirth" type="radio"
@@ -86,6 +95,7 @@
         LOGGER.setTraceEnabled(false);
 
         var easTranscriber = new EnglishAngloSaxonTranscriber();
+        var eaTranscriber = new EnglishAurebeshTranscriber();
         var eceTranscriber = new EnglishCirthEreborTranscriber();
         var etTranscriber = new EnglishTengwarTranscriber();
         var mode = "tengwar";
@@ -108,6 +118,7 @@
             var outputArea = document.getElementById("outputArea");
             outputArea.innerHTML = "";
             HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
+            HtmlUtilities.removeClass(outputArea, "font-aurebesh");
             HtmlUtilities.removeClass(outputArea, "font-cirth");
             HtmlUtilities.removeClass(outputArea, "font-tengwar");
         }
@@ -118,6 +129,14 @@
             transcriber = easTranscriber;
             var outputArea = document.getElementById("outputArea");
             HtmlUtilities.addClass(outputArea, "font-anglo-saxon");
+        }
+
+        function setAurebesh()
+        {
+            clearOutputArea();
+            transcriber = eaTranscriber;
+            var outputArea = document.getElementById("outputArea");
+            HtmlUtilities.addClass(outputArea, "font-aurebesh");
         }
 
         function setCirth()
@@ -141,6 +160,10 @@
             if (mode === "angloSaxon")
             {
                 setAngloSaxon();
+            }
+            else if (mode === "aurebesh")
+            {
+                setAurebesh();
             }
             else if (mode === "cirth")
             {
