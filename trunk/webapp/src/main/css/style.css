@@ -19,6 +19,12 @@ body {
 }
 
 @font-face {
+    font-family: Aurebesh;
+    src:
+        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Aurebesh.ttf');
+}
+
+@font-face {
     font-family: Tengwar;
     src:
         url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf');
@@ -26,6 +32,10 @@ body {
 
 .font-anglo-saxon {
     font-family: Junicode-Bold;
+}
+
+.font-aurebesh {
+    font-family: Aurebesh;
 }
 
 .font-cirth {
