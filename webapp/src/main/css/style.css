@@ -1,6 +1,6 @@
 body {
     background-image:
-        url('https://runetranscriber.googlecode.com/svn/trunk/core/doc/images/yellowGradient.png');
+        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/yellowGradient.png');
     background-repeat: no-repeat;
     font-family: Arial, Verdana, Helvetica, Sans-Serif;
     font-size: medium;
@@ -9,25 +9,25 @@ body {
 @font-face {
     font-family: Junicode-Bold;
     src:
-        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Junicode-Bold.ttf');
+        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/Junicode-Bold.ttf');
 }
 
 @font-face {
     font-family: Angerthas;
     src:
-        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/ANGERTH.TTF');
+        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/ANGERTH.TTF');
 }
 
 @font-face {
     font-family: Aurebesh;
     src:
-        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/Aurebesh.ttf');
+        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/Aurebesh.ttf');
 }
 
 @font-face {
     font-family: Tengwar;
     src:
-        url('http://runetranscriber.googlecode.com/svn/trunk/core/src/main/resources/TengwarSindarin.ttf');
+        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/TengwarSindarin.ttf');
 }
 
 .font-anglo-saxon {
