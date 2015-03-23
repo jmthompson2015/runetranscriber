@@ -11,9 +11,9 @@
     <properties>
         <!-- Versions -->
         <commons.collections.version>3.2.1</commons.collections.version>
-        <commons.lang.version>3.1</commons.lang.version>
+        <commons.lang.version>3.3.2</commons.lang.version>
         <java.version>1.6</java.version>
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
     </properties>
     <modules>
         <module>core</module>
@@ -43,7 +43,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.2</version>
                 <configuration>
                     <source>${java.version}</source>
                     <test>${java.version}</test>
