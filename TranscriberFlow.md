@@ -1,0 +1,14 @@
+# Introduction #
+
+Add your content here.
+
+
+# Details #
+
+| **State** | **Upward Transition** | **Downward Transition** |
+|:----------|:----------------------|:------------------------|
+| Font Letters | _n/a_ | _not supported_ |
+| Runes | runesToFontLetters() | runesToPhonemes() |
+| Phonemes | phonemesToRunes() | phonemesToLanguageWords() |
+| Language Words | languageWordsToPhonemes() | languageWordsToString() |
+| Language String | languageStringToWords() | _n/a_ |
