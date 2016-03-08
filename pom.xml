@@ -10,7 +10,7 @@
     <name>RuneTranscriber</name>
     <properties>
         <!-- Versions -->
-        <commons.collections.version>3.2.1</commons.collections.version>
+        <commons.collections.version>3.2.2</commons.collections.version>
         <commons.lang.version>3.3.2</commons.lang.version>
         <java.version>1.6</java.version>
         <junit.version>4.12</junit.version>
