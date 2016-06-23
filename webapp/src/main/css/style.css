@@ -1,6 +1,6 @@
 body {
     background-image:
-        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/yellowGradient.png');
+        url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/yellowGradient.png');
     background-repeat: no-repeat;
     font-family: Arial, Verdana, Helvetica, Sans-Serif;
     font-size: medium;
@@ -8,26 +8,22 @@ body {
 
 @font-face {
     font-family: Junicode-Bold;
-    src:
-        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/Junicode-Bold.ttf');
+    src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/Junicode-Bold.ttf');
 }
 
 @font-face {
     font-family: Angerthas;
-    src:
-        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/ANGERTH.TTF');
+    src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/ANGERTH.TTF');
 }
 
 @font-face {
     font-family: Aurebesh;
-    src:
-        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/Aurebesh.ttf');
+    src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/Aurebesh.ttf');
 }
 
 @font-face {
     font-family: Tengwar;
-    src:
-        url('https://runetranscriber.googlecode.com/svn/trunk/webapp/src/main/resources/TengwarSindarin.ttf');
+    src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/TengwarSindarin.ttf');
 }
 
 .font-anglo-saxon {
