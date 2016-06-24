@@ -1,4 +1,4 @@
-define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, EnglishAurebeshTranscriber)
+define([ "AurebeshRune" ], function(AurebeshRune)
 {
     "use strict";
     var AurebeshRuneFormat =
@@ -49,26 +49,12 @@ define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, 
         {
             var answer = "";
 
-            var transcriber = new EnglishAurebeshTranscriber();
             var properties = AurebeshRune.properties;
 
             for (var i = 0; i < runes.length; i++)
             {
                 var rune = runes[i];
-
-                var letter = transcriber.determineFontLetter(rune);
-
-                if (Array.isArray(letter))
-                {
-                    for (var j = 0; j < letter.length; j++)
-                    {
-                        answer += letter[j];
-                    }
-                }
-                else
-                {
-                    answer += letter;
-                }
+                answer += properties[rune].fontLetter;
             }
 
             return answer;
