@@ -1,15 +1,20 @@
 /*
  * Provides an example for Tengwar runes from <a href="http://en.wikipedia.org/wiki/Tengwar">Wikipedia</a>.
  */
-var TengwarExample1 =
+define([ "TengwaRune" ], function(TengwaRune)
 {
-    LANGUAGE_LETTERS: "tengwar",
+    "use strict";
+    var TengwarExample1 =
+    {
+        LANGUAGE_LETTERS: "tengwar",
 
-    RUNES: [ TengwaRune.TINCO, TengwaRune.ACUTE, TengwaRune.UNGWE,
-            TengwaRune.THREE_DOTS, TengwaRune.ORE, ],
-}
+        RUNES: [ TengwaRune.TINCO, TengwaRune.ACUTE, TengwaRune.UNGWE, TengwaRune.THREE_DOTS, TengwaRune.ORE, ],
+    }
 
-if (Object.freeze)
-{
-    Object.freeze(TengwarExample1)
-};
+    if (Object.freeze)
+    {
+        Object.freeze(TengwarExample1)
+    };
+
+    return TengwarExample1;
+});
