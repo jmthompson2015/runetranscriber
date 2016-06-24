@@ -1,53 +1,59 @@
-var AngloSaxonRuneFormat =
+define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 {
-    format: function(runes)
+    "use strict";
+    var AngloSaxonRuneFormat =
     {
-        var answer = "";
-
-        var properties = AngloSaxonRune.properties;
-
-        for (var i = 0; i < runes.length; i++)
+        format: function(runes)
         {
-            var rune = runes[i];
-            answer += properties[rune].name;
-            if (i < runes.length - 1)
+            var answer = "";
+
+            var properties = AngloSaxonRune.properties;
+
+            for (var i = 0; i < runes.length; i++)
             {
-                answer += "-";
+                var rune = runes[i];
+                answer += properties[rune].name;
+                if (i < runes.length - 1)
+                {
+                    answer += "-";
+                }
             }
-        }
 
-        return answer;
-    },
+            return answer;
+        },
 
-    parse: function(string)
-    {
-        var answer = [];
-
-        var names = string.split("-");
-        // LOGGER.trace("names.length = " + names.length);
-
-        for (var i = 0; i < names.length; i++)
+        parse: function(string)
         {
-            var name = names[i];
-            // LOGGER.trace("name = " + name);
-            answer[answer.length] = AngloSaxonRune[name];
-        }
+            var answer = [];
 
-        return answer;
-    },
+            var names = string.split("-");
+            // LOGGER.trace("names.length = " + names.length);
 
-    getFontLetters: function(runes)
-    {
-        var answer = "";
+            for (var i = 0; i < names.length; i++)
+            {
+                var name = names[i];
+                // LOGGER.trace("name = " + name);
+                answer[answer.length] = AngloSaxonRune[name];
+            }
 
-        var properties = AngloSaxonRune.properties;
+            return answer;
+        },
 
-        for (var i = 0; i < runes.length; i++)
+        getFontLetters: function(runes)
         {
-            var rune = runes[i];
-            answer += properties[rune].fontLetter;
-        }
+            var answer = "";
 
-        return answer;
-    }
-};
+            var properties = AngloSaxonRune.properties;
+
+            for (var i = 0; i < runes.length; i++)
+            {
+                var rune = runes[i];
+                answer += properties[rune].fontLetter;
+            }
+
+            return answer;
+        }
+    };
+
+    return AngloSaxonRuneFormat;
+});
