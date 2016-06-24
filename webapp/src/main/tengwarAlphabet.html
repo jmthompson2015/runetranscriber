@@ -5,14 +5,11 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/style.css">
 
+<script src="../../../coreweb/lib/require/require-2.2.0.min.js" data-main="js/CerthRune"></script>
+
 <script src="js/util/Logger.js"></script>
 <script src="js/util/ArrayAugments.js"></script>
 <script src="js/util/HtmlUtilities.js"></script>
-
-<script src="js/TengwaRune.js"></script>
-<script src="js/TengwarToPhoneticTranscriber.js"></script>
-
-<script src="js/ui/TengwarPanel.js"></script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -26,7 +23,10 @@
         var LOGGER = new Logger();
         LOGGER.setTraceEnabled(false);
 
-        document.getElementById("displayArea").innerHTML = TengwarPanel.createHtml();
+        require([ "ui/TengwarPanel" ], function(TengwarPanel)
+        {
+            document.getElementById("displayArea").innerHTML = TengwarPanel.createHtml();
+        });
     </script>
 </body>
 </html>

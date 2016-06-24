@@ -5,26 +5,11 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/style.css">
 
+<script src="../../../coreweb/lib/require/require-2.2.0.min.js" data-main="js/CerthRune"></script>
+
 <script src="js/util/Logger.js"></script>
 <script src="js/util/ArrayAugments.js"></script>
 <script src="js/util/HtmlUtilities.js"></script>
-
-<script src="js/AngloSaxonRune.js"></script>
-<script src="js/AngloSaxonRuneFormat.js"></script>
-<script src="js/AurebeshRune.js"></script>
-<script src="js/AurebeshRuneFormat.js"></script>
-<script src="js/CerthRune.js"></script>
-<script src="js/CerthRuneFormat.js"></script>
-<script src="js/EnglishAngloSaxonTranscriber.js"></script>
-<script src="js/EnglishAurebeshTranscriber.js"></script>
-<script src="js/EnglishCirthEreborTranscriber.js"></script>
-<script src="js/EnglishTengwarTranscriber.js"></script>
-<script src="js/EnglishToPhoneticForTengwarTranscriber.js"></script>
-<script src="js/PhoneticToEnglishForTengwarTranscriber.js"></script>
-<script src="js/PhoneticToTengwarTranscriber.js"></script>
-<script src="js/TengwaRune.js"></script>
-<script src="js/TengwarToPhoneticTranscriber.js"></script>
-<script src="js/TengwaRuneFormat.js"></script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -37,8 +22,7 @@
 			<td>Input</td>
 		</tr>
 		<tr>
-			<td><textarea id="inputArea" rows="4" cols="60">the lord of the rings</textarea>
-			</td>
+			<td><textarea id="inputArea" rows="4" cols="60">the lord of the rings</textarea></td>
 		</tr>
 		<tr>
 			<td>Output Runes</td>
@@ -47,36 +31,25 @@
 			<td id="buttonBar">
 				<table id="buttonTable">
 					<tr>
-						<td class="left" colspan="2"><input id="angloSaxon"
-							type="radio" name="outputRune"
-							onclick="mode = 'angloSaxon'; transcribeActionPerformed();" /> <label
+						<td class="left" colspan="2"><input id="angloSaxon" type="radio" name="outputRune" /> <label
 							for="angloSaxon">Anglo Saxon</label></td>
 					</tr>
 					<tr>
-						<td class="left" colspan="2"><input id="aurebesh"
-							type="radio" name="outputRune"
-							onclick="mode = 'aurebesh'; transcribeActionPerformed();" /> <label
-							for="aurebesh">Aurebesh</label></td>
+						<td class="left" colspan="2"><input id="aurebesh" type="radio" name="outputRune" /> <label for="aurebesh">Aurebesh</label></td>
 					</tr>
 					<tr>
-						<td class="left" colspan="2"><input id="cirth" type="radio"
-							name="outputRune"
-							onclick="mode = 'cirth'; transcribeActionPerformed();" /> <label
-							for="cirth">Cirth</label></td>
+						<td class="left" colspan="2"><input id="cirth" type="radio" name="outputRune" /> <label for="cirth">Cirth</label></td>
 					</tr>
 					<tr>
-						<td class="left" colspan="2"><input checked id="tengwar"
-							type="radio" name="outputRune"
-							onclick="mode = 'tengwar'; transcribeActionPerformed();" /> <label
+						<td class="left" colspan="2"><input checked id="tengwar" type="radio" name="outputRune" /> <label
 							for="tengwar">Tengwar</label></td>
 					</tr>
 					<tr>
 						<td>
-							<button id="clearButton" onclick="clearActionPerformed()">Clear</button>
+							<button id="clearButton">Clear</button>
 						</td>
 						<td>
-							<button id="transcribeButton"
-								onclick="transcribeActionPerformed()">Transcribe</button>
+							<button id="transcribeButton">Transcribe</button>
 						</td>
 					</tr>
 				</table>
@@ -94,99 +67,128 @@
         var LOGGER = new Logger();
         LOGGER.setTraceEnabled(false);
 
-        var easTranscriber = new EnglishAngloSaxonTranscriber();
-        var eaTranscriber = new EnglishAurebeshTranscriber();
-        var eceTranscriber = new EnglishCirthEreborTranscriber();
-        var etTranscriber = new EnglishTengwarTranscriber();
-        var mode = "tengwar";
-        var transcriber;
-
-        function clearActionPerformed()
+        require([ "EnglishAngloSaxonTranscriber", "EnglishAurebeshTranscriber", "EnglishCirthEreborTranscriber",
+                "EnglishTengwarTranscriber" ], function(EnglishAngloSaxonTranscriber, EnglishAurebeshTranscriber,
+                EnglishCirthEreborTranscriber, EnglishTengwarTranscriber)
         {
-            clearInputArea();
-            clearOutputArea();
-        }
+            var easTranscriber = new EnglishAngloSaxonTranscriber();
+            var eaTranscriber = new EnglishAurebeshTranscriber();
+            var eceTranscriber = new EnglishCirthEreborTranscriber();
+            var etTranscriber = new EnglishTengwarTranscriber();
+            var mode = "tengwar";
+            var transcriber;
 
-        function clearInputArea()
-        {
-            var inputArea = document.getElementById("inputArea");
-            inputArea.value = "";
-        }
-
-        function clearOutputArea()
-        {
-            var outputArea = document.getElementById("outputArea");
-            outputArea.innerHTML = "";
-            HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
-            HtmlUtilities.removeClass(outputArea, "font-aurebesh");
-            HtmlUtilities.removeClass(outputArea, "font-cirth");
-            HtmlUtilities.removeClass(outputArea, "font-tengwar");
-        }
-
-        function setAngloSaxon()
-        {
-            clearOutputArea();
-            transcriber = easTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            HtmlUtilities.addClass(outputArea, "font-anglo-saxon");
-        }
-
-        function setAurebesh()
-        {
-            clearOutputArea();
-            transcriber = eaTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            HtmlUtilities.addClass(outputArea, "font-aurebesh");
-        }
-
-        function setCirth()
-        {
-            clearOutputArea();
-            transcriber = eceTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            HtmlUtilities.addClass(outputArea, "font-cirth");
-        }
-
-        function setTengwar()
-        {
-            clearOutputArea();
-            transcriber = etTranscriber;
-            var outputArea = document.getElementById("outputArea");
-            HtmlUtilities.addClass(outputArea, "font-tengwar");
-        }
-
-        function transcribeActionPerformed()
-        {
-            if (mode === "angloSaxon")
+            function clearActionPerformed()
             {
-                setAngloSaxon();
-            }
-            else if (mode === "aurebesh")
-            {
-                setAurebesh();
-            }
-            else if (mode === "cirth")
-            {
-                setCirth();
-            }
-            else if (mode === "tengwar")
-            {
-                setTengwar();
+                clearInputArea();
+                clearOutputArea();
             }
 
-            var inputArea = document.getElementById("inputArea");
-            var fromSequence = inputArea.value;
-            LOGGER.debug("fromSequence = " + fromSequence);
-            var toSequence = transcriber.transcribeForward(fromSequence);
-            LOGGER.debug("toSequence = " + toSequence);
-            var formatter = transcriber.getFormatter();
-            var fontLetters = formatter.getFontLetters(toSequence);
-            LOGGER.debug("fontLetters = " + fontLetters);
-            var outputArea = document.getElementById("outputArea");
-            outputArea.innerHTML = fontLetters;
-        }
+            function clearInputArea()
+            {
+                var inputArea = document.getElementById("inputArea");
+                inputArea.value = "";
+            }
 
-        transcribeActionPerformed();
+            function clearOutputArea()
+            {
+                var outputArea = document.getElementById("outputArea");
+                outputArea.innerHTML = "";
+                HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
+                HtmlUtilities.removeClass(outputArea, "font-aurebesh");
+                HtmlUtilities.removeClass(outputArea, "font-cirth");
+                HtmlUtilities.removeClass(outputArea, "font-tengwar");
+            }
+
+            function setAngloSaxon()
+            {
+                clearOutputArea();
+                transcriber = easTranscriber;
+                var outputArea = document.getElementById("outputArea");
+                HtmlUtilities.addClass(outputArea, "font-anglo-saxon");
+            }
+
+            function setAurebesh()
+            {
+                clearOutputArea();
+                transcriber = eaTranscriber;
+                var outputArea = document.getElementById("outputArea");
+                HtmlUtilities.addClass(outputArea, "font-aurebesh");
+            }
+
+            function setCirth()
+            {
+                clearOutputArea();
+                transcriber = eceTranscriber;
+                var outputArea = document.getElementById("outputArea");
+                HtmlUtilities.addClass(outputArea, "font-cirth");
+            }
+
+            function setTengwar()
+            {
+                clearOutputArea();
+                transcriber = etTranscriber;
+                var outputArea = document.getElementById("outputArea");
+                HtmlUtilities.addClass(outputArea, "font-tengwar");
+            }
+
+            function transcribeActionPerformed()
+            {
+                if (mode === "angloSaxon")
+                {
+                    setAngloSaxon();
+                }
+                else if (mode === "aurebesh")
+                {
+                    setAurebesh();
+                }
+                else if (mode === "cirth")
+                {
+                    setCirth();
+                }
+                else if (mode === "tengwar")
+                {
+                    setTengwar();
+                }
+
+                var inputArea = document.getElementById("inputArea");
+                var fromSequence = inputArea.value;
+                LOGGER.debug("fromSequence = " + fromSequence);
+                var toSequence = transcriber.transcribeForward(fromSequence);
+                LOGGER.debug("toSequence = " + toSequence);
+                var formatter = transcriber.getFormatter();
+                var fontLetters = formatter.getFontLetters(toSequence);
+                LOGGER.debug("fontLetters = " + fontLetters);
+                var outputArea = document.getElementById("outputArea");
+                outputArea.innerHTML = fontLetters;
+            }
+
+            document.getElementById("angloSaxon").onclick = function()
+            {
+                mode = 'angloSaxon';
+                transcribeActionPerformed();
+            };
+            document.getElementById("aurebesh").onclick = function()
+            {
+                mode = 'aurebesh';
+                transcribeActionPerformed();
+            };
+            document.getElementById("cirth").onclick = function()
+            {
+                mode = 'cirth';
+                transcribeActionPerformed();
+            };
+            document.getElementById("tengwar").onclick = function()
+            {
+                mode = 'tengwar';
+                transcribeActionPerformed();
+            };
+
+            document.getElementById("clearButton").onclick = clearActionPerformed;
+            document.getElementById("transcribeButton").onclick = transcribeActionPerformed;
+
+            transcribeActionPerformed();
+        });
     </script>
 </body>
 </html>

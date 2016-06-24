@@ -5,15 +5,10 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/style.css">
 
+<script src="../../../coreweb/lib/require/require-2.2.0.min.js" data-main="js/CerthRune"></script>
+
 <script src="js/util/Logger.js"></script>
 <script src="js/util/HtmlUtilities.js"></script>
-
-<script src="js/AurebeshRune.js"></script>
-<script src="js/EnglishAurebeshTranscriber.js"></script>
-
-<script src="js/example/AurebeshExampleToHtml.js"></script>
-<script src="js/example/AurebeshExampleSW1TPM1.js"></script>
-<script src="js/example/AurebeshExampleSW4ANH1.js"></script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -50,144 +45,149 @@
         var LOGGER = new Logger();
         LOGGER.setTraceEnabled(false);
 
-        var example = AurebeshExampleSW1TPM1;
-        // var example = AurebeshExampleSW4ANH1;
-
-        document.getElementById("image").src = example.IMAGE;
-
-        var lines = splitOnNewline(example.RUNES);
-
-        for (var i = 0; i < lines.length; i++)
+        require([ "AurebeshRune", "example/AurebeshExampleSW1TPM1", "example/AurebeshExampleSW4ANH1",
+                "example/AurebeshExampleToHtml" ], function(AurebeshRune, AurebeshExampleSW1TPM1,
+                AurebeshExampleSW4ANH1, AurebeshExampleToHtml)
         {
-            var generator = new AurebeshExampleToHtml(lines[i]);
+            var example = AurebeshExampleSW1TPM1;
+            // var example = AurebeshExampleSW4ANH1;
 
-            var text = "";
-            text += generator.generateFontRows();
-            text += generator.generateRuneRows();
-            text += generator.generatePhonemeRows();
-            console.info(text);
+            document.getElementById("image").src = example.IMAGE;
 
-            var elementId = "line" + (i + 1) + "Table";
-            document.getElementById(elementId).innerHTML = text;
-        }
+            var lines = splitOnNewline(example.RUNES);
 
-        var alphabetText = "<table>";
-        var values = AurebeshRune.values;
-        var properties = AurebeshRune.properties;
+            for (var i = 0; i < lines.length; i++)
+            {
+                var generator = new AurebeshExampleToHtml(lines[i]);
 
-        for (var k = 0; k < 5; k++)
-        {
+                var text = "";
+                text += generator.generateFontRows();
+                text += generator.generateRuneRows();
+                text += generator.generatePhonemeRows();
+                // console.info(text);
+
+                var elementId = "line" + (i + 1) + "Table";
+                document.getElementById(elementId).innerHTML = text;
+            }
+
+            var alphabetText = "<table>";
+            var values = AurebeshRune.values;
+            var properties = AurebeshRune.properties;
+
+            for (var k = 0; k < 5; k++)
+            {
+                alphabetText += "<tr>";
+
+                for (var i = 0; i < 7; i++)
+                {
+                    var index = k * 7 + i;
+
+                    if (index < 34)
+                    {
+                        var rune = values[index];
+                        alphabetText += "<td class='table-cell-aurebesh'>";
+                        alphabetText += properties[rune].fontLetter;
+                        alphabetText += "</td>";
+                        alphabetText += "<td class='table-cell-details'>";
+                        alphabetText += properties[rune].name;
+                        alphabetText += "<br/>";
+                        alphabetText += properties[rune].phoneme;
+                        alphabetText += "</td>";
+                    }
+                }
+
+                alphabetText += "</tr>";
+            }
+
             alphabetText += "<tr>";
 
-            for (var i = 0; i < 7; i++)
+            for (var i = 0; i < 6; i++)
             {
-                var index = k * 7 + i;
-
-                if (index < 34)
-                {
-                    var rune = values[index];
-                    alphabetText += "<td class='table-cell-aurebesh'>";
-                    alphabetText += properties[rune].fontLetter;
-                    alphabetText += "</td>";
-                    alphabetText += "<td class='table-cell-details'>";
-                    alphabetText += properties[rune].name;
-                    alphabetText += "<br/>";
-                    alphabetText += properties[rune].phoneme;
-                    alphabetText += "</td>";
-                }
+                var rune = values[34 + i];
+                alphabetText += "<td class='table-cell-aurebesh'>";
+                alphabetText += properties[rune].fontLetter;
+                alphabetText += "</td>";
+                alphabetText += "<td class='table-cell-details'>";
+                alphabetText += properties[rune].name;
+                alphabetText += "<br/>";
+                alphabetText += properties[rune].phoneme;
+                alphabetText += "</td>";
             }
-
             alphabetText += "</tr>";
-        }
 
-        alphabetText += "<tr>";
-
-        for (var i = 0; i < 6; i++)
-        {
-            var rune = values[34 + i];
-            alphabetText += "<td class='table-cell-aurebesh'>";
-            alphabetText += properties[rune].fontLetter;
-            alphabetText += "</td>";
-            alphabetText += "<td class='table-cell-details'>";
-            alphabetText += properties[rune].name;
-            alphabetText += "<br/>";
-            alphabetText += properties[rune].phoneme;
-            alphabetText += "</td>";
-        }
-        alphabetText += "</tr>";
-
-        alphabetText += "<tr>";
-        for (var i = 0; i < 6; i++)
-        {
-            var rune = values[40 + i];
-            alphabetText += "<td class='table-cell-aurebesh'>";
-            alphabetText += properties[rune].fontLetter;
-            alphabetText += "</td>";
-            alphabetText += "<td class='table-cell-details'>";
-            alphabetText += properties[rune].name;
-            alphabetText += "<br/>";
-            alphabetText += properties[rune].phoneme;
-            alphabetText += "</td>";
-        }
-        alphabetText += "</tr>";
-
-        alphabetText += "<tr>";
-        for (var i = 0; i < 6; i++)
-        {
-            var rune = values[46 + i];
-            alphabetText += "<td class='table-cell-aurebesh'>";
-            alphabetText += properties[rune].fontLetter;
-            alphabetText += "</td>";
-            alphabetText += "<td class='table-cell-details'>";
-            alphabetText += properties[rune].name;
-            alphabetText += "<br/>";
-            alphabetText += properties[rune].phoneme;
-            alphabetText += "</td>";
-        }
-        alphabetText += "</tr>";
-
-        alphabetText += "</table>";
-
-        document.getElementById("alphabetTable").innerHTML = alphabetText;
-
-        var fontText = "<table>";
-        for (var i = 0; i < 256; i++)
-        {
-            var ch = String.fromCharCode(i);
-            fontText += "<tr>";
-            fontText += "<td class='table-cell-details'>";
-            fontText += ch;
-            fontText += "</td>";
-            fontText += "<td class='table-cell-aurebesh'>";
-            fontText += ch;
-            fontText += "</td>";
-            fontText += "<td class='table-cell-details'>";
-            fontText += i;
-            fontText += "</td>";
-            fontText += "</tr>";
-        }
-        fontText += "</table>";
-
-        document.getElementById("fontTable").innerHTML = fontText;
-
-        function splitOnNewline(runes)
-        {
-            var answer = [];
-
-            var start = 0;
-            var index = runes.indexOf(AurebeshRune.NEWLINE, start);
-
-            while (index >= 0)
+            alphabetText += "<tr>";
+            for (var i = 0; i < 6; i++)
             {
-                answer[answer.length] = runes.slice(start, index);
-                start = index + 1;
-                index = runes.indexOf(AurebeshRune.NEWLINE, start);
+                var rune = values[40 + i];
+                alphabetText += "<td class='table-cell-aurebesh'>";
+                alphabetText += properties[rune].fontLetter;
+                alphabetText += "</td>";
+                alphabetText += "<td class='table-cell-details'>";
+                alphabetText += properties[rune].name;
+                alphabetText += "<br/>";
+                alphabetText += properties[rune].phoneme;
+                alphabetText += "</td>";
             }
+            alphabetText += "</tr>";
 
-            answer[answer.length] = runes.slice(start);
+            alphabetText += "<tr>";
+            for (var i = 0; i < 6; i++)
+            {
+                var rune = values[46 + i];
+                alphabetText += "<td class='table-cell-aurebesh'>";
+                alphabetText += properties[rune].fontLetter;
+                alphabetText += "</td>";
+                alphabetText += "<td class='table-cell-details'>";
+                alphabetText += properties[rune].name;
+                alphabetText += "<br/>";
+                alphabetText += properties[rune].phoneme;
+                alphabetText += "</td>";
+            }
+            alphabetText += "</tr>";
 
-            return answer;
-        }
+            alphabetText += "</table>";
+
+            document.getElementById("alphabetTable").innerHTML = alphabetText;
+
+            var fontText = "<table>";
+            for (var i = 0; i < 256; i++)
+            {
+                var ch = String.fromCharCode(i);
+                fontText += "<tr>";
+                fontText += "<td class='table-cell-details'>";
+                fontText += ch;
+                fontText += "</td>";
+                fontText += "<td class='table-cell-aurebesh'>";
+                fontText += ch;
+                fontText += "</td>";
+                fontText += "<td class='table-cell-details'>";
+                fontText += i;
+                fontText += "</td>";
+                fontText += "</tr>";
+            }
+            fontText += "</table>";
+
+            document.getElementById("fontTable").innerHTML = fontText;
+
+            function splitOnNewline(runes)
+            {
+                var answer = [];
+
+                var start = 0;
+                var index = runes.indexOf(AurebeshRune.NEWLINE, start);
+
+                while (index >= 0)
+                {
+                    answer[answer.length] = runes.slice(start, index);
+                    start = index + 1;
+                    index = runes.indexOf(AurebeshRune.NEWLINE, start);
+                }
+
+                answer[answer.length] = runes.slice(start);
+
+                return answer;
+            }
+        });
     </script>
 </body>
 </html>
