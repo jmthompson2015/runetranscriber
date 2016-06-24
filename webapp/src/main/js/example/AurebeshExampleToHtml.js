@@ -1,140 +1,145 @@
-var AurebeshExampleToHtml = function(runesIn)
+define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, EnglishAurebeshTranscriber)
 {
-    var runes = runesIn;
-    var transcriber = new EnglishAurebeshTranscriber();
-
-    this.getRunes = function()
+    var AurebeshExampleToHtml = function(runesIn)
     {
-        return runes;
-    }
+        var runes = runesIn;
+        var transcriber = new EnglishAurebeshTranscriber();
 
-    this.getTranscriber = function()
-    {
-        return transcriber;
-    }
-}
-
-AurebeshExampleToHtml.prototype.generateFontRows = function()
-{
-    var letters = this.getTranscriber().runesToFontLetters(this.getRunes());
-
-    var answer = "<tr>\n";
-    answer += "<td class=\"table-header-cell-details\">Font</td>\n";
-
-    for (var i = 0; i < letters.length; i++)
-    {
-        var letter = letters[i];
-
-        if (letter !== "newline")
+        this.getRunes = function()
         {
-            answer += "<td class=\"table-cell-aurebesh\">"
+            return runes;
+        }
 
-            if (Array.isArray(letter))
-            {
-                for (var j = 0; j < letter.length; j++)
-                {
-                    var letter2 = letter[j];
-                    answer += letter2;
-                }
-            }
-            else
-            {
-                answer += letter;
-            }
-
-            answer += "</td>\n"
+        this.getTranscriber = function()
+        {
+            return transcriber;
         }
     }
 
-    answer += "</tr>\n";
-
-    return answer;
-}
-
-AurebeshExampleToHtml.prototype.generateRuneRows = function()
-{
-    var runes = this.getRunes();
-    var properties = AurebeshRune.properties;
-
-    var answer = "<tr>\n";
-    answer += "<td class=\"table-header-cell-details\">Rune</td>\n";
-
-    for (var i = 0; i < runes.length; i++)
+    AurebeshExampleToHtml.prototype.generateFontRows = function()
     {
-        var rune = runes[i];
+        var letters = this.getTranscriber().runesToFontLetters(this.getRunes());
 
-        if (rune !== "newline")
+        var answer = "<tr>\n";
+        answer += "<td class=\"table-header-cell-details\">Font</td>\n";
+
+        for (var i = 0; i < letters.length; i++)
         {
-            answer += "<td class=\"table-cell-rune-name\">";
+            var letter = letters[i];
 
-            if (rune === "space")
+            if (letter !== "newline")
             {
-                answer += " ";
-            }
-            else if (rune === "period")
-            {
-                answer += ".";
-            }
-            else if (Array.isArray(rune))
-            {
-                for (var j = 0; j < rune.length; j++)
+                answer += "<td class=\"table-cell-aurebesh\">"
+
+                if (Array.isArray(letter))
                 {
-                    var rune2 = rune[j];
-                    answer += properties[rune2].name;
-
-                    if (j < rune.length - 1)
+                    for (var j = 0; j < letter.length; j++)
                     {
-                        answer += "-";
+                        var letter2 = letter[j];
+                        answer += letter2;
                     }
                 }
-            }
-            else
-            {
-                answer += properties[rune].name;
-            }
-
-            answer += "</td>\n";
-        }
-    }
-
-    answer += "</tr>\n";
-
-    return answer;
-}
-
-AurebeshExampleToHtml.prototype.generatePhonemeRows = function()
-{
-    var letters = this.getTranscriber().runesToPhonemes(this.getRunes());
-
-    var answer = "<tr>\n";
-    answer += "<td class=\"table-header-cell-details\">Phoneme</td>\n";
-
-    for (var i = 0; i < letters.length; i++)
-    {
-        var letter = letters[i];
-
-        if (letter !== "newline")
-        {
-            answer += "<td class=\"table-cell-details\">";
-
-            if (Array.isArray(letter))
-            {
-                for (var j = 0; j < letter.length; j++)
+                else
                 {
-                    var letter2 = letter[j];
-                    answer += letter2;
+                    answer += letter;
                 }
-            }
-            else
-            {
-                answer += letter;
-            }
 
-            answer += "</td>\n";
+                answer += "</td>\n"
+            }
         }
+
+        answer += "</tr>\n";
+
+        return answer;
     }
 
-    answer += "</tr>\n";
+    AurebeshExampleToHtml.prototype.generateRuneRows = function()
+    {
+        var runes = this.getRunes();
+        var properties = AurebeshRune.properties;
 
-    return answer;
-}
+        var answer = "<tr>\n";
+        answer += "<td class=\"table-header-cell-details\">Rune</td>\n";
+
+        for (var i = 0; i < runes.length; i++)
+        {
+            var rune = runes[i];
+
+            if (rune !== "newline")
+            {
+                answer += "<td class=\"table-cell-rune-name\">";
+
+                if (rune === "space")
+                {
+                    answer += " ";
+                }
+                else if (rune === "period")
+                {
+                    answer += ".";
+                }
+                else if (Array.isArray(rune))
+                {
+                    for (var j = 0; j < rune.length; j++)
+                    {
+                        var rune2 = rune[j];
+                        answer += properties[rune2].name;
+
+                        if (j < rune.length - 1)
+                        {
+                            answer += "-";
+                        }
+                    }
+                }
+                else
+                {
+                    answer += properties[rune].name;
+                }
+
+                answer += "</td>\n";
+            }
+        }
+
+        answer += "</tr>\n";
+
+        return answer;
+    }
+
+    AurebeshExampleToHtml.prototype.generatePhonemeRows = function()
+    {
+        var letters = this.getTranscriber().runesToPhonemes(this.getRunes());
+
+        var answer = "<tr>\n";
+        answer += "<td class=\"table-header-cell-details\">Phoneme</td>\n";
+
+        for (var i = 0; i < letters.length; i++)
+        {
+            var letter = letters[i];
+
+            if (letter !== "newline")
+            {
+                answer += "<td class=\"table-cell-details\">";
+
+                if (Array.isArray(letter))
+                {
+                    for (var j = 0; j < letter.length; j++)
+                    {
+                        var letter2 = letter[j];
+                        answer += letter2;
+                    }
+                }
+                else
+                {
+                    answer += letter;
+                }
+
+                answer += "</td>\n";
+            }
+        }
+
+        answer += "</tr>\n";
+
+        return answer;
+    }
+
+    return AurebeshExampleToHtml;
+});
