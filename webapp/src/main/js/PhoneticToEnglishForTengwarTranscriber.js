@@ -1,138 +1,140 @@
-var PhoneticToEnglishForTengwarTranscriber = function()
+define(function()
 {
-    var phonemeToLanguageMap = {};
-
-    // The Lord Of The Rings
-    // Christopher reversed 'e' and 'i' from J.R.R.?
-    phonemeToLanguageMap["az"] = "as";
-    phonemeToLanguageMap["hireen"] = "herein";
-    phonemeToLanguageMap["hobbets"] = "hobbits";
-    phonemeToLanguageMap["iz"] = "is";
-    phonemeToLanguageMap["jhon"] = "john";
-    phonemeToLanguageMap["keng"] = "king";
-    phonemeToLanguageMap["riuil"] = "reuel";
-    phonemeToLanguageMap["reng"] = "ring";
-    phonemeToLanguageMap["sit"] = "set";
-    phonemeToLanguageMap["tolkein"] = "tolkien";
-    phonemeToLanguageMap["wor"] = "war";
-    phonemeToLanguageMap["wistmarch"] = "westmarch";
-
-    // The Silmarillion
-    phonemeToLanguageMap["aje"] = "age";
-    phonemeToLanguageMap["kome"] = "come";
-    phonemeToLanguageMap["powr"] = "power";
-    phonemeToLanguageMap["rekovery"] = "recovery";
-
-    // Unfinished Tales Of Numenor And Middle-Earth
-    phonemeToLanguageMap["akkount"] = "account";
-    phonemeToLanguageMap["kristofer"] = "christopher";
-    phonemeToLanguageMap["druedaiin"] = "druedain";
-
-    // The War Of The Ring
-    phonemeToLanguageMap["kirith"] = "cirith";
-
-    // Sauron Defeated
-    phonemeToLanguageMap["akownt"] = "account";
-    phonemeToLanguageMap["kataklysm"] = "cataclysm";
-    phonemeToLanguageMap["certan"] = "certain";
-    phonemeToLanguageMap["destruktion"] = "destruction";
-    phonemeToLanguageMap["oksford"] = "oxford";
-    phonemeToLanguageMap["skolars"] = "scholars";
-
-    this.getPhonemeToLanguageMap = function()
+    "use strict";
+    var PhoneticToEnglishForTengwarTranscriber = function()
     {
-        return phonemeToLanguageMap;
-    }
-}
+        var phonemeToLanguageMap = {};
 
-PhoneticToEnglishForTengwarTranscriber.prototype.convertWord = function(word)
-{
-    var answer = word;
-    var map = this.getPhonemeToLanguageMap();
-    var word2 = map[word];
+        // The Lord Of The Rings
+        // Christopher reversed 'e' and 'i' from J.R.R.?
+        phonemeToLanguageMap["az"] = "as";
+        phonemeToLanguageMap["hireen"] = "herein";
+        phonemeToLanguageMap["hobbets"] = "hobbits";
+        phonemeToLanguageMap["iz"] = "is";
+        phonemeToLanguageMap["jhon"] = "john";
+        phonemeToLanguageMap["keng"] = "king";
+        phonemeToLanguageMap["riuil"] = "reuel";
+        phonemeToLanguageMap["reng"] = "ring";
+        phonemeToLanguageMap["sit"] = "set";
+        phonemeToLanguageMap["tolkein"] = "tolkien";
+        phonemeToLanguageMap["wor"] = "war";
+        phonemeToLanguageMap["wistmarch"] = "westmarch";
 
-    if (word2)
-    {
-        answer = word2;
-    }
+        // The Silmarillion
+        phonemeToLanguageMap["aje"] = "age";
+        phonemeToLanguageMap["kome"] = "come";
+        phonemeToLanguageMap["powr"] = "power";
+        phonemeToLanguageMap["rekovery"] = "recovery";
 
-    return answer;
-}
+        // Unfinished Tales Of Numenor And Middle-Earth
+        phonemeToLanguageMap["akkount"] = "account";
+        phonemeToLanguageMap["kristofer"] = "christopher";
+        phonemeToLanguageMap["druedaiin"] = "druedain";
 
-PhoneticToEnglishForTengwarTranscriber.prototype.determineLanguageLetter = function(
-        phoneme)
-{
-    var answer;
+        // The War Of The Ring
+        phonemeToLanguageMap["kirith"] = "cirith";
 
-    if (Array.isArray(phoneme))
-    {
-        answer = "";
+        // Sauron Defeated
+        phonemeToLanguageMap["akownt"] = "account";
+        phonemeToLanguageMap["kataklysm"] = "cataclysm";
+        phonemeToLanguageMap["certan"] = "certain";
+        phonemeToLanguageMap["destruktion"] = "destruction";
+        phonemeToLanguageMap["oksford"] = "oxford";
+        phonemeToLanguageMap["skolars"] = "scholars";
 
-        for (var i = 0; i < phoneme.length; i++)
+        this.getPhonemeToLanguageMap = function()
         {
-            answer += this.determineLanguageLetter(phoneme[i]);
+            return phonemeToLanguageMap;
         }
     }
-    else
+
+    PhoneticToEnglishForTengwarTranscriber.prototype.convertWord = function(word)
     {
-        answer = phoneme;
+        var answer = word;
+        var map = this.getPhonemeToLanguageMap();
+        var word2 = map[word];
+
+        if (word2)
+        {
+            answer = word2;
+        }
+
+        return answer;
     }
 
-    return answer;
-}
-
-PhoneticToEnglishForTengwarTranscriber.prototype.phonemesToLanguageWords = function(
-        phonemes)
-{
-    var answer = [];
-
-    var word = "";
-
-    for (var i = 0; i < phonemes.length; i++)
+    PhoneticToEnglishForTengwarTranscriber.prototype.determineLanguageLetter = function(phoneme)
     {
-        var phoneme = phonemes[i];
+        var answer;
 
-        if (phoneme === " " || phoneme === "," || phoneme === "."
-                || phoneme === "\n")
+        if (Array.isArray(phoneme))
         {
-            answer[answer.length] = this.convertWord(word);
-            answer[answer.length] = phoneme;
-            word = "";
-        }
-        else if (i === phonemes.length - 1)
-        {
-            word += this.determineLanguageLetter(phoneme);
-            answer[answer.length] = this.convertWord(word);
+            answer = "";
+
+            for (var i = 0; i < phoneme.length; i++)
+            {
+                answer += this.determineLanguageLetter(phoneme[i]);
+            }
         }
         else
         {
-            word += this.determineLanguageLetter(phoneme);
+            answer = phoneme;
         }
+
+        return answer;
     }
 
-    return answer;
-}
-
-PhoneticToEnglishForTengwarTranscriber.prototype.languageWordsToString = function(
-        words)
-{
-    var answer = "";
-
-    for (var i = 0; i < words.length; i++)
+    PhoneticToEnglishForTengwarTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
     {
-        var word = words[i];
-        answer += word;
+        var answer = [];
 
-        if ((word === "," || word === ".") && i < words.length - 1)
+        var word = "";
+
+        for (var i = 0; i < phonemes.length; i++)
         {
-            answer += " ";
+            var phoneme = phonemes[i];
+
+            if (phoneme === " " || phoneme === "," || phoneme === "." || phoneme === "\n")
+            {
+                answer[answer.length] = this.convertWord(word);
+                answer[answer.length] = phoneme;
+                word = "";
+            }
+            else if (i === phonemes.length - 1)
+            {
+                word += this.determineLanguageLetter(phoneme);
+                answer[answer.length] = this.convertWord(word);
+            }
+            else
+            {
+                word += this.determineLanguageLetter(phoneme);
+            }
         }
+
+        return answer;
     }
 
-    return answer;
-}
+    PhoneticToEnglishForTengwarTranscriber.prototype.languageWordsToString = function(words)
+    {
+        var answer = "";
 
-if (Object.freeze)
-{
-    Object.freeze(PhoneticToEnglishForTengwarTranscriber);
-}
+        for (var i = 0; i < words.length; i++)
+        {
+            var word = words[i];
+            answer += word;
+
+            if ((word === "," || word === ".") && i < words.length - 1)
+            {
+                answer += " ";
+            }
+        }
+
+        return answer;
+    }
+
+    if (Object.freeze)
+    {
+        Object.freeze(PhoneticToEnglishForTengwarTranscriber);
+    }
+
+    return PhoneticToEnglishForTengwarTranscriber;
+});
