@@ -1,6 +1,7 @@
-define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToTengwarTranscriber", "TengwaRune",
-        "TengwarToPhoneticTranscriber" ], function(EnglishToPhoneticForTengwarTranscriber,
-        PhoneticToTengwarTranscriber, TengwaRune, TengwarToPhoneticTranscriber)
+define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarTranscriber",
+        "PhoneticToTengwarTranscriber", "TengwaRune", "TengwarToPhoneticTranscriber" ], function(
+        EnglishToPhoneticForTengwarTranscriber, PhoneticToEnglishForTengwarTranscriber, PhoneticToTengwarTranscriber,
+        TengwaRune, TengwarToPhoneticTranscriber)
 {
     "use strict";
     var EnglishTengwarTranscriber = function()
