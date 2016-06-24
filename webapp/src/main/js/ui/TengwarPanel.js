@@ -1,6 +1,6 @@
 define(
-        [ "TengwaRune", "TengwarToPhoneticTranscriber" ],
-        function(TengwaRune, TengwarToPhoneticTranscriber)
+        [ "TengwaRune", "TengwarToPhoneticTranscriber", "util/ArrayAugments" ],
+        function(TengwaRune, TengwarToPhoneticTranscriber, ArrayAugments)
         {
             var TengwarPanel =
             {

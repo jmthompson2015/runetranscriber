@@ -2,9 +2,10 @@ define([ "example/TengwarExampleTS1", "example/TengwarExampleTS2", "example/Teng
         "example/TengwarExampleUTONAME2", "example/TengwarExampleTROTS1", "example/TengwarExampleTROTS2",
         "example/TengwarExampleTTOI1", "example/TengwarExampleTTOI2", "example/TengwarExampleTWOTR1",
         "example/TengwarExampleTWOTR2", "example/TengwarExampleSD1", "example/TengwarExampleSD2",
-        "example/TengwarExampleTLOTR2" ], function(TengwarExampleTS1, TengwarExampleTS2, TengwarExampleUTONAME1,
-        TengwarExampleUTONAME2, TengwarExampleTROTS1, TengwarExampleTROTS2, TengwarExampleTTOI1, TengwarExampleTTOI2,
-        TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1, TengwarExampleSD2, TengwarExampleTLOTR2)
+        "example/TengwarExampleTLOTR2", "util/ArrayAugments" ], function(TengwarExampleTS1, TengwarExampleTS2,
+        TengwarExampleUTONAME1, TengwarExampleUTONAME2, TengwarExampleTROTS1, TengwarExampleTROTS2,
+        TengwarExampleTTOI1, TengwarExampleTTOI2, TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1,
+        TengwarExampleSD2, TengwarExampleTLOTR2, ArrayAugments)
 {
     "use strict";
     var EnglishToPhoneticForTengwarTranscriber = function()
