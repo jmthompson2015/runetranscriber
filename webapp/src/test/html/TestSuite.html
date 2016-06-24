@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TestSuite</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.20.0.css">
+<script src="http://code.jquery.com/qunit/qunit-1.20.0.js"></script>
+<script>
+    QUnit.config.autostart = false;
+</script>
+
+<script src="../../../../coreweb/lib/require/require-2.2.0.min.js" data-main="../../main/js/CerthRune"></script>
+
+<script src="../../main/js/util/Logger.js"></script>
+<script src="../../main/js/util/ArrayAugments.js"></script>
+
+<script>
+    "use strict";
+    var LOGGER = new Logger();
+    LOGGER.setTraceEnabled(false);
+    LOGGER.setDebugEnabled(false);
+
+    var prefix = "../../test/js/";
+    var suffix = "Test";
+    var testModules = [ "AngloSaxonRune", "AngloSaxonRuneFormat", "AurebeshRune", "AurebeshRuneFormat", "CerthRune",
+            "CerthRuneFormat", "EnglishAngloSaxonTranscriber", "EnglishAurebeshTranscriber",
+            "EnglishCirthEreborTranscriber", "EnglishTengwarTranscriber", "EnglishToPhoneticForTengwarTranscriber",
+            "PhoneticToEnglishForTengwarTranscriber", "PhoneticToTengwarTranscriber", "TengwarToPhoneticTranscriber",
+            "TengwaRune", "TengwaRuneFormat", "TranscriberInterface" ];
+    testModules = testModules.map(function(testModule)
+    {
+        return prefix + testModule + suffix;
+    });
+
+    require(testModules, function()
+    {
+        QUnit.start();
+    });
+</script>
+</head>
+<body>
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
+</body>
+</html>
