@@ -5,26 +5,10 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/style.css">
 
+<script src="../../../coreweb/lib/require/require-2.2.0.min.js" data-main="js/CerthRune"></script>
+
 <script src="js/util/Logger.js"></script>
-<script src="js/util/HtmlUtilities.js"></script>
-
-<script src="js/EnglishTengwarTranscriber2.js"></script>
-<script src="js/TengwaRune.js"></script>
-
-<script src="js/example/TengwarExampleToHtml.js"></script>
-<script src="js/example/TengwarExampleTLOTR2.js"></script>
-<script src="js/example/TengwarExampleTS1.js"></script>
-<script src="js/example/TengwarExampleTS2.js"></script>
-<script src="js/example/TengwarExampleUTONAME1.js"></script>
-<script src="js/example/TengwarExampleUTONAME2.js"></script>
-<script src="js/example/TengwarExampleTROTS1.js"></script>
-<script src="js/example/TengwarExampleTROTS2.js"></script>
-<script src="js/example/TengwarExampleTTOI1.js"></script>
-<script src="js/example/TengwarExampleTTOI2.js"></script>
-<script src="js/example/TengwarExampleTWOTR1.js"></script>
-<script src="js/example/TengwarExampleTWOTR2.js"></script>
-<script src="js/example/TengwarExampleSD1.js"></script>
-<script src="js/example/TengwarExampleSD2.js"></script>
+<script src="js/util/ArrayAugments.js"></script>
 
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
@@ -49,60 +33,64 @@
         var LOGGER = new Logger();
         LOGGER.setTraceEnabled(false);
 
-        var example = TengwarExampleTLOTR2;
-        // var example = TengwarExampleTS1;
-        // var example = TengwarExampleTS2;
-        // var example = TengwarExampleUTONAME1;
-        // var example = TengwarExampleUTONAME2;
-        // var example = TengwarExampleTROTS1;
-        // var example = TengwarExampleTROTS2;
-        // var example = TengwarExampleTTOI1;
-        // var example = TengwarExampleTTOI2;
-        // var example = TengwarExampleTWOTR1;
-        // var example = TengwarExampleTWOTR2;
-        // var example = TengwarExampleSD1;
-        // var example = TengwarExampleSD2;
-
-        document.getElementById("image").src = example.IMAGE;
-
-        var lines = splitOnNewline(example.RUNES);
-        // LOGGER.debug("lines.length = " + lines.length);
-
-        for (var i = 0; i < lines.length; i++)
+        require([ "TengwaRune", "example/TengwarExampleToHtml", "example/TengwarExampleTLOTR2" ], function(TengwaRune,
+                TengwarExampleToHtml, TengwarExampleTLOTR2)
         {
-            var generator = new TengwarExampleToHtml(lines[i]);
+            var example = TengwarExampleTLOTR2;
+            // var example = TengwarExampleTS1;
+            // var example = TengwarExampleTS2;
+            // var example = TengwarExampleUTONAME1;
+            // var example = TengwarExampleUTONAME2;
+            // var example = TengwarExampleTROTS1;
+            // var example = TengwarExampleTROTS2;
+            // var example = TengwarExampleTTOI1;
+            // var example = TengwarExampleTTOI2;
+            // var example = TengwarExampleTWOTR1;
+            // var example = TengwarExampleTWOTR2;
+            // var example = TengwarExampleSD1;
+            // var example = TengwarExampleSD2;
 
-            var text = "";
-            text += generator.generateFontRows();
-            text += generator.generateRuneRows();
-            text += generator.generatePhonemeRows();
-            text += generator.generateLanguageRows();
-            console.info(text);
+            document.getElementById("image").src = example.IMAGE;
 
-            var elementId = "line" + (i + 1) + "Table";
-            document.getElementById(elementId).innerHTML = text;
-        }
+            var lines = splitOnNewline(example.RUNES);
+            // LOGGER.debug("lines.length = " + lines.length);
 
-        function splitOnNewline(runes)
-        {
-            var answer = [];
-
-            var start = 0;
-            var index = runes.indexOf(TengwaRune.NEWLINE, start);
-            // LOGGER.debug("start, index = " + start + ", " + index);
-
-            while (index >= 0)
+            for (var i = 0; i < lines.length; i++)
             {
-                answer[answer.length] = runes.slice(start, index);
-                start = index + 1;
-                index = runes.indexOf(TengwaRune.NEWLINE, start);
-                // LOGGER.debug("start, index = " + start + ", " + index);
+                var generator = new TengwarExampleToHtml(lines[i]);
+
+                var text = "";
+                text += generator.generateFontRows();
+                text += generator.generateRuneRows();
+                text += generator.generatePhonemeRows();
+                text += generator.generateLanguageRows();
+                // console.info(text);
+
+                var elementId = "line" + (i + 1) + "Table";
+                document.getElementById(elementId).innerHTML = text;
             }
 
-            answer[answer.length] = runes.slice(start);
+            function splitOnNewline(runes)
+            {
+                var answer = [];
 
-            return answer;
-        }
+                var start = 0;
+                var index = runes.indexOf(TengwaRune.NEWLINE, start);
+                // LOGGER.debug("start, index = " + start + ", " + index);
+
+                while (index >= 0)
+                {
+                    answer[answer.length] = runes.slice(start, index);
+                    start = index + 1;
+                    index = runes.indexOf(TengwaRune.NEWLINE, start);
+                    // LOGGER.debug("start, index = " + start + ", " + index);
+                }
+
+                answer[answer.length] = runes.slice(start);
+
+                return answer;
+            }
+        });
     </script>
 </body>
 </html>
