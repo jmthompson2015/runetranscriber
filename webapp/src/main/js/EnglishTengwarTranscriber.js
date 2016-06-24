@@ -1,7 +1,7 @@
 define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarTranscriber",
-        "PhoneticToTengwarTranscriber", "TengwaRune", "TengwarToPhoneticTranscriber" ], function(
+        "PhoneticToTengwarTranscriber", "TengwaRune", "TengwaRuneFormat", "TengwarToPhoneticTranscriber" ], function(
         EnglishToPhoneticForTengwarTranscriber, PhoneticToEnglishForTengwarTranscriber, PhoneticToTengwarTranscriber,
-        TengwaRune, TengwarToPhoneticTranscriber)
+        TengwaRune, TengwaRuneFormat, TengwarToPhoneticTranscriber)
 {
     "use strict";
     var EnglishTengwarTranscriber = function()
