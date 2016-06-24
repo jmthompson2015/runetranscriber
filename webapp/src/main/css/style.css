@@ -71,6 +71,30 @@ body {
     text-align: center;
 }
 
+.table-cell-anglo-saxon {
+    border: 1px solid;
+    border-color: darkgreen;
+    font-family: Junicode-Bold;
+    font-size: small;
+    padding: 5px;
+}
+
+.table-cell-aurebesh {
+    border: 1px solid;
+    border-color: darkgreen;
+    font-family: Aurebesh;
+    font-size: small;
+    padding: 5px;
+}
+
+.table-cell-cirth {
+    border: 1px solid;
+    border-color: darkgreen;
+    font-family: Angerthas;
+    font-size: small;
+    padding: 5px;
+}
+
 .table-cell-details {
     border: 1px solid;
     border-color: darkgreen;
@@ -93,6 +117,14 @@ body {
     padding: 5px;
 }
 
+.table-details {
+    border: 1px solid;
+    border-collapse: collapse;
+    border-color: darkgreen;
+    font-size: medium;
+    vertical-align: top;
+}
+
 .table-header-cell-details {
     border: 1px solid;
     background-color: darkgreen;
@@ -101,12 +133,4 @@ body {
     font-size: small;
     font-style: bold;
     padding: 5px;
-}
-
-.table-details {
-    border: 1px solid;
-    border-collapse: collapse;
-    border-color: darkgreen;
-    font-size: medium;
-    vertical-align: top;
 }
