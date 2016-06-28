@@ -4,10 +4,10 @@ define([ "ui/RuneTable" ], function(RuneTable)
     {
         render: function()
         {
-            var letterRows = this.split(this.props.letters);
-            var runeRows = this.split(this.props.runes, this.props.runeSet.runes.NEWLINE);
-            var phonemeRows = this.split(this.props.phonemes);
-            var languageWordRows = this.split(this.props.languageWords);
+            var letterRows = this.props.letters.split();
+            var runeRows = this.props.runes.split(this.props.runeSet.runes.NEWLINE);
+            var phonemeRows = this.props.phonemes.split();
+            var languageWordRows = this.props.languageWords.split();
 
             var rows = [];
 
@@ -41,34 +41,6 @@ define([ "ui/RuneTable" ], function(RuneTable)
             {
                 className: "table-details",
             }, React.DOM.tbody({}, rows));
-        },
-
-        split: function(array, delimiter)
-        {
-            var answer = [];
-            var myDelimiter = (delimiter ? delimiter : "\n");
-
-            var index = array.indexOf(myDelimiter);
-
-            if (index < 0)
-            {
-                answer = array;
-            }
-            else
-            {
-                var fromIndex = 0;
-
-                while (index >= 0)
-                {
-                    answer.push(array.slice(fromIndex, index));
-                    fromIndex = index + 1;
-                    index = array.indexOf(myDelimiter, fromIndex);
-                }
-
-                answer.push(array.slice(fromIndex));
-            }
-
-            return answer;
         },
     });
 
