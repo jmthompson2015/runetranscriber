@@ -1,13 +1,16 @@
 /*
  * Provides an example for Anglo-Saxon runes from The Hobbit, Preface #1.
  */
-define([ "AngloSaxonRune" ],
+define(
+        [ "AngloSaxonRune" ],
         function(AngloSaxonRune)
         {
             "use strict";
             var AngloSaxonExample5 =
             {
                 NAME: "Anglo-Saxon Example 5",
+
+                IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_Preface1.jpg",
 
                 LANGUAGE_LETTERS: "The hobbit\nor\nthere and back again",
 

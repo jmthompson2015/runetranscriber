@@ -10,6 +10,8 @@ define(
             {
                 NAME: "Anglo-Saxon Example 1",
 
+                IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_TitlePage1_Top_Line1.jpg",
+
                 IMAGES: [
                         "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_TitlePage1_Top_Line1.jpg",
                         "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_TitlePage2_Top_Line1.jpg",

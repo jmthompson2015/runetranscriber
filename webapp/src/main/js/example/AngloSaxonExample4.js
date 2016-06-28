@@ -10,6 +10,8 @@ define(
             {
                 NAME: "Anglo-Saxon Example 4",
 
+                IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_ThrorsMap3.jpg",
+
                 LANGUAGE_LETTERS: "Stand by the grey st\none when the thrush kn\nocks and the setting s\nun with the last light \nof Durin's Day will sh\nine upon the keyhole. \nTh.",
 
                 RUNES: [
