@@ -465,6 +465,12 @@ define(function()
 
             return answer;
         },
+
+        isPunctuation: function(rune)
+        {
+            return [ AurebeshRune.SPACE, AurebeshRune.COMMA, AurebeshRune.PERIOD, AurebeshRune.NEWLINE ].includes(rune) ||
+                    [ " ", ",", ".", "\n" ].includes(rune);
+        }
     }
 
     if (Object.freeze)

@@ -20,11 +20,22 @@ define([ "AurebeshRune" ], function(AurebeshRune)
         assert.equal(AurebeshRune.findRuneByPhoneme("u"), AurebeshRune.USK);
     });
 
+    QUnit.test("isPunctuation", function(assert)
+    {
+        assert.ok(AurebeshRune.isPunctuation(AurebeshRune.SPACE));
+        assert.ok(AurebeshRune.isPunctuation(AurebeshRune.COMMA));
+        assert.ok(AurebeshRune.isPunctuation(AurebeshRune.PERIOD));
+        assert.ok(AurebeshRune.isPunctuation(AurebeshRune.NEWLINE));
+
+        assert.ok(!AurebeshRune.isPunctuation(AurebeshRune.TINCO));
+    });
+
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(AurebeshRune).length - 1 // properties
-        - 1 // values
-        - 1 // findRuneByPhoneme
+                - 1 // values
+                - 1 // findRuneByPhoneme
+                - 1 // isPunctuation
         ;
 
         var properties = Object.getOwnPropertyNames(AurebeshRune);

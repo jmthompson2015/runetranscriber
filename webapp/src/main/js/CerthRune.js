@@ -464,6 +464,12 @@ define(function()
                 "c30", "c31", "c32", "c33", "c34", "c35", "c36", "c37", "c38", "c39", "c40", "c41", "c42", "c43",
                 "c44", "c45", "c46", "c47", "c48", "c49", "c50", "c51", "c52", "c53", "c54", "c55", "c56", "c57",
                 "c58", "c59", "c60", "space", "comma", "period", "newline", ],
+
+        isPunctuation: function(rune)
+        {
+            return [ CerthRune.SPACE, CerthRune.COMMA, CerthRune.PERIOD, CerthRune.NEWLINE ].includes(rune) ||
+                    [ " ", ",", ".", "\n" ].includes(rune);
+        }
     };
 
     if (Object.freeze)

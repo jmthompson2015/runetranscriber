@@ -3,10 +3,21 @@ define([ "CerthRune" ], function(CerthRune)
     "use strict";
     QUnit.module("CerthRune");
 
+    QUnit.test("isPunctuation", function(assert)
+    {
+        assert.ok(CerthRune.isPunctuation(CerthRune.SPACE));
+        assert.ok(CerthRune.isPunctuation(CerthRune.COMMA));
+        assert.ok(CerthRune.isPunctuation(CerthRune.PERIOD));
+        assert.ok(CerthRune.isPunctuation(CerthRune.NEWLINE));
+
+        assert.ok(!CerthRune.isPunctuation(CerthRune.TINCO));
+    });
+
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(CerthRune).length - 1 // properties
         - 1 // values
+        - 1 // isPunctuation
         ;
 
         var properties = Object.getOwnPropertyNames(CerthRune);

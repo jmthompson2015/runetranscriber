@@ -3,10 +3,21 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
     "use strict";
     QUnit.module("AngloSaxonRune");
 
+    QUnit.test("isPunctuation", function(assert)
+    {
+        assert.ok(AngloSaxonRune.isPunctuation(AngloSaxonRune.SPACE));
+        assert.ok(AngloSaxonRune.isPunctuation(AngloSaxonRune.COMMA));
+        assert.ok(AngloSaxonRune.isPunctuation(AngloSaxonRune.PERIOD));
+        assert.ok(AngloSaxonRune.isPunctuation(AngloSaxonRune.NEWLINE));
+
+        assert.ok(!AngloSaxonRune.isPunctuation(AngloSaxonRune.TINCO));
+    });
+
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(AngloSaxonRune).length - 1 // properties
         - 1 // values
+        - 1 // isPunctuation
         ;
 
         var properties = Object.getOwnPropertyNames(AngloSaxonRune);

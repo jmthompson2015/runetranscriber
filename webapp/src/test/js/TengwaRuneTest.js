@@ -20,12 +20,23 @@ define([ "TengwaRune" ], function(TengwaRune)
         assert.equal(TengwaRune.findRuneByPhoneme("u"), TengwaRune.URE);
     });
 
+    QUnit.test("isPunctuation", function(assert)
+    {
+        assert.ok(TengwaRune.isPunctuation(TengwaRune.SPACE));
+        assert.ok(TengwaRune.isPunctuation(TengwaRune.COMMA));
+        assert.ok(TengwaRune.isPunctuation(TengwaRune.PERIOD));
+        assert.ok(TengwaRune.isPunctuation(TengwaRune.NEWLINE));
+
+        assert.ok(!TengwaRune.isPunctuation(TengwaRune.TINCO));
+    });
+
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(TengwaRune).length - 1 // properties
                 - 1 // values
                 - 1 // tehtar
                 - 1 // findRuneByPhoneme
+                - 1 // isPunctuation
         ;
 
         var properties = Object.getOwnPropertyNames(TengwaRune);

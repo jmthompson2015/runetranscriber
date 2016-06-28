@@ -585,6 +585,12 @@ define(function()
 
             return answer;
         },
+
+        isPunctuation: function(rune)
+        {
+            return [ TengwaRune.SPACE, TengwaRune.COMMA, TengwaRune.PERIOD, TengwaRune.NEWLINE ].includes(rune) ||
+                    [ " ", ",", ".", "\n" ].includes(rune);
+        }
     }
 
     if (Object.freeze)
