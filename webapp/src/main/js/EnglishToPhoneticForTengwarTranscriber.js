@@ -188,12 +188,12 @@ define([ "util/ArrayAugments" ], function(ArrayAugments)
 
     EnglishToPhoneticForTengwarTranscriber.prototype.isPunctuation = function(letter)
     {
-        return this.PUNCTUATION.contains(letter);
+        return this.PUNCTUATION.includes(letter);
     };
 
     EnglishToPhoneticForTengwarTranscriber.prototype.isVowel = function(letter)
     {
-        return this.VOWELS.contains(letter);
+        return this.VOWELS.includes(letter);
     };
 
     EnglishToPhoneticForTengwarTranscriber.prototype.languageStringToWords = function(string)

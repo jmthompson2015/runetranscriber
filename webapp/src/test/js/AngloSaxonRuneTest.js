@@ -26,14 +26,14 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
         {
             var property = properties[i];
 
-            if (property === "properties" || property === "values" || property === "findRuneByPhoneme")
+            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }
 
             var key = AngloSaxonRune[property];
 
-            if (!AngloSaxonRune.values.contains(key))
+            if (!AngloSaxonRune.values.includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }

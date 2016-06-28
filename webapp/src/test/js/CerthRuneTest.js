@@ -26,14 +26,14 @@ define([ "CerthRune" ], function(CerthRune)
         {
             var property = properties[i];
 
-            if (property === "properties" || property === "values" || property === "findRuneByPhoneme")
+            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }
 
             var key = CerthRune[property];
 
-            if (!CerthRune.values.contains(key))
+            if (!CerthRune.values.includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }

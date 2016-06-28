@@ -44,14 +44,14 @@ define([ "AurebeshRune" ], function(AurebeshRune)
         {
             var property = properties[i];
 
-            if (property === "properties" || property === "values" || property === "findRuneByPhoneme")
+            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }
 
             var key = AurebeshRune[property];
 
-            if (!AurebeshRune.values.contains(key))
+            if (!AurebeshRune.values.includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }

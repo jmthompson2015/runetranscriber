@@ -298,14 +298,14 @@ define(
                 var PUNCTUATION = [ " ", ",", ".", "\n", TengwaRune.SPACE, TengwaRune.COMMA, TengwaRune.PERIOD,
                         TengwaRune.NEWLINE ];
 
-                return PUNCTUATION.contains(letter);
+                return PUNCTUATION.includes(letter);
             };
 
             PhoneticToTengwarTranscriber.prototype.isVowel = function(letter)
             {
                 var VOWELS = [ "a", "e", "i", "o", "u" ];
 
-                return VOWELS.contains(letter);
+                return VOWELS.includes(letter);
             };
 
             PhoneticToTengwarTranscriber.prototype.phonemesToRunes = function(phonemes)

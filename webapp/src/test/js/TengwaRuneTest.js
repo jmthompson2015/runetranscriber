@@ -45,15 +45,14 @@ define([ "TengwaRune" ], function(TengwaRune)
         {
             var property = properties[i];
 
-            if (property === "properties" || property === "values" || property === "tehtar" ||
-                    property === "findRuneByPhoneme")
+            if ([ "properties", "values", "tehtar", "findRuneByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }
 
             var key = TengwaRune[property];
 
-            if (!TengwaRune.values.contains(key))
+            if (!TengwaRune.values.includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }
