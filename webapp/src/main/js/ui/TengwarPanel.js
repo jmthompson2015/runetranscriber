@@ -33,7 +33,7 @@ define(
                             rune = runes[i];
                             answer += "<td style=\"border: 1px solid; border-color: darkgreen; font-family: Tengwar;font-size: x-large;\">";
 
-                            if (TengwaRune.tehtar.contains(runes))
+                            if (TengwaRune.tehtar.includes(runes))
                             {
                                 answer += properties[TengwaRune.SHORT_CARRIER].fontLetter;
                             }
@@ -70,7 +70,7 @@ define(
                         answer += "<tr>";
                         answer += "<td style=\"font-family: Tengwar;font-size: x-large;\">";
 
-                        if (TengwaRune.tehtar.contains(runes))
+                        if (TengwaRune.tehtar.includes(runes))
                         {
                             answer += properties[TengwaRune.SHORT_CARRIER].fontLetter;
                         }
