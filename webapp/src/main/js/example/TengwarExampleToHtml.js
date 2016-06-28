@@ -144,7 +144,8 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
     TengwarExampleToHtml.prototype.generateLanguageRows = function()
     {
         var runes = this.getRunes();
-        var words = this.getTranscriber().runesToLanguageWords(runes);
+        var phonemes = this.getTranscriber().runesToPhonemes(runes);
+        var words = this.getTranscriber().phonemesToLanguageWords(phonemes);
 
         var answer = "<tr>\n";
         answer += "<td class=\"table-header-cell-details\">Language</td>\n";
@@ -194,12 +195,11 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
         return answer;
     };
 
-    TengwarExampleToHtml.prototype.isPunctuation =
-            function(word)
-            {
-                return word === TengwaRune.SPACE || word === TengwaRune.COMMA || word === TengwaRune.PERIOD ||
-                        word === TengwaRune.NEWLINE || word === " " || word === "," || word === "." || word === "\n";
-            };
+    TengwarExampleToHtml.prototype.isPunctuation = function(word)
+    {
+        return word === TengwaRune.SPACE || word === TengwaRune.COMMA || word === TengwaRune.PERIOD ||
+                word === TengwaRune.NEWLINE || word === " " || word === "," || word === "." || word === "\n";
+    };
 
     return TengwarExampleToHtml;
 });
