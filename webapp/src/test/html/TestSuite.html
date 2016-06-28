@@ -10,6 +10,7 @@
     QUnit.config.autostart = false;
 </script>
 
+<script src="../../../../coreweb/lib/react/react-15.1.0.js"></script>
 <script src="../../../../coreweb/lib/require/require-2.2.0.min.js" data-main="../../main/js/CerthRune"></script>
 
 <script src="../../main/js/util/Logger.js"></script>
@@ -26,7 +27,8 @@
             "CerthRuneFormat", "EnglishAngloSaxonTranscriber", "EnglishAurebeshTranscriber",
             "EnglishCirthEreborTranscriber", "EnglishTengwarTranscriber", "EnglishToPhoneticForTengwarTranscriber",
             "PhoneticToEnglishForTengwarTranscriber", "PhoneticToTengwarTranscriber", "RuneSet",
-            "TengwarToPhoneticTranscriber", "TengwaRune", "TengwaRuneFormat", "TranscriberInterface" ];
+            "TengwarToPhoneticTranscriber", "TengwaRune", "TengwaRuneFormat", "TranscriberInterface",
+            "util/ArrayAugments" ];
     testModules = testModules.map(function(testModule)
     {
         return prefix + testModule + suffix;
