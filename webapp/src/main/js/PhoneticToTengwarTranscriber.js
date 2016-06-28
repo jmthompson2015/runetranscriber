@@ -1,18 +1,10 @@
 define(
-        [ "TengwaRune", "example/TengwarExampleTS1", "example/TengwarExampleTS2", "example/TengwarExampleUTONAME1",
-                "example/TengwarExampleUTONAME2", "example/TengwarExampleTROTS1", "example/TengwarExampleTROTS2",
-                "example/TengwarExampleTTOI1", "example/TengwarExampleTTOI2", "example/TengwarExampleTWOTR1",
-                "example/TengwarExampleTWOTR2", "example/TengwarExampleSD1", "example/TengwarExampleSD2",
-                "example/TengwarExampleTLOTR2" ],
-        function(TengwaRune, TengwarExampleTS1, TengwarExampleTS2, TengwarExampleUTONAME1, TengwarExampleUTONAME2,
-                TengwarExampleTROTS1, TengwarExampleTROTS2, TengwarExampleTTOI1, TengwarExampleTTOI2,
-                TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1, TengwarExampleSD2, TengwarExampleTLOTR2)
+        [ "TengwaRune", ],
+        function(TengwaRune)
         {
             "use strict";
             var PhoneticToTengwarTranscriber = function()
             {
-                // var phonemeToRuneMap = this.createPhonemeToRuneMap();
-
                 var phonemeToRuneMap = {};
 
                 phonemeToRuneMap["\n"] = "newline";
@@ -232,294 +224,6 @@ define(
                 }
             }
 
-            PhoneticToTengwarTranscriber.prototype.createPhonemeToRuneMap = function()
-            {
-                var answer = {};
-
-                // Inconsistencies.
-                answer["r"] = TengwaRune.ROMEN;
-                answer["y"] = TengwaRune.ANNA;
-
-                // The Silmarillon 1
-                answer[[ [ "e", "a" ], "r", "th" ]] = [ [ "dot", "shortCarrier", "threeUnderDots" ], "ore", "thule" ];
-                answer[[ [ "e", "k" ], [ "o", "v" ], [ "e", "r" ], "y" ]] = [ [ TengwaRune.DOT, TengwaRune.QUESSE ],
-                        [ TengwaRune.LEFT_CURL, TengwaRune.AMPA ], [ TengwaRune.DOT, TengwaRune.ROMEN ],
-                        [ TengwaRune.ACUTE, TengwaRune.LONG_CARRIER ] ];
-
-                // The Silmarillon 2
-                answer[[ "t", "o" ]] = [ TengwaRune.TINCO, [ TengwaRune.LEFT_CURL, TengwaRune.SHORT_CARRIER ] ];
-                answer[[ [ "i", "s" ], "t", [ "o", "r" ], "y" ]] = [ [ TengwaRune.ACUTE, TengwaRune.SILME ],
-                        TengwaRune.TINCO, [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
-                        [ TengwaRune.ACUTE, TengwaRune.LONG_CARRIER ] ];
-                answer[[ "p", [ "o", "w" ], "r" ]] = [ TengwaRune.PARMA, [ TengwaRune.LEFT_CURL, TengwaRune.VALA ],
-                        TengwaRune.ORE ];
-                answer[[ "th", [ "e", "s", "e" ] ]] = [ TengwaRune.ANTO,
-                        [ TengwaRune.DOT, TengwaRune.SILME, TengwaRune.UNDER_DOT ] ];
-                answer[[ "th", [ "e", "i" ], "r" ]] = [ TengwaRune.ANTO, [ TengwaRune.DOT, TengwaRune.YANTA ],
-                        TengwaRune.ORE ];
-
-                // Unfinished Tales Of Numenor And Middle-Earth 1
-                answer[[ "th", [ "i", "s" ] ]] = [ TengwaRune.ANTO, [ TengwaRune.ACUTE, TengwaRune.SILME ] ];
-                answer[[ "b", "y" ]] = [ TengwaRune.UMBAR, TengwaRune.ANNA ];
-                answer[[ "r", "e", "u", [ "e", "l" ] ]] = [ "romen", [ "dot", "shortCarrier" ],
-                        [ "rightCurl", "shortCarrier" ], [ "dot", "lambe" ] ];
-                // answer[[ "r", "e" ]] = [ TengwaRune.ROMEN,
-                // [ TengwaRune.DOT, TengwaRune.SHORT_CARRIER ] ];
-                answer[[ "s", [ "o", "n" ] ]] = [ TengwaRune.SILME, [ TengwaRune.LEFT_CURL, TengwaRune.NUMEN ] ];
-
-                // Unfinished Tales Of Numenor And Middle-Earth 2
-                answer[[ "m", [ "a", "n" ], "y" ]] = [ TengwaRune.MALTA, [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ],
-                        TengwaRune.ANNA ];
-                answer[[ "n", [ "u", "m" ], [ "e", "n" ], [ "o", "r" ] ]] = [ "numen", [ "rightCurl", "malta" ],
-                        [ "dot", "numen" ], [ "leftCurl", "romen" ] ];
-                answer[[ [ "e", "r" ], "i", [ "a", "n" ], "d" ]] = [ [ TengwaRune.DOT, TengwaRune.ROMEN ],
-                        [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER ], [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ],
-                        TengwaRune.ANDO ];
-                answer[[ "w", [ "a", "r" ] ]] = [ TengwaRune.VALA, [ TengwaRune.THREE_DOTS, TengwaRune.ORE ] ];
-                answer[[ [ "a", "n" ], "t", [ "i", "r" ], "i" ]] = [ [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ],
-                        TengwaRune.TINCO, [ TengwaRune.ACUTE, TengwaRune.ROMEN ],
-                        [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER ] ];
-
-                // The Return Of The Shadow 1
-                answer[[ [ "o", "u" ], "r", "n", [ "e", "y" ] ]] = [ [ TengwaRune.LEFT_CURL, TengwaRune.URE ],
-                        TengwaRune.ORE, TengwaRune.NUMEN, [ TengwaRune.DOT, TengwaRune.ANNA ] ];
-                answer[[ [ "a", "f" ], "t", [ "e", "r" ] ]] = [ [ TengwaRune.THREE_DOTS, TengwaRune.FORMEN ],
-                        TengwaRune.TINCO, [ TengwaRune.DOT, TengwaRune.ORE ] ];
-                answer[[ "s", "t", [ "o", "r" ], "y" ]] = [ TengwaRune.SILME, TengwaRune.TINCO,
-                        [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ], TengwaRune.ANNA ];
-
-                // The Return Of The Shadow 2
-                answer[[ "f", [ "o", "r" ], [ "e", "s" ], "t" ]] = [ TengwaRune.FORMEN,
-                        [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ], [ TengwaRune.DOT, TengwaRune.SILME ],
-                        TengwaRune.TINCO ];
-                answer[[ [ "e", "a" ], "th", [ "e", "r" ] ]] = [
-                        [ TengwaRune.DOT, TengwaRune.SHORT_CARRIER, TengwaRune.THREE_UNDER_DOTS ], TengwaRune.ANTO,
-                        [ TengwaRune.DOT, TengwaRune.ORE ] ];
-                answer[[ [ "b", "e" ], "f", [ "o", "r", "e" ] ]] = [ [ TengwaRune.UMBAR, TengwaRune.UNDER_DOT ],
-                        TengwaRune.FORMEN, [ TengwaRune.LEFT_CURL, TengwaRune.ORE, TengwaRune.UNDER_DOT ] ];
-                answer[[ "m", [ "o", "r" ], [ "i", "a" ] ]] = [ TengwaRune.MALTA,
-                        [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
-                        [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER, TengwaRune.THREE_UNDER_DOTS ] ];
-
-                // The Treason Of Isengard 1
-                answer[[ [ "e", "n" ], "g", [ "a", "r" ], "d" ]] = [ [ TengwaRune.DOT, TengwaRune.NUMEN ],
-                        TengwaRune.UNGWE, [ TengwaRune.THREE_DOTS, TengwaRune.ORE ], TengwaRune.ANDO ];
-                answer[[ "l", [ "a", "n" ], "d" ]] = [ TengwaRune.LAMBE, [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ],
-                        TengwaRune.ANDO ];
-                answer[[ "l", [ "o", "r" ], [ "i", "e" ], "n" ]] = [ TengwaRune.LAMBE,
-                        [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
-                        [ TengwaRune.ACUTE, TengwaRune.SHORT_CARRIER, TengwaRune.UNDER_DOT ], TengwaRune.NUMEN ];
-
-                // The Treason Of Isengard 2
-                answer[[ [ "a", "n" ], "d", [ "u", "i" ], "n" ]] = [ [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ],
-                        TengwaRune.ANDO, [ TengwaRune.TOP_CURL, TengwaRune.YANTA ], TengwaRune.NUMEN ];
-                answer[[ "r", [ "i", "v" ], [ "e", "r" ] ]] = [ TengwaRune.ROMEN,
-                        [ TengwaRune.ACUTE, TengwaRune.AMPA ], [ TengwaRune.DOT, TengwaRune.ORE ] ];
-                answer[[ [ "a", "n" ], "d", [ "a", "l" ], "f" ]] = [ [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ],
-                        TengwaRune.ANDO, [ TengwaRune.THREE_DOTS, TengwaRune.LAMBE ], TengwaRune.FORMEN ];
-                answer[[ "r", [ "a", "n" ], "d", [ "i", "r" ] ]] = [ TengwaRune.ROMEN,
-                        [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN ], TengwaRune.ANDO,
-                        [ TengwaRune.ACUTE, TengwaRune.ROMEN ] ];
-                answer[[ "r", [ "i", "d" ], [ "e", "r" ], "s" ]] = [ TengwaRune.ROMEN,
-                        [ TengwaRune.ACUTE, TengwaRune.ANDO ], [ TengwaRune.DOT, TengwaRune.ORE ], TengwaRune.SILME ];
-
-                // The War Of The Ring 1
-                answer[[ [ "i", "c" ], "t", [ "o", "r" ], "y" ]] = [ [ TengwaRune.ACUTE, TengwaRune.SILME_NUQUERNA ],
-                        TengwaRune.TINCO, [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ], TengwaRune.ANNA ];
-                answer[[ "th", [ "e", "n" ] ]] = [ TengwaRune.ANTO, [ TengwaRune.DOT, TengwaRune.NUMEN ] ];
-
-                // The War Of The Ring 1
-                answer[[ "w", [ "i", "th" ] ]] = [ TengwaRune.VALA, [ TengwaRune.ACUTE, TengwaRune.ANTO ] ];
-                answer[[ "m", [ "o", "r" ], [ "a", "n", "n" ], [ "o", "n" ] ]] = [ TengwaRune.MALTA,
-                        [ TengwaRune.LEFT_CURL, TengwaRune.ROMEN ],
-                        [ TengwaRune.THREE_DOTS, TengwaRune.NUMEN, TengwaRune.UNDER_BAR, ],
-                        [ TengwaRune.LEFT_CURL, TengwaRune.NUMEN ] ];
-                answer[[ "f", [ "a", "r" ], [ "a", "m" ], [ "i", "r" ] ]] = [ TengwaRune.FORMEN,
-                        [ TengwaRune.THREE_DOTS, TengwaRune.ROMEN ], [ TengwaRune.THREE_DOTS, TengwaRune.MALTA ],
-                        [ TengwaRune.ACUTE, TengwaRune.ROMEN ] ];
-                answer[[ "s", "t", "ai", "r" ]] = [ TengwaRune.SILME, TengwaRune.TINCO,
-                        [ TengwaRune.THREE_DOTS, TengwaRune.YANTA ], TengwaRune.ORE ];
-                answer[[ "k", [ "i", "r" ], [ "i", "th" ] ]] = [ TengwaRune.QUESSE,
-                        [ TengwaRune.ACUTE, TengwaRune.ROMEN ], [ TengwaRune.ACUTE, TengwaRune.THULE ] ];
-                answer[[ [ "u", "m" ], "b", [ "a", "r" ] ]] = [ [ TengwaRune.RIGHT_CURL, TengwaRune.MALTA ],
-                        TengwaRune.UMBAR, [ TengwaRune.THREE_DOTS, TengwaRune.ORE ] ];
-
-                // Sauron Defeated 1
-                answer[[ "s", "a", [ "u", "r" ], [ "o", "n" ] ]] = [ TengwaRune.SILME,
-                        [ TengwaRune.THREE_DOTS, TengwaRune.SHORT_CARRIER ],
-                        [ TengwaRune.RIGHT_CURL, TengwaRune.ROMEN ], [ TengwaRune.LEFT_CURL, TengwaRune.NUMEN ] ];
-
-                // Sauron Defeated 2
-                answer[[ [ "i", "b" ], [ "e", "r" ], "a", "t" ]] = [ [ TengwaRune.ACUTE, TengwaRune.UMBAR ],
-                        [ TengwaRune.DOT, TengwaRune.ORE ], [ TengwaRune.THREE_DOTS, TengwaRune.SHORT_CARRIER ],
-                        TengwaRune.TINCO, ];
-                answer[[ [ "e", "r" ], "t", "a", "n" ]] = [ [ TengwaRune.DOT, TengwaRune.ORE ], TengwaRune.TINCO,
-                        [ TengwaRune.THREE_DOTS, TengwaRune.SHORT_CARRIER ], TengwaRune.NUMEN ];
-                answer[[ "s", "k", [ "o", "l" ], [ "a", "r" ] ]] = [ TengwaRune.SILME, TengwaRune.QUESSE,
-                        [ TengwaRune.LEFT_CURL, TengwaRune.LAMBE ], [ TengwaRune.THREE_DOTS, TengwaRune.ORE ] ];
-                answer[[ "z", [ "i", "g" ], [ "u", "r" ] ]] = [ TengwaRune.ESSE,
-                        [ TengwaRune.ACUTE, TengwaRune.UNGWE ], [ TengwaRune.RIGHT_CURL, TengwaRune.ROMEN ] ];
-
-                // The Lord Of The Rings 2
-                answer[[ "m", [ "a", "r" ], "ch" ]] = [ TengwaRune.MALTA, [ TengwaRune.THREE_DOTS, TengwaRune.ORE ],
-                        TengwaRune.CALMA ];
-                answer[[ "r", [ "e", "t" ], [ "u", "r" ], "n" ]] = [ "romen", [ "dot", "tinco" ], [ "topCurl", "ore" ],
-                        "numen" ];
-                answer[[ "s", "e", "e", "n" ]] = [ TengwaRune.SILME, [ TengwaRune.DOT, TengwaRune.SHORT_CARRIER ],
-                        [ TengwaRune.DOT, TengwaRune.SHORT_CARRIER ], TengwaRune.NUMEN ];
-
-                var examples = [ TengwarExampleTS1, TengwarExampleTS2, TengwarExampleUTONAME1, TengwarExampleUTONAME2,
-                        TengwarExampleTROTS1, TengwarExampleTROTS2, TengwarExampleTTOI1, TengwarExampleTTOI2,
-                        TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1, TengwarExampleSD2,
-                        // TLOTR last because J.R.R. uses a different approach than
-                        // Christopher.
-                        TengwarExampleTLOTR2 ];
-
-                var romenCount = 0;
-                var oreCount = 0;
-                var thuleCount = 0;
-                var antoCount = 0;
-
-                for (var i = 0; i < examples.length; i++)
-                {
-                    var example = examples[i];
-                    var phonemes = example.PHONEMES;
-                    var runes = example.RUNES;
-
-                    for (var j = 0; j < phonemes.length; j++)
-                    {
-                        var phoneme = phonemes[j];
-                        var rune = runes[j];
-
-                        if (rune === TengwaRune.ANTO)
-                        {
-                            antoCount++;
-                        }
-                        else if (rune === TengwaRune.ORE)
-                        {
-                            oreCount++;
-                        }
-                        else if (rune === TengwaRune.ROMEN)
-                        {
-                            romenCount++;
-                        }
-                        else if (rune === TengwaRune.THULE)
-                        {
-                            thuleCount++;
-                        }
-
-                        if (answer[phoneme] === undefined)
-                        {
-                            answer[phoneme] = rune;
-                        }
-                        // else if (answer[languageWord] !== phonemeWord)
-                        // {
-                        // LOGGER.warn("different entry for _" + languageWord + "_: _"
-                        // + answer[languageWord] + "_ or _" + phonemeWord + "_");
-                        // }
-                    }
-                }
-
-                // LOGGER.info("romenCount = " + romenCount);
-                // LOGGER.info("oreCount = " + oreCount);
-                // LOGGER.info("thuleCount = " + thuleCount);
-                // LOGGER.info("antoCount = " + antoCount);
-
-                return answer;
-            }
-
-            PhoneticToTengwarTranscriber.prototype.createWordToCountMap = function(result)
-            {
-                var answer = {};
-
-                var examples = [ TengwarExampleTS1, TengwarExampleTS2, TengwarExampleUTONAME1, TengwarExampleUTONAME2,
-                        TengwarExampleTROTS1, TengwarExampleTROTS2, TengwarExampleTTOI1, TengwarExampleTTOI2,
-                        TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1, TengwarExampleSD2,
-                        // TLOTR last because J.R.R. uses a different approach than
-                        // Christopher.
-                        TengwarExampleTLOTR2 ];
-
-                var romenCount = 0;
-                var oreCount = 0;
-                var thuleCount = 0;
-                var antoCount = 0;
-
-                for (var i = 0; i < examples.length; i++)
-                {
-                    var example = examples[i];
-                    var words = example.LANGUAGE_WORDS;
-
-                    for (var j = 0; j < words.length; j++)
-                    {
-                        var word = words[j];
-
-                        if (!(word === " " || word === "," || word === "." || word === "\n"))
-                        {
-                            var count = answer[word];
-
-                            if (count === undefined)
-                            {
-                                answer[word] = 1;
-                            }
-                            else
-                            {
-                                answer[word] = count + 1;
-                            }
-                        }
-                    }
-                }
-
-                return answer;
-            }
-
-            PhoneticToTengwarTranscriber.prototype.createWordToRuneWordMap = function()
-            {
-                var answer = {};
-
-                var examples = [ TengwarExampleTS1, TengwarExampleTS2, TengwarExampleUTONAME1, TengwarExampleUTONAME2,
-                        TengwarExampleTROTS1, TengwarExampleTROTS2, TengwarExampleTTOI1, TengwarExampleTTOI2,
-                        TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1, TengwarExampleSD2,
-                        // TLOTR last because J.R.R. uses a different approach than
-                        // Christopher.
-                        TengwarExampleTLOTR2 ];
-
-                for (var i = 0; i < examples.length; i++)
-                {
-                    var example = examples[i];
-                    var words = example.LANGUAGE_WORDS;
-                    var runeWords = this.runesToRuneWords(example.RUNES);
-
-                    // LOGGER.debug("words.length = " + words.length);
-                    // LOGGER.debug("runeWords.length = " + runeWords.length);
-
-                    for (var j = 0; j < words.length; j++)
-                    {
-                        var word = words[j];
-                        var runeWord = runeWords[j];
-
-                        if (!(word === " " || word === "," || word === "." || word === "\n"))
-                        {
-                            var rw = answer[word];
-
-                            if (rw === undefined)
-                            {
-                                answer[word] = [ runeWord ];
-                            }
-                            else
-                            {
-                                // Don't store a duplicate.
-                                if (!rw.contains(runeWord))
-                                {
-                                    rw[rw.length] = runeWord;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                return answer;
-            }
-
             PhoneticToTengwarTranscriber.prototype.determineFontLetter = function(rune)
             {
                 if (!rune) { throw new Error("rune " + rune + " is undefined"); }
@@ -632,7 +336,6 @@ define(
                         {
                             phoneme = phonemes[i];
                         }
-                        // LOGGER.debug(i + "," + j + " phoneme = " + phoneme);
 
                         var rune = map[phoneme];
 
@@ -686,8 +389,6 @@ define(
                     }
                 }
 
-                // LOGGER.debug("answer = " + answer);
-
                 return answer;
             }
 
@@ -718,8 +419,6 @@ define(
                 for (var i = 0; i < runes.length; i++)
                 {
                     var letter = runes[i];
-
-                    // LOGGER.debug(i + " letter = _" + letter + "_");
 
                     if (letter === "and" || letter === "of" || letter === "ofThe" || letter === "the")
                     {
@@ -804,7 +503,6 @@ define(
                     {
                         propertyString = "\"\\n\"";
                     }
-                    // else if (Array.isArray(property) && property.length > 1)
                     else if (property.indexOf(",") >= 0)
                     {
                         var values = property.split(",");

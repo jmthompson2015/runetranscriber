@@ -82,7 +82,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
             for (var i = 0; i < rune.length; i++)
             {
                 var rune2 = rune[i];
-                answer[answer.length] = this.determineFontLetter(rune2);
+                answer.push(this.determineFontLetter(rune2));
             }
         }
         else
@@ -101,6 +101,27 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
             {
                 LOGGER.error("Unknown rune " + rune);
             }
+        }
+
+        return answer;
+    }
+
+    EnglishAurebeshTranscriber.prototype.determineLanguageLetter = function(phoneme)
+    {
+        var answer;
+
+        if (Array.isArray(phoneme))
+        {
+            answer = "";
+
+            for (var i = 0; i < phoneme.length; i++)
+            {
+                answer += this.determineLanguageLetter(phoneme[i]);
+            }
+        }
+        else
+        {
+            answer = phoneme;
         }
 
         return answer;
@@ -125,7 +146,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
 
                 for (var i = 0; i < rune.length; i++)
                 {
-                    answer[answer.length] = this.determinePhoneme(rune[i]);
+                    answer.push(this.determinePhoneme(rune[i]));
                 }
             }
             else
@@ -134,6 +155,36 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
                 var phoneme = properties[rune].phoneme;
 
                 answer = phoneme;
+            }
+        }
+
+        return answer;
+    }
+
+    EnglishAurebeshTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
+    {
+        var answer = [];
+
+        var word = "";
+
+        for (var i = 0; i < phonemes.length; i++)
+        {
+            var phoneme = phonemes[i];
+
+            if (phoneme === " " || phoneme === "," || phoneme === "." || phoneme === "\n")
+            {
+                answer.push(word);
+                answer.push(phoneme);
+                word = "";
+            }
+            else if (i === phonemes.length - 1)
+            {
+                word += this.determineLanguageLetter(phoneme);
+                answer.push(word);
+            }
+            else
+            {
+                word += this.determineLanguageLetter(phoneme);
             }
         }
 
@@ -150,9 +201,9 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
 
             if (!rune) { throw new Error("rune is undefined from " + i + " " + runes); }
 
-            if (rune !== "newline")
+            // if (rune !== "newline")
             {
-                answer[answer.length] = this.determineFontLetter(rune);
+                answer.push(this.determineFontLetter(rune));
             }
         }
 
@@ -166,7 +217,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         for (var i = 0; i < runes.length; i++)
         {
             var rune = runes[i];
-            answer[answer.length] = this.determinePhoneme(rune);
+            answer.push(this.determinePhoneme(rune));
         }
 
         return answer;
@@ -195,7 +246,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
 
                 if (forwardMap[word] != null)
                 {
-                    answer[answer.length] = forwardMap[word];
+                    answer.push(forwardMap[word]);
                     i += j - 1;
                     j = -1;
                 }

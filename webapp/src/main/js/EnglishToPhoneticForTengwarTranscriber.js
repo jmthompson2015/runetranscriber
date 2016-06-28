@@ -1,17 +1,8 @@
-define([ "example/TengwarExampleTS1", "example/TengwarExampleTS2", "example/TengwarExampleUTONAME1",
-        "example/TengwarExampleUTONAME2", "example/TengwarExampleTROTS1", "example/TengwarExampleTROTS2",
-        "example/TengwarExampleTTOI1", "example/TengwarExampleTTOI2", "example/TengwarExampleTWOTR1",
-        "example/TengwarExampleTWOTR2", "example/TengwarExampleSD1", "example/TengwarExampleSD2",
-        "example/TengwarExampleTLOTR2", "util/ArrayAugments" ], function(TengwarExampleTS1, TengwarExampleTS2,
-        TengwarExampleUTONAME1, TengwarExampleUTONAME2, TengwarExampleTROTS1, TengwarExampleTROTS2,
-        TengwarExampleTTOI1, TengwarExampleTTOI2, TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1,
-        TengwarExampleSD2, TengwarExampleTLOTR2, ArrayAugments)
+define([ "util/ArrayAugments" ], function(ArrayAugments)
 {
     "use strict";
     var EnglishToPhoneticForTengwarTranscriber = function()
     {
-        // var languageToPhonemeMap = this.createLanguageToPhonemeMap();
-
         var languageToPhonemeMap = {};
 
         languageToPhonemeMap["\n"] = "\n";
@@ -190,50 +181,6 @@ define([ "example/TengwarExampleTS1", "example/TengwarExampleTS2", "example/Teng
 
     EnglishToPhoneticForTengwarTranscriber.prototype.VOWELS = [ "a", "e", "i", "o", "u" ];
 
-    EnglishToPhoneticForTengwarTranscriber.prototype.createLanguageToPhonemeMap = function()
-    {
-        var answer = {};
-
-        // Inconsistencies.
-        answer["named"] = [ "n", [ "a", "m" ], [ "e", "d" ] ];
-        answer["return"] = [ "r", [ "e", "t" ], [ "u", "r" ], "n" ];
-        answer["set"] = [ "s", [ "e", "t" ] ];
-        answer["to"] = [ "t", "o" ];
-        answer["war"] = [ "w", [ "a", "r" ] ];
-
-        var examples = [ TengwarExampleTS1, TengwarExampleTS2, TengwarExampleUTONAME1, TengwarExampleUTONAME2,
-                TengwarExampleTROTS1, TengwarExampleTROTS2, TengwarExampleTTOI1, TengwarExampleTTOI2,
-                TengwarExampleTWOTR1, TengwarExampleTWOTR2, TengwarExampleSD1, TengwarExampleSD2,
-                // TLOTR last because J.R.R. uses a different approach than
-                // Christopher.
-                TengwarExampleTLOTR2 ];
-
-        for (var i = 0; i < examples.length; i++)
-        {
-            var example = examples[i];
-            var languageWords = example.LANGUAGE_WORDS;
-            var phonemeWords = this.phonemesToPhonemeWords(example.PHONEMES);
-
-            for (var j = 0; j < languageWords.length; j++)
-            {
-                var languageWord = languageWords[j];
-                var phonemeWord = phonemeWords[j];
-
-                if (answer[languageWord] === undefined)
-                {
-                    answer[languageWord] = phonemeWord;
-                }
-                // else if (answer[languageWord] !== phonemeWord)
-                // {
-                // LOGGER.warn("different entry for _" + languageWord + "_: _"
-                // + answer[languageWord] + "_ or _" + phonemeWord + "_");
-                // }
-            }
-        }
-
-        return answer;
-    }
-
     EnglishToPhoneticForTengwarTranscriber.prototype.isConsonant = function(letter)
     {
         return letter !== "" && !this.isVowel(letter) && !this.isPunctuation(letter);
@@ -348,8 +295,7 @@ define([ "example/TengwarExampleTS1", "example/TengwarExampleTS2", "example/Teng
                         if (this.isVowel(letter0) && this.isConsonant(letter1) && this.isVowel(letter2) &&
                                 (letter3 === "s" || letter3 === ""))
                         {
-                            // group vowel-consonant-vowel at end of word or
-                            // followed by s.
+                            // group vowel-consonant-vowel at end of word or followed by s.
                             answer[answer.length] = [ letter0, letter1, letter2 ];
                             start += 2;
                         }

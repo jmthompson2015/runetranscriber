@@ -25,49 +25,6 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "example/TengwarExampleTS1", 
         assert.equal(result, "[\"w\", [\"i\", \"s\"], \"t\", \"m\", [\"a\", \"r\"], \"ch\"]");
     });
 
-    QUnit.test("createLanguageToPhonemeMap()", function(assert)
-    {
-        // Setup.
-        var transcriber = createTranscriber();
-
-        // Run.
-        var result = transcriber.createLanguageToPhonemeMap();
-        // console.info(transcriber.mapToString(result));
-
-        // Verify.
-        assert.ok(result);
-        assert.equal(Object.keys(result).length, 164);
-        assert.equal(result[" "], " ");
-        assert.equal(result["the"], "the");
-
-        {
-            var value = result["age"];
-            assert.equal(value.length, 1);
-            assert.equal(value[0][0], "a");
-            assert.equal(value[0][1], "j");
-            assert.equal(value[0][2], "e");
-        }
-
-        {
-            var value = result["brought"];
-            assert.equal(value.length, 5);
-            assert.equal(value[0], "b");
-            assert.equal(value[1], "r");
-            assert.equal(value[2][0], "o");
-            assert.equal(value[2][1], "u");
-            assert.equal(value[3], "gh");
-            assert.equal(value[4], "t");
-        }
-
-        {
-            var value = result["son"];
-            assert.equal(value.length, 2);
-            assert.equal(value[0], "s");
-            assert.equal(value[1][0], "o");
-            assert.equal(value[1][1], "n");
-        }
-    });
-
     QUnit.test("isConsonant()", function(assert)
     {
         // Setup.

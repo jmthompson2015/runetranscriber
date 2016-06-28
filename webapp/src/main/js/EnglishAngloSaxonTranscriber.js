@@ -157,6 +157,165 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
     }
 
+    EnglishAngloSaxonTranscriber.prototype.determineFontLetter = function(rune)
+    {
+        if (!rune) { throw new Error("rune " + rune + " is undefined"); }
+
+        var answer;
+
+        if (Array.isArray(rune))
+        {
+            answer = [];
+
+            for (var i = 0; i < rune.length; i++)
+            {
+                var rune2 = rune[i];
+                answer.push(this.determineFontLetter(rune2));
+            }
+        }
+        else
+        {
+            var properties = AngloSaxonRune.properties;
+            try
+            {
+                var fontLetter = properties[rune].fontLetter;
+
+                if (fontLetter)
+                {
+                    answer = fontLetter;
+                }
+            }
+            catch (e)
+            {
+                LOGGER.error("Unknown rune " + rune);
+            }
+        }
+
+        return answer;
+    }
+
+    EnglishAngloSaxonTranscriber.prototype.determineLanguageLetter = function(phoneme)
+    {
+        var answer;
+
+        if (Array.isArray(phoneme))
+        {
+            answer = "";
+
+            for (var i = 0; i < phoneme.length; i++)
+            {
+                answer += this.determineLanguageLetter(phoneme[i]);
+            }
+        }
+        else if (phoneme === "ae")
+        {
+            answer = "a";
+        }
+        else
+        {
+            answer = phoneme;
+        }
+
+        return answer;
+    }
+
+    EnglishAngloSaxonTranscriber.prototype.determinePhoneme = function(rune)
+    {
+        var answer = "?";
+
+        var map = this.getReverseMap();
+        var letter = map[rune];
+
+        if (letter)
+        {
+            answer = letter;
+        }
+        else
+        {
+            if (Array.isArray(rune))
+            {
+                answer = [];
+
+                for (var i = 0; i < rune.length; i++)
+                {
+                    answer.push(this.determinePhoneme(rune[i]));
+                }
+            }
+            else
+            {
+                var properties = AngloSaxonRune.properties;
+                if (!properties[rune]) { throw "No properties found for rune: " + rune; }
+                var phoneme = properties[rune].phoneme;
+
+                answer = phoneme;
+            }
+        }
+
+        return answer;
+    }
+
+    EnglishAngloSaxonTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
+    {
+        var answer = [];
+
+        var word = "";
+
+        for (var i = 0; i < phonemes.length; i++)
+        {
+            var phoneme = phonemes[i];
+
+            if ([ " ", ",", ".", "\n" ].includes(phoneme))
+            {
+                answer.push(word);
+                answer.push(phoneme);
+                word = "";
+            }
+            else if (i === phonemes.length - 1)
+            {
+                word += this.determineLanguageLetter(phoneme);
+                answer.push(word);
+            }
+            else
+            {
+                word += this.determineLanguageLetter(phoneme);
+            }
+        }
+
+        return answer;
+    }
+
+    EnglishAngloSaxonTranscriber.prototype.runesToFontLetters = function(runes)
+    {
+        var answer = [];
+
+        for (var i = 0; i < runes.length; i++)
+        {
+            var rune = runes[i];
+
+            if (!rune) { throw new Error("rune is undefined from " + i + " " + runes); }
+
+            // if (rune !== "newline")
+            {
+                answer.push(this.determineFontLetter(rune));
+            }
+        }
+
+        return answer;
+    }
+
+    EnglishAngloSaxonTranscriber.prototype.runesToPhonemes = function(runes)
+    {
+        var answer = [];
+
+        for (var i = 0; i < runes.length; i++)
+        {
+            var rune = runes[i];
+            answer.push(this.determinePhoneme(rune));
+        }
+
+        return answer;
+    }
+
     /**
      * @param fromSequence
      *            From sequence.

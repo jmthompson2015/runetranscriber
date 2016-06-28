@@ -69,6 +69,13 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         return answer;
     }
 
+    EnglishTengwarTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
+    {
+        var transcriber = new PhoneticToEnglishForTengwarTranscriber();
+
+        return transcriber.phonemesToLanguageWords(phonemes);
+    }
+
     EnglishTengwarTranscriber.prototype.runesToFontLetters = function(runes)
     {
         var answer = [];
@@ -79,22 +86,13 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
 
             if (!rune) { throw new Error("rune is undefined from " + i + " " + runes); }
 
-            if (rune !== "newline")
+            // if (rune !== "newline")
             {
-                answer[answer.length] = this.determineFontLetter(rune);
+                answer.push(this.determineFontLetter(rune));
             }
         }
 
         return answer;
-    }
-
-    EnglishTengwarTranscriber.prototype.runesToLanguageWords = function(runes)
-    {
-        var phonemes = this.runesToPhonemes(runes);
-        var phonemesToLanguageTranscriber = new PhoneticToEnglishForTengwarTranscriber();
-        var languageWords = phonemesToLanguageTranscriber.phonemesToLanguageWords(phonemes);
-
-        return languageWords;
     }
 
     EnglishTengwarTranscriber.prototype.runesToPhonemes = function(runes)

@@ -1,9 +1,8 @@
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat", "EnglishAngloSaxonTranscriber", "example/AngloSaxonExample1",
-        "example/AngloSaxonExample2", "example/AngloSaxonExample3", "example/AngloSaxonExample4",
-        "example/AngloSaxonExample5", "example/AngloSaxonExample6", "example/AngloSaxonExample7",
-        "example/AngloSaxonExample8" ], function(AngloSaxonRune, AngloSaxonRuneFormat, EnglishAngloSaxonTranscriber,
-        AngloSaxonExample1, AngloSaxonExample2, AngloSaxonExample3, AngloSaxonExample4, AngloSaxonExample5,
-        AngloSaxonExample6, AngloSaxonExample7, AngloSaxonExample8)
+define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonExample1", "example/AngloSaxonExample2",
+        "example/AngloSaxonExample3", "example/AngloSaxonExample4", "example/AngloSaxonExample5",
+        "example/AngloSaxonExample6", "example/AngloSaxonExample7", "example/AngloSaxonExample8" ], function(
+        AngloSaxonRune, EnglishAngloSaxonTranscriber, AngloSaxonExample1, AngloSaxonExample2, AngloSaxonExample3,
+        AngloSaxonExample4, AngloSaxonExample5, AngloSaxonExample6, AngloSaxonExample7, AngloSaxonExample8)
 {
     "use strict";
     QUnit.module("EnglishAngloSaxonTranscriber");
@@ -30,6 +29,70 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat", "EnglishAngloSaxonTranscriber
 
         // Verify.
         assert.equal(result, 7);
+    });
+
+    QUnit.skip("Example1 phonemesToLanguageWords()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishAngloSaxonTranscriber();
+        var phonemes = AngloSaxonExample1.PHONEMES;
+
+        // Run.
+        var result = transcriber.phonemesToLanguageWords(phonemes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = AngloSaxonExample1.WORDS;
+        assert.equal(result.length, expected.length);
+
+        for (var i = 0; i < result.length; i++)
+        {
+            assert.equal(result[i], expected[i], "" + i);
+        }
+    });
+
+    QUnit.test("Example1 runesToFontLetters()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishAngloSaxonTranscriber();
+        var runes = AngloSaxonExample1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToFontLetters(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = runes.map(function(runeKey)
+        {
+            var rune = AngloSaxonRune.properties[runeKey];
+            return rune.fontLetter;
+        });
+        assert.equal(result.length, expected.length);
+
+        for (var i = 0; i < result.length; i++)
+        {
+            assert.equal(result[i], expected[i], "" + i);
+        }
+    });
+
+    QUnit.test("Example1 runesToPhonemes()", function(assert)
+    {
+        // Setup.
+        var transcriber = new EnglishAngloSaxonTranscriber();
+        var runes = AngloSaxonExample1.RUNES;
+
+        // Run.
+        var result = transcriber.runesToPhonemes(runes);
+
+        // Verify.
+        assert.ok(result);
+        var expected = AngloSaxonExample1.PHONEMES;
+        assert.equal(result.length, expected.length);
+
+        for (var i = 0; i < result.length; i++)
+        {
+            assert.equal(result[i], expected[i], "" + i);
+        }
     });
 
     QUnit.test("Example1 transcribeForward()", function(assert)
