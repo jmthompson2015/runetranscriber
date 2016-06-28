@@ -2,12 +2,14 @@
  * Provides an example for Anglo-Saxon runes from The Hobbit, Thror's Map #3.
  */
 define(
-        [ "AngloSaxonRune", "AngloSaxonRuneFormat" ],
-        function(AngloSaxonRune, AngloSaxonRuneFormat)
+        [ "AngloSaxonRune" ],
+        function(AngloSaxonRune)
         {
             "use strict";
             var AngloSaxonExample4 =
             {
+                NAME: "Anglo-Saxon Example 4",
+
                 LANGUAGE_LETTERS: "Stand by the grey st\none when the thrush kn\nocks and the setting s\nun with the last light \nof Durin's Day will sh\nine upon the keyhole. \nTh.",
 
                 RUNES: [

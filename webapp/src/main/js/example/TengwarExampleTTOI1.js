@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTTOI1 =
             {
+                NAME: "Tengwar Example TTOI1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/treasonofisengard/TTOI_TitlePage1.jpg",
 
                 LANGUAGE_STRING: "In the Treason of Isengard the story of the Fellowship of the Ring is traced\n"

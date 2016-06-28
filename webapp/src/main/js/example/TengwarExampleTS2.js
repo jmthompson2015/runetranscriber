@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTS2 =
             {
+                NAME: "Tengwar Example TS2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/silmarillion/TheSilmarillion_TitlePage2.png",
 
                 LANGUAGE_STRING: "To which are appended the Downfall of Numenor and the history of the\n"

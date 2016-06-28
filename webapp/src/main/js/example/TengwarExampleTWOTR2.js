@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTWOTR2 =
             {
+                NAME: "Tengwar Example TWOTR2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/warofthering/TWOTR_TitlePage2.jpg",
 
                 LANGUAGE_STRING: "journey of Frodo with Samwise and Gollum to the Morannon, of the\n"

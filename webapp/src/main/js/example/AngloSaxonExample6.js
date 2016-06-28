@@ -1,11 +1,13 @@
 /*
  * Provides an example for Anglo-Saxon runes from The Hobbit, Preface #2.
  */
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, AngloSaxonRuneFormat)
+define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 {
     "use strict";
     var AngloSaxonExample6 =
     {
+        NAME: "Anglo-Saxon Example 6",
+
         LANGUAGE_LETTERS: "Five feet high the door and three may walk abreast. Th. Th.",
 
         RUNES: [

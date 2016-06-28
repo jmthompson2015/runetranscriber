@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleUTONAME1 =
             {
+                NAME: "Tengwar Example UTONAME1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/unfinishedtales/UTONAME_TitlePage1.jpg",
 
                 LANGUAGE_STRING: "In this book of Unfinished Tales by John Ronald Reuel Tolkien\n"

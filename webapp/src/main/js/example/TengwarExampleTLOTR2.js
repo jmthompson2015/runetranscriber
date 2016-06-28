@@ -9,6 +9,8 @@ define(
             "use strict";
             var TengwarExampleTLOTR2 =
             {
+                NAME: "Tengwar Example TLOTR2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/lordoftherings/TLOTR_TitlePage2.jpg",
 
                 LANGUAGE_STRING: "of Westmarch by John Ronald Reuel Tolkien. Herein is set forth\n"

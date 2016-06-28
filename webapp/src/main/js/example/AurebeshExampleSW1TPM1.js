@@ -8,9 +8,14 @@ define(
             "use strict";
             var AurebeshExampleSW1TPM1 =
             {
+                NAME: "Aurebesh Example SW1TPM1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/starwars/SW1TPM_turnTheShipAround.jpg",
 
                 LANGUAGE_STRING: "anakin\n" + "turn the ship\n" + "around and go\n" + "back homie\n" + "right away",
+
+                LANGUAGE_WORDS: [ "anakin", "\n", "turn", "the", "ship", "\n", "around", "and", "go", "\n", "back",
+                        "homie", "\n", "right", "away" ],
 
                 RUNES: [
                 // Line 1

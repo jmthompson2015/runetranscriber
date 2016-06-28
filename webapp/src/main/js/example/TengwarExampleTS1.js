@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTS1 =
             {
+                NAME: "Tengwar Example TS1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/silmarillion/TheSilmarillion_TitlePage1.png",
 
                 LANGUAGE_STRING: "The Tales of the First Age when Morgoth dwelt in Middle earth\n"

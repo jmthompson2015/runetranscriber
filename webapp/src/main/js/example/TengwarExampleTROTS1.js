@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTROTS1 =
             {
+                NAME: "Tengwar Example TROTS1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/returnoftheshadow/TROTS_TitlePage1.jpg",
 
                 LANGUAGE_STRING: "In the Return of the Shadow are traced the first forms of the story of the Lord\n"

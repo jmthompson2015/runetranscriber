@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTTOI2 =
             {
+                NAME: "Tengwar Example TTOI2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/treasonofisengard/TTOI_TitlePage2.jpg",
 
                 LANGUAGE_STRING: "of its ending at Calembel beside Anduin the Great river. Then is\n"

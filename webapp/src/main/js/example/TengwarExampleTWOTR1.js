@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTWOTR1 =
             {
+                NAME: "Tengwar Example TWOTR1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/warofthering/TWOTR_TitlePage1.jpg",
 
                 LANGUAGE_STRING: "In the War of the Ring is traced the story of the victory at Helms Deep\n"

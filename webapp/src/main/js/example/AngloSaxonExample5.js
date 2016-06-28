@@ -1,12 +1,14 @@
 /*
  * Provides an example for Anglo-Saxon runes from The Hobbit, Preface #1.
  */
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ],
-        function(AngloSaxonRune, AngloSaxonRuneFormat)
+define([ "AngloSaxonRune" ],
+        function(AngloSaxonRune)
         {
             "use strict";
             var AngloSaxonExample5 =
             {
+                NAME: "Anglo-Saxon Example 5",
+
                 LANGUAGE_LETTERS: "The hobbit\nor\nthere and back again",
 
                 RUNES: [

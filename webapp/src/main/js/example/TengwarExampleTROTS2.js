@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleTROTS2 =
             {
+                NAME: "Tengwar Example TROTS2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/returnoftheshadow/TROTS_TitlePage2.jpg",
 
                 LANGUAGE_STRING: "named Bingo but afterwards Frodo, is followed from Hobbiton in the\n"

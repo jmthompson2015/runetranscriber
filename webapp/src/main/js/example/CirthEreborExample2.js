@@ -6,6 +6,8 @@ define([ "CerthRune" ], function(CerthRune)
     "use strict";
     var CirthEreborExample2 =
     {
+        NAME: "Cirth Erebor Example 2",
+
         LANGUAGE_LETTERS: "balin son of fundin lord of moria",
 
         RUNES: [

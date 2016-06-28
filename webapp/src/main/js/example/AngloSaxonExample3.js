@@ -1,11 +1,13 @@
 /*
  * Provides an example for Anglo-Saxon runes from The Hobbit, Thror's Map #2 by pointing finger.
  */
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, AngloSaxonRuneFormat)
+define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 {
     "use strict";
     var AngloSaxonExample3 =
     {
+        NAME: "Anglo-Saxon Example 3",
+
         LANGUAGE_LETTERS: "Five\nfeet high\nthe door an\nd three may\nwalk abre\nast. Th. Th.",
 
         RUNES: [

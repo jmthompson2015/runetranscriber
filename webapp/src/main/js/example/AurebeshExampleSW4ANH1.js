@@ -8,6 +8,8 @@ define(
             "use strict";
             var AurebeshExampleSW4ANH1 =
             {
+                NAME: "Aurebesh Example SW4ANH1",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/starwars/SW4ANH_tractorBeam.jpg",
 
                 LANGUAGE_STRING: "power\n" + "tractor beam 12 sec n6",

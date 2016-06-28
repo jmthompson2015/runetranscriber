@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleUTONAME2 =
             {
+                NAME: "Tengwar Example UTONAME2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/unfinishedtales/UTONAME_TitlePage2.jpg",
 
                 LANGUAGE_STRING: "are told many things of men and elves in Numenor and in Middle\n"

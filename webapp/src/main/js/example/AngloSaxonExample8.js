@@ -1,11 +1,13 @@
 /*
  * Provides an example for Anglo-Saxon runes from LEGO 9473 Sticker #1.
  */
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, AngloSaxonRuneFormat)
+define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 {
     "use strict";
     var AngloSaxonExample8 =
     {
+        NAME: "Anglo-Saxon Example 8",
+
         LANGUAGE_LETTERS: "Djordje was here",
 
         RUNES: [

@@ -1,11 +1,13 @@
 /*
  * Provides an example for Anglo-Saxon runes from The Hobbit, Preface #3.
  */
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, AngloSaxonRuneFormat)
+define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 {
     "use strict";
     var AngloSaxonExample7 =
     {
+        NAME: "Anglo-Saxon Example 7",
+
         LANGUAGE_LETTERS: "Stand by the grey stone when the thrush knocks an\n"
                 + "d the setting sun with the last light of Durin's Day \n" + "will shine upon the keyhole.",
 

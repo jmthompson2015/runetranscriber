@@ -8,6 +8,8 @@ define(
             "use strict";
             var TengwarExampleSD2 =
             {
+                NAME: "Tengwar Example SD2",
+
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/saurondefeated/SD_TitlePage2.jpg",
 
                 LANGUAGE_STRING: "Then follows an account of the intrusion of the Cataclysm of the West\n"
