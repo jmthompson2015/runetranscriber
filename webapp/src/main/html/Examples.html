@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rune Transcriber: Examples</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/style.css">
+
+<script src="../../../../coreweb/lib/react/react-15.1.0.js"></script>
+<script src="../../../../coreweb/lib/react-dom/react-dom-15.1.0.js"></script>
+<script src="../../../../coreweb/lib/require/require-2.2.0.min.js" data-main="../js/CerthRune"></script>
+
+<script src="../js/util/Logger.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+	<section>
+		<label>Rune Set: <span id="runeSetSelect"></span>
+		</label>
+	</section>
+	<section>
+		<label>Example: <span id="exampleSelect"></span>
+		</label>
+	</section>
+	<section>
+		<div id="image"></div>
+		<div id="runePanel"></div>
+	</section>
+	<script>
+        "use strict";
+        var LOGGER = new Logger();
+        LOGGER.setTraceEnabled(false);
+        LOGGER.setDebugEnabled(false);
+
+        require([ "RuneSet", "example/TengwarExampleSD1", "ui/RunePanel", "ui/Select", "util/InputValidator" ],
+                function(RuneSet, TengwarExampleSD1, RunePanel, Select, InputValidator)
+                {
+                    var nameToExample = createNameToExample();
+
+                    var runeSetKey = RuneSet.TENGWAR;
+                    var runeSet = RuneSet.properties[runeSetKey];
+                    var example = TengwarExampleSD1;
+                    var exampleName = example.NAME;
+
+                    var runeSetSelect = createRuneSetSelect(runeSetKey);
+                    var exampleSelect = createExampleSelect(exampleName);
+                    var runePanel = createRunePanel(runeSet, example);
+
+                    ReactDOM.render(runeSetSelect, document.getElementById("runeSetSelect"));
+                    ReactDOM.render(exampleSelect, document.getElementById("exampleSelect"));
+                    ReactDOM.render(runePanel, document.getElementById("runePanel"));
+
+                    function createRuneSetSelect(myRuneSetKey)
+                    {
+                        var values = RuneSet.values();
+
+                        if (!myRuneSetKey)
+                        {
+                            runeSetKey = values[0];
+                            runeSet = RuneSet.properties[runeSetKey];
+                            myRuneSetKey = runeSet;
+                        }
+
+                        var initialSelectedValue = myRuneSetKey;
+
+                        var labelFunction = function(value)
+                        {
+                            return RuneSet.properties[value].name;
+                        };
+
+                        var onChange = function(event)
+                        {
+                            var runeSetKey = event.currentTarget.value;
+                            runeSet = RuneSet.properties[runeSetKey];
+                            exampleSelect = createExampleSelect();
+                            ReactDOM.render(exampleSelect, document.getElementById("exampleSelect"));
+                            example = runeSet.examples[0];
+                            runePanel = createRunePanel(runeSet, example);
+                            ReactDOM.render(runePanel, document.getElementById("runePanel"));
+                        };
+
+                        return React.createElement(Select,
+                        {
+                            values: values,
+                            initialSelectedValue: initialSelectedValue,
+                            labelFunction: labelFunction,
+                            onChange: onChange,
+                        });
+                    }
+
+                    function createExampleSelect(myExampleName)
+                    {
+                        var values = runeSet.examples.map(function(example)
+                        {
+                            return example.NAME;
+                        });
+
+                        if (!myExampleName || !values.includes(myExampleName))
+                        {
+                            myExampleName = values[0];
+                            example = nameToExample[myExampleName];
+                        }
+
+                        var initialSelectedValue = myExampleName;
+
+                        var onChange = function(event)
+                        {
+                            var exampleName = event.currentTarget.value;
+                            example = nameToExample[exampleName];
+                            var runePanel = createRunePanel(runeSet, example);
+                            ReactDOM.render(runePanel, document.getElementById("runePanel"));
+                        };
+
+                        return React.createElement(Select,
+                        {
+                            values: values,
+                            initialSelectedValue: initialSelectedValue,
+                            onChange: onChange,
+                        });
+                    }
+
+                    function createRunePanel(runeSet, example)
+                    {
+                        InputValidator.validateNotNull("runeSet", runeSet);
+                        InputValidator.validateNotNull("example", example);
+
+                        var transcriber = new runeSet.transcriber();
+                        var runes = example.RUNES;
+                        var letters = transcriber.runesToFontLetters(runes);
+                        var phonemes = transcriber.runesToPhonemes(runes);
+                        var languageWords = transcriber.phonemesToLanguageWords(phonemes);
+
+                        return React.createElement(RunePanel,
+                        {
+                            runeSet: runeSet,
+                            image: example.IMAGE,
+                            letters: letters,
+                            runes: runes,
+                            phonemes: phonemes,
+                            languageWords: languageWords,
+                        });
+                    }
+
+                    function createNameToExample()
+                    {
+                        var answer = {};
+
+                        RuneSet.values().forEach(function(runeSetKey)
+                        {
+                            var runeSet = RuneSet.properties[runeSetKey];
+
+                            runeSet.examples.forEach(function(example)
+                            {
+                                answer[example.NAME] = example;
+                            });
+                        });
+
+                        return answer;
+                    }
+                });
+    </script>
+</body>
+</html>
