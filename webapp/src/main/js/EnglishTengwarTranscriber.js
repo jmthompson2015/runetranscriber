@@ -9,28 +9,28 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         this.getFormatter = function()
         {
             return TengwaRuneFormat;
-        }
+        };
 
         this.getForwardMap = function()
         {
             return {};
-        }
+        };
 
         this.getMaxForwardKeyLength = function()
         {
             return 0;
-        }
+        };
 
         this.getMaxReverseKeyLength = function()
         {
             return 0;
-        }
+        };
 
         this.getReverseMap = function()
         {
             return {};
-        }
-    }
+        };
+    };
 
     EnglishTengwarTranscriber.prototype.determineFontLetter = function(rune)
     {
@@ -67,14 +67,14 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         }
 
         return answer;
-    }
+    };
 
     EnglishTengwarTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
     {
         var transcriber = new PhoneticToEnglishForTengwarTranscriber();
 
         return transcriber.phonemesToLanguageWords(phonemes);
-    }
+    };
 
     EnglishTengwarTranscriber.prototype.runesToFontLetters = function(runes)
     {
@@ -93,7 +93,7 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         }
 
         return answer;
-    }
+    };
 
     EnglishTengwarTranscriber.prototype.runesToPhonemes = function(runes)
     {
@@ -101,7 +101,7 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         var phonemes = runesToPhonemesTranscriber.runesToPhonemes(runes);
 
         return phonemes;
-    }
+    };
 
     /**
      * @param fromSequence
@@ -119,7 +119,7 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         var runes = phonemesToRunesTranscriber.phonemesToRunes(phonemes);
 
         return runes;
-    }
+    };
 
     /**
      * @param toSequence
@@ -137,7 +137,7 @@ define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarT
         var languageString = phonemesToLanguageTranscriber.languageWordsToString(languageWords);
 
         return languageString;
-    }
+    };
 
     return EnglishTengwarTranscriber;
 });

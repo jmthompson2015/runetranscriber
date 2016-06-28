@@ -21,15 +21,16 @@ define(
                     }
 
                     var answer = "";
+                    var i, rune;
 
                     if (Array.isArray(runes))
                     {
                         answer += "<table class=\"center table-details\">";
                         answer += "<tr>";
 
-                        for (var i = 0; i < runes.length; i++)
+                        for (i = 0; i < runes.length; i++)
                         {
-                            var rune = runes[i];
+                            rune = runes[i];
                             answer += "<td style=\"border: 1px solid; border-color: darkgreen; font-family: Tengwar;font-size: x-large;\">";
 
                             if (TengwaRune.tehtar.contains(runes))
@@ -45,9 +46,9 @@ define(
 
                         answer += "<tr>";
 
-                        for (var i = 0; i < runes.length; i++)
+                        for (i = 0; i < runes.length; i++)
                         {
-                            var rune = runes[i];
+                            rune = runes[i];
                             answer += "<td style=\"border: 1px solid; border-color: darkgreen; font-size: x-small;\">";
                             answer += this.getName(rune);
                             answer += "</td>";
@@ -99,6 +100,7 @@ define(
                 createHtml: function()
                 {
                     var answer = "";
+                    var i, rune;
 
                     answer += "<table class=\"center table-details\">";
                     answer += "<tr>";
@@ -117,9 +119,9 @@ define(
                     answer += "</th>";
                     answer += "</tr>";
 
-                    for (var i = 0; i < 24; i++)
+                    for (i = 0; i < 24; i++)
                     {
-                        var rune = TengwaRune.values[i];
+                        rune = TengwaRune.values[i];
                         answer += this.createRow(4, i, rune);
                     }
 
@@ -127,16 +129,16 @@ define(
                     answer += "<br/>";
                     answer += "<table class=\"center table-details\">";
 
-                    for (var i = 24; i < 36; i++)
+                    for (i = 24; i < 36; i++)
                     {
-                        var rune = TengwaRune.values[i];
+                        rune = TengwaRune.values[i];
                         answer += this.createRow(4, i, rune);
                     }
 
                     answer += "</table>";
                     answer += "<br/>";
                     answer += "<table class=\"center table-details\">";
-                    var i = 24;
+                    i = 24;
                     answer += this.createRow(4, i++, TengwaRune.THE);
                     answer += this.createRow(4, i++, TengwaRune.OF);
                     answer += this.createRow(4, i++, TengwaRune.OF_THE);
@@ -145,7 +147,7 @@ define(
 
                     answer += "<br/>";
                     answer += "<table class=\"center table-details\">";
-                    var i = 30;
+                    i = 30;
                     answer += this.createRow(5, i++, [ TengwaRune.THREE_DOTS, TengwaRune.THREE_UNDER_DOTS,
                             TengwaRune.BAR ], "a");
                     answer += this.createRow(5, i++, [ TengwaRune.DOT, TengwaRune.UNDER_DOT ], "e");
@@ -161,7 +163,7 @@ define(
 
                     answer += "<br/>";
                     answer += "<table class=\"center table-details\">";
-                    var i = 30;
+                    i = 30;
                     answer += this.createRow(5, i++, [ TengwaRune.HYPHEN ]);
                     answer += this.createRow(5, i++, [ TengwaRune.SPACE ], "&nbsp;");
                     answer += this.createRow(5, i++, [ TengwaRune.COMMA ]);
@@ -210,12 +212,12 @@ define(
 
                     return answer;
                 },
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(TengwarPanel)
-            };
+                Object.freeze(TengwarPanel);
+            }
 
             return TengwarPanel;
         });

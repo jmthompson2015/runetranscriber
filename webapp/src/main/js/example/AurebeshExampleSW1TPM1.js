@@ -47,12 +47,12 @@ define(
                         AurebeshRune.SPACE,
                         // away
                         AurebeshRune.AUREK, AurebeshRune.WESK, AurebeshRune.AUREK, AurebeshRune.YIRT, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AurebeshExampleSW1TPM1)
-            };
+                Object.freeze(AurebeshExampleSW1TPM1);
+            }
 
             return AurebeshExampleSW1TPM1;
         });

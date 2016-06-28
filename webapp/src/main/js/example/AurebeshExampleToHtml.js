@@ -8,13 +8,13 @@ define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, 
         this.getRunes = function()
         {
             return runes;
-        }
+        };
 
         this.getTranscriber = function()
         {
             return transcriber;
-        }
-    }
+        };
+    };
 
     AurebeshExampleToHtml.prototype.generateFontRows = function()
     {
@@ -29,7 +29,7 @@ define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, 
 
             if (letter !== "newline")
             {
-                answer += "<td class=\"table-cell-aurebesh\">"
+                answer += "<td class=\"table-cell-aurebesh\">";
 
                 if (Array.isArray(letter))
                 {
@@ -44,14 +44,14 @@ define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, 
                     answer += letter;
                 }
 
-                answer += "</td>\n"
+                answer += "</td>\n";
             }
         }
 
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
     AurebeshExampleToHtml.prototype.generateRuneRows = function()
     {
@@ -102,7 +102,7 @@ define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, 
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
     AurebeshExampleToHtml.prototype.generatePhonemeRows = function()
     {
@@ -139,7 +139,7 @@ define([ "AurebeshRune", "EnglishAurebeshTranscriber" ], function(AurebeshRune, 
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
     return AurebeshExampleToHtml;
 });

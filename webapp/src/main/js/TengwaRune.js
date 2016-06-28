@@ -591,12 +591,12 @@ define(function()
             return [ TengwaRune.SPACE, TengwaRune.COMMA, TengwaRune.PERIOD, TengwaRune.NEWLINE ].includes(rune) ||
                     [ " ", ",", ".", "\n" ].includes(rune);
         }
-    }
+    };
 
     if (Object.freeze)
     {
-        Object.freeze(TengwaRune)
-    };
+        Object.freeze(TengwaRune);
+    }
 
     return TengwaRune;
 });

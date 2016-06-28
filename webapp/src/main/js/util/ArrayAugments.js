@@ -15,13 +15,13 @@ define(function()
         }
 
         return false;
-    }
+    };
 
     Array.prototype.equals = function(obj)
     {
         if (this === obj) { return true; }
 
-        if (this == null || obj == null)
+        if (this === null || obj === null)
         {
             LOGGER.trace("fail on null check");
             return false;
@@ -60,7 +60,7 @@ define(function()
         }
 
         return true;
-    }
+    };
 
     Array.prototype.split = function(delimiter)
     {
@@ -88,5 +88,5 @@ define(function()
         }
 
         return answer;
-    }
+    };
 });

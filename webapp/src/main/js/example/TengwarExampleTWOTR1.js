@@ -100,12 +100,12 @@ define(
                         "@", " ", "2", "7", [ "y", "Y" ], "5", [ "b", "R" ], " ", "W", " ", [ "8", "R" ], [ "5", "T" ],
                         "x", [ "6", "D" ], "2", " ", "w", "h", " ", "@", " ", [ "5", "T" ], "1", "8", "&#183;", "4",
                         [ "5", "T" ], " ", [ "8", "R" ], " ", "1", [ "j", "Y" ], "2", " ", "W?" ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(TengwarExampleTWOTR1)
-            };
+                Object.freeze(TengwarExampleTWOTR1);
+            }
 
             return TengwarExampleTWOTR1;
         });

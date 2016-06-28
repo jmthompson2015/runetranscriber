@@ -8,13 +8,13 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
         this.getRunes = function()
         {
             return runes;
-        }
+        };
 
         this.getTranscriber = function()
         {
             return transcriber;
-        }
-    }
+        };
+    };
 
     TengwarExampleToHtml.prototype.generateFontRows = function()
     {
@@ -29,7 +29,7 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
 
             if (letter !== "newline")
             {
-                answer += "<td class=\"table-cell-tengwar\">"
+                answer += "<td class=\"table-cell-tengwar\">";
 
                 if (Array.isArray(letter))
                 {
@@ -44,14 +44,14 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
                     answer += letter;
                 }
 
-                answer += "</td>\n"
+                answer += "</td>\n";
             }
         }
 
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
     TengwarExampleToHtml.prototype.generateRuneRows = function()
     {
@@ -102,7 +102,7 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
     TengwarExampleToHtml.prototype.generatePhonemeRows = function()
     {
@@ -139,7 +139,7 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
     TengwarExampleToHtml.prototype.generateLanguageRows = function()
     {
@@ -192,13 +192,14 @@ define([ "EnglishTengwarTranscriber", "TengwaRune" ], function(EnglishTengwarTra
         answer += "</tr>\n";
 
         return answer;
-    }
+    };
 
-    TengwarExampleToHtml.prototype.isPunctuation = function(word)
-    {
-        return word === TengwaRune.SPACE || word === TengwaRune.COMMA || word === TengwaRune.PERIOD ||
-                word === TengwaRune.NEWLINE || word === " " || word === "," || word === "." || word === "\n";
-    }
+    TengwarExampleToHtml.prototype.isPunctuation =
+            function(word)
+            {
+                return word === TengwaRune.SPACE || word === TengwaRune.COMMA || word === TengwaRune.PERIOD ||
+                        word === TengwaRune.NEWLINE || word === " " || word === "," || word === "." || word === "\n";
+            };
 
     return TengwarExampleToHtml;
 });

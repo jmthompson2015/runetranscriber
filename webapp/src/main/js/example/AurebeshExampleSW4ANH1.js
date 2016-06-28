@@ -30,12 +30,12 @@ define(
                         AurebeshRune.SENTH, AurebeshRune.ESK, AurebeshRune.CRESH, AurebeshRune.SPACE,
                         // n6)
                         AurebeshRune.NERN, AurebeshRune.SIX, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AurebeshExampleSW4ANH1)
-            };
+                Object.freeze(AurebeshExampleSW4ANH1);
+            }
 
             return AurebeshExampleSW4ANH1;
         });

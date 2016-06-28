@@ -46,27 +46,27 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         this.getFormatter = function()
         {
             return CerthRuneFormat;
-        }
+        };
 
         this.getForwardMap = function()
         {
             return forwardMap;
-        }
+        };
 
         this.getMaxForwardKeyLength = function()
         {
             return maxForwardKeyLength;
-        }
+        };
 
         this.getMaxReverseKeyLength = function()
         {
             return maxReverseKeyLength;
-        }
+        };
 
         this.getReverseMap = function()
         {
             return reverseMap;
-        }
+        };
 
         function determineMaxForwardKeyLength()
         {
@@ -110,7 +110,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
             forwardMap[fromSequence] = toSequence;
             reverseMap[CerthRuneFormat.format(toSequence)] = fromSequence;
         }
-    }
+    };
 
     EnglishCirthEreborTranscriber.prototype.determineFontLetter = function(rune)
     {
@@ -147,7 +147,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     EnglishCirthEreborTranscriber.prototype.determineLanguageLetter = function(phoneme)
     {
@@ -168,7 +168,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     EnglishCirthEreborTranscriber.prototype.determinePhoneme = function(rune)
     {
@@ -203,7 +203,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     EnglishCirthEreborTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
     {
@@ -233,7 +233,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     EnglishCirthEreborTranscriber.prototype.runesToFontLetters = function(runes)
     {
@@ -252,7 +252,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     EnglishCirthEreborTranscriber.prototype.runesToPhonemes = function(runes)
     {
@@ -265,7 +265,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     /**
      * @param fromSequence
@@ -305,7 +305,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     /**
      * @param toSequence
@@ -346,7 +346,7 @@ define([ "CerthRune", "CerthRuneFormat" ], function(CerthRune, CerthRuneFormat)
         }
 
         return answer;
-    }
+    };
 
     return EnglishCirthEreborTranscriber;
 });

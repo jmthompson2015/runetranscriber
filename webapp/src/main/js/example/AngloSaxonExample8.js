@@ -20,12 +20,12 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
                 AngloSaxonRune.WYNN, AngloSaxonRune.AESC, AngloSaxonRune.SIGEL, AngloSaxonRune.SPACE,
                 // here
                 AngloSaxonRune.HAEGL, AngloSaxonRune.EH, AngloSaxonRune.RAD, AngloSaxonRune.EH, ],
-    }
+    };
 
     if (Object.freeze)
     {
-        Object.freeze(AngloSaxonExample8)
-    };
+        Object.freeze(AngloSaxonExample8);
+    }
 
     return AngloSaxonExample8;
 });

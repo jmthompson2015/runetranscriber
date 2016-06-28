@@ -23,7 +23,7 @@ define([ "ui/RuneTable" ], function(RuneTable)
 
             for (var i = 0; i < runeRows.length; i++)
             {
-                var cell = React.DOM.td({}, React.createElement(RuneTable,
+                cell = React.DOM.td({}, React.createElement(RuneTable,
                 {
                     runeSet: this.props.runeSet,
                     letters: letterRows[i],

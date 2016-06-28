@@ -9,27 +9,27 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         this.getFormatter = function()
         {
             return AurebeshRuneFormat;
-        }
+        };
 
         this.getForwardMap = function()
         {
             return forwardMap;
-        }
+        };
 
         this.getMaxForwardKeyLength = function()
         {
             return 1;
-        }
+        };
 
         this.getMaxReverseKeyLength = function()
         {
             return 1;
-        }
+        };
 
         this.getReverseMap = function()
         {
             return reverseMap;
-        }
+        };
 
         var values = AurebeshRune.values;
         var properties = AurebeshRune.properties;
@@ -67,7 +67,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
             forwardMap[fromSequence] = toSequence;
             reverseMap[toSequence] = fromSequence;
         }
-    }
+    };
 
     EnglishAurebeshTranscriber.prototype.determineFontLetter = function(rune)
     {
@@ -104,7 +104,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     EnglishAurebeshTranscriber.prototype.determineLanguageLetter = function(phoneme)
     {
@@ -125,7 +125,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     EnglishAurebeshTranscriber.prototype.determinePhoneme = function(rune)
     {
@@ -159,7 +159,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     EnglishAurebeshTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
     {
@@ -189,7 +189,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     EnglishAurebeshTranscriber.prototype.runesToFontLetters = function(runes)
     {
@@ -208,7 +208,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     EnglishAurebeshTranscriber.prototype.runesToPhonemes = function(runes)
     {
@@ -221,7 +221,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     /**
      * @param fromSequence
@@ -244,7 +244,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
             {
                 var word = fromSequence.slice(i, i + j).toLowerCase();
 
-                if (forwardMap[word] != null)
+                if (forwardMap[word] !== null)
                 {
                     answer.push(forwardMap[word]);
                     i += j - 1;
@@ -259,7 +259,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     /**
      * @param toSequence
@@ -283,7 +283,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
             {
                 var word = toSequence.slice(i, i + j);
 
-                if (reverseMap[word] != null)
+                if (reverseMap[word] !== null)
                 {
                     answer += reverseMap[word];
                     i += j - 1;
@@ -298,7 +298,7 @@ define([ "AurebeshRune", "AurebeshRuneFormat" ], function(AurebeshRune, Aurebesh
         }
 
         return answer;
-    }
+    };
 
     return EnglishAurebeshTranscriber;
 });

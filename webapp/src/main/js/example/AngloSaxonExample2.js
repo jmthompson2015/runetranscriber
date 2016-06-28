@@ -23,12 +23,12 @@ define(
                 AngloSaxonRune.WYNN,
                 // n
                 AngloSaxonRune.NYD, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AngloSaxonExample2)
-            };
+                Object.freeze(AngloSaxonExample2);
+            }
 
             return AngloSaxonExample2;
         });

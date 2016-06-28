@@ -45,12 +45,12 @@ define(
                         AngloSaxonRune.THORN, AngloSaxonRune.PERIOD,
                         // th.
                         AngloSaxonRune.THORN, AngloSaxonRune.PERIOD, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AngloSaxonExample3)
-            };
+                Object.freeze(AngloSaxonExample3);
+            }
 
             return AngloSaxonExample3;
         });

@@ -82,12 +82,12 @@ define(
                         // keyhole.
                         AngloSaxonRune.CEN, AngloSaxonRune.EH, AngloSaxonRune.YR, AngloSaxonRune.HAEGL,
                         AngloSaxonRune.OS, AngloSaxonRune.LAGU, AngloSaxonRune.EH, AngloSaxonRune.PERIOD, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AngloSaxonExample7)
-            };
+                Object.freeze(AngloSaxonExample7);
+            }
 
             return AngloSaxonExample7;
         });

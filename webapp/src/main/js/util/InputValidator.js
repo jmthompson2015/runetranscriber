@@ -43,7 +43,7 @@ define(function()
         {
             if (InputValidator.isArray(object))
             {
-                if (object.length == 0)
+                if (object.length === 0)
                 {
                     // Empty array.
                     LOGGER.error(new Error().stack);
@@ -82,7 +82,7 @@ define(function()
                 throw objectName + InputValidator.NULL;
             }
         }
-    }
+    };
 
     return InputValidator;
 });

@@ -79,7 +79,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat", "AurebeshRune", "AurebeshRune
         {
             return Object.getOwnPropertyNames(RuneSet.properties);
         },
-    }
+    };
 
     if (Object.freeze)
     {

@@ -59,7 +59,7 @@ define([ "AurebeshRune" ], function(AurebeshRune)
 
             return answer;
         }
-    }
+    };
 
     return AurebeshRuneFormat;
 });

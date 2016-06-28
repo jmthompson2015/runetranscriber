@@ -15,82 +15,82 @@ function Logger()
     this.isOffEnabled = function()
     {
         return this.OFF;
-    }
+    };
 
     this.isFatalEnabled = function()
     {
         return this.FATAL;
-    }
+    };
 
     this.isErrorEnabled = function()
     {
         return this.ERROR;
-    }
+    };
 
     this.isWarnEnabled = function()
     {
         return this.WARN;
-    }
+    };
 
     this.isInfoEnabled = function()
     {
         return this.INFO;
-    }
+    };
 
     this.isDebugEnabled = function()
     {
         return this.DEBUG;
-    }
+    };
 
     this.isTimeEnabled = function()
     {
         return this.TIME;
-    }
+    };
 
     this.isTraceEnabled = function()
     {
         return this.TRACE;
-    }
+    };
 
     this.setOffEnabled = function(isEnabled)
     {
         this.OFF = isEnabled;
-    }
+    };
 
     this.setFatalEnabled = function(isEnabled)
     {
         this.FATAL = isEnabled;
-    }
+    };
 
     this.setErrorEnabled = function(isEnabled)
     {
         this.ERROR = isEnabled;
-    }
+    };
 
     this.setWarnEnabled = function(isEnabled)
     {
         this.WARN = isEnabled;
-    }
+    };
 
     this.setInfoEnabled = function(isEnabled)
     {
         this.INFO = isEnabled;
-    }
+    };
 
     this.setDebugEnabled = function(isEnabled)
     {
         this.DEBUG = isEnabled;
-    }
+    };
 
     this.setTimeEnabled = function(isEnabled)
     {
         this.TIME = isEnabled;
-    }
+    };
 
     this.setTraceEnabled = function(isEnabled)
     {
         this.TRACE = isEnabled;
-    }
+    };
 
     this.fatal = function(message)
     {
@@ -98,7 +98,7 @@ function Logger()
         {
             console.log(getDateString() + " FATAL " + message);
         }
-    }
+    };
 
     this.error = function(message)
     {
@@ -106,7 +106,7 @@ function Logger()
         {
             console.log(getDateString() + " ERROR " + message);
         }
-    }
+    };
 
     this.warn = function(message)
     {
@@ -114,7 +114,7 @@ function Logger()
         {
             console.log(getDateString() + " WARN  " + message);
         }
-    }
+    };
 
     this.info = function(message)
     {
@@ -122,7 +122,7 @@ function Logger()
         {
             console.log(getDateString() + " INFO  " + message);
         }
-    }
+    };
 
     this.debug = function(message)
     {
@@ -130,7 +130,7 @@ function Logger()
         {
             console.log(getDateString() + " DEBUG " + message);
         }
-    }
+    };
 
     this.time = function(title, start, end)
     {
@@ -139,7 +139,7 @@ function Logger()
             var message = TimePrinter.formatElapsedTime(title, start, end);
             console.log(getDateString() + " TIME  " + message);
         }
-    }
+    };
 
     this.trace = function(message)
     {
@@ -147,7 +147,7 @@ function Logger()
         {
             console.log(getDateString() + " TRACE " + message);
         }
-    }
+    };
 
     function getDateString()
     {

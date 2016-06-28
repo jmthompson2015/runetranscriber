@@ -29,12 +29,12 @@ define(
                 CerthRune.C50, CerthRune.C4, CerthRune.SPACE,
                 // moria
                 CerthRune.C6, CerthRune.C50, CerthRune.C12, CerthRune.C39, CerthRune.C48, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(CirthEreborExample2)
-            };
+                Object.freeze(CirthEreborExample2);
+            }
 
             return CirthEreborExample2;
         });

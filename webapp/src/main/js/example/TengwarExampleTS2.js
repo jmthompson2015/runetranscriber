@@ -107,12 +107,12 @@ define(
                         [ "a", "R" ], " ", "4", [ "8", "T", "&#201;" ], " ", "1", [ "j", "D", "&#201;" ], "8", " ",
                         "z", [ "t", "Y", "&#201;" ], " ", [ "1", "&#229;" ], " ", "4", [ "l", "T" ], "6", " ",
                         [ "5", "T" ], "2", "-" ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(TengwarExampleTS2)
-            };
+                Object.freeze(TengwarExampleTS2);
+            }
 
             return TengwarExampleTS2;
         });

@@ -15,8 +15,8 @@ define([ "TengwaRune" ], function(TengwaRune)
         this.getRuneToPhonemeMap = function()
         {
             return runeToPhonemeMap;
-        }
-    }
+        };
+    };
 
     TengwarToPhoneticTranscriber.prototype.determinePhoneme = function(rune)
     {
@@ -70,7 +70,7 @@ define([ "TengwaRune" ], function(TengwaRune)
         }
 
         return answer;
-    }
+    };
 
     TengwarToPhoneticTranscriber.prototype.runesToPhonemes = function(runes)
     {
@@ -92,7 +92,7 @@ define([ "TengwaRune" ], function(TengwaRune)
         }
 
         return answer;
-    }
+    };
 
     if (Object.freeze)
     {

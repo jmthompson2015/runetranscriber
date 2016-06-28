@@ -471,12 +471,12 @@ define(function()
             return [ AurebeshRune.SPACE, AurebeshRune.COMMA, AurebeshRune.PERIOD, AurebeshRune.NEWLINE ].includes(rune) ||
                     [ " ", ",", ".", "\n" ].includes(rune);
         }
-    }
+    };
 
     if (Object.freeze)
     {
-        Object.freeze(AurebeshRune)
-    };
+        Object.freeze(AurebeshRune);
+    }
 
     return AurebeshRune;
 });

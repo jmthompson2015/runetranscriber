@@ -12,7 +12,7 @@ define(
                 phonemeToRuneMap[[ "", "" ]] = "comma";
                 phonemeToRuneMap["-"] = "hyphen";
                 phonemeToRuneMap["."] = "period";
-                phonemeToRuneMap["a"] = [ "threeDots", "shortCarrier" ];
+                phonemeToRuneMap.a = [ "threeDots", "shortCarrier" ];
                 phonemeToRuneMap[[ "a", "c", "e" ]] = [ "threeDots", "silmeNuquerna", "underDot" ];
                 phonemeToRuneMap[[ "a", "d" ]] = [ "threeDots", "ando" ];
                 phonemeToRuneMap[[ "a", "d", "e" ]] = [ "threeDots", "ando", "underDot" ];
@@ -39,17 +39,17 @@ define(
                 phonemeToRuneMap[[ "a", "t" ]] = [ "threeDots", "tinco" ];
                 phonemeToRuneMap[[ "a", "y" ]] = [ "threeDots", "anna" ];
                 phonemeToRuneMap[[ "a", "z" ]] = [ "threeDots", "esseNuquerna" ];
-                phonemeToRuneMap["ai"] = [ "threeDots", "yanta" ];
-                phonemeToRuneMap["and"] = [ "bar", "ando" ];
-                phonemeToRuneMap["b"] = "umbar";
+                phonemeToRuneMap.ai = [ "threeDots", "yanta" ];
+                phonemeToRuneMap.and = [ "bar", "ando" ];
+                phonemeToRuneMap.b = "umbar";
                 phonemeToRuneMap[[ "b", "e" ]] = [ "umbar", "underDot" ];
                 phonemeToRuneMap[[ "b", "e", "f", "o", "r", "e" ]] = [ [ "umbar", "underDot" ], "formen",
                         [ "leftCurl", "ore", "underDot" ] ];
                 phonemeToRuneMap[[ "b", "y" ]] = [ "umbar", "anna" ];
-                phonemeToRuneMap["c"] = "silmeNuquerna";
-                phonemeToRuneMap["ch"] = "calma";
-                phonemeToRuneMap["d"] = "ando";
-                phonemeToRuneMap["e"] = [ "dot", "shortCarrier" ];
+                phonemeToRuneMap.c = "silmeNuquerna";
+                phonemeToRuneMap.ch = "calma";
+                phonemeToRuneMap.d = "ando";
+                phonemeToRuneMap.e = [ "dot", "shortCarrier" ];
                 phonemeToRuneMap[[ "e", "a" ]] = [ "dot", "shortCarrier", "threeUnderDots" ];
                 phonemeToRuneMap[[ "e", "a", "r", "th" ]] = [ [ "dot", "shortCarrier", "threeUnderDots" ], "ore",
                         "thule" ];
@@ -79,15 +79,15 @@ define(
                 phonemeToRuneMap[[ "e", "t" ]] = [ "dot", "tinco" ];
                 phonemeToRuneMap[[ "e", "th" ]] = [ "dot", "anto" ];
                 phonemeToRuneMap[[ "e", "y" ]] = [ "dot", "anna" ];
-                phonemeToRuneMap["f"] = "formen";
+                phonemeToRuneMap.f = "formen";
                 phonemeToRuneMap[[ "f", "a", "r", "a", "m", "i", "r" ]] = [ "formen", [ "threeDots", "romen" ],
                         [ "threeDots", "malta" ], [ "acute", "romen" ] ];
                 phonemeToRuneMap[[ "f", "o", "r", "e", "s", "t" ]] = [ "formen", [ "leftCurl", "romen" ],
                         [ "dot", "silme" ], "tinco" ];
-                phonemeToRuneMap["g"] = "ungwe";
-                phonemeToRuneMap["gh"] = "gh";
-                phonemeToRuneMap["h"] = "hyarmen";
-                phonemeToRuneMap["i"] = [ "acute", "shortCarrier" ];
+                phonemeToRuneMap.g = "ungwe";
+                phonemeToRuneMap.gh = "gh";
+                phonemeToRuneMap.h = "hyarmen";
+                phonemeToRuneMap.i = [ "acute", "shortCarrier" ];
                 phonemeToRuneMap[[ "i", "a" ]] = [ "acute", "shortCarrier", "threeUnderDots" ];
                 phonemeToRuneMap[[ "i", "b" ]] = [ "acute", "umbar" ];
                 phonemeToRuneMap[[ "i", "b", "e", "r", "a", "t" ]] = [ [ "acute", "umbar" ], [ "dot", "ore" ],
@@ -118,25 +118,25 @@ define(
                 phonemeToRuneMap[[ "i", "th" ]] = [ "acute", "thule" ];
                 phonemeToRuneMap[[ "i", "v" ]] = [ "acute", "ampa" ];
                 phonemeToRuneMap[[ "i", "z" ]] = [ "acute", "esse" ];
-                phonemeToRuneMap["j"] = "anga";
-                phonemeToRuneMap["k"] = "quesse";
+                phonemeToRuneMap.j = "anga";
+                phonemeToRuneMap.k = "quesse";
                 phonemeToRuneMap[[ "k", "i", "r", "i", "th" ]] = [ "quesse", [ "acute", "romen" ], [ "acute", "thule" ] ];
-                phonemeToRuneMap["l"] = "lambe";
+                phonemeToRuneMap.l = "lambe";
                 phonemeToRuneMap[[ "l", "a", "n", "d" ]] = [ "lambe", [ "threeDots", "numen" ], "ando" ];
                 phonemeToRuneMap[[ "l", "e" ]] = [ "lambe", "underDot" ];
                 phonemeToRuneMap[[ "l", "o", "r", "i", "e", "n" ]] = [ "lambe", [ "leftCurl", "romen" ],
                         [ "acute", "shortCarrier", "underDot" ], "numen" ];
-                phonemeToRuneMap["m"] = "malta";
+                phonemeToRuneMap.m = "malta";
                 phonemeToRuneMap[[ "m", "a", "n", "y" ]] = [ "malta", [ "threeDots", "numen" ], "anna" ];
                 phonemeToRuneMap[[ "m", "a", "r", "ch" ]] = [ "malta", [ "threeDots", "ore" ], "calma" ];
                 phonemeToRuneMap[[ "m", "o", "r", "a", "n", "n", "o", "n" ]] = [ "malta", [ "leftCurl", "romen" ],
                         [ "threeDots", "numen", "underBar" ], [ "leftCurl", "numen" ] ];
                 phonemeToRuneMap[[ "m", "o", "r", "i", "a" ]] = [ "malta", [ "leftCurl", "romen" ],
                         [ "acute", "shortCarrier", "threeUnderDots" ] ];
-                phonemeToRuneMap["n"] = "numen";
+                phonemeToRuneMap.n = "numen";
                 phonemeToRuneMap[[ "n", "u", "m", "e", "n", "o", "r" ]] = [ "numen", [ "rightCurl", "malta" ],
                         [ "dot", "numen" ], [ "leftCurl", "romen" ] ];
-                phonemeToRuneMap["o"] = [ "leftCurl", "shortCarrier" ];
+                phonemeToRuneMap.o = [ "leftCurl", "shortCarrier" ];
                 phonemeToRuneMap[[ "o", "d" ]] = [ "leftCurl", "ando" ];
                 phonemeToRuneMap[[ "o", "f" ]] = [ "leftCurl", "formen" ];
                 phonemeToRuneMap[[ "o", "g" ]] = [ "leftCurl", "ungwe" ];
@@ -156,12 +156,12 @@ define(
                 phonemeToRuneMap[[ "o", "v" ]] = [ "leftCurl", "ampa" ];
                 phonemeToRuneMap[[ "o", "w" ]] = [ "leftCurl", "vala" ];
                 phonemeToRuneMap[[ "o", "w", "e" ]] = [ "leftCurl", "vala", "underDot" ];
-                phonemeToRuneMap["of"] = "of";
+                phonemeToRuneMap.of = "of";
                 phonemeToRuneMap["of the"] = "ofThe";
-                phonemeToRuneMap["oo"] = [ "leftCurl", "longCarrier" ];
-                phonemeToRuneMap["p"] = "parma";
+                phonemeToRuneMap.oo = [ "leftCurl", "longCarrier" ];
+                phonemeToRuneMap.p = "parma";
                 phonemeToRuneMap[[ "p", "o", "w", "r" ]] = [ "parma", [ "leftCurl", "vala" ], "ore" ];
-                phonemeToRuneMap["r"] = "romen";
+                phonemeToRuneMap.r = "romen";
                 phonemeToRuneMap[[ "r", "a", "n", "d", "i", "r" ]] = [ "romen", [ "threeDots", "numen" ], "ando",
                         [ "acute", "romen" ] ];
                 phonemeToRuneMap[[ "r", "e" ]] = [ "romen", "underDot" ];
@@ -172,7 +172,7 @@ define(
                 phonemeToRuneMap[[ "r", "i", "d", "e", "r", "s" ]] = [ "romen", [ "acute", "ando" ], [ "dot", "ore" ],
                         "silme" ];
                 phonemeToRuneMap[[ "r", "i", "v", "e", "r" ]] = [ "romen", [ "acute", "ampa" ], [ "dot", "ore" ] ];
-                phonemeToRuneMap["s"] = "silme";
+                phonemeToRuneMap.s = "silme";
                 phonemeToRuneMap[[ "s", "a", "u", "r", "o", "n" ]] = [ "silme", [ "threeDots", "shortCarrier" ],
                         [ "rightCurl", "romen" ], [ "leftCurl", "numen" ] ];
                 phonemeToRuneMap[[ "s", "e", "e", "n" ]] = [ "silme", [ "dot", "shortCarrier" ],
@@ -182,16 +182,16 @@ define(
                 phonemeToRuneMap[[ "s", "o", "n" ]] = [ "silme", [ "leftCurl", "numen" ] ];
                 phonemeToRuneMap[[ "s", "t", "ai", "r" ]] = [ "silme", "tinco", [ "threeDots", "yanta" ], "ore" ];
                 phonemeToRuneMap[[ "s", "t", "o", "r", "y" ]] = [ "silme", "tinco", [ "leftCurl", "romen" ], "anna" ];
-                phonemeToRuneMap["sh"] = "harma";
-                phonemeToRuneMap["t"] = "tinco";
+                phonemeToRuneMap.sh = "harma";
+                phonemeToRuneMap.t = "tinco";
                 phonemeToRuneMap[[ "t", "o" ]] = [ "tinco", [ "leftCurl", "shortCarrier" ] ];
-                phonemeToRuneMap["th"] = "thule";
+                phonemeToRuneMap.th = "thule";
                 phonemeToRuneMap[[ "th", "e", "i", "r" ]] = [ "anto", [ "dot", "yanta" ], "ore" ];
                 phonemeToRuneMap[[ "th", "e", "n" ]] = [ "anto", [ "dot", "numen" ] ];
                 phonemeToRuneMap[[ "th", "e", "s", "e" ]] = [ "anto", [ "dot", "silme", "underDot" ] ];
                 phonemeToRuneMap[[ "th", "i", "s" ]] = [ "anto", [ "acute", "silme" ] ];
-                phonemeToRuneMap["the"] = "the";
-                phonemeToRuneMap["u"] = [ "rightCurl", "shortCarrier" ];
+                phonemeToRuneMap.the = "the";
+                phonemeToRuneMap.u = [ "rightCurl", "shortCarrier" ];
                 phonemeToRuneMap[[ "u", "e" ]] = [ "rightCurl", "shortCarrier", "underDot" ];
                 phonemeToRuneMap[[ "u", "i" ]] = [ "topCurl", "yanta" ];
                 phonemeToRuneMap[[ "u", "k" ]] = [ "rightCurl", "quesse" ];
@@ -206,23 +206,23 @@ define(
                 phonemeToRuneMap[[ "u", "r" ]] = [ "rightCurl", "ore" ];
                 phonemeToRuneMap[[ "u", "s" ]] = [ "rightCurl", "silme" ];
                 phonemeToRuneMap[[ "u", "t" ]] = [ "rightCurl", "tinco" ];
-                phonemeToRuneMap["v"] = "ampa";
+                phonemeToRuneMap.v = "ampa";
                 phonemeToRuneMap[[ "v", "e" ]] = [ "ampa", "underDot" ];
-                phonemeToRuneMap["w"] = "vala";
+                phonemeToRuneMap.w = "vala";
                 phonemeToRuneMap[[ "w", "a" ]] = [ "vala", "threeUnderDots" ];
                 phonemeToRuneMap[[ "w", "a", "r" ]] = [ "vala", [ "threeDots", "ore" ] ];
                 phonemeToRuneMap[[ "w", "i", "th" ]] = [ "vala", [ "acute", "anto" ] ];
-                phonemeToRuneMap["wh"] = "hwestaSindarinwa";
-                phonemeToRuneMap["y"] = "anna";
-                phonemeToRuneMap["z"] = "esse";
+                phonemeToRuneMap.wh = "hwestaSindarinwa";
+                phonemeToRuneMap.y = "anna";
+                phonemeToRuneMap.z = "esse";
                 phonemeToRuneMap[[ "z", "i", "g", "u", "r" ]] = [ "esse", [ "acute", "ungwe" ],
                         [ "rightCurl", "romen" ] ];
 
                 this.getPhonemeToRuneMap = function()
                 {
                     return phonemeToRuneMap;
-                }
-            }
+                };
+            };
 
             PhoneticToTengwarTranscriber.prototype.determineFontLetter = function(rune)
             {
@@ -280,18 +280,18 @@ define(
                 }
 
                 return answer;
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.isConsonant = function(letter)
             {
                 return !this.isPunctuation(letter) && !this.isVowel(letter);
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.isPreVowel = function(rune)
             {
                 return rune === "acute" || rune === "bar" || rune === "dot" || rune === "leftCurl" ||
                         rune === "rightCurl" || rune === "threeDots" || rune === "topCurl";
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.isPunctuation = function(letter)
             {
@@ -299,14 +299,14 @@ define(
                         TengwaRune.NEWLINE ];
 
                 return PUNCTUATION.contains(letter);
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.isVowel = function(letter)
             {
                 var VOWELS = [ "a", "e", "i", "o", "u" ];
 
                 return VOWELS.contains(letter);
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.phonemesToRunes = function(phonemes)
             {
@@ -390,7 +390,7 @@ define(
                 }
 
                 return answer;
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.runesToFontLetters = function(runes)
             {
@@ -409,7 +409,7 @@ define(
                 }
 
                 return answer;
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.runesToRuneWords = function(runes)
             {
@@ -447,7 +447,7 @@ define(
                 }
 
                 return answer;
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.arrayToString = function(value)
             {
@@ -486,7 +486,7 @@ define(
                 }
 
                 return answer;
-            }
+            };
 
             PhoneticToTengwarTranscriber.prototype.mapToString = function(result)
             {
@@ -551,7 +551,7 @@ define(
                 }
 
                 return answer;
-            }
+            };
 
             if (Object.freeze)
             {

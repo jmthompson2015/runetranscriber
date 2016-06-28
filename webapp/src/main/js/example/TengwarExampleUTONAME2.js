@@ -148,12 +148,12 @@ define(
                         [ "5", "T" ], " ", "W?", " ", "2", "7", [ "`", "&#225;", "&#201;" ], "2", [ "l", "D" ],
                         [ "5", "R" ], " ", "@", " ", [ "8", "R" ], "1", [ "7", "D" ], [ "`", "R" ], " ", [ "2", "{" ],
                         " ", "@", " ", "q", [ "j", "D" ], [ "5", "D" ], "1", [ "7", "R" ], [ "`", "R" ], "-" ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(TengwarExampleUTONAME2)
-            };
+                Object.freeze(TengwarExampleUTONAME2);
+            }
 
             return TengwarExampleUTONAME2;
         });

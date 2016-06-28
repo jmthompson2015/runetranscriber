@@ -74,27 +74,27 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         this.getFormatter = function()
         {
             return AngloSaxonRuneFormat;
-        }
+        };
 
         this.getForwardMap = function()
         {
             return forwardMap;
-        }
+        };
 
         this.getMaxForwardKeyLength = function()
         {
             return maxForwardKeyLength;
-        }
+        };
 
         this.getMaxReverseKeyLength = function()
         {
             return maxReverseKeyLength;
-        }
+        };
 
         this.getReverseMap = function()
         {
             return reverseMap;
-        }
+        };
 
         function determineMaxForwardKeyLength()
         {
@@ -155,7 +155,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
             var key = AngloSaxonRuneFormat.format(toSequence);
             reverseMap[key] = fromSequence;
         }
-    }
+    };
 
     EnglishAngloSaxonTranscriber.prototype.determineFontLetter = function(rune)
     {
@@ -192,7 +192,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     EnglishAngloSaxonTranscriber.prototype.determineLanguageLetter = function(phoneme)
     {
@@ -217,7 +217,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     EnglishAngloSaxonTranscriber.prototype.determinePhoneme = function(rune)
     {
@@ -252,7 +252,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     EnglishAngloSaxonTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
     {
@@ -282,7 +282,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     EnglishAngloSaxonTranscriber.prototype.runesToFontLetters = function(runes)
     {
@@ -301,7 +301,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     EnglishAngloSaxonTranscriber.prototype.runesToPhonemes = function(runes)
     {
@@ -314,7 +314,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     /**
      * @param fromSequence
@@ -354,7 +354,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer;
-    }
+    };
 
     /**
      * @param toSequence
@@ -395,7 +395,7 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat" ], function(AngloSaxonRune, An
         }
 
         return answer.trim();
-    }
+    };
 
     return EnglishAngloSaxonTranscriber;
 });

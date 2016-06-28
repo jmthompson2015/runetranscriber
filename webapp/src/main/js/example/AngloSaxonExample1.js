@@ -198,12 +198,12 @@ define(
                 FONT_LETTERS: [
 
                 ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AngloSaxonExample1)
-            };
+                Object.freeze(AngloSaxonExample1);
+            }
 
             return AngloSaxonExample1;
         });

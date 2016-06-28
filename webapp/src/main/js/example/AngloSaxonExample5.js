@@ -33,12 +33,12 @@ define(
                         // again
                         AngloSaxonRune.AESC, AngloSaxonRune.GYFU, AngloSaxonRune.AESC, AngloSaxonRune.IS,
                         AngloSaxonRune.NYD, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(AngloSaxonExample5)
-            };
+                Object.freeze(AngloSaxonExample5);
+            }
 
             return AngloSaxonExample5;
         });

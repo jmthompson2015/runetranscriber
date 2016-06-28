@@ -112,12 +112,12 @@ define(
                         "7", [ "1", "T" ], [ "6", "J" ], "5", " ", "W?", " ", "z", [ "b", "T" ], " ", [ ",", "D" ],
                         " ", "8", [ "`", "T" ], [ "`", "T" ], "5", " ", "w", [ "~", "R" ], " ", "@", " ", "9",
                         [ "w", "Y", "&#237;" ], [ "1", "T" ], "8", "-" ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(TengwarExampleTLOTR2)
-            };
+                Object.freeze(TengwarExampleTLOTR2);
+            }
 
             return TengwarExampleTLOTR2;
         });

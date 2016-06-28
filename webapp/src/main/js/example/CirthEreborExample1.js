@@ -36,12 +36,12 @@ define(
                         CerthRune.C12, CerthRune.C46, CerthRune.C9, CerthRune.SPACE,
                         // book
                         CerthRune.C2, CerthRune.C51, CerthRune.C18, ],
-            }
+            };
 
             if (Object.freeze)
             {
-                Object.freeze(CirthEreborExample1)
-            };
+                Object.freeze(CirthEreborExample1);
+            }
 
             return CirthEreborExample1;
         });

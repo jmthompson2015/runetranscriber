@@ -7,46 +7,46 @@ define(function()
 
         // The Lord Of The Rings
         // Christopher reversed 'e' and 'i' from J.R.R.?
-        phonemeToLanguageMap["az"] = "as";
-        phonemeToLanguageMap["hireen"] = "herein";
-        phonemeToLanguageMap["hobbets"] = "hobbits";
-        phonemeToLanguageMap["iz"] = "is";
-        phonemeToLanguageMap["jhon"] = "john";
-        phonemeToLanguageMap["keng"] = "king";
-        phonemeToLanguageMap["riuil"] = "reuel";
-        phonemeToLanguageMap["reng"] = "ring";
-        phonemeToLanguageMap["sit"] = "set";
-        phonemeToLanguageMap["tolkein"] = "tolkien";
-        phonemeToLanguageMap["wor"] = "war";
-        phonemeToLanguageMap["wistmarch"] = "westmarch";
+        phonemeToLanguageMap.az = "as";
+        phonemeToLanguageMap.hireen = "herein";
+        phonemeToLanguageMap.hobbets = "hobbits";
+        phonemeToLanguageMap.iz = "is";
+        phonemeToLanguageMap.jhon = "john";
+        phonemeToLanguageMap.keng = "king";
+        phonemeToLanguageMap.riuil = "reuel";
+        phonemeToLanguageMap.reng = "ring";
+        phonemeToLanguageMap.sit = "set";
+        phonemeToLanguageMap.tolkein = "tolkien";
+        phonemeToLanguageMap.wor = "war";
+        phonemeToLanguageMap.wistmarch = "westmarch";
 
         // The Silmarillion
-        phonemeToLanguageMap["aje"] = "age";
-        phonemeToLanguageMap["kome"] = "come";
-        phonemeToLanguageMap["powr"] = "power";
-        phonemeToLanguageMap["rekovery"] = "recovery";
+        phonemeToLanguageMap.aje = "age";
+        phonemeToLanguageMap.kome = "come";
+        phonemeToLanguageMap.powr = "power";
+        phonemeToLanguageMap.rekovery = "recovery";
 
         // Unfinished Tales Of Numenor And Middle-Earth
-        phonemeToLanguageMap["akkount"] = "account";
-        phonemeToLanguageMap["kristofer"] = "christopher";
-        phonemeToLanguageMap["druedaiin"] = "druedain";
+        phonemeToLanguageMap.akkount = "account";
+        phonemeToLanguageMap.kristofer = "christopher";
+        phonemeToLanguageMap.druedaiin = "druedain";
 
         // The War Of The Ring
-        phonemeToLanguageMap["kirith"] = "cirith";
+        phonemeToLanguageMap.kirith = "cirith";
 
         // Sauron Defeated
-        phonemeToLanguageMap["akownt"] = "account";
-        phonemeToLanguageMap["kataklysm"] = "cataclysm";
-        phonemeToLanguageMap["certan"] = "certain";
-        phonemeToLanguageMap["destruktion"] = "destruction";
-        phonemeToLanguageMap["oksford"] = "oxford";
-        phonemeToLanguageMap["skolars"] = "scholars";
+        phonemeToLanguageMap.akownt = "account";
+        phonemeToLanguageMap.kataklysm = "cataclysm";
+        phonemeToLanguageMap.certan = "certain";
+        phonemeToLanguageMap.destruktion = "destruction";
+        phonemeToLanguageMap.oksford = "oxford";
+        phonemeToLanguageMap.skolars = "scholars";
 
         this.getPhonemeToLanguageMap = function()
         {
             return phonemeToLanguageMap;
-        }
-    }
+        };
+    };
 
     PhoneticToEnglishForTengwarTranscriber.prototype.convertWord = function(word)
     {
@@ -60,7 +60,7 @@ define(function()
         }
 
         return answer;
-    }
+    };
 
     PhoneticToEnglishForTengwarTranscriber.prototype.determineLanguageLetter = function(phoneme)
     {
@@ -81,7 +81,7 @@ define(function()
         }
 
         return answer;
-    }
+    };
 
     PhoneticToEnglishForTengwarTranscriber.prototype.phonemesToLanguageWords = function(phonemes)
     {
@@ -111,7 +111,7 @@ define(function()
         }
 
         return answer;
-    }
+    };
 
     PhoneticToEnglishForTengwarTranscriber.prototype.languageWordsToString = function(words)
     {
@@ -129,7 +129,7 @@ define(function()
         }
 
         return answer;
-    }
+    };
 
     if (Object.freeze)
     {

@@ -29,7 +29,7 @@ define(function()
                 element.className = element.className.replace(regex, ' ');
             }
         },
-    }
+    };
 
     return HtmlUtilities;
 });

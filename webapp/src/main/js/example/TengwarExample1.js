@@ -19,12 +19,12 @@ define([ "TengwaRune" ], function(TengwaRune)
         RUNES: [ [ TengwaRune.ACUTE, TengwaRune.TINCO ], [ TengwaRune.THREE_DOTS, TengwaRune.UNGWE ], TengwaRune.ORE ],
 
         FONT_LETTERS: [ [ "R", "1" ], [ "D", "x" ], "6" ],
-    }
+    };
 
     if (Object.freeze)
     {
-        Object.freeze(TengwarExample1)
-    };
+        Object.freeze(TengwarExample1);
+    }
 
     return TengwarExample1;
 });
