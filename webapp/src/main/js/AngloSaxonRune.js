@@ -38,6 +38,7 @@ define(function()
         SPACE: "space",
         COMMA: "comma",
         PERIOD: "period",
+        APOSTROPHE: "apostrophe",
         NEWLINE: "newline",
 
         properties:
@@ -266,6 +267,13 @@ define(function()
                 fontLetter: "\u1392",
                 phoneme: ".",
             },
+            "apostrophe":
+            {
+                name: "APOSTROPHE",
+                displayName: "apostrophe",
+                fontLetter: "",
+                phoneme: "'",
+            },
             "newline":
             {
                 name: "NEWLINE",
@@ -277,12 +285,12 @@ define(function()
 
         values: [ "feoh", "ur", "thorn", "os", "rad", "cen", "gyfu", "wynn", "haegl", "nyd", "is", "ger", "eoh",
                 "peord", "eolh", "sigel", "tiw", "beorc", "eh", "mann", "lagu", "ing", "eoel", "daeg", "ac", "aesc",
-                "yr", "ior", "ear", "space", "comma", "period", "newline", ],
+                "yr", "ior", "ear", "space", "comma", "period", "apostrophe", "newline", ],
 
         isPunctuation: function(rune)
         {
-            return [ AngloSaxonRune.SPACE, AngloSaxonRune.COMMA, AngloSaxonRune.PERIOD, AngloSaxonRune.NEWLINE ]
-                    .includes(rune) ||
+            return [ AngloSaxonRune.SPACE, AngloSaxonRune.COMMA, AngloSaxonRune.PERIOD, AngloSaxonRune.APOSTROPHE,
+                    AngloSaxonRune.NEWLINE ].includes(rune) ||
                     [ " ", ",", ".", "\n" ].includes(rune);
         }
     };
