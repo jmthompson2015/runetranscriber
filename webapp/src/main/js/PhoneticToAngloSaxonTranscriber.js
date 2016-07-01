@@ -14,7 +14,7 @@ define([ "AngloSaxonRune", "PhoneticToRuneTranscriber", "util/InputValidator" ],
         PhoneticToAngloSaxonTranscriber.runeToPhonemeMap[toSequence.join("")] = fromSequence;
     }
 
-    AngloSaxonRune.values.forEach(function(runeKey)
+    AngloSaxonRune.values().forEach(function(runeKey)
     {
         var rune = AngloSaxonRune.properties[runeKey];
         put([ rune.phoneme ], [ runeKey ]);

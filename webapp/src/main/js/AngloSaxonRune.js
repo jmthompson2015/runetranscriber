@@ -283,16 +283,17 @@ define(function()
             },
         },
 
-        values: [ "feoh", "ur", "thorn", "os", "rad", "cen", "gyfu", "wynn", "haegl", "nyd", "is", "ger", "eoh",
-                "peord", "eolh", "sigel", "tiw", "beorc", "eh", "mann", "lagu", "ing", "eoel", "daeg", "ac", "aesc",
-                "yr", "ior", "ear", "space", "comma", "period", "apostrophe", "newline", ],
-
         isPunctuation: function(rune)
         {
             return [ AngloSaxonRune.SPACE, AngloSaxonRune.COMMA, AngloSaxonRune.PERIOD, AngloSaxonRune.APOSTROPHE,
                     AngloSaxonRune.NEWLINE ].includes(rune) ||
                     [ " ", ",", ".", "\n" ].includes(rune);
-        }
+        },
+
+        values: function()
+        {
+            return Object.getOwnPropertyNames(AngloSaxonRune.properties);
+        },
     };
 
     if (Object.freeze)

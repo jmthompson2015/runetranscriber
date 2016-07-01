@@ -154,8 +154,7 @@
                 LOGGER.debug("fromSequence = " + fromSequence);
                 var toSequence = transcriber.transcribeForward(fromSequence);
                 LOGGER.debug("toSequence = " + toSequence);
-                var formatter = transcriber.getFormatter();
-                var fontLetters = formatter.getFontLetters(toSequence);
+                var fontLetters = transcriber.runesToFontLetters(toSequence).join("");
                 LOGGER.debug("fontLetters = " + fontLetters);
                 var outputArea = document.getElementById("outputArea");
                 outputArea.innerHTML = fontLetters;

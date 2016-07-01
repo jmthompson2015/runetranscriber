@@ -58,7 +58,7 @@ define([ "AngloSaxonRune", "AurebeshRune", "CerthRune", "PhoneticToRuneTranscrib
         var phonemeToRuneMap = {};
         var runeToPhonemeMap = {};
 
-        AngloSaxonRune.values.forEach(function(runeKey)
+        AngloSaxonRune.values().forEach(function(runeKey)
         {
             var rune = AngloSaxonRune.properties[runeKey];
             phonemeToRuneMap[rune.phoneme] = [ runeKey ];
@@ -74,7 +74,7 @@ define([ "AngloSaxonRune", "AurebeshRune", "CerthRune", "PhoneticToRuneTranscrib
         var phonemeToRuneMap = {};
         var runeToPhonemeMap = {};
 
-        AurebeshRune.values.forEach(function(runeKey)
+        AurebeshRune.values().forEach(function(runeKey)
         {
             var rune = AurebeshRune.properties[runeKey];
             phonemeToRuneMap[rune.phoneme] = [ runeKey ];
@@ -93,7 +93,7 @@ define([ "AngloSaxonRune", "AurebeshRune", "CerthRune", "PhoneticToRuneTranscrib
         var phonemeToRuneMap = {};
         var runeToPhonemeMap = {};
 
-        CerthRune.values.forEach(function(runeKey)
+        CerthRune.values().forEach(function(runeKey)
         {
             var rune = CerthRune.properties[runeKey];
             phonemeToRuneMap[rune.phoneme] = [ runeKey ];

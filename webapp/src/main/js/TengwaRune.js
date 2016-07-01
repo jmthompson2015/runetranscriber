@@ -539,24 +539,6 @@ define(function()
             },
         },
 
-        values: [ // values
-        "tinco", "parma", "calma", "quesse", // 1
-        "ando", "umbar", "anga", "ungwe", // 2
-        "thule", "formen", "harma", "hwesta", // 3
-        "anto", "ampa", "anca", "unque", // 4
-        "numen", "malta", "ngoldo", "ngwalme", // 5
-        "ore", "vala", "anna", "vilya", // 6
-        "romen", "arda", "lambe", "alda", // (7)
-        "silme", "silmeNuquerna", "esse", "esseNuquerna", // (8)
-        "hyarmen", "hwestaSindarinwa", "yanta", "ure", // (9)
-
-        "shortCarrier", "longCarrier", "threeDots", "threeUnderDots", "circumflex", "acute", "dot", "underDot",
-                "leftCurl", "leftUnderCurl", "topCurl", "rightCurl", "chevron", "bar", "underBar", // vowels
-
-                "the", "of", "ofThe", "gh", // abreviations
-                "hyphen", "space", "comma", "period", "newline", // punctuation
-        ],
-
         // Tehtar (diacritic marks)
         tehtar: [ "threeDots", "threeUnderDots", "bar", // a
         "dot", "underDot", // e
@@ -569,7 +551,7 @@ define(function()
         findRuneByPhoneme: function(phoneme)
         {
             var answer;
-            var values = TengwaRune.values;
+            var values = TengwaRune.values();
             var properties = TengwaRune.properties;
 
             for (var j = 0; j < values.length; j++)
@@ -590,7 +572,12 @@ define(function()
         {
             return [ TengwaRune.SPACE, TengwaRune.COMMA, TengwaRune.PERIOD, TengwaRune.NEWLINE ].includes(rune) ||
                     [ " ", ",", ".", "\n" ].includes(rune);
-        }
+        },
+
+        values: function()
+        {
+            return Object.getOwnPropertyNames(TengwaRune.properties);
+        },
     };
 
     if (Object.freeze)

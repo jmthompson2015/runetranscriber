@@ -51,12 +51,12 @@ define([ "AurebeshRune" ], function(AurebeshRune)
 
             var key = AurebeshRune[property];
 
-            if (!AurebeshRune.values.includes(key))
+            if (!AurebeshRune.values().includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }
         }
 
-        assert.equal(AurebeshRune.values.length, keysLength);
+        assert.equal(AurebeshRune.values().length, keysLength);
     });
 });

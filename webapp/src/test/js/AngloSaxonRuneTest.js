@@ -33,12 +33,12 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 
             var key = AngloSaxonRune[property];
 
-            if (!AngloSaxonRune.values.includes(key))
+            if (!AngloSaxonRune.values().includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }
         }
 
-        assert.equal(AngloSaxonRune.values.length, keysLength);
+        assert.equal(AngloSaxonRune.values().length, keysLength);
     });
 });

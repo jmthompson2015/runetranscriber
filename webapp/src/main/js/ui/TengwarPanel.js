@@ -121,7 +121,7 @@ define(
 
                     for (i = 0; i < 24; i++)
                     {
-                        rune = TengwaRune.values[i];
+                        rune = TengwaRune.values()[i];
                         answer += this.createRow(4, i, rune);
                     }
 
@@ -131,7 +131,7 @@ define(
 
                     for (i = 24; i < 36; i++)
                     {
-                        rune = TengwaRune.values[i];
+                        rune = TengwaRune.values()[i];
                         answer += this.createRow(4, i, rune);
                     }
 
