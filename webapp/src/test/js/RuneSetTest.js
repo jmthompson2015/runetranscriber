@@ -56,11 +56,12 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat", "AurebeshRune", "AurebeshRune
 
         // Verify.
         assert.ok(result);
-        assert.equal(result.length, 4);
+        assert.equal(result.length, 5);
         assert.equal(result[0], "angloSaxon");
         assert.equal(result[1], "aurebesh");
         assert.equal(result[2], "cirth");
-        assert.equal(result[3], "tengwar");
+        assert.equal(result[3], "kryptonian");
+        assert.equal(result[4], "tengwar");
 
         var properties = Object.getOwnPropertyNames(RuneSet);
         var count = properties.length - 1 - // properties
