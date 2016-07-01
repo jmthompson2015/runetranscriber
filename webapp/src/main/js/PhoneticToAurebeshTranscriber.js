@@ -1,48 +1,47 @@
-define([ "AurebeshRune", "PhoneticToRuneTranscriber", "util/InputValidator" ], function(AurebeshRune,
-        PhoneticToRuneTranscriber, InputValidator)
-{
-    "use strict";
-    var PhoneticToAurebeshTranscriber =
-    {
-        phonemeToRuneMap: {},
-        runeToPhonemeMap: {},
-    };
+define([ "AurebeshRune", "PhoneticToRuneTranscriber", "util/InputValidator" ],
+        function(AurebeshRune, PhoneticToRuneTranscriber, InputValidator)
+        {
+            "use strict";
+            var PhoneticToAurebeshTranscriber =
+            {
+                phonemeToRuneMap: {},
+                runeToPhonemeMap: {},
+            };
 
-    AurebeshRune.values().forEach(
-            function(runeKey)
+            AurebeshRune.values().forEach(function(runeKey)
             {
                 var rune = AurebeshRune.properties[runeKey];
                 PhoneticToAurebeshTranscriber.phonemeToRuneMap[rune.phoneme] = [ runeKey ];
                 PhoneticToAurebeshTranscriber.runeToPhonemeMap[runeKey] = [ rune.phoneme ];
-
-                PhoneticToAurebeshTranscriber.phonemeToRuneMap["the"] = [ AurebeshRune.TRILL, AurebeshRune.HERF,
-                        AurebeshRune.ESK ];
-                PhoneticToAurebeshTranscriber.phonemeToRuneMap["ship"] = [ AurebeshRune.SENTH, AurebeshRune.HERF,
-                        AurebeshRune.ISK, AurebeshRune.PETH ];
             });
 
-    PhoneticToAurebeshTranscriber.delegate = new PhoneticToRuneTranscriber(AurebeshRune,
-            PhoneticToAurebeshTranscriber.phonemeToRuneMap, PhoneticToAurebeshTranscriber.runeToPhonemeMap);
+            PhoneticToAurebeshTranscriber.phonemeToRuneMap["the"] = [ AurebeshRune.TRILL, AurebeshRune.HERF,
+                    AurebeshRune.ESK ];
+            PhoneticToAurebeshTranscriber.phonemeToRuneMap["ship"] = [ AurebeshRune.SENTH, AurebeshRune.HERF,
+                    AurebeshRune.ISK, AurebeshRune.PETH ];
 
-    PhoneticToAurebeshTranscriber.runesToFontLetters = function(runeKeys)
-    {
-        return PhoneticToAurebeshTranscriber.delegate.runesToFontLetters(runeKeys);
-    };
+            PhoneticToAurebeshTranscriber.delegate = new PhoneticToRuneTranscriber(AurebeshRune,
+                    PhoneticToAurebeshTranscriber.phonemeToRuneMap, PhoneticToAurebeshTranscriber.runeToPhonemeMap);
 
-    PhoneticToAurebeshTranscriber.transcribeForward = function(phonemes)
-    {
-        return PhoneticToAurebeshTranscriber.delegate.transcribeForward(phonemes);
-    };
+            PhoneticToAurebeshTranscriber.runesToFontLetters = function(runeKeys)
+            {
+                return PhoneticToAurebeshTranscriber.delegate.runesToFontLetters(runeKeys);
+            };
 
-    PhoneticToAurebeshTranscriber.transcribeReverse = function(runeKeys)
-    {
-        return PhoneticToAurebeshTranscriber.delegate.transcribeReverse(runeKeys);
-    };
+            PhoneticToAurebeshTranscriber.transcribeForward = function(phonemes)
+            {
+                return PhoneticToAurebeshTranscriber.delegate.transcribeForward(phonemes);
+            };
 
-    if (Object.freeze)
-    {
-        Object.freeze(PhoneticToAurebeshTranscriber);
-    };
+            PhoneticToAurebeshTranscriber.transcribeReverse = function(runeKeys)
+            {
+                return PhoneticToAurebeshTranscriber.delegate.transcribeReverse(runeKeys);
+            };
 
-    return PhoneticToAurebeshTranscriber;
-});
+            if (Object.freeze)
+            {
+                Object.freeze(PhoneticToAurebeshTranscriber);
+            };
+
+            return PhoneticToAurebeshTranscriber;
+        });
