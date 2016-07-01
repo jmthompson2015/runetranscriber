@@ -12,7 +12,51 @@ define(
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_ThrorsMap2.jpg",
 
-                LANGUAGE_LETTERS: "Five\nfeet high\nthe door an\nd three may\nwalk abre\nast. Th. Th.",
+                LANGUAGE_STRING: "Five\nfeet high\nthe door an\nd three may\nwalk abre\nast. Th. Th.",
+
+                LANGUAGE_WORDS: [ "five", "\n", "feet", " ", "high", "\n", "the", " ", "door", " ", "an", "\n", "d",
+                        " ", "three", " ", "may", "\n", "walk", " ", "abre", "\n", "ast", ".", " ", "th", ".", " ",
+                        "th", "." ],
+
+                PHONEMES: [
+                // five
+                "f", "i", "v", "e", "\n",
+                // feet
+                "f", "oe", "t", " ",
+                // high
+                AngloSaxonRune.properties["haegl"].phoneme, AngloSaxonRune.properties["is"].phoneme,
+                        AngloSaxonRune.properties["gyfu"].phoneme, AngloSaxonRune.properties["haegl"].phoneme,
+                        AngloSaxonRune.properties["newline"].phoneme,
+                        // the
+                        AngloSaxonRune.properties["thorn"].phoneme, AngloSaxonRune.properties["eh"].phoneme,
+                        AngloSaxonRune.properties["space"].phoneme,
+                        // door
+                        AngloSaxonRune.properties["daeg"].phoneme, AngloSaxonRune.properties["os"].phoneme,
+                        AngloSaxonRune.properties["rad"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                        // and
+                        AngloSaxonRune.properties["aesc"].phoneme, AngloSaxonRune.properties["nyd"].phoneme,
+                        AngloSaxonRune.properties["newline"].phoneme, AngloSaxonRune.properties["daeg"].phoneme,
+                        AngloSaxonRune.properties["space"].phoneme,
+                        // three
+                        AngloSaxonRune.properties["thorn"].phoneme, AngloSaxonRune.properties["rad"].phoneme,
+                        AngloSaxonRune.properties["eoel"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                        // may
+                        AngloSaxonRune.properties["mann"].phoneme, AngloSaxonRune.properties["aesc"].phoneme,
+                        AngloSaxonRune.properties["yr"].phoneme, AngloSaxonRune.properties["newline"].phoneme,
+                        // walk
+                        AngloSaxonRune.properties["wynn"].phoneme, AngloSaxonRune.properties["aesc"].phoneme,
+                        AngloSaxonRune.properties["lagu"].phoneme, AngloSaxonRune.properties["cen"].phoneme,
+                        AngloSaxonRune.properties["space"].phoneme,
+                        // abreast.
+                        AngloSaxonRune.properties["aesc"].phoneme, AngloSaxonRune.properties["beorc"].phoneme,
+                        AngloSaxonRune.properties["rad"].phoneme, AngloSaxonRune.properties["eh"].phoneme,
+                        AngloSaxonRune.properties["newline"].phoneme, AngloSaxonRune.properties["aesc"].phoneme,
+                        AngloSaxonRune.properties["sigel"].phoneme, AngloSaxonRune.properties["tiw"].phoneme,
+                        AngloSaxonRune.properties["period"].phoneme, " ",
+                        // th.
+                        AngloSaxonRune.properties["thorn"].phoneme, AngloSaxonRune.properties["period"].phoneme, " ",
+                        // th.
+                        AngloSaxonRune.properties["thorn"].phoneme, AngloSaxonRune.properties["period"].phoneme ],
 
                 RUNES: [
                 // five
@@ -40,11 +84,40 @@ define(
                         // abreast.
                         AngloSaxonRune.AESC, AngloSaxonRune.BEORC, AngloSaxonRune.RAD, AngloSaxonRune.EH,
                         AngloSaxonRune.NEWLINE, AngloSaxonRune.AESC, AngloSaxonRune.SIGEL, AngloSaxonRune.TIW,
-                        AngloSaxonRune.PERIOD,
+                        AngloSaxonRune.PERIOD, AngloSaxonRune.SPACE,
                         // th.
-                        AngloSaxonRune.THORN, AngloSaxonRune.PERIOD,
+                        AngloSaxonRune.THORN, AngloSaxonRune.PERIOD, AngloSaxonRune.SPACE,
                         // th.
                         AngloSaxonRune.THORN, AngloSaxonRune.PERIOD, ],
+
+                FONT_LETTERS: [ AngloSaxonRune.properties["feoh"].fontLetter,
+                        AngloSaxonRune.properties["is"].fontLetter, AngloSaxonRune.properties["ur"].fontLetter,
+                        AngloSaxonRune.properties["eh"].fontLetter, AngloSaxonRune.properties["newline"].fontLetter,
+                        AngloSaxonRune.properties["feoh"].fontLetter, AngloSaxonRune.properties["eoel"].fontLetter,
+                        AngloSaxonRune.properties["tiw"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                        AngloSaxonRune.properties["haegl"].fontLetter, AngloSaxonRune.properties["is"].fontLetter,
+                        AngloSaxonRune.properties["gyfu"].fontLetter, AngloSaxonRune.properties["haegl"].fontLetter,
+                        AngloSaxonRune.properties["newline"].fontLetter, AngloSaxonRune.properties["thorn"].fontLetter,
+                        AngloSaxonRune.properties["eh"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                        AngloSaxonRune.properties["daeg"].fontLetter, AngloSaxonRune.properties["os"].fontLetter,
+                        AngloSaxonRune.properties["rad"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                        AngloSaxonRune.properties["aesc"].fontLetter, AngloSaxonRune.properties["nyd"].fontLetter,
+                        AngloSaxonRune.properties["newline"].fontLetter, AngloSaxonRune.properties["daeg"].fontLetter,
+                        AngloSaxonRune.properties["space"].fontLetter, AngloSaxonRune.properties["thorn"].fontLetter,
+                        AngloSaxonRune.properties["rad"].fontLetter, AngloSaxonRune.properties["eoel"].fontLetter,
+                        AngloSaxonRune.properties["space"].fontLetter, AngloSaxonRune.properties["mann"].fontLetter,
+                        AngloSaxonRune.properties["aesc"].fontLetter, AngloSaxonRune.properties["yr"].fontLetter,
+                        AngloSaxonRune.properties["newline"].fontLetter, AngloSaxonRune.properties["wynn"].fontLetter,
+                        AngloSaxonRune.properties["aesc"].fontLetter, AngloSaxonRune.properties["lagu"].fontLetter,
+                        AngloSaxonRune.properties["cen"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                        AngloSaxonRune.properties["aesc"].fontLetter, AngloSaxonRune.properties["beorc"].fontLetter,
+                        AngloSaxonRune.properties["rad"].fontLetter, AngloSaxonRune.properties["eh"].fontLetter,
+                        AngloSaxonRune.properties["newline"].fontLetter, AngloSaxonRune.properties["aesc"].fontLetter,
+                        AngloSaxonRune.properties["sigel"].fontLetter, AngloSaxonRune.properties["tiw"].fontLetter,
+                        AngloSaxonRune.properties["period"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                        AngloSaxonRune.properties["thorn"].fontLetter, AngloSaxonRune.properties["period"].fontLetter,
+                        AngloSaxonRune.properties["space"].fontLetter, AngloSaxonRune.properties["thorn"].fontLetter,
+                        AngloSaxonRune.properties["period"].fontLetter ],
             };
 
             if (Object.freeze)

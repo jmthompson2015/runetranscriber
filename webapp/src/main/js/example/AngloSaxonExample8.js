@@ -10,7 +10,18 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
 
         IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/lego9473/lego1.png",
 
-        LANGUAGE_LETTERS: "Djordje was here",
+        LANGUAGE_STRING: "Djordje was here",
+
+        LANGUAGE_WORDS: [ "djordje", " ", "was", " ", "here" ],
+
+        PHONEMES: [ AngloSaxonRune.properties["daeg"].phoneme, AngloSaxonRune.properties["is"].phoneme,
+                AngloSaxonRune.properties["os"].phoneme, AngloSaxonRune.properties["rad"].phoneme,
+                AngloSaxonRune.properties["daeg"].phoneme, AngloSaxonRune.properties["is"].phoneme,
+                AngloSaxonRune.properties["eh"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                AngloSaxonRune.properties["wynn"].phoneme, AngloSaxonRune.properties["aesc"].phoneme,
+                AngloSaxonRune.properties["sigel"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                AngloSaxonRune.properties["haegl"].phoneme, AngloSaxonRune.properties["eh"].phoneme,
+                AngloSaxonRune.properties["rad"].phoneme, AngloSaxonRune.properties["eh"].phoneme ],
 
         RUNES: [
         // djordje
@@ -20,6 +31,15 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
                 AngloSaxonRune.WYNN, AngloSaxonRune.AESC, AngloSaxonRune.SIGEL, AngloSaxonRune.SPACE,
                 // here
                 AngloSaxonRune.HAEGL, AngloSaxonRune.EH, AngloSaxonRune.RAD, AngloSaxonRune.EH, ],
+
+        FONT_LETTERS: [ AngloSaxonRune.properties["daeg"].fontLetter, AngloSaxonRune.properties["is"].fontLetter,
+                AngloSaxonRune.properties["os"].fontLetter, AngloSaxonRune.properties["rad"].fontLetter,
+                AngloSaxonRune.properties["daeg"].fontLetter, AngloSaxonRune.properties["is"].fontLetter,
+                AngloSaxonRune.properties["eh"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                AngloSaxonRune.properties["wynn"].fontLetter, AngloSaxonRune.properties["aesc"].fontLetter,
+                AngloSaxonRune.properties["sigel"].fontLetter, AngloSaxonRune.properties["space"].fontLetter,
+                AngloSaxonRune.properties["haegl"].fontLetter, AngloSaxonRune.properties["eh"].fontLetter,
+                AngloSaxonRune.properties["rad"].fontLetter, AngloSaxonRune.properties["eh"].fontLetter ],
     };
 
     if (Object.freeze)

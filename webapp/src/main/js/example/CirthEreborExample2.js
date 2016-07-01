@@ -12,7 +12,26 @@ define(
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/lordoftherings/TLOTR_BalinsTomb_CirthErebor.jpg",
 
-                LANGUAGE_LETTERS: "balin son of fundin lord of moria",
+                LANGUAGE_STRING: "balin son of fundin lord of moria",
+
+                LANGUAGE_WORDS: [ "balin", " ", "son", " ", "of", " ", "fundin", " ", "lord", " ", "of", " ", "moria" ],
+
+                PHONEMES: [ CerthRune.properties["c2"].phoneme, CerthRune.properties["c48"].phoneme,
+                        CerthRune.properties["c31"].phoneme, CerthRune.properties["c39"].phoneme,
+                        CerthRune.properties["c53"].phoneme, CerthRune.properties["space"].phoneme,
+                        CerthRune.properties["c34"].phoneme, CerthRune.properties["c56"].phoneme,
+                        CerthRune.properties["c53"].phoneme, CerthRune.properties["space"].phoneme,
+                        CerthRune.properties["c50"].phoneme, CerthRune.properties["c4"].phoneme,
+                        CerthRune.properties["space"].phoneme, CerthRune.properties["c3"].phoneme,
+                        CerthRune.properties["c42"].phoneme, CerthRune.properties["c33"].phoneme,
+                        CerthRune.properties["c39"].phoneme, CerthRune.properties["c53"].phoneme,
+                        CerthRune.properties["space"].phoneme, CerthRune.properties["c31"].phoneme,
+                        CerthRune.properties["c50"].phoneme, CerthRune.properties["c12"].phoneme,
+                        CerthRune.properties["c9"].phoneme, CerthRune.properties["space"].phoneme,
+                        CerthRune.properties["c50"].phoneme, CerthRune.properties["c4"].phoneme,
+                        CerthRune.properties["space"].phoneme, CerthRune.properties["c6"].phoneme,
+                        CerthRune.properties["c50"].phoneme, CerthRune.properties["c12"].phoneme,
+                        CerthRune.properties["c39"].phoneme, CerthRune.properties["c48"].phoneme ],
 
                 RUNES: [
                 // balin
@@ -29,6 +48,23 @@ define(
                 CerthRune.C50, CerthRune.C4, CerthRune.SPACE,
                 // moria
                 CerthRune.C6, CerthRune.C50, CerthRune.C12, CerthRune.C39, CerthRune.C48, ],
+
+                FONT_LETTERS: [ CerthRune.properties["c2"].fontLetter, CerthRune.properties["c48"].fontLetter,
+                        CerthRune.properties["c31"].fontLetter, CerthRune.properties["c39"].fontLetter,
+                        CerthRune.properties["c53"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        CerthRune.properties["c34"].fontLetter, CerthRune.properties["c56"].fontLetter,
+                        CerthRune.properties["c53"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        CerthRune.properties["c50"].fontLetter, CerthRune.properties["c4"].fontLetter,
+                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c3"].fontLetter,
+                        CerthRune.properties["c42"].fontLetter, CerthRune.properties["c33"].fontLetter,
+                        CerthRune.properties["c39"].fontLetter, CerthRune.properties["c53"].fontLetter,
+                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c31"].fontLetter,
+                        CerthRune.properties["c50"].fontLetter, CerthRune.properties["c12"].fontLetter,
+                        CerthRune.properties["c9"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        CerthRune.properties["c50"].fontLetter, CerthRune.properties["c4"].fontLetter,
+                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c6"].fontLetter,
+                        CerthRune.properties["c50"].fontLetter, CerthRune.properties["c12"].fontLetter,
+                        CerthRune.properties["c39"].fontLetter, CerthRune.properties["c48"].fontLetter ],
             };
 
             if (Object.freeze)

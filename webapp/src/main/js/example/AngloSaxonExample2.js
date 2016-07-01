@@ -12,17 +12,29 @@ define(
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_ThrorsMap1EastTop.jpg",
 
-                LANGUAGE_LETTERS: "ESWN",
+                LANGUAGE_STRING: "E S W N",
+
+                LANGUAGE_WORDS: [ "e", " ", "s", " ", "w", " ", "n" ],
+
+                PHONEMES: [ AngloSaxonRune.properties["eh"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                        AngloSaxonRune.properties["sigel"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                        AngloSaxonRune.properties["wynn"].phoneme, AngloSaxonRune.properties["space"].phoneme,
+                        AngloSaxonRune.properties["nyd"].phoneme ],
 
                 RUNES: [
                 // e
-                AngloSaxonRune.EH,
+                AngloSaxonRune.EH, AngloSaxonRune.SPACE,
                 // s
-                AngloSaxonRune.SIGEL,
+                AngloSaxonRune.SIGEL, AngloSaxonRune.SPACE,
                 // w
-                AngloSaxonRune.WYNN,
+                AngloSaxonRune.WYNN, AngloSaxonRune.SPACE,
                 // n
                 AngloSaxonRune.NYD, ],
+
+                FONT_LETTERS: [ AngloSaxonRune.properties["eh"].fontLetter,
+                        AngloSaxonRune.properties["space"].fontLetter, AngloSaxonRune.properties["sigel"].fontLetter,
+                        AngloSaxonRune.properties["space"].fontLetter, AngloSaxonRune.properties["wynn"].fontLetter,
+                        AngloSaxonRune.properties["space"].fontLetter, AngloSaxonRune.properties["nyd"].fontLetter ],
             };
 
             if (Object.freeze)
