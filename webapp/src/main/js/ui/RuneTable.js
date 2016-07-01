@@ -213,6 +213,7 @@ define(function()
                 key: cells.length,
                 className: "table-header-cell-details",
             }, title));
+            var wordStart = 0;
             var start = 0;
             var runeSet = this.props.runeSet;
 
@@ -232,18 +233,25 @@ define(function()
                         }
                     }
 
-                    cells.push(React.DOM.td(
+                    if (!runeSet.runes.isPunctuation(words[i - 1]))
                     {
-                        key: cells.length,
-                        className: "table-cell-details",
-                        colSpan: colSpan,
-                    }, words[i - 1]));
+                        var myWords = words.slice(wordStart, i).join("");
+
+                        cells.push(React.DOM.td(
+                        {
+                            key: cells.length,
+                            className: "table-cell-details",
+                            colSpan: colSpan,
+                        }, myWords));
+                    }
 
                     cells.push(React.DOM.td(
                     {
                         key: cells.length,
                         className: "table-cell-details",
                     }, word));
+
+                    wordStart = i + 1;
                 }
                 else if (i === words.length - 1)
                 {
