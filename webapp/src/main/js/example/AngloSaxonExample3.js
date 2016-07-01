@@ -11,6 +11,7 @@ define(
                 NAME: "Anglo-Saxon Example 3",
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_ThrorsMap2.jpg",
+                IMAGE_WIDTH: 200,
 
                 LANGUAGE_STRING: "Five\nfeet high\nthe door an\nd three may\nwalk abre\nast. Th. Th.",
 

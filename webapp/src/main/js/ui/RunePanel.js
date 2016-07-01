@@ -4,6 +4,7 @@ define([ "ui/RuneTable" ], function(RuneTable)
     {
         render: function()
         {
+            var imageWidth = (this.props.imageWidth ? this.props.imageWidth : 700);
             var letterRows = this.props.letters.split();
             var runeRows = this.props.runes.split(this.props.runeSet.runes.NEWLINE);
             var expectedPhonemeRows = this.props.expectedPhonemes.split();
@@ -16,7 +17,7 @@ define([ "ui/RuneTable" ], function(RuneTable)
             var cell = React.DOM.td({}, React.DOM.img(
             {
                 src: this.props.image,
-                width: 700,
+                width: imageWidth,
             }));
             rows.push(React.DOM.tr(
             {

@@ -9,6 +9,7 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
         NAME: "Anglo-Saxon Example 8",
 
         IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/lego9473/lego1.png",
+        IMAGE_WIDTH: 400,
 
         LANGUAGE_STRING: "Djordje was here",
 

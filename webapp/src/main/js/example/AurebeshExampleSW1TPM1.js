@@ -11,6 +11,7 @@ define(
                 NAME: "Aurebesh Example SW1TPM1",
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/starwars/SW1TPM_turnTheShipAround.jpg",
+                IMAGE_WIDTH: 400,
 
                 LANGUAGE_STRING: "anakin\n" + "turn the ship\n" + "around and go\n" + "back homie\n" + "right away",
 

@@ -11,6 +11,7 @@ define(
                 NAME: "Anglo-Saxon Example 5",
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_Preface1.jpg",
+                IMAGE_WIDTH: 300,
 
                 LANGUAGE_STRING: "The hobbit\nor\nthere and back again",
 

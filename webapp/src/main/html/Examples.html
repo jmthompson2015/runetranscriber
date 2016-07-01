@@ -127,6 +127,7 @@
                         InputValidator.validateNotNull("runeSet", runeSet);
                         InputValidator.validateNotNull("example", example);
 
+                        var imageWidth = (example.IMAGE_WIDTH ? example.IMAGE_WIDTH : undefined);
                         var transcriber = new runeSet.transcriber();
                         var runes = example.RUNES;
                         var letters = transcriber.runesToFontLetters(runes);
@@ -139,6 +140,7 @@
                         {
                             runeSet: runeSet,
                             image: example.IMAGE,
+                            imageWidth: imageWidth,
                             letters: letters,
                             runes: runes,
                             expectedPhonemes: expectedPhonemes,

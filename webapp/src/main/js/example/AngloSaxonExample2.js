@@ -11,6 +11,7 @@ define(
                 NAME: "Anglo-Saxon Example 2",
 
                 IMAGE: "https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/hobbit/TheHobbit_ThrorsMap1EastTop.jpg",
+                IMAGE_WIDTH: 200,
 
                 LANGUAGE_STRING: "E S W N",
 
