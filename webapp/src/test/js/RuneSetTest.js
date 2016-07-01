@@ -1,9 +1,7 @@
-define([ "AngloSaxonRune", "AngloSaxonRuneFormat", "AurebeshRune", "AurebeshRuneFormat", "CerthRune",
-        "CerthRuneFormat", "RuneSet", "TengwaRune", "TengwaRuneFormat", "EnglishAngloSaxonTranscriber",
+define([ "AngloSaxonRune", "AurebeshRune", "CerthRune", "RuneSet", "TengwaRune", "EnglishAngloSaxonTranscriber",
         "EnglishAurebeshTranscriber", "EnglishCirthEreborTranscriber", "EnglishTengwarTranscriber" ], function(
-        AngloSaxonRune, AngloSaxonRuneFormat, AurebeshRune, AurebeshRuneFormat, CerthRune, CerthRuneFormat, RuneSet,
-        TengwaRune, TengwaRuneFormat, EnglishAngloSaxonTranscriber, EnglishAurebeshTranscriber,
-        EnglishCirthEreborTranscriber, EnglishTengwarTranscriber)
+        AngloSaxonRune, AurebeshRune, CerthRune, RuneSet, TengwaRune, EnglishAngloSaxonTranscriber,
+        EnglishAurebeshTranscriber, EnglishCirthEreborTranscriber, EnglishTengwarTranscriber)
 {
     "use strict";
     QUnit.module("RuneSet");
@@ -14,7 +12,6 @@ define([ "AngloSaxonRune", "AngloSaxonRuneFormat", "AurebeshRune", "AurebeshRune
         var properties = RuneSet.properties[runeSet];
         assert.equal(properties.name, "Anglo-Saxon");
         assert.equal(properties.runes, AngloSaxonRune);
-        assert.equal(properties.formatter, AngloSaxonRuneFormat);
         assert.equal(properties.transcriber, EnglishAngloSaxonTranscriber);
         assert.equal(properties.value, runeSet);
     });

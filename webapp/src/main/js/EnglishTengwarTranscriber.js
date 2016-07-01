@@ -1,16 +1,11 @@
 define([ "EnglishToPhoneticForTengwarTranscriber", "PhoneticToEnglishForTengwarTranscriber",
-        "PhoneticToTengwarTranscriber", "TengwaRune", "TengwaRuneFormat", "TengwarToPhoneticTranscriber" ], function(
+        "PhoneticToTengwarTranscriber", "TengwaRune", "TengwarToPhoneticTranscriber" ], function(
         EnglishToPhoneticForTengwarTranscriber, PhoneticToEnglishForTengwarTranscriber, PhoneticToTengwarTranscriber,
-        TengwaRune, TengwaRuneFormat, TengwarToPhoneticTranscriber)
+        TengwaRune, TengwarToPhoneticTranscriber)
 {
     "use strict";
     var EnglishTengwarTranscriber = function()
     {
-        this.getFormatter = function()
-        {
-            return TengwaRuneFormat;
-        };
-
         this.getForwardMap = function()
         {
             return {};
