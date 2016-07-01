@@ -1,6 +1,7 @@
 define([ "EnglishAngloSaxonTranscriber", "EnglishAurebeshTranscriber", "EnglishCirthEreborTranscriber",
-        "EnglishTengwarTranscriber" ], function(EnglishAngloSaxonTranscriber, EnglishAurebeshTranscriber,
-        EnglishCirthEreborTranscriber, EnglishTengwarTranscriber)
+        "EnglishKryptonianTranscriber", "EnglishTengwarTranscriber" ], function(EnglishAngloSaxonTranscriber,
+        EnglishAurebeshTranscriber, EnglishCirthEreborTranscriber, EnglishKryptonianTranscriber,
+        EnglishTengwarTranscriber)
 {
     "use strict";
     QUnit.module("Transcriber interface");
@@ -11,8 +12,9 @@ define([ "EnglishAngloSaxonTranscriber", "EnglishAurebeshTranscriber", "EnglishC
         var transcriber0 = new EnglishAngloSaxonTranscriber();
         var transcriber1 = new EnglishAurebeshTranscriber();
         var transcriber2 = new EnglishCirthEreborTranscriber();
-        var transcriber3 = new EnglishTengwarTranscriber();
-        var transcribers = [ transcriber0, transcriber1, transcriber2, transcriber3 ];
+        var transcriber3 = new EnglishKryptonianTranscriber();
+        var transcriber4 = new EnglishTengwarTranscriber();
+        var transcribers = [ transcriber0, transcriber1, transcriber2, transcriber3, transcriber4 ];
 
         // Run / Verify.
         transcribers.forEach(function(transcriber)

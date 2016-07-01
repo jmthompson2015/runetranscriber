@@ -39,6 +39,10 @@
 						<td class="left" colspan="2"><input id="cirth" type="radio" name="outputRune" /> <label for="cirth">Cirth</label></td>
 					</tr>
 					<tr>
+						<td class="left" colspan="2"><input id="kryptonian" type="radio" name="outputRune" /> <label
+							for="kryptonian">Kryptonian</label></td>
+					</tr>
+					<tr>
 						<td class="left" colspan="2"><input checked id="tengwar" type="radio" name="outputRune" /> <label
 							for="tengwar">Tengwar</label></td>
 					</tr>
@@ -66,12 +70,14 @@
         LOGGER.setTraceEnabled(false);
 
         require([ "EnglishAngloSaxonTranscriber", "EnglishAurebeshTranscriber", "EnglishCirthEreborTranscriber",
-                "EnglishTengwarTranscriber", "util/HtmlUtilities" ], function(EnglishAngloSaxonTranscriber,
-                EnglishAurebeshTranscriber, EnglishCirthEreborTranscriber, EnglishTengwarTranscriber, HtmlUtilities)
+                "EnglishKryptonianTranscriber", "EnglishTengwarTranscriber", "util/HtmlUtilities" ], function(
+                EnglishAngloSaxonTranscriber, EnglishAurebeshTranscriber, EnglishCirthEreborTranscriber,
+                EnglishKryptonianTranscriber, EnglishTengwarTranscriber, HtmlUtilities)
         {
             var easTranscriber = new EnglishAngloSaxonTranscriber();
             var eaTranscriber = new EnglishAurebeshTranscriber();
             var eceTranscriber = new EnglishCirthEreborTranscriber();
+            var ekTranscriber = new EnglishKryptonianTranscriber();
             var etTranscriber = new EnglishTengwarTranscriber();
             var mode = "tengwar";
             var transcriber;
@@ -95,6 +101,7 @@
                 HtmlUtilities.removeClass(outputArea, "font-anglo-saxon");
                 HtmlUtilities.removeClass(outputArea, "font-aurebesh");
                 HtmlUtilities.removeClass(outputArea, "font-cirth");
+                HtmlUtilities.removeClass(outputArea, "font-kryptonian");
                 HtmlUtilities.removeClass(outputArea, "font-tengwar");
             }
 
@@ -122,6 +129,14 @@
                 HtmlUtilities.addClass(outputArea, "font-cirth");
             }
 
+            function setKryptonian()
+            {
+                clearOutputArea();
+                transcriber = ekTranscriber;
+                var outputArea = document.getElementById("outputArea");
+                HtmlUtilities.addClass(outputArea, "font-kryptonian");
+            }
+
             function setTengwar()
             {
                 clearOutputArea();
@@ -143,6 +158,10 @@
                 else if (mode === "cirth")
                 {
                     setCirth();
+                }
+                else if (mode === "kryptonian")
+                {
+                    setKryptonian();
                 }
                 else if (mode === "tengwar")
                 {
@@ -173,6 +192,11 @@
             document.getElementById("cirth").onclick = function()
             {
                 mode = 'cirth';
+                transcribeActionPerformed();
+            };
+            document.getElementById("kryptonian").onclick = function()
+            {
+                mode = 'kryptonian';
                 transcribeActionPerformed();
             };
             document.getElementById("tengwar").onclick = function()
