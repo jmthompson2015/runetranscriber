@@ -121,6 +121,14 @@ define(function()
                             className: "table-cell-rune-name",
                         }, " "));
                     }
+                    else if (rune === "comma")
+                    {
+                        cells.push(React.DOM.td(
+                        {
+                            key: cells.length,
+                            className: "table-cell-rune-name",
+                        }, ","));
+                    }
                     else if (rune === "period")
                     {
                         cells.push(React.DOM.td(
