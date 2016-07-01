@@ -7,31 +7,10 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
     "use strict";
     QUnit.module("EnglishAngloSaxonTranscriber");
 
-    QUnit.test("getMaxForwardKeyLength()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishAngloSaxonTranscriber();
+    // ////////////////////////////////////////////////////////////////////////
+    // phonemesToLanguageWords()
 
-        // Run.
-        var result = transcriber.getMaxForwardKeyLength();
-
-        // Verify.
-        assert.equal(result, 7);
-    });
-
-    QUnit.test("getMaxReverseKeyLength()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishAngloSaxonTranscriber();
-
-        // Run.
-        var result = transcriber.getMaxReverseKeyLength();
-
-        // Verify.
-        assert.equal(result, 7);
-    });
-
-    QUnit.skip("Example1 phonemesToLanguageWords()", function(assert)
+    QUnit.test("phonemesToLanguageWords() AngloSaxonExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -42,7 +21,7 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(result);
-        var expected = AngloSaxonExample1.WORDS;
+        var expected = AngloSaxonExample1.LANGUAGE_WORDS;
         assert.equal(result.length, expected.length);
 
         for (var i = 0; i < result.length; i++)
@@ -51,7 +30,10 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example1 runesToFontLetters()", function(assert)
+    // ////////////////////////////////////////////////////////////////////////
+    // runesToFontLetters()
+
+    QUnit.test("runesToFontLetters() AngloSaxonExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -75,7 +57,10 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example1 runesToPhonemes()", function(assert)
+    // ////////////////////////////////////////////////////////////////////////
+    // runesToPhonemes()
+
+    QUnit.test("runesToPhonemes() AngloSaxonExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -95,32 +80,34 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example1 transcribeForward()", function(assert)
+    // ////////////////////////////////////////////////////////////////////////
+    // transcribeForward()
+
+    QUnit.test("transcribeForward() AngloSaxonExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample1.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample1.LANGUAGE_STRING;
 
         // Run.
-        var toSequence = transcriber.transcribeForward(fromSequence);
+        var result = transcriber.transcribeForward(fromSequence);
 
         // Verify.
-        assert.ok(toSequence);
+        assert.ok(result);
         var expected = AngloSaxonExample1.RUNES;
-        // assert.equal(toSequence, expected);
-        assert.equal(toSequence.length, expected.length);
+        assert.equal(result.length, expected.length);
 
-        for (var i = 0; i < toSequence.length; i++)
+        for (var i = 0; i < result.length; i++)
         {
-            assert.equal(toSequence[i], expected[i], "" + i);
+            assert.equal(result[i], expected[i], "" + i);
         }
     });
 
-    QUnit.test("Example2 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample2", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample2.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample2.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -128,7 +115,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample2.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -137,11 +123,11 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example3 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample3", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample3.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample3.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -149,7 +135,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample3.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -158,11 +143,11 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example4 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample4", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample4.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample4.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -170,7 +155,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample4.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -179,11 +163,11 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example5 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample5", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample5.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample5.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -191,7 +175,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample5.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -200,11 +183,11 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example6 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample6", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample6.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample6.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -212,7 +195,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample6.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -221,11 +203,11 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example7 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample7", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample7.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample7.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -233,7 +215,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample7.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -242,11 +223,11 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example8 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AngloSaxonExample8", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
-        var fromSequence = AngloSaxonExample8.LANGUAGE_LETTERS;
+        var fromSequence = AngloSaxonExample8.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -254,7 +235,6 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         // Verify.
         assert.ok(toSequence);
         var expected = AngloSaxonExample8.RUNES;
-        // assert.equal(toSequence, expected);
         assert.equal(toSequence.length, expected.length);
 
         for (var i = 0; i < toSequence.length; i++)
@@ -263,7 +243,10 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
         }
     });
 
-    QUnit.test("Example1 transcribeReverse()", function(assert)
+    // ////////////////////////////////////////////////////////////////////////
+    // transcribeReverse()
+
+    QUnit.test("transcribeReverse() AngloSaxonExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -274,13 +257,12 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = AngloSaxonExample1.LANGUAGE_LETTERS.toLowerCase();
-        expected = expected.replace("'", "");
+        var expected = AngloSaxonExample1.LANGUAGE_STRING.toLowerCase();
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example2 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AngloSaxonExample2", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -291,13 +273,13 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = AngloSaxonExample2.LANGUAGE_LETTERS.toLowerCase();
+        var expected = AngloSaxonExample2.LANGUAGE_STRING.toLowerCase();
         expected = expected.replace("'", "");
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example3 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AngloSaxonExample3", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -308,13 +290,13 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = AngloSaxonExample3.LANGUAGE_LETTERS.toLowerCase();
+        var expected = AngloSaxonExample3.LANGUAGE_STRING.toLowerCase();
         expected = expected.replace("'", "");
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example4 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AngloSaxonExample4", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -325,13 +307,12 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = AngloSaxonExample4.LANGUAGE_LETTERS.toLowerCase();
-        expected = expected.replace("'", "");
+        var expected = AngloSaxonExample4.LANGUAGE_STRING.toLowerCase();
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example5 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AngloSaxonExample5", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -342,13 +323,13 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = AngloSaxonExample5.LANGUAGE_LETTERS.toLowerCase();
+        var expected = AngloSaxonExample5.LANGUAGE_STRING.toLowerCase();
         expected = expected.replace("'", "");
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example6 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AngloSaxonExample6", function(assert)
     {
         // Setup.
         var transcriber = new EnglishAngloSaxonTranscriber();
@@ -359,7 +340,7 @@ define([ "AngloSaxonRune", "EnglishAngloSaxonTranscriber", "example/AngloSaxonEx
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = AngloSaxonExample6.LANGUAGE_LETTERS.toLowerCase();
+        var expected = AngloSaxonExample6.LANGUAGE_STRING.toLowerCase();
         expected = expected.replace("'", "");
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);

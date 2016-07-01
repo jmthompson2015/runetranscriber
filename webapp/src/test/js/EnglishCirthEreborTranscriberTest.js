@@ -4,35 +4,14 @@ define([ "EnglishCirthEreborTranscriber", "example/CirthEreborExample1", "exampl
     "use strict";
     QUnit.module("EnglishCirthEreborTranscriber");
 
-    QUnit.test("getMaxForwardKeyLength()", function(assert)
+    // ////////////////////////////////////////////////////////////////////////
+    // transcribeForward()
+
+    QUnit.test("transcribeForward() CirthEreborExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishCirthEreborTranscriber();
-
-        // Run.
-        var result = transcriber.getMaxForwardKeyLength();
-
-        // Verify.
-        assert.equal(result, 3);
-    });
-
-    QUnit.test("getMaxReverseKeyLength()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishCirthEreborTranscriber();
-
-        // Run.
-        var result = transcriber.getMaxReverseKeyLength();
-
-        // Verify.
-        assert.equal(result, 3);
-    });
-
-    QUnit.test("Example1 transcribeForward()", function(assert)
-    {
-        // Setup.
-        var transcriber = new EnglishCirthEreborTranscriber();
-        var fromSequence = CirthEreborExample1.LANGUAGE_LETTERS;
+        var fromSequence = CirthEreborExample1.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -49,11 +28,11 @@ define([ "EnglishCirthEreborTranscriber", "example/CirthEreborExample1", "exampl
         }
     });
 
-    QUnit.test("Example2 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() CirthEreborExample2", function(assert)
     {
         // Setup.
         var transcriber = new EnglishCirthEreborTranscriber();
-        var fromSequence = CirthEreborExample2.LANGUAGE_LETTERS;
+        var fromSequence = CirthEreborExample2.LANGUAGE_STRING;
 
         // Run.
         var toSequence = transcriber.transcribeForward(fromSequence);
@@ -70,7 +49,10 @@ define([ "EnglishCirthEreborTranscriber", "example/CirthEreborExample1", "exampl
         }
     });
 
-    QUnit.test("Example1 transcribeReverse()", function(assert)
+    // ////////////////////////////////////////////////////////////////////////
+    // transcribeReverse()
+
+    QUnit.test("transcribeReverse() CirthEreborExample1", function(assert)
     {
         // Setup.
         var transcriber = new EnglishCirthEreborTranscriber();
@@ -81,12 +63,12 @@ define([ "EnglishCirthEreborTranscriber", "example/CirthEreborExample1", "exampl
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = CirthEreborExample1.LANGUAGE_LETTERS;
+        var expected = CirthEreborExample1.LANGUAGE_STRING;
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });
 
-    QUnit.test("Example2 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() CirthEreborExample2", function(assert)
     {
         // Setup.
         var transcriber = new EnglishCirthEreborTranscriber();
@@ -97,7 +79,7 @@ define([ "EnglishCirthEreborTranscriber", "example/CirthEreborExample1", "exampl
 
         // Verify.
         assert.ok(fromSequence);
-        var expected = CirthEreborExample2.LANGUAGE_LETTERS;
+        var expected = CirthEreborExample2.LANGUAGE_STRING;
         assert.equal(fromSequence.length, expected.length);
         assert.equal(fromSequence, expected);
     });

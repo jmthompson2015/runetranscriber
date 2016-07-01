@@ -4,65 +4,38 @@ define([ "EnglishAurebeshTranscriber", "example/AurebeshExampleSW1TPM1", "exampl
     "use strict";
     QUnit.module("EnglishAurebeshTranscriber");
 
-    QUnit.test("getMaxForwardKeyLength()", function(assert)
-    {
-        // Setup.
-        var transcriber = createTranscriber();
+    // ////////////////////////////////////////////////////////////////////////
+    // transcribeForward()
 
-        // Run.
-        var result = transcriber.getMaxForwardKeyLength();
-
-        // Verify.
-        assert.equal(result, 1);
-    });
-
-    QUnit.test("getMaxReverseKeyLength()", function(assert)
-    {
-        // Setup.
-        var transcriber = createTranscriber();
-
-        // Run.
-        var result = transcriber.getMaxReverseKeyLength();
-
-        // Verify.
-        assert.equal(result, 1);
-    });
-
-    /*******************************************************************************************************************
-     * transcribeForward()
-     */
-
-    QUnit.test("Example SW1TPM1 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AurebeshExampleSW1TPM1", function(assert)
     {
         var expected = [];
         testTranscribeForward(assert, AurebeshExampleSW1TPM1.LANGUAGE_STRING, AurebeshExampleSW1TPM1.RUNES);
     });
 
-    QUnit.test("Example SW4ANH1 transcribeForward()", function(assert)
+    QUnit.test("transcribeForward() AurebeshExampleSW4ANH1", function(assert)
     {
         var expected = [];
         testTranscribeForward(assert, AurebeshExampleSW4ANH1.LANGUAGE_STRING, AurebeshExampleSW4ANH1.RUNES);
     });
 
-    /*******************************************************************************************************************
-     * transcribeReverse()
-     */
+    // ////////////////////////////////////////////////////////////////////////
+    // transcribeReverse()
 
-    QUnit.test("Example SW1TPM1 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AurebeshExampleSW1TPM1", function(assert)
     {
         testTranscribeReverse(assert, AurebeshExampleSW1TPM1.RUNES, AurebeshExampleSW1TPM1.LANGUAGE_STRING
                 .toLowerCase(), true);
     });
 
-    QUnit.test("Example SW4ANH1 transcribeReverse()", function(assert)
+    QUnit.test("transcribeReverse() AurebeshExampleSW4ANH1", function(assert)
     {
         testTranscribeReverse(assert, AurebeshExampleSW4ANH1.RUNES, AurebeshExampleSW4ANH1.LANGUAGE_STRING
                 .toLowerCase(), true);
     });
 
-    /*******************************************************************************************************************
-     * Utility functions.
-     */
+    // ////////////////////////////////////////////////////////////////////////
+    // Utility functions.
 
     function createTranscriber()
     {
