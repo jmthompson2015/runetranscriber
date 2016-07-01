@@ -130,7 +130,9 @@
                         var transcriber = new runeSet.transcriber();
                         var runes = example.RUNES;
                         var letters = transcriber.runesToFontLetters(runes);
+                        var expectedPhonemes = example.PHONEMES;
                         var phonemes = transcriber.runesToPhonemes(runes);
+                        var expectedLanguageWords = example.LANGUAGE_WORDS;
                         var languageWords = transcriber.phonemesToLanguageWords(phonemes);
 
                         return React.createElement(RunePanel,
@@ -139,7 +141,9 @@
                             image: example.IMAGE,
                             letters: letters,
                             runes: runes,
+                            expectedPhonemes: expectedPhonemes,
                             phonemes: phonemes,
+                            expectedLanguageWords: expectedLanguageWords,
                             languageWords: languageWords,
                         });
                     }

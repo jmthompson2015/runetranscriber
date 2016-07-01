@@ -6,7 +6,9 @@ define([ "ui/RuneTable" ], function(RuneTable)
         {
             var letterRows = this.props.letters.split();
             var runeRows = this.props.runes.split(this.props.runeSet.runes.NEWLINE);
+            var expectedPhonemeRows = this.props.expectedPhonemes.split();
             var phonemeRows = this.props.phonemes.split();
+            var expectedLanguageWordRows = this.props.expectedLanguageWords.split();
             var languageWordRows = this.props.languageWords.split();
 
             var rows = [];
@@ -28,7 +30,9 @@ define([ "ui/RuneTable" ], function(RuneTable)
                     runeSet: this.props.runeSet,
                     letters: letterRows[i],
                     runes: runeRows[i],
+                    expectedPhonemes: expectedPhonemeRows[i],
                     phonemes: phonemeRows[i],
+                    expectedLanguageWords: expectedLanguageWordRows[i],
                     languageWords: languageWordRows[i],
                 }));
                 rows.push(React.DOM.tr(

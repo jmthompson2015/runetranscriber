@@ -17,13 +17,31 @@ define(function()
                 key: rows.length,
             }, cells));
 
-            cells = this.createPhonemeRows();
+            if (this.props.expectedPhonemes)
+            {
+                cells = this.createPhonemeRows("Expected Phoneme", this.props.expectedPhonemes);
+                rows.push(React.DOM.tr(
+                {
+                    key: rows.length,
+                }, cells));
+            }
+
+            cells = this.createPhonemeRows("Phoneme", this.props.phonemes);
             rows.push(React.DOM.tr(
             {
                 key: rows.length,
             }, cells));
 
-            cells = this.createLanguageRows();
+            if (this.props.expectedLanguageWords)
+            {
+                cells = this.createLanguageRows("Expected Language", this.props.expectedLanguageWords);
+                rows.push(React.DOM.tr(
+                {
+                    key: rows.length,
+                }, cells));
+            }
+
+            cells = this.createLanguageRows("Language", this.props.languageWords);
             rows.push(React.DOM.tr(
             {
                 key: rows.length,
@@ -144,15 +162,14 @@ define(function()
             return cells;
         },
 
-        createPhonemeRows: function()
+        createPhonemeRows: function(title, letters)
         {
-            var letters = this.props.phonemes;
             var cells = [];
             cells.push(React.DOM.td(
             {
                 key: cells.length,
                 className: "table-header-cell-details",
-            }, "Phoneme"));
+            }, title));
 
             for (var i = 0; i < letters.length; i++)
             {
@@ -187,16 +204,15 @@ define(function()
             return cells;
         },
 
-        createLanguageRows: function()
+        createLanguageRows: function(title, words)
         {
             var runes = this.props.runes;
-            var words = this.props.languageWords;
             var cells = [];
             cells.push(React.DOM.td(
             {
                 key: cells.length,
                 className: "table-header-cell-details",
-            }, "Language"));
+            }, title));
             var start = 0;
             var runeSet = this.props.runeSet;
 
@@ -250,7 +266,9 @@ define(function()
         runeSet: React.PropTypes.object.isRequired,
         letters: React.PropTypes.array.isRequired,
         runes: React.PropTypes.array.isRequired,
+        expectedPhonemes: React.PropTypes.array,
         phonemes: React.PropTypes.array.isRequired,
+        expectedLanguageWords: React.PropTypes.array,
         languageWords: React.PropTypes.array.isRequired,
     };
 
