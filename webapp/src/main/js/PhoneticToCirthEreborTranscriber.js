@@ -8,7 +8,7 @@ define([ "CerthRune", "PhoneticToRuneTranscriber", "util/InputValidator" ], func
         runeToPhonemeMap: {},
     };
 
-    CerthRune.values.forEach(function(runeKey)
+    CerthRune.values().forEach(function(runeKey)
     {
         var rune = CerthRune.properties[runeKey];
         PhoneticToCirthEreborTranscriber.phonemeToRuneMap[rune.phoneme] = [ runeKey ];

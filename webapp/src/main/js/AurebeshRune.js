@@ -435,21 +435,10 @@ define(function()
             },
         },
 
-        values: [ // values
-        "aurek", "besh", "cresh", "dorn", "esk", "forn", "grek", // 1
-        "herf", "isk", "jenth", "krill", "leth", "mern", "nern", // 2
-        "osk", "peth", "qek", "resh", "senth", "trill", "usk", // 3
-        "vev", "wesk", "xesh", "yirt", "zerek", "cherek", "enth", // 4
-        "onith", "krenth", "nen", "orenth", "shen", "thesh", // 5
-        "one", "two", "three", "four", "five", "six", // numbers 1
-        "seven", "eight", "nine", "zero", "plus", "minus", // numbers 2
-        "hyphen", "leftParen", "rightParen", "space", "comma", "period", "newline", // punctuation
-        ],
-
         findRuneByPhoneme: function(phoneme)
         {
             var answer;
-            var values = AurebeshRune.values;
+            var values = AurebeshRune.values();
             var properties = AurebeshRune.properties;
 
             for (var j = 0; j < values.length; j++)
@@ -470,7 +459,12 @@ define(function()
         {
             return [ AurebeshRune.SPACE, AurebeshRune.COMMA, AurebeshRune.PERIOD, AurebeshRune.NEWLINE ].includes(rune) ||
                     [ " ", ",", ".", "\n" ].includes(rune);
-        }
+        },
+
+        values: function()
+        {
+            return Object.getOwnPropertyNames(AurebeshRune.properties);
+        },
     };
 
     if (Object.freeze)

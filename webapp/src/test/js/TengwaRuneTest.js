@@ -52,12 +52,12 @@ define([ "TengwaRune" ], function(TengwaRune)
 
             var key = TengwaRune[property];
 
-            if (!TengwaRune.values.includes(key))
+            if (!TengwaRune.values().includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }
         }
 
-        assert.equal(TengwaRune.values.length, keysLength);
+        assert.equal(TengwaRune.values().length, keysLength);
     });
 });

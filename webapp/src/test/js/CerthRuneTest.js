@@ -33,12 +33,12 @@ define([ "CerthRune" ], function(CerthRune)
 
             var key = CerthRune[property];
 
-            if (!CerthRune.values.includes(key))
+            if (!CerthRune.values().includes(key))
             {
                 LOGGER.error("missing value for property " + property + " key " + key);
             }
         }
 
-        assert.equal(CerthRune.values.length, keysLength);
+        assert.equal(CerthRune.values().length, keysLength);
     });
 });

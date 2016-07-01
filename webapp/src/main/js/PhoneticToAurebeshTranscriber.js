@@ -8,17 +8,18 @@ define([ "AurebeshRune", "PhoneticToRuneTranscriber", "util/InputValidator" ], f
         runeToPhonemeMap: {},
     };
 
-    AurebeshRune.values.forEach(function(runeKey)
-    {
-        var rune = AurebeshRune.properties[runeKey];
-        PhoneticToAurebeshTranscriber.phonemeToRuneMap[rune.phoneme] = [ runeKey ];
-        PhoneticToAurebeshTranscriber.runeToPhonemeMap[runeKey] = [ rune.phoneme ];
+    AurebeshRune.values().forEach(
+            function(runeKey)
+            {
+                var rune = AurebeshRune.properties[runeKey];
+                PhoneticToAurebeshTranscriber.phonemeToRuneMap[rune.phoneme] = [ runeKey ];
+                PhoneticToAurebeshTranscriber.runeToPhonemeMap[runeKey] = [ rune.phoneme ];
 
-        PhoneticToAurebeshTranscriber.phonemeToRuneMap["the"] = [ AurebeshRune.TRILL, AurebeshRune.HERF,
-                AurebeshRune.ESK ];
-        PhoneticToAurebeshTranscriber.phonemeToRuneMap["ship"] = [ AurebeshRune.SENTH, AurebeshRune.HERF,
-                AurebeshRune.ISK, AurebeshRune.PETH ];
-    });
+                PhoneticToAurebeshTranscriber.phonemeToRuneMap["the"] = [ AurebeshRune.TRILL, AurebeshRune.HERF,
+                        AurebeshRune.ESK ];
+                PhoneticToAurebeshTranscriber.phonemeToRuneMap["ship"] = [ AurebeshRune.SENTH, AurebeshRune.HERF,
+                        AurebeshRune.ISK, AurebeshRune.PETH ];
+            });
 
     PhoneticToAurebeshTranscriber.delegate = new PhoneticToRuneTranscriber(AurebeshRune,
             PhoneticToAurebeshTranscriber.phonemeToRuneMap, PhoneticToAurebeshTranscriber.runeToPhonemeMap);
