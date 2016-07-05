@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rune Transcriber: Font Explorer</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/style.css">
+
+<script src="../../../../coreweb/lib/react/react-15.1.0.js"></script>
+<script src="../../../../coreweb/lib/react-dom/react-dom-15.1.0.js"></script>
+<script src="../../../../coreweb/lib/require/require-2.2.0.min.js" data-main="../js/CerthRune"></script>
+
+<script src="../js/util/Logger.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+	<section>
+		<label>Rune Set: <span id="runeSetSelect"></span>
+		</label> 
+		
+		<label>Page: <span id="pageSelect"></span>
+		</label>
+	</section>
+	<section>
+		<div id="fontPanel"></div>
+	</section>
+	<script>
+        "use strict";
+        var LOGGER = new Logger();
+        LOGGER.setTraceEnabled(false);
+        LOGGER.setDebugEnabled(false);
+
+        require([ "RuneSet", "ui/FontPanel", "ui/Select", "util/InputValidator" ], function(RuneSet, FontPanel, Select,
+                InputValidator)
+        {
+            var runeSetKey = RuneSet.TENGWAR;
+            var runeSet = RuneSet.properties[runeSetKey];
+            var page = 0;
+
+            var runeSetSelect = createRuneSetSelect(runeSetKey);
+            var pageSelect = createPageSelect(0);
+            var fontPanel = createFontPanel(runeSet, 0);
+
+            ReactDOM.render(runeSetSelect, document.getElementById("runeSetSelect"));
+            ReactDOM.render(pageSelect, document.getElementById("pageSelect"));
+            ReactDOM.render(fontPanel, document.getElementById("fontPanel"));
+
+            function createRuneSetSelect(myRuneSetKey)
+            {
+                var values = RuneSet.values();
+
+                if (!myRuneSetKey)
+                {
+                    runeSetKey = values[0];
+                    runeSet = RuneSet.properties[runeSetKey];
+                    myRuneSetKey = runeSet;
+                }
+
+                var initialSelectedValue = myRuneSetKey;
+
+                var labelFunction = function(value)
+                {
+                    return RuneSet.properties[value].name;
+                };
+
+                var onChange = function(event)
+                {
+                     runeSetKey = event.currentTarget.value;
+                    runeSet = RuneSet.properties[runeSetKey];
+                    page = 0;
+                    pageSelect = createPageSelect(page);
+                    ReactDOM.render(pageSelect, document.getElementById("pageSelect"));
+                    fontPanel = createFontPanel(runeSet, page);
+                    ReactDOM.render(fontPanel, document.getElementById("fontPanel"));
+                };
+
+                return React.createElement(Select,
+                {
+                    values: values,
+                    initialSelectedValue: initialSelectedValue,
+                    labelFunction: labelFunction,
+                    onChange: onChange,
+                });
+            }
+
+            function createPageSelect(myPage)
+            {
+                var values = [];
+
+                for (var i = 0; i < 32; i++)
+                {
+                    values.push(i);
+                }
+
+                var initialSelectedValue = (myPage ? myPage : 0);
+
+                var onChange = function(event)
+                {
+                    page = parseInt(event.currentTarget.value);
+                    fontPanel = createFontPanel(runeSet, page);
+                    ReactDOM.render(fontPanel, document.getElementById("fontPanel"));
+                };
+
+                return React.createElement(Select,
+                {
+                    values: values,
+                    initialSelectedValue: initialSelectedValue,
+                    onChange: onChange,
+                });
+            }
+
+            function createFontPanel(runeSet, page)
+            {
+                InputValidator.validateNotNull("runeSet", runeSet);
+                InputValidator.validateNotNull("page", page);
+
+                return React.createElement(FontPanel,
+                {
+                    runeSet: runeSet,
+                    page: page,
+                });
+            }
+        });
+    </script>
+</body>
+</html>
