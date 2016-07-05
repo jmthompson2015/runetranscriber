@@ -548,7 +548,27 @@ define(function()
         "underBar", "circumflex", "chevron" // other
         ],
 
-        findRuneByPhoneme: function(phoneme)
+        findByFontLetter: function(fontLetter)
+        {
+            var answer;
+            var values = TengwaRune.values();
+            var properties = TengwaRune.properties;
+
+            for (var j = 0; j < values.length; j++)
+            {
+                var rune = values[j];
+
+                if (properties[rune].fontLetter === fontLetter)
+                {
+                    answer = rune;
+                    break;
+                }
+            }
+
+            return answer;
+        },
+
+        findByPhoneme: function(phoneme)
         {
             var answer;
             var values = TengwaRune.values();

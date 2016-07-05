@@ -318,7 +318,7 @@ define(function()
             },
         },
 
-        findRuneByPhoneme: function(phoneme)
+        findByFontLetter: function(fontLetter)
         {
             var answer;
             var values = KryptonianRune.values();
@@ -326,11 +326,31 @@ define(function()
 
             for (var j = 0; j < values.length; j++)
             {
-                rune = values[j];
+                var runeKey = values[j];
 
-                if (properties[rune].phoneme === phoneme)
+                if (properties[runeKey].fontLetter === fontLetter)
                 {
-                    answer = rune;
+                    answer = runeKey;
+                    break;
+                }
+            }
+
+            return answer;
+        },
+
+        findByPhoneme: function(phoneme)
+        {
+            var answer;
+            var values = KryptonianRune.values();
+            var properties = KryptonianRune.properties;
+
+            for (var j = 0; j < values.length; j++)
+            {
+                var runeKey = values[j];
+
+                if (properties[runeKey].phoneme === phoneme)
+                {
+                    answer = runeKey;
                     break;
                 }
             }

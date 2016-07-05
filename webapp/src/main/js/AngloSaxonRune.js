@@ -283,6 +283,46 @@ define(function()
             },
         },
 
+        findByFontLetter: function(fontLetter)
+        {
+            var answer;
+            var values = AngloSaxonRune.values();
+            var properties = AngloSaxonRune.properties;
+
+            for (var j = 0; j < values.length; j++)
+            {
+                var runeKey = values[j];
+
+                if (properties[runeKey].fontLetter === fontLetter)
+                {
+                    answer = runeKey;
+                    break;
+                }
+            }
+
+            return answer;
+        },
+
+        findByPhoneme: function(phoneme)
+        {
+            var answer;
+            var values = AngloSaxonRune.values();
+            var properties = AngloSaxonRune.properties;
+
+            for (var j = 0; j < values.length; j++)
+            {
+                var runeKey = values[j];
+
+                if (properties[runeKey].phoneme === phoneme)
+                {
+                    answer = runeKey;
+                    break;
+                }
+            }
+
+            return answer;
+        },
+
         isPunctuation: function(rune)
         {
             return [ AngloSaxonRune.SPACE, AngloSaxonRune.COMMA, AngloSaxonRune.PERIOD, AngloSaxonRune.APOSTROPHE,

@@ -364,8 +364,8 @@ define(
 
                                     if (this.isVowel(letter0) && this.isConsonant(letter1) && letter1 === letter2)
                                     {
-                                        var rune0 = TengwaRune.findRuneByPhoneme(letter0);
-                                        var rune1 = TengwaRune.findRuneByPhoneme(letter1);
+                                        var rune0 = TengwaRune.findByPhoneme(letter0);
+                                        var rune1 = TengwaRune.findByPhoneme(letter1);
 
                                         answer[answer.length] = [ rune0, rune1, TengwaRune.UNDER_BAR ];
                                         i += j;
