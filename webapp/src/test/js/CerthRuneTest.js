@@ -3,6 +3,16 @@ define([ "CerthRune" ], function(CerthRune)
     "use strict";
     QUnit.module("CerthRune");
 
+    QUnit.test("findByFontLetter()", function(assert)
+    {
+        assert.ok(CerthRune.findByFontLetter("p"), CerthRune.C1);
+    });
+
+    QUnit.test("findByPhoneme()", function(assert)
+    {
+        assert.ok(CerthRune.findByPhoneme("p"), CerthRune.C1);
+    });
+
     QUnit.test("isPunctuation", function(assert)
     {
         assert.ok(CerthRune.isPunctuation(CerthRune.SPACE));
@@ -16,8 +26,10 @@ define([ "CerthRune" ], function(CerthRune)
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(CerthRune).length - 1 // properties
-        - 1 // values
-        - 1 // isPunctuation
+                - 1 // findByFontLetter
+                - 1 // findByPhoneme
+                - 1 // isPunctuation
+                - 1 // values
         ;
 
         var properties = Object.getOwnPropertyNames(CerthRune);
@@ -26,7 +38,7 @@ define([ "CerthRune" ], function(CerthRune)
         {
             var property = properties[i];
 
-            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
+            if ([ "properties", "values", "findByFontLetter", "findByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }

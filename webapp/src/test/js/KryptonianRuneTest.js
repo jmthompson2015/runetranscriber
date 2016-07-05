@@ -3,20 +3,25 @@ define([ "KryptonianRune" ], function(KryptonianRune)
     "use strict";
     QUnit.module("KryptonianRune");
 
-    QUnit.test("findRuneByPhoneme", function(assert)
+    QUnit.test("findByFontLetter()", function(assert)
     {
-        assert.equal(KryptonianRune.findRuneByPhoneme("t"), KryptonianRune.T);
-        assert.equal(KryptonianRune.findRuneByPhoneme("p"), KryptonianRune.P);
-        assert.equal(KryptonianRune.findRuneByPhoneme("k"), KryptonianRune.K);
+        assert.ok(KryptonianRune.findByFontLetter("a"), KryptonianRune.A);
+    });
 
-        assert.equal(KryptonianRune.findRuneByPhoneme("r"), KryptonianRune.R);
-        assert.equal(KryptonianRune.findRuneByPhoneme("w"), KryptonianRune.W);
-        assert.equal(KryptonianRune.findRuneByPhoneme("y"), KryptonianRune.Y);
+    QUnit.test("findByPhoneme", function(assert)
+    {
+        assert.equal(KryptonianRune.findByPhoneme("t"), KryptonianRune.T);
+        assert.equal(KryptonianRune.findByPhoneme("p"), KryptonianRune.P);
+        assert.equal(KryptonianRune.findByPhoneme("k"), KryptonianRune.K);
 
-        assert.equal(KryptonianRune.findRuneByPhoneme("h"), KryptonianRune.H);
-        assert.equal(KryptonianRune.findRuneByPhoneme("w"), KryptonianRune.W);
-        assert.equal(KryptonianRune.findRuneByPhoneme("i"), KryptonianRune.I);
-        assert.equal(KryptonianRune.findRuneByPhoneme("u"), KryptonianRune.U);
+        assert.equal(KryptonianRune.findByPhoneme("r"), KryptonianRune.R);
+        assert.equal(KryptonianRune.findByPhoneme("w"), KryptonianRune.W);
+        assert.equal(KryptonianRune.findByPhoneme("y"), KryptonianRune.Y);
+
+        assert.equal(KryptonianRune.findByPhoneme("h"), KryptonianRune.H);
+        assert.equal(KryptonianRune.findByPhoneme("w"), KryptonianRune.W);
+        assert.equal(KryptonianRune.findByPhoneme("i"), KryptonianRune.I);
+        assert.equal(KryptonianRune.findByPhoneme("u"), KryptonianRune.U);
     });
 
     QUnit.test("isPunctuation", function(assert)
@@ -30,7 +35,8 @@ define([ "KryptonianRune" ], function(KryptonianRune)
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(KryptonianRune).length - 1 // properties
-                - 1 // findRuneByPhoneme
+                - 1 // findByFontLetter
+                - 1 // findByPhoneme
                 - 1 // isPunctuation
                 - 1 // values
         ;
@@ -41,7 +47,7 @@ define([ "KryptonianRune" ], function(KryptonianRune)
         {
             var property = properties[i];
 
-            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
+            if ([ "properties", "values", "findByFontLetter", "findByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }

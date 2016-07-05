@@ -3,6 +3,16 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
     "use strict";
     QUnit.module("AngloSaxonRune");
 
+    QUnit.test("findByFontLetter()", function(assert)
+    {
+        assert.ok(AngloSaxonRune.findByFontLetter("\u16a3"), AngloSaxonRune.YR);
+    });
+
+    QUnit.test("findByPhoneme()", function(assert)
+    {
+        assert.ok(AngloSaxonRune.findByPhoneme("y"), AngloSaxonRune.YR);
+    });
+
     QUnit.test("isPunctuation", function(assert)
     {
         assert.ok(AngloSaxonRune.isPunctuation(AngloSaxonRune.SPACE));
@@ -16,8 +26,10 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(AngloSaxonRune).length - 1 // properties
-        - 1 // values
-        - 1 // isPunctuation
+                - 1 // findByFontLetter
+                - 1 // findByPhoneme
+                - 1 // isPunctuation
+                - 1 // values
         ;
 
         var properties = Object.getOwnPropertyNames(AngloSaxonRune);
@@ -26,7 +38,7 @@ define([ "AngloSaxonRune" ], function(AngloSaxonRune)
         {
             var property = properties[i];
 
-            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
+            if ([ "properties", "values", "findByFontLetter", "findByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }

@@ -3,21 +3,26 @@ define([ "AurebeshRune" ], function(AurebeshRune)
     "use strict";
     QUnit.module("AurebeshRune");
 
-    QUnit.test("findRuneByPhoneme", function(assert)
+    QUnit.test("findByFontLetter()", function(assert)
     {
-        assert.equal(AurebeshRune.findRuneByPhoneme("t"), AurebeshRune.TRILL);
-        assert.equal(AurebeshRune.findRuneByPhoneme("p"), AurebeshRune.PETH);
-        assert.equal(AurebeshRune.findRuneByPhoneme("ch"), AurebeshRune.CHEREK);
-        assert.equal(AurebeshRune.findRuneByPhoneme("k"), AurebeshRune.KRILL);
+        assert.ok(AurebeshRune.findByFontLetter("a"), AurebeshRune.AUREK);
+    });
 
-        assert.equal(AurebeshRune.findRuneByPhoneme("r"), AurebeshRune.RESH);
-        assert.equal(AurebeshRune.findRuneByPhoneme("w"), AurebeshRune.WESK);
-        assert.equal(AurebeshRune.findRuneByPhoneme("y"), AurebeshRune.YIRT);
+    QUnit.test("findByPhoneme", function(assert)
+    {
+        assert.equal(AurebeshRune.findByPhoneme("t"), AurebeshRune.TRILL);
+        assert.equal(AurebeshRune.findByPhoneme("p"), AurebeshRune.PETH);
+        assert.equal(AurebeshRune.findByPhoneme("ch"), AurebeshRune.CHEREK);
+        assert.equal(AurebeshRune.findByPhoneme("k"), AurebeshRune.KRILL);
 
-        assert.equal(AurebeshRune.findRuneByPhoneme("h"), AurebeshRune.HERF);
-        assert.equal(AurebeshRune.findRuneByPhoneme("w"), AurebeshRune.WESK);
-        assert.equal(AurebeshRune.findRuneByPhoneme("i"), AurebeshRune.ISK);
-        assert.equal(AurebeshRune.findRuneByPhoneme("u"), AurebeshRune.USK);
+        assert.equal(AurebeshRune.findByPhoneme("r"), AurebeshRune.RESH);
+        assert.equal(AurebeshRune.findByPhoneme("w"), AurebeshRune.WESK);
+        assert.equal(AurebeshRune.findByPhoneme("y"), AurebeshRune.YIRT);
+
+        assert.equal(AurebeshRune.findByPhoneme("h"), AurebeshRune.HERF);
+        assert.equal(AurebeshRune.findByPhoneme("w"), AurebeshRune.WESK);
+        assert.equal(AurebeshRune.findByPhoneme("i"), AurebeshRune.ISK);
+        assert.equal(AurebeshRune.findByPhoneme("u"), AurebeshRune.USK);
     });
 
     QUnit.test("isPunctuation", function(assert)
@@ -33,9 +38,10 @@ define([ "AurebeshRune" ], function(AurebeshRune)
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(AurebeshRune).length - 1 // properties
-                - 1 // values
-                - 1 // findRuneByPhoneme
+                - 1 // findByFontLetter
+                - 1 // findByPhoneme
                 - 1 // isPunctuation
+                - 1 // values
         ;
 
         var properties = Object.getOwnPropertyNames(AurebeshRune);
@@ -44,7 +50,7 @@ define([ "AurebeshRune" ], function(AurebeshRune)
         {
             var property = properties[i];
 
-            if ([ "properties", "values", "findRuneByPhoneme", "isPunctuation" ].includes(property))
+            if ([ "properties", "values", "findByFontLetter", "findByPhoneme", "isPunctuation" ].includes(property))
             {
                 continue;
             }

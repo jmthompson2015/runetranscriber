@@ -3,21 +3,21 @@ define([ "TengwaRune" ], function(TengwaRune)
     "use strict";
     QUnit.module("TengwaRune");
 
-    QUnit.test("findRuneByPhoneme", function(assert)
+    QUnit.test("findByPhoneme", function(assert)
     {
-        assert.equal(TengwaRune.findRuneByPhoneme("t"), TengwaRune.TINCO);
-        assert.equal(TengwaRune.findRuneByPhoneme("p"), TengwaRune.PARMA);
-        assert.equal(TengwaRune.findRuneByPhoneme("ch"), TengwaRune.CALMA);
-        assert.equal(TengwaRune.findRuneByPhoneme("k"), TengwaRune.QUESSE);
+        assert.equal(TengwaRune.findByPhoneme("t"), TengwaRune.TINCO);
+        assert.equal(TengwaRune.findByPhoneme("p"), TengwaRune.PARMA);
+        assert.equal(TengwaRune.findByPhoneme("ch"), TengwaRune.CALMA);
+        assert.equal(TengwaRune.findByPhoneme("k"), TengwaRune.QUESSE);
 
-        assert.equal(TengwaRune.findRuneByPhoneme("r"), TengwaRune.ORE);
-        assert.equal(TengwaRune.findRuneByPhoneme("w"), TengwaRune.VALA);
-        assert.equal(TengwaRune.findRuneByPhoneme("y"), TengwaRune.ANNA);
+        assert.equal(TengwaRune.findByPhoneme("r"), TengwaRune.ORE);
+        assert.equal(TengwaRune.findByPhoneme("w"), TengwaRune.VALA);
+        assert.equal(TengwaRune.findByPhoneme("y"), TengwaRune.ANNA);
 
-        assert.equal(TengwaRune.findRuneByPhoneme("h"), TengwaRune.HYARMEN);
-        assert.equal(TengwaRune.findRuneByPhoneme("wh"), TengwaRune.HWESTA_SINDARINWA);
-        assert.equal(TengwaRune.findRuneByPhoneme("i"), TengwaRune.YANTA);
-        assert.equal(TengwaRune.findRuneByPhoneme("u"), TengwaRune.URE);
+        assert.equal(TengwaRune.findByPhoneme("h"), TengwaRune.HYARMEN);
+        assert.equal(TengwaRune.findByPhoneme("wh"), TengwaRune.HWESTA_SINDARINWA);
+        assert.equal(TengwaRune.findByPhoneme("i"), TengwaRune.YANTA);
+        assert.equal(TengwaRune.findByPhoneme("u"), TengwaRune.URE);
     });
 
     QUnit.test("isPunctuation", function(assert)
@@ -33,10 +33,11 @@ define([ "TengwaRune" ], function(TengwaRune)
     QUnit.test("values", function(assert)
     {
         var keysLength = Object.keys(TengwaRune).length - 1 // properties
-                - 1 // values
                 - 1 // tehtar
-                - 1 // findRuneByPhoneme
+                - 1 // findByFontLetter
+                - 1 // findByPhoneme
                 - 1 // isPunctuation
+                - 1 // values
         ;
 
         var properties = Object.getOwnPropertyNames(TengwaRune);
@@ -45,7 +46,8 @@ define([ "TengwaRune" ], function(TengwaRune)
         {
             var property = properties[i];
 
-            if ([ "properties", "values", "tehtar", "findRuneByPhoneme", "isPunctuation" ].includes(property))
+            if ([ "properties", "values", "tehtar", "findByFontLetter", "findByPhoneme", "isPunctuation" ]
+                    .includes(property))
             {
                 continue;
             }
