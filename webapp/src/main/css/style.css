@@ -152,3 +152,29 @@ body {
     border-color: lightgrey;
     padding: 5px;
 }
+
+.fontTable {
+    padding-left: 20px;
+    vertical-align: top;
+}
+
+.number-cell {
+    border: 1px solid;
+    border-color: darkgreen;
+    font-size: x-small;
+    padding: 5px;
+}
+
+.rune-cell {
+    border: 1px solid;
+    border-color: darkgreen;
+    font-size: x-small;
+    padding: 5px;
+}
+
+.phoneme-cell {
+    border: 1px solid;
+    border-color: darkgreen;
+    font-size: small;
+    padding: 5px;
+}
