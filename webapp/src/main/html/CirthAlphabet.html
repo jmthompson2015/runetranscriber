@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rune Transcriber: Cirth Alphabet</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/style.css">
+
+<script src="../../../../coreweb/lib/react/react-15.1.0.js"></script>
+<script src="../../../../coreweb/lib/react-dom/react-dom-15.1.0.js"></script>
+<script src="../../../../coreweb/lib/require/require-2.2.0.min.js" data-main="../js/CerthRune"></script>
+
+<script src="../js/util/Logger.js"></script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+	<h1>Cirth Alphabet</h1>
+	<section>
+		<img id="image"
+			src="https://rawgit.com/jmthompson2015/runetranscriber/master/core/doc/images/lordoftherings/TLOTR_Appendices_CirthTable.png" />
+	</section>
+	<section style="padding-top: 20px;">
+		<div id="alphabetPanel"></div>
+	</section>
+	<section style="padding-top: 20px;">
+		<a href="https://en.wikipedia.org/wiki/Cirth">Wikipedia</a>
+	</section>
+	<script>
+        "use strict";
+        var LOGGER = new Logger();
+        LOGGER.setTraceEnabled(false);
+        LOGGER.setDebugEnabled(false);
+
+        require([ "ui/CirthAlphabetPanel", "util/InputValidator" ], function(CirthAlphabetPanel, InputValidator)
+        {
+            var element = React.createElement(CirthAlphabetPanel);
+            ReactDOM.render(element, document.getElementById("alphabetPanel"));
+        });
+    </script>
+</body>
+</html>
