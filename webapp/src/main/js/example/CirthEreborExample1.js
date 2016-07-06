@@ -51,9 +51,9 @@ define(
                 // the
                 CerthRune.C11, CerthRune.C55, CerthRune.SPACE,
                 // rings
-                CerthRune.C12, CerthRune.C39, CerthRune.C36, CerthRune.C34, CerthRune.SPACE,
+                CerthRune.C12, CerthRune.C39, CerthRune.C36, CerthRune.C35, CerthRune.SPACE,
                 // translated
-                CerthRune.C8, CerthRune.C12, CerthRune.C48, CerthRune.C53, CerthRune.C34, CerthRune.C31, CerthRune.C48,
+                CerthRune.C8, CerthRune.C12, CerthRune.C48, CerthRune.C22, CerthRune.C35, CerthRune.C31, CerthRune.C48,
                         CerthRune.C8, CerthRune.C55, CerthRune.C9, CerthRune.SPACE,
                         // from
                         CerthRune.C3, CerthRune.C12, CerthRune.C50, CerthRune.C6, CerthRune.SPACE,
