@@ -140,14 +140,14 @@ define(function()
             {
                 name: "C10",
                 displayName: "c10",
-                fontLetter: "?",
+                fontLetter: "\u00FE",
                 phoneme: "th",
             },
             "c11":
             {
                 name: "C11",
                 displayName: "c11",
-                fontLetter: "?",
+                fontLetter: "\u00F0",
                 phoneme: "dh",
             },
             "c12":

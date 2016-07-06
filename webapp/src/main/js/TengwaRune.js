@@ -297,7 +297,7 @@ define(function()
             "silmeNuquerna":
             {
                 name: "SILME_NUQUERNA",
-                displayName: "silme_nuquerna",
+                displayName: "silme nuquerna",
                 nameMeaning: "silme reversed",
                 fontLetter: "i",
                 phoneme: "c",
@@ -313,7 +313,7 @@ define(function()
             "esseNuquerna":
             {
                 name: "ESSE_NUQUERNA",
-                displayName: "esse_nuquerna",
+                displayName: "esse nuquerna",
                 nameMeaning: "aze reversed",
                 fontLetter: ",",
                 phoneme: "z",
@@ -329,7 +329,7 @@ define(function()
             "hwestaSindarinwa":
             {
                 name: "HWESTA_SINDARINWA",
-                displayName: "hwesta_sindarinwa",
+                displayName: "hwesta sindarinwa",
                 nameMeaning: "sindarin hwesta",
                 fontLetter: "o",
                 phoneme: "wh",
@@ -369,7 +369,7 @@ define(function()
             "ofThe":
             {
                 name: "OF_THE",
-                displayName: "of_the",
+                displayName: "of the",
                 nameMeaning: "of the",
                 fontLetter: "W?",
                 phoneme: "of the",
@@ -399,7 +399,7 @@ define(function()
             "threeDots":
             {
                 name: "THREE_DOTS",
-                displayName: "three_dots",
+                displayName: "three dots",
                 nameMeaning: "three dots",
                 fontLetter: "D",
                 phoneme: "a",
@@ -407,9 +407,9 @@ define(function()
             "threeUnderDots":
             {
                 name: "THREE_UNDER_DOTS",
-                displayName: "three_under_dots",
+                displayName: "three under dots",
                 nameMeaning: "three under dots",
-                fontLetter: "&#209;",
+                fontLetter: "\u00D1",
                 phoneme: "a",
             },
             "circumflex":
@@ -438,15 +438,15 @@ define(function()
             "underDot":
             {
                 name: "UNDER_DOT",
-                displayName: "under_dot",
+                displayName: "under dot",
                 nameMeaning: "under dot",
-                fontLetter: "&#201;",
+                fontLetter: "\u00C9",
                 phoneme: "e",
             },
             "leftCurl":
             {
                 name: "LEFT_CURL",
-                displayName: "left_curl",
+                displayName: "left curl",
                 nameMeaning: "left curl",
                 fontLetter: "Y",
                 phoneme: "o",
@@ -454,15 +454,15 @@ define(function()
             "leftUnderCurl":
             {
                 name: "LEFT_UNDER_CURL",
-                displayName: "left_under_curl",
+                displayName: "left under curl",
                 nameMeaning: "left under curl",
-                fontLetter: "&#229;",
+                fontLetter: "\u00E5",
                 phoneme: "o",
             },
             "topCurl":
             {
                 name: "TOP_CURL",
-                displayName: "top_curl",
+                displayName: "top curl",
                 nameMeaning: "top curl",
                 fontLetter: "J",
                 phoneme: "u",
@@ -470,9 +470,9 @@ define(function()
             "rightCurl":
             {
                 name: "RIGHT_CURL",
-                displayName: "right_curl",
+                displayName: "right curl",
                 nameMeaning: "right curl",
-                fontLetter: "&#225;",
+                fontLetter: "\u00E1",
                 phoneme: "u",
             },
             "chevron":
@@ -495,14 +495,14 @@ define(function()
                 name: "UNDER_BAR",
                 displayName: "underBar",
                 nameMeaning: "underBar",
-                fontLetter: "&#237;",
+                fontLetter: "\u00ED",
             },
             "hyphen":
             {
                 name: "HYPHEN",
                 displayName: "hyphen",
                 nameMeaning: "hyphen",
-                fontLetter: "&#183;",
+                fontLetter: "\u00B7",
                 phoneme: "-",
             },
             "space":
@@ -518,7 +518,7 @@ define(function()
                 name: "COMMA",
                 displayName: "comma",
                 nameMeaning: "comma",
-                fontLetter: "&#183;",
+                fontLetter: "\u00B7",
                 phoneme: ",",
             },
             "period":
