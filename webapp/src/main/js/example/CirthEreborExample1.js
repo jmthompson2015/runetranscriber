@@ -17,27 +17,42 @@ define(
                 LANGUAGE_WORDS: [ "the", " ", "lord", " ", "of", " ", "the", " ", "rings", " ", "translated", " ",
                         "from", " ", "the", " ", "red", " ", "book" ],
 
-                PHONEMES: [ CerthRune.properties["c11"].phoneme, CerthRune.properties["c55"].phoneme,
-                        CerthRune.properties["space"].phoneme, CerthRune.properties["c31"].phoneme,
-                        CerthRune.properties["c50"].phoneme, CerthRune.properties["c12"].phoneme,
-                        CerthRune.properties["c9"].phoneme, CerthRune.properties["space"].phoneme,
+                PHONEMES: [
+                // the
+                CerthRune.properties["c11"].phoneme, CerthRune.properties["c55"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // lord
+                        CerthRune.properties["c31"].phoneme, CerthRune.properties["c50"].phoneme,
+                        CerthRune.properties["c12"].phoneme, CerthRune.properties["c9"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // of
                         CerthRune.properties["c50"].phoneme, CerthRune.properties["c4"].phoneme,
-                        CerthRune.properties["space"].phoneme, CerthRune.properties["c11"].phoneme,
-                        CerthRune.properties["c55"].phoneme, CerthRune.properties["space"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // the
+                        CerthRune.properties["c11"].phoneme, CerthRune.properties["c55"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // rings
                         CerthRune.properties["c12"].phoneme, CerthRune.properties["c39"].phoneme,
-                        CerthRune.properties["c36"].phoneme, CerthRune.properties["c34"].phoneme,
-                        CerthRune.properties["space"].phoneme, CerthRune.properties["c8"].phoneme,
-                        CerthRune.properties["c12"].phoneme, CerthRune.properties["c48"].phoneme,
-                        CerthRune.properties["c53"].phoneme, CerthRune.properties["c34"].phoneme,
-                        CerthRune.properties["c31"].phoneme, CerthRune.properties["c48"].phoneme,
-                        CerthRune.properties["c8"].phoneme, CerthRune.properties["c55"].phoneme,
-                        CerthRune.properties["c9"].phoneme, CerthRune.properties["space"].phoneme,
+                        CerthRune.properties["c36"].phoneme, CerthRune.properties["c35"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // translated
+                        CerthRune.properties["c8"].phoneme, CerthRune.properties["c12"].phoneme,
+                        CerthRune.properties["c48"].phoneme, CerthRune.properties["c22"].phoneme,
+                        CerthRune.properties["c35"].phoneme, CerthRune.properties["c31"].phoneme,
+                        CerthRune.properties["c48"].phoneme, CerthRune.properties["c8"].phoneme,
+                        CerthRune.properties["c55"].phoneme, CerthRune.properties["c9"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // from
                         CerthRune.properties["c3"].phoneme, CerthRune.properties["c12"].phoneme,
                         CerthRune.properties["c50"].phoneme, CerthRune.properties["c6"].phoneme,
-                        CerthRune.properties["space"].phoneme, CerthRune.properties["c11"].phoneme,
-                        CerthRune.properties["c55"].phoneme, CerthRune.properties["space"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // the
+                        CerthRune.properties["c11"].phoneme, CerthRune.properties["c55"].phoneme,
+                        CerthRune.properties["space"].phoneme,
+                        // red
                         CerthRune.properties["c12"].phoneme, CerthRune.properties["c46"].phoneme,
                         CerthRune.properties["c9"].phoneme, CerthRune.properties["space"].phoneme,
+                        // book
                         CerthRune.properties["c2"].phoneme, CerthRune.properties["c51"].phoneme,
                         CerthRune.properties["c18"].phoneme ],
 
@@ -64,27 +79,42 @@ define(
                         // book
                         CerthRune.C2, CerthRune.C51, CerthRune.C18, ],
 
-                FONT_LETTERS: [ CerthRune.properties["c11"].fontLetter, CerthRune.properties["c55"].fontLetter,
-                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c31"].fontLetter,
-                        CerthRune.properties["c50"].fontLetter, CerthRune.properties["c12"].fontLetter,
-                        CerthRune.properties["c9"].fontLetter, CerthRune.properties["space"].fontLetter,
+                FONT_LETTERS: [
+                // the
+                CerthRune.properties["c11"].fontLetter, CerthRune.properties["c55"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // lord
+                        CerthRune.properties["c31"].fontLetter, CerthRune.properties["c50"].fontLetter,
+                        CerthRune.properties["c12"].fontLetter, CerthRune.properties["c9"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // of
                         CerthRune.properties["c50"].fontLetter, CerthRune.properties["c4"].fontLetter,
-                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c11"].fontLetter,
-                        CerthRune.properties["c55"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // the
+                        CerthRune.properties["c11"].fontLetter, CerthRune.properties["c55"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // rings
                         CerthRune.properties["c12"].fontLetter, CerthRune.properties["c39"].fontLetter,
-                        CerthRune.properties["c36"].fontLetter, CerthRune.properties["c34"].fontLetter,
-                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c8"].fontLetter,
-                        CerthRune.properties["c12"].fontLetter, CerthRune.properties["c48"].fontLetter,
-                        CerthRune.properties["c53"].fontLetter, CerthRune.properties["c34"].fontLetter,
-                        CerthRune.properties["c31"].fontLetter, CerthRune.properties["c48"].fontLetter,
-                        CerthRune.properties["c8"].fontLetter, CerthRune.properties["c55"].fontLetter,
-                        CerthRune.properties["c9"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        CerthRune.properties["c36"].fontLetter, CerthRune.properties["c35"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // translated
+                        CerthRune.properties["c8"].fontLetter, CerthRune.properties["c12"].fontLetter,
+                        CerthRune.properties["c48"].fontLetter, CerthRune.properties["c22"].fontLetter,
+                        CerthRune.properties["c35"].fontLetter, CerthRune.properties["c31"].fontLetter,
+                        CerthRune.properties["c48"].fontLetter, CerthRune.properties["c8"].fontLetter,
+                        CerthRune.properties["c55"].fontLetter, CerthRune.properties["c9"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // from
                         CerthRune.properties["c3"].fontLetter, CerthRune.properties["c12"].fontLetter,
                         CerthRune.properties["c50"].fontLetter, CerthRune.properties["c6"].fontLetter,
-                        CerthRune.properties["space"].fontLetter, CerthRune.properties["c11"].fontLetter,
-                        CerthRune.properties["c55"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // the
+                        CerthRune.properties["c11"].fontLetter, CerthRune.properties["c55"].fontLetter,
+                        CerthRune.properties["space"].fontLetter,
+                        // red
                         CerthRune.properties["c12"].fontLetter, CerthRune.properties["c46"].fontLetter,
                         CerthRune.properties["c9"].fontLetter, CerthRune.properties["space"].fontLetter,
+                        // book
                         CerthRune.properties["c2"].fontLetter, CerthRune.properties["c51"].fontLetter,
                         CerthRune.properties["c18"].fontLetter ],
             };
