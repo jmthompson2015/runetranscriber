@@ -198,14 +198,14 @@ define(
              * runesToFontLetters()
              */
 
-            QUnit.test("JMT runesToFontLetters()", function(assert)
+            QUnit.test("runesToFontLetters() JMT", function(assert)
             {
                 var input = [ "anga", [ "dot", "formen", "underBar" ], "romen", [ "dot", "anna" ], "space",
 
                 "malta", [ "acute", "calma" ], [ "threeDots", "shortCarrier" ], [ "dot", "lambe" ], "space",
 
                 "tinco", "hyarmen", [ "leftCurl", "malta" ], "parma", "silme", [ "leftCurl", "numen" ] ];
-                var expected = [ "s", [ "e", "T", "&#237;" ], "7", [ "h", "T" ], " ",
+                var expected = [ "s", [ "e", "T", "\u00ED" ], "7", [ "h", "T" ], " ",
 
                 "t", [ "a", "R" ], [ "`", "D" ], [ "j", "T" ], " ",
 
@@ -224,7 +224,7 @@ define(
                 var result = transcriber.runesToFontLetters(runes);
 
                 // Verify.
-                var expected = [ [ "7", "&#201;" ], [ "6", "&#225;" ] ];
+                var expected = [ [ "7", "\u00C9" ], [ "6", "\u00E1" ] ];
                 verify(assert, result, expected);
             });
 
@@ -243,7 +243,7 @@ define(
                 var result = transcriber.runesToFontLetters(runes);
 
                 // Verify.
-                var expected = [ [ "`", "D" ], [ "`", "T" ], [ "`", "R" ], [ "`", "Y" ], [ "`", "&#225;" ], ];
+                var expected = [ [ "`", "D" ], [ "`", "T" ], [ "`", "R" ], [ "`", "Y" ], [ "`", "\u00E1" ], ];
                 verify(assert, result, expected);
             });
 

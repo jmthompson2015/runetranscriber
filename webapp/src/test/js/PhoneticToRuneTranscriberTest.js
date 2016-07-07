@@ -100,10 +100,11 @@ define([ "AngloSaxonRune", "AurebeshRune", "CerthRune", "PhoneticToRuneTranscrib
             runeToPhonemeMap[runeKey] = [ rune.phoneme ];
         });
 
-        phonemeToRuneMap[CerthRune.properties["c34"].phoneme] = [ "c34" ];
-        phonemeToRuneMap[CerthRune.properties["c36"].phoneme] = [ "c36" ];
-        phonemeToRuneMap[CerthRune.properties["c48"].phoneme] = [ "c48" ];
-        phonemeToRuneMap[CerthRune.properties["c50"].phoneme] = [ "c50" ];
+        phonemeToRuneMap["n"] = [ CerthRune.C22 ];
+        phonemeToRuneMap["s"] = [ CerthRune.C35 ];
+        phonemeToRuneMap["ng"] = [ CerthRune.C36 ];
+        phonemeToRuneMap["a"] = [ CerthRune.C48 ];
+        phonemeToRuneMap["o"] = [ CerthRune.C50 ];
         phonemeToRuneMap["red"] = [ CerthRune.C12, CerthRune.C46, CerthRune.C9 ];
 
         return new PhoneticToRuneTranscriber(runeSet.runes, phonemeToRuneMap, runeToPhonemeMap);
