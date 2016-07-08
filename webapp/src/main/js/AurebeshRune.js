@@ -40,7 +40,6 @@ define(function()
         ORENTH: "orenth",
         SHEN: "shen",
         THESH: "thesh",
-        ZERO: "zero",
         ONE: "one",
         TWO: "two",
         THREE: "three",
@@ -50,6 +49,7 @@ define(function()
         SEVEN: "seven",
         EIGHT: "eight",
         NINE: "nine",
+        ZERO: "zero",
         PLUS: "plus",
         MINUS: "minus",
         HYPHEN: "hyphen",
@@ -248,64 +248,57 @@ define(function()
             {
                 name: "CHEREK",
                 displayName: "cherek",
-                fontLetter: "&#231;",
+                fontLetter: "\u00E7",
                 phoneme: "ch",
             },
             "enth":
             {
                 name: "ENTH",
                 displayName: "enth",
-                fontLetter: "&#230;",
+                fontLetter: "\u00E6",
                 phoneme: "ae",
             },
             "onith":
             {
                 name: "ONITH",
                 displayName: "onith",
-                fontLetter: "&#235;",
+                fontLetter: "\u00EB",
                 phoneme: "eo",
             },
             "krenth":
             {
                 name: "KRENTH",
                 displayName: "krenth",
-                fontLetter: "&#254;",
+                fontLetter: "\u00FE",
                 phoneme: "kh",
             },
             "nen":
             {
                 name: "NEN",
                 displayName: "nen",
-                fontLetter: "&#241;",
+                fontLetter: "\u00F1",
                 phoneme: "ng",
             },
             "orenth":
             {
                 name: "ORENTH",
                 displayName: "orenth",
-                fontLetter: "&#248;",
+                fontLetter: "\u00F8",
                 phoneme: "oo",
             },
             "shen":
             {
                 name: "SHEN",
                 displayName: "shen",
-                fontLetter: "&#223;",
+                fontLetter: "\u00DF",
                 phoneme: "sh",
             },
             "thesh":
             {
                 name: "THESH",
                 displayName: "thesh",
-                fontLetter: "&#240;",
+                fontLetter: "\u00F0",
                 phoneme: "th",
-            },
-            "zero":
-            {
-                name: "ZERO",
-                displayName: "zero",
-                fontLetter: "0",
-                phoneme: "0",
             },
             "one":
             {
@@ -369,6 +362,13 @@ define(function()
                 displayName: "nine",
                 fontLetter: "9",
                 phoneme: "9",
+            },
+            "zero":
+            {
+                name: "ZERO",
+                displayName: "zero",
+                fontLetter: "0",
+                phoneme: "0",
             },
             "plus":
             {

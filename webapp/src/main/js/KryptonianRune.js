@@ -32,16 +32,16 @@ define(function()
         Y: "y",
         Z: "z",
 
-        0: "0",
-        1: "1",
-        2: "2",
-        3: "3",
-        4: "4",
-        5: "5",
-        6: "6",
-        7: "7",
-        8: "8",
-        9: "9",
+        ONE: "one",
+        TWO: "two",
+        THREE: "three",
+        FOUR: "four",
+        FIVE: "five",
+        SIX: "six",
+        SEVEN: "seven",
+        EIGHT: "eight",
+        NINE: "nine",
+        ZERO: "zero",
 
         SPACE: "space",
         NEWLINE: "newline",
@@ -231,73 +231,73 @@ define(function()
                 phoneme: "z",
             },
 
-            "0":
+            "zero":
             {
-                name: "0",
-                displayName: "0",
+                name: "ZERO",
+                displayName: "zero",
                 fontLetter: "0",
                 phoneme: "0",
             },
-            "1":
+            "one":
             {
-                name: "1",
-                displayName: "1",
+                name: "ONE",
+                displayName: "one",
                 fontLetter: "1",
                 phoneme: "1",
             },
-            "2":
+            "two":
             {
-                name: "2",
-                displayName: "2",
+                name: "TWO",
+                displayName: "two",
                 fontLetter: "2",
                 phoneme: "2",
             },
-            "3":
+            "three":
             {
-                name: "3",
-                displayName: "3",
+                name: "THREE",
+                displayName: "three",
                 fontLetter: "3",
                 phoneme: "3",
             },
-            "4":
+            "four":
             {
-                name: "4",
-                displayName: "4",
+                name: "FOUR",
+                displayName: "four",
                 fontLetter: "4",
                 phoneme: "4",
             },
-            "5":
+            "five":
             {
-                name: "5",
-                displayName: "5",
+                name: "FIVE",
+                displayName: "five",
                 fontLetter: "5",
                 phoneme: "5",
             },
-            "6":
+            "six":
             {
-                name: "6",
-                displayName: "6",
+                name: "SIX",
+                displayName: "six",
                 fontLetter: "6",
                 phoneme: "6",
             },
-            "7":
+            "seven":
             {
-                name: "7",
-                displayName: "7",
+                name: "SEVEN",
+                displayName: "seven",
                 fontLetter: "7",
                 phoneme: "7",
             },
-            "8":
+            "eight":
             {
-                name: "8",
-                displayName: "8",
+                name: "EIGHT",
+                displayName: "eight",
                 fontLetter: "8",
                 phoneme: "8",
             },
-            "9":
+            "nine":
             {
-                name: "9",
-                displayName: "9",
+                name: "NINE",
+                displayName: "nine",
                 fontLetter: "9",
                 phoneme: "9",
             },
