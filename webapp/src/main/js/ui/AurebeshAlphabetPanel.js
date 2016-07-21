@@ -10,6 +10,7 @@ define([ "AurebeshRune", "util/InputValidator" ], function(AurebeshRune, InputVa
             cells.push(React.DOM.td(
             {
                 key: cells.length,
+                className: "fontTable",
             }, this.createFontTable()));
 
             cells.push(React.DOM.td(
@@ -89,7 +90,7 @@ define([ "AurebeshRune", "util/InputValidator" ], function(AurebeshRune, InputVa
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -114,7 +115,7 @@ define([ "AurebeshRune", "util/InputValidator" ], function(AurebeshRune, InputVa
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 

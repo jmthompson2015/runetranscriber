@@ -6,6 +6,10 @@ body {
     font-size: medium;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 @font-face {
     font-family: Junicode-Bold;
     src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/Junicode-Bold.ttf');
@@ -31,150 +35,76 @@ body {
     src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/TengwarSindarin.ttf');
 }
 
-.alignCenter {
+#ALIGN_CENTER, .table-details, .align-center {
     text-align: center;
 }
 
-.font-anglo-saxon {
-    font-family: Junicode-Bold;
-}
-
-.font-aurebesh {
-    font-family: Aurebesh;
-}
-
-.font-cirth {
-    font-family: Angerthas;
-}
-
-.font-kryptonian {
-    font-family: Kryptonian;
-}
-
-.font-tengwar {
-    font-family: Tengwar;
-}
-
-#inputArea, #outputArea {
-    background-color: white;
-    font-size: large;
-}
-
-#inputArea, #buttonBar, #outputArea {
-    text-align: center;
-    width: 100%;
-}
-
-#outputArea {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.left {
-    text-align: left;
-}
-
-#buttonTable {
-    /** These center the table. */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#transcribeButton {
-    text-align: center;
-}
-
-.table-cell-anglo-saxon {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-family: Junicode-Bold;
-    font-size: large;
-    padding: 3px;
-}
-
-.table-cell-aurebesh {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-family: Aurebesh;
-    font-size: large;
-    padding: 3px;
-}
-
-.table-cell-cirth {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-family: Angerthas;
-    font-size: large;
-    padding: 3px;
-}
-
-.table-cell-details {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-size: small;
-    padding: 3px;
-}
-
-.table-cell-kryptonian {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-family: Kryptonian;
-    font-size: large;
-    padding: 3px;
-}
-
-.table-cell-rune-name {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-size: x-small;
-    padding: 3px;
-}
-
-.table-cell-tengwar {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-family: Tengwar;
-    font-size: large;
-    padding: 3px;
-}
-
-.table-details {
-    border: 1px solid;
-    border-collapse: collapse;
-    border-color: darkgreen;
-    font-size: small;
-    vertical-align: top;
-}
-
-.table-header-cell-details {
-    border: 1px solid;
+#BACKGROUND_DARK, .table-header-cell-details, .background-dark {
     background-color: darkgreen;
+}
+
+#BORDER_DARK, .language-cell, .number-cell, .phoneme-cell, .rune-cell, .table-cell-anglo-saxon, .table-cell-aurebesh,
+    .table-cell-cirth, .table-cell-kryptonian, .table-cell-tengwar, .table-details, .border-dark {
+    border: 1px solid;
+    border-color: darkgreen;
+}
+
+#BORDER_LIGHT, .table-header-cell-details, .border-light {
+    border: 1px solid;
     border-color: lightgrey;
-    padding: 3px;
 }
 
-.fontTable {
-    padding-left: 20px;
-    vertical-align: top;
+#DISPLAY_INLINE_BLOCK, .alphabetBlock, .imageBlock, .display-inline-block {
+    display: inline-block;
 }
 
-.number-cell {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-size: x-small;
-    padding: 3px;
+#FONT_ANGLO_SAXON, .table-cell-anglo-saxon, .font-anglo-saxon {
+    font-family: Junicode-Bold;
 }
 
-.rune-cell {
-    border: 1px solid;
-    border-color: darkgreen;
-    font-size: x-small;
-    padding: 3px;
+#FONT_AUREBESH, .table-cell-aurebesh, .font-aurebesh {
+    font-family: Aurebesh;
 }
 
-.phoneme-cell {
-    border: 1px solid;
-    border-color: darkgreen;
+#FONT_CIRTH, .table-cell-cirth, .font-cirth {
+    font-family: Angerthas;
+}
+
+#FONT_KRYPTONIAN, .table-cell-kryptonian, .font-kryptonian {
+    font-family: Kryptonian;
+}
+
+#FONT_SIZE_LARGE, .table-cell-anglo-saxon, .table-cell-aurebesh, .table-cell-cirth, .table-cell-kryptonian,
+    .table-cell-tengwar, .font-size-large {
+    font-size: large;
+}
+
+#FONT_SIZE_SMALL, .language-cell, .phoneme-cell, .table-header-cell-details, .font-size-small {
     font-size: small;
+}
+
+#FONT_SIZE_X_SMALL, .number-cell, .rune-cell, .font-size-x-small {
+    font-size: x-small;
+}
+
+#FONT_TENGWAR, .table-cell-tengwar, .font-tengwar {
+    font-family: Tengwar;
+}
+
+#PADDING_3, .language-cell, .number-cell, .phoneme-cell, .rune-cell, .table-cell-anglo-saxon, .table-cell-aurebesh,
+    .table-cell-cirth, .table-cell-kryptonian, .table-cell-tengwar, .table-details, .table-header-cell-details,
+    .padding-3 {
     padding: 3px;
+}
+
+#PADDING_LEFT_20, .alphabetBlock, .fontTable, .padding-left-20 {
+    padding-left: 20px;
+}
+
+#PADDING_TOP_20, .runeLink, .padding-top-20 {
+    padding-top: 20px;
+}
+
+#VERTICAL_ALIGN_TOP, .alphabetBlock, .fontTable, .vertical-align-top {
+    vertical-align: top;
 }

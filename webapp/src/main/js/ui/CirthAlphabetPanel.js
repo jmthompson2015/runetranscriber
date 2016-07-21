@@ -10,6 +10,7 @@ define([ "CerthRune", "util/InputValidator" ], function(CerthRune, InputValidato
             cells.push(React.DOM.td(
             {
                 key: cells.length,
+                className: "fontTable",
             }, this.createFontTable()));
             cells.push(React.DOM.td(
             {
@@ -57,7 +58,7 @@ define([ "CerthRune", "util/InputValidator" ], function(CerthRune, InputValidato
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -75,24 +76,8 @@ define([ "CerthRune", "util/InputValidator" ], function(CerthRune, InputValidato
                     var rune = CerthRune.properties["c" + number];
                     var phoneme = rune.phoneme;
 
-                    cells.push(React.DOM.td(
-                    {
-                        key: cells.length,
-                        className: "table-cell-details",
-                        style:
-                        {
-                            fontSize: "x-small",
-                        },
-                    }, number));
-                    cells.push(React.DOM.td(
-                    {
-                        key: cells.length,
-                        className: "table-cell-details",
-                        style:
-                        {
-                            fontSize: "medium",
-                        },
-                    }, phoneme));
+                    cells.push(this.createNumberCell(cells.length, number));
+                    cells.push(this.createPhonemeCell(cells.length, phoneme));
                 }
 
                 rows.push(React.DOM.tr(
@@ -103,7 +88,7 @@ define([ "CerthRune", "util/InputValidator" ], function(CerthRune, InputValidato
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -130,7 +115,7 @@ define([ "CerthRune", "util/InputValidator" ], function(CerthRune, InputValidato
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 

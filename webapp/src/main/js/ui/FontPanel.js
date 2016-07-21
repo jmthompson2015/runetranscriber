@@ -69,22 +69,22 @@ define([], function()
                 fontCells.push(React.DOM.td(
                 {
                     key: fontCells.length,
-                    className: runeSet.fontClassName + " alignCenter",
+                    className: runeSet.fontClassName,
                 }, fontLetter));
                 runeCells.push(React.DOM.td(
                 {
                     key: runeCells.length,
-                    className: "table-cell-rune-name alignCenter",
+                    className: "rune-cell",
                 }, runeName));
                 numberCells.push(React.DOM.td(
                 {
                     key: numberCells.length,
-                    className: "table-cell-details alignCenter",
+                    className: "number-cell",
                 }, start + i));
                 hexCells.push(React.DOM.td(
                 {
                     key: hexCells.length,
-                    className: "table-cell-details alignCenter",
+                    className: "number-cell",
                 }, hex));
             }
 

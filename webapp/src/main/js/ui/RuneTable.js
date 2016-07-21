@@ -118,7 +118,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-rune-name",
+                            className: "rune-cell",
                         }, " "));
                     }
                     else if (rune === "comma")
@@ -126,7 +126,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-rune-name",
+                            className: "rune-cell",
                         }, ","));
                     }
                     else if (rune === "period")
@@ -134,7 +134,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-rune-name",
+                            className: "rune-cell",
                         }, "."));
                     }
                     else if (Array.isArray(rune))
@@ -153,7 +153,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-rune-name",
+                            className: "rune-cell",
                         }, word));
                     }
                     else
@@ -161,7 +161,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-rune-name",
+                            className: "rune-cell",
                         }, properties[rune].name));
                     }
                 }
@@ -195,7 +195,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-details",
+                            className: "phoneme-cell",
                         }, word));
                     }
                     else
@@ -203,7 +203,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-details",
+                            className: "phoneme-cell",
                         }, letter));
                     }
                 }
@@ -248,7 +248,7 @@ define(function()
                         cells.push(React.DOM.td(
                         {
                             key: cells.length,
-                            className: "table-cell-details",
+                            className: "language-cell",
                             colSpan: colSpan,
                         }, myWords));
                     }
@@ -256,7 +256,7 @@ define(function()
                     cells.push(React.DOM.td(
                     {
                         key: cells.length,
-                        className: "table-cell-details",
+                        className: "language-cell",
                     }, word));
 
                     wordStart = i + 1;
@@ -267,7 +267,7 @@ define(function()
                     cells.push(React.DOM.td(
                     {
                         key: cells.length,
-                        className: "table-cell-details",
+                        className: "language-cell",
                         colSpan: colSpan,
                     }, word));
                 }

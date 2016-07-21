@@ -10,6 +10,7 @@ define([ "KryptonianRune", "util/InputValidator" ], function(KryptonianRune, Inp
             cells.push(React.DOM.td(
             {
                 key: cells.length,
+                className: "fontTable",
             }, this.createFontTable()));
 
             cells.push(React.DOM.td(
@@ -70,7 +71,7 @@ define([ "KryptonianRune", "util/InputValidator" ], function(KryptonianRune, Inp
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -95,7 +96,7 @@ define([ "KryptonianRune", "util/InputValidator" ], function(KryptonianRune, Inp
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 

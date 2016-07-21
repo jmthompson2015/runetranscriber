@@ -10,6 +10,7 @@ define([ "TengwaRune", "util/InputValidator" ], function(TengwaRune, InputValida
             cells.push(React.DOM.td(
             {
                 key: cells.length,
+                className: "fontTable",
             }, this.createFontTable()));
 
             cells.push(React.DOM.td(
@@ -82,7 +83,7 @@ define([ "TengwaRune", "util/InputValidator" ], function(TengwaRune, InputValida
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -98,7 +99,7 @@ define([ "TengwaRune", "util/InputValidator" ], function(TengwaRune, InputValida
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -156,7 +157,7 @@ define([ "TengwaRune", "util/InputValidator" ], function(TengwaRune, InputValida
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -183,7 +184,7 @@ define([ "TengwaRune", "util/InputValidator" ], function(TengwaRune, InputValida
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 

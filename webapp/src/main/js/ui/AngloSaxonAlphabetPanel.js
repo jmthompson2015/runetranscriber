@@ -10,6 +10,7 @@ define([ "AngloSaxonRune", "util/InputValidator" ], function(AngloSaxonRune, Inp
             cells.push(React.DOM.td(
             {
                 key: cells.length,
+                className: "fontTable",
             }, this.createFontTable()));
 
             cells.push(React.DOM.td(
@@ -60,7 +61,7 @@ define([ "AngloSaxonRune", "util/InputValidator" ], function(AngloSaxonRune, Inp
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
@@ -85,7 +86,7 @@ define([ "AngloSaxonRune", "util/InputValidator" ], function(AngloSaxonRune, Inp
 
             return React.DOM.table(
             {
-                className: "table-details alignCenter",
+                className: "table-details",
             }, React.DOM.tbody({}, rows));
         },
 
