@@ -25,9 +25,10 @@ define([], function()
         createRows: function(start, columnCount)
         {
             var runeSet = this.props.runeSet;
-            var rowCount = 4;
+            var rowCount = 5;
             var fontCells = [];
             var runeCells = [];
+            var keyCells = [];
             var numberCells = [];
             var hexCells = [];
 
@@ -42,6 +43,11 @@ define([], function()
                 key: runeCells.length,
                 className: "table-header-cell-details",
             }, "Rune"));
+            keyCells.push(React.DOM.td(
+            {
+                key: numberCells.length,
+                className: "table-header-cell-details",
+            }, "Key"));
             numberCells.push(React.DOM.td(
             {
                 key: numberCells.length,
@@ -76,6 +82,11 @@ define([], function()
                     key: runeCells.length,
                     className: "rune-cell",
                 }, runeName));
+                keyCells.push(React.DOM.td(
+                {
+                    key: keyCells.length,
+                    className: "language-cell",
+                }, fontLetter));
                 numberCells.push(React.DOM.td(
                 {
                     key: numberCells.length,
@@ -98,6 +109,10 @@ define([], function()
             {
                 key: rowCount * (start / columnCount) + rows.length,
             }, runeCells));
+            rows.push(React.DOM.tr(
+            {
+                key: rowCount * (start / columnCount) + rows.length,
+            }, keyCells));
             rows.push(React.DOM.tr(
             {
                 key: rowCount * (start / columnCount) + rows.length,
