@@ -11,17 +11,17 @@ define([ "LanguageToPhoneticTranscriber", "RuneSet", "example/AurebeshExampleSW1
 
     QUnit.test("languageWordsToString() AurebeshExampleSW1TPM1", function(assert)
     {
-        languageWordsToString(assert, RuneSet.AUREBESH,AurebeshExampleSW1TPM1);
+        languageWordsToString(assert, RuneSet.AUREBESH, AurebeshExampleSW1TPM1);
     });
 
     QUnit.test("transcribeForward() AurebeshExampleSW1TPM1", function(assert)
     {
-        transcribeForward(assert, RuneSet.AUREBESH,AurebeshExampleSW1TPM1);
+        transcribeForward(assert, RuneSet.AUREBESH, AurebeshExampleSW1TPM1);
     });
 
     QUnit.test("transcribeReverse() AurebeshExampleSW1TPM1", function(assert)
     {
-        transcribeReverse(assert, RuneSet.AUREBESH,AurebeshExampleSW1TPM1);
+        transcribeReverse(assert, RuneSet.AUREBESH, AurebeshExampleSW1TPM1);
     });
 
     function createAurebeshTranscriber()
@@ -35,35 +35,37 @@ define([ "LanguageToPhoneticTranscriber", "RuneSet", "example/AurebeshExampleSW1
             phonemeToLanguageMap[toSequence.join("")] = [ fromSequence ];
         }
 
-        // Consonants.
+        // Lower-case letters.
+        put("a", [ "a" ]);
         put("b", [ "b" ]);
         put("c", [ "c" ]);
         put("d", [ "d" ]);
+        put("e", [ "e" ]);
         put("f", [ "f" ]);
         put("g", [ "g" ]);
         put("h", [ "h" ]);
+        put("i", [ "i" ]);
         put("j", [ "j" ]);
         put("k", [ "k" ]);
         put("l", [ "l" ]);
         put("m", [ "m" ]);
         put("n", [ "n" ]);
+        put("o", [ "o" ]);
         put("p", [ "p" ]);
         put("q", [ "q" ]);
         put("r", [ "r" ]);
         put("s", [ "s" ]);
         put("t", [ "t" ]);
+        put("u", [ "u" ]);
         put("v", [ "v" ]);
         put("w", [ "w" ]);
         put("x", [ "x" ]);
         put("y", [ "y" ]);
         put("z", [ "z" ]);
 
-        // Vowels.
-        put("a", [ "a" ]);
-        put("e", [ "e" ]);
-        put("i", [ "i" ]);
-        put("o", [ "o" ]);
-        put("u", [ "u" ]);
+        // Upper-case letters.
+        put("A", [ "A" ]);
+        put("K", [ "K" ]);
 
         // Numbers.
         put("0", [ "0" ]);
@@ -136,7 +138,7 @@ define([ "LanguageToPhoneticTranscriber", "RuneSet", "example/AurebeshExampleSW1
 
         // Verify.
         assert.ok(result);
-        var languageString = example.LANGUAGE_STRING.toLowerCase();
+        var languageString = example.LANGUAGE_STRING;
         assert.equal(result, languageString);
     };
 

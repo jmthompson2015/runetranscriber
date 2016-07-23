@@ -9,13 +9,12 @@ define([ "util/InputValidator" ], function(InputValidator)
         {
             InputValidator.validateNotNull("languageString", languageString);
 
-            var myLanguageString = languageString.toLowerCase();
             var answer = [];
             var word = "";
 
-            for (var i = 0; i < myLanguageString.length; i++)
+            for (var i = 0; i < languageString.length; i++)
             {
-                var letter = myLanguageString.substr(i, 1);
+                var letter = languageString.substr(i, 1);
 
                 if ([ " ", ",", ".", "'", "\n" ].includes(letter))
                 {
@@ -66,7 +65,7 @@ define([ "util/InputValidator" ], function(InputValidator)
                 {
                     for (var j = Math.min(end - i, myMaxKeyLength); j > 0; j--)
                     {
-                        var word = fromSequence.slice(i, i + j).toLowerCase();
+                        var word = fromSequence.slice(i, i + j);
 
                         if (forwardMap[word] !== undefined)
                         {
@@ -102,7 +101,7 @@ define([ "util/InputValidator" ], function(InputValidator)
                 for (var j = Math.min(end - i, myMaxKeyLength); j > 0; j--)
                 {
                     var segment = phonemes.slice(i, i + j);
-                    var word = segment.join("").toLowerCase();
+                    var word = segment.join("");
 
                     if (reverseMap[word] !== undefined)
                     {

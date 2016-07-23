@@ -69,7 +69,9 @@ define([ "LanguageToPhoneticTranscriber" ], function(LanguageToPhoneticTranscrib
 
     EnglishToPhoneticForKryptonianTranscriber.languageStringToWords = function(languageString)
     {
-        return EnglishToPhoneticForKryptonianTranscriber.delegate.languageStringToWords(languageString);
+        var myLanguageString = languageString.toLowerCase();
+
+        return EnglishToPhoneticForKryptonianTranscriber.delegate.languageStringToWords(myLanguageString);
     };
 
     EnglishToPhoneticForKryptonianTranscriber.languageWordsToString = function(languageWords)

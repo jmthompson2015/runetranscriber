@@ -71,7 +71,9 @@ define([ "LanguageToPhoneticTranscriber" ], function(LanguageToPhoneticTranscrib
 
     EnglishToPhoneticForAngloSaxonTranscriber.languageStringToWords = function(languageString)
     {
-        return EnglishToPhoneticForAngloSaxonTranscriber.delegate.languageStringToWords(languageString);
+        var myLanguageString = languageString.toLowerCase();
+
+        return EnglishToPhoneticForAngloSaxonTranscriber.delegate.languageStringToWords(myLanguageString);
     };
 
     EnglishToPhoneticForAngloSaxonTranscriber.languageWordsToString = function(languageWords)
