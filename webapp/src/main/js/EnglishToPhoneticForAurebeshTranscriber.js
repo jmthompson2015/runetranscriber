@@ -18,7 +18,6 @@ define([ "LanguageToPhoneticTranscriber" ], function(LanguageToPhoneticTranscrib
     for (i = 0; i < 26; i++)
     {
         var letter = String.fromCharCode(97 + i);
-        LOGGER.info(i + " letter = " + letter);
         put(letter, [ letter ]);
     }
 
@@ -26,7 +25,6 @@ define([ "LanguageToPhoneticTranscriber" ], function(LanguageToPhoneticTranscrib
     for (i = 0; i < 26; i++)
     {
         var letter = String.fromCharCode(65 + i);
-        LOGGER.info(i + " letter = " + letter);
         put(letter, [ letter ]);
     }
 
