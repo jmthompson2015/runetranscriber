@@ -6,6 +6,7 @@ define(function()
     "use strict";
     var AurebeshRune =
     {
+        // Lower-case.
         AUREK: "aurek",
         BESH: "besh",
         CRESH: "cresh",
@@ -32,6 +33,7 @@ define(function()
         XESH: "xesh",
         YIRT: "yirt",
         ZEREK: "zerek",
+
         CHEREK: "cherek",
         ENTH: "enth",
         ONITH: "onith",
@@ -40,6 +42,8 @@ define(function()
         ORENTH: "orenth",
         SHEN: "shen",
         THESH: "thesh",
+
+        // Numbers.
         ONE: "one",
         TWO: "two",
         THREE: "three",
@@ -50,15 +54,76 @@ define(function()
         EIGHT: "eight",
         NINE: "nine",
         ZERO: "zero",
+
         PLUS: "plus",
         MINUS: "minus",
-        HYPHEN: "hyphen",
+        COLON: "colon",
+        SEMICOLON: "semicolon",
+        PERIOD: "period",
+
+        // Upper-case.
+        AUREK_UC: "aurekUC",
+        BESH_UC: "beshUC",
+        CRESH_UC: "creshUC",
+        DORN_UC: "dornUC",
+        ESK_UC: "eskUC",
+        FORN_UC: "fornUC",
+        GREK_UC: "grekUC",
+        HERF_UC: "herfUC",
+        ISK_UC: "iskUC",
+        JENTH_UC: "jenthUC",
+        KRILL_UC: "krillUC",
+        LETH_UC: "lethUC",
+        MERN_UC: "mernUC",
+        NERN_UC: "nernUC",
+        OSK_UC: "oskUC",
+        PETH_UC: "pethUC",
+        QEK_UC: "qekUC",
+        RESH_UC: "reshUC",
+        SENTH_UC: "senthUC",
+        TRILL_UC: "trillUC",
+        USK_UC: "uskUC",
+        VEV_UC: "vevUC",
+        WESK_UC: "weskUC",
+        XESH_UC: "xeshUC",
+        YIRT_UC: "yirtUC",
+        ZEREK_UC: "zerekUC",
+
+        CHEREK_UC: "cherekUC",
+        ENTH_UC: "enthUC",
+        ONITH_UC: "onithUC",
+        KRENTH_UC: "krenthUC",
+        NEN_UC: "nenUC",
+        ORENTH_UC: "orenthUC",
+        SHEN_UC: "shenUC",
+        THESH_UC: "theshUC",
+
+        // Punctuation.
+        NEWLINE: "newline",
+        SPACE: "space",
+        EXCLAMATION: "exclamation",
+        QUOTE: "quote",
+        HASH: "hash",
+        CREDIT: "credit",
+        PERCENT: "percent",
+        AMPERSAND: "ampersand",
+        APOSTROPHE: "apostrophe",
         LEFT_PAREN: "leftParen",
         RIGHT_PAREN: "rightParen",
-        SPACE: "space",
+        ASTERISK: "asterisk",
         COMMA: "comma",
-        PERIOD: "period",
-        NEWLINE: "newline",
+        SLASH: "slash",
+        LESS_THAN: "lessThan",
+        EQUALS: "equals",
+        GREATER_THAN: "greaterThan",
+        QUESTION_MARK: "questionMark",
+        AT_SIGN: "atSign",
+        LEFT_BRACKET: "leftBracket",
+        BACKSLASH: "backslash",
+        RIGHT_BRACKET: "rightBracket",
+        CARET: "caret",
+        UNDERSCORE: "underscore",
+        ACUTE: "acute",
 
         properties:
         {
@@ -384,12 +449,328 @@ define(function()
                 fontLetter: "-",
                 phoneme: "-",
             },
-            "hyphen":
+            "colon":
             {
-                name: "HYPHEN",
-                displayName: "hyphen",
-                fontLetter: "-",
-                phoneme: "-",
+                name: "COLON",
+                displayName: "colon",
+                fontLetter: ":",
+                phoneme: ":",
+            },
+            "semicolon":
+            {
+                name: "SEMICOLON",
+                displayName: "semicolon",
+                fontLetter: ";",
+                phoneme: ";",
+            },
+            "period":
+            {
+                name: "PERIOD",
+                displayName: "period",
+                fontLetter: ".",
+                phoneme: ".",
+            },
+
+            "aurekUC":
+            {
+                name: "AUREK",
+                displayName: "aurek",
+                fontLetter: "A",
+                phoneme: "A",
+            },
+            "beshUC":
+            {
+                name: "BESH",
+                displayName: "besh",
+                fontLetter: "B",
+                phoneme: "B",
+            },
+            "creshUC":
+            {
+                name: "CRESH",
+                displayName: "cresh",
+                fontLetter: "C",
+                phoneme: "C",
+            },
+            "dornUC":
+            {
+                name: "DORN",
+                displayName: "dorn",
+                fontLetter: "D",
+                phoneme: "D",
+            },
+            "eskUC":
+            {
+                name: "ESK",
+                displayName: "esk",
+                fontLetter: "E",
+                phoneme: "E",
+            },
+            "fornUC":
+            {
+                name: "FORN",
+                displayName: "forn",
+                fontLetter: "F",
+                phoneme: "F",
+            },
+            "grekUC":
+            {
+                name: "GREK",
+                displayName: "grek",
+                fontLetter: "G",
+                phoneme: "G",
+            },
+            "herfUC":
+            {
+                name: "HERF",
+                displayName: "herf",
+                fontLetter: "H",
+                phoneme: "H",
+            },
+            "iskUC":
+            {
+                name: "ISK",
+                displayName: "isk",
+                fontLetter: "I",
+                phoneme: "I",
+            },
+            "jenthUC":
+            {
+                name: "JENTH",
+                displayName: "jenth",
+                fontLetter: "J",
+                phoneme: "J",
+            },
+            "krillUC":
+            {
+                name: "KRILL",
+                displayName: "krill",
+                fontLetter: "K",
+                phoneme: "K",
+            },
+            "lethUC":
+            {
+                name: "LETH",
+                displayName: "leth",
+                fontLetter: "L",
+                phoneme: "L",
+            },
+            "mernUC":
+            {
+                name: "MERN",
+                displayName: "mern",
+                fontLetter: "M",
+                phoneme: "M",
+            },
+            "nernUC":
+            {
+                name: "NERN",
+                displayName: "nern",
+                fontLetter: "N",
+                phoneme: "N",
+            },
+            "oskUC":
+            {
+                name: "OSK",
+                displayName: "osk",
+                fontLetter: "O",
+                phoneme: "O",
+            },
+            "pethUC":
+            {
+                name: "PETH",
+                displayName: "peth",
+                fontLetter: "P",
+                phoneme: "P",
+            },
+            "qekUC":
+            {
+                name: "QEK",
+                displayName: "qek",
+                fontLetter: "Q",
+                phoneme: "Q",
+            },
+            "reshUC":
+            {
+                name: "RESH",
+                displayName: "resh",
+                fontLetter: "R",
+                phoneme: "R",
+            },
+            "senthUC":
+            {
+                name: "SENTH",
+                displayName: "senth",
+                fontLetter: "S",
+                phoneme: "S",
+            },
+            "trillUC":
+            {
+                name: "TRILL",
+                displayName: "trill",
+                fontLetter: "T",
+                phoneme: "T",
+            },
+            "uskUC":
+            {
+                name: "USK",
+                displayName: "usk",
+                fontLetter: "U",
+                phoneme: "U",
+            },
+            "vevUC":
+            {
+                name: "VEV",
+                displayName: "vev",
+                fontLetter: "V",
+                phoneme: "V",
+            },
+            "weskUC":
+            {
+                name: "WESK",
+                displayName: "wesk",
+                fontLetter: "W",
+                phoneme: "W",
+            },
+            "xeshUC":
+            {
+                name: "XESH",
+                displayName: "xesh",
+                fontLetter: "X",
+                phoneme: "X",
+            },
+            "yirtUC":
+            {
+                name: "YIRT",
+                displayName: "yirt",
+                fontLetter: "Y",
+                phoneme: "Y",
+            },
+            "zerekUC":
+            {
+                name: "ZEREK",
+                displayName: "zerek",
+                fontLetter: "Z",
+                phoneme: "Z",
+            },
+            "cherekUC":
+            {
+                name: "CHEREK",
+                displayName: "cherek",
+                fontLetter: "\u00C7",
+                phoneme: "CH",
+            },
+            "enthUC":
+            {
+                name: "ENTH",
+                displayName: "enth",
+                fontLetter: "\u00C6",
+                phoneme: "AE",
+            },
+            "onithUC":
+            {
+                name: "ONITH",
+                displayName: "onith",
+                fontLetter: "\u00CB",
+                phoneme: "EO",
+            },
+            "krenthUC":
+            {
+                name: "KRENTH",
+                displayName: "krenth",
+                fontLetter: "\u00DE",
+                phoneme: "KH",
+            },
+            "nenUC":
+            {
+                name: "NEN",
+                displayName: "nen",
+                fontLetter: "\u00D1",
+                phoneme: "NG",
+            },
+            "orenthUC":
+            {
+                name: "ORENTH",
+                displayName: "orenth",
+                fontLetter: "\u00D8",
+                phoneme: "OO",
+            },
+            "shenUC":
+            {
+                name: "SHEN",
+                displayName: "shen",
+                fontLetter: "\u00DF",
+                phoneme: "SH",
+            },
+            "theshUC":
+            {
+                name: "THESH",
+                displayName: "thesh",
+                fontLetter: "\u00D0",
+                phoneme: "TH",
+            },
+            "newline":
+            {
+                name: "NEWLINE",
+                displayName: "newline",
+                fontLetter: "\n",
+                phoneme: "\n",
+            },
+            "space":
+            {
+                name: "SPACE",
+                displayName: "space",
+                fontLetter: " ",
+                phoneme: " ",
+            },
+            "exclamation":
+            {
+                name: "EXCLAMATION",
+                displayName: "exclamation",
+                fontLetter: "!",
+                phoneme: "!",
+            },
+            "quote":
+            {
+                name: "QUOTE",
+                displayName: "quote",
+                fontLetter: "\"",
+                phoneme: "\"",
+            },
+            "hash":
+            {
+                name: "HASH",
+                displayName: "hash",
+                fontLetter: "#",
+                phoneme: "#",
+            },
+            "credit":
+            {
+                name: "CREDIT",
+                displayName: "Republic Credit",
+                fontLetter: "$",
+                phoneme: "$",
+            },
+            "percent":
+            {
+                name: "PERCENT",
+                displayName: "percent",
+                fontLetter: "%",
+                phoneme: "%",
+            },
+            "ampersand":
+            {
+                name: "AMPERSAND",
+                displayName: "ampersand",
+                fontLetter: "&",
+                phoneme: "&",
+            },
+            "apostophe":
+            {
+                name: "APOSTROPHE",
+                displayName: "apostophe",
+                fontLetter: "'",
+                phoneme: "'",
             },
             "leftParen":
             {
@@ -405,12 +786,12 @@ define(function()
                 fontLetter: ")",
                 phoneme: ")",
             },
-            "space":
+            "asterisk":
             {
-                name: "SPACE",
-                displayName: "space",
-                fontLetter: " ",
-                phoneme: " ",
+                name: "ASTERISK",
+                displayName: "asterisk",
+                fontLetter: "*",
+                phoneme: "*",
             },
             "comma":
             {
@@ -419,19 +800,89 @@ define(function()
                 fontLetter: ",",
                 phoneme: ",",
             },
-            "period":
+            "slash":
             {
-                name: "PERIOD",
-                displayName: "period",
-                fontLetter: ".",
-                phoneme: ".",
+                name: "SLASH",
+                displayName: "slash",
+                fontLetter: "/",
+                phoneme: "/",
             },
-            "newline":
+            "lessThan":
             {
-                name: "NEWLINE",
-                displayName: "newline",
-                fontLetter: "\n",
-                phoneme: "\n",
+                name: "LESS_THAN",
+                displayName: "lessThan",
+                fontLetter: "<",
+                phoneme: "<",
+            },
+            "equals":
+            {
+                name: "EQUALS",
+                displayName: "equals",
+                fontLetter: "=",
+                phoneme: "=",
+            },
+            "greaterThan":
+            {
+                name: "GREATER_THAN",
+                displayName: "greaterThan",
+                fontLetter: ">",
+                phoneme: ">",
+            },
+            "questionMark":
+            {
+                name: "QUESTION_MARK",
+                displayName: "questionMark",
+                fontLetter: "?",
+                phoneme: "?",
+            },
+            "atSign":
+            {
+                name: "AT_SIGN",
+                displayName: "atSign",
+                fontLetter: "@",
+                phoneme: "@",
+            },
+            "leftBracket":
+            {
+                name: "LEFT_BRACKET",
+                displayName: "leftBracket",
+                fontLetter: "[",
+                phoneme: "[",
+            },
+            "backslash":
+            {
+                name: "BACKSLASH",
+                displayName: "backslash",
+                fontLetter: "\\",
+                phoneme: "\\",
+            },
+            "rightBracket":
+            {
+                name: "RIGHT_BRACKET",
+                displayName: "rightBracket",
+                fontLetter: "]",
+                phoneme: "]",
+            },
+            "caret":
+            {
+                name: "CARET",
+                displayName: "caret",
+                fontLetter: "^",
+                phoneme: "^",
+            },
+            "underscore":
+            {
+                name: "UNDERSCORE",
+                displayName: "underscore",
+                fontLetter: "_",
+                phoneme: "_",
+            },
+            "acute":
+            {
+                name: "ACUTE",
+                displayName: "acute",
+                fontLetter: "`",
+                phoneme: "`",
             },
         },
 

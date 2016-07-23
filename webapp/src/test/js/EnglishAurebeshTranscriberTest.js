@@ -24,14 +24,12 @@ define([ "EnglishAurebeshTranscriber", "example/AurebeshExampleSW1TPM1", "exampl
 
     QUnit.test("transcribeReverse() AurebeshExampleSW1TPM1", function(assert)
     {
-        testTranscribeReverse(assert, AurebeshExampleSW1TPM1.RUNES, AurebeshExampleSW1TPM1.LANGUAGE_STRING
-                .toLowerCase(), true);
+        testTranscribeReverse(assert, AurebeshExampleSW1TPM1.RUNES, AurebeshExampleSW1TPM1.LANGUAGE_STRING, true);
     });
 
     QUnit.test("transcribeReverse() AurebeshExampleSW4ANH1", function(assert)
     {
-        testTranscribeReverse(assert, AurebeshExampleSW4ANH1.RUNES, AurebeshExampleSW4ANH1.LANGUAGE_STRING
-                .toLowerCase(), true);
+        testTranscribeReverse(assert, AurebeshExampleSW4ANH1.RUNES, AurebeshExampleSW4ANH1.LANGUAGE_STRING, true);
     });
 
     // ////////////////////////////////////////////////////////////////////////

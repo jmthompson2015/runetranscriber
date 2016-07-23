@@ -13,35 +13,22 @@ define([ "LanguageToPhoneticTranscriber" ], function(LanguageToPhoneticTranscrib
         EnglishToPhoneticForAurebeshTranscriber.phonemeToLanguageMap[toSequence.join("")] = [ fromSequence ];
     }
 
-    // Consonants.
-    put("b", [ "b" ]);
-    put("c", [ "c" ]);
-    put("d", [ "d" ]);
-    put("f", [ "f" ]);
-    put("g", [ "g" ]);
-    put("h", [ "h" ]);
-    put("j", [ "j" ]);
-    put("k", [ "k" ]);
-    put("l", [ "l" ]);
-    put("m", [ "m" ]);
-    put("n", [ "n" ]);
-    put("p", [ "p" ]);
-    put("q", [ "q" ]);
-    put("r", [ "r" ]);
-    put("s", [ "s" ]);
-    put("t", [ "t" ]);
-    put("v", [ "v" ]);
-    put("w", [ "w" ]);
-    put("x", [ "x" ]);
-    put("y", [ "y" ]);
-    put("z", [ "z" ]);
+    // Lower-case letters.
+    var i;
+    for (i = 0; i < 26; i++)
+    {
+        var letter = String.fromCharCode(97 + i);
+        LOGGER.info(i + " letter = " + letter);
+        put(letter, [ letter ]);
+    }
 
-    // Vowels.
-    put("a", [ "a" ]);
-    put("e", [ "e" ]);
-    put("i", [ "i" ]);
-    put("o", [ "o" ]);
-    put("u", [ "u" ]);
+    // Upper-case letters.
+    for (i = 0; i < 26; i++)
+    {
+        var letter = String.fromCharCode(65 + i);
+        LOGGER.info(i + " letter = " + letter);
+        put(letter, [ letter ]);
+    }
 
     // Numbers.
     put("0", [ "0" ]);

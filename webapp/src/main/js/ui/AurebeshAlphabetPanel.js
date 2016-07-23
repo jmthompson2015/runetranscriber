@@ -13,12 +13,6 @@ define([ "AurebeshRune", "util/InputValidator" ], function(AurebeshRune, InputVa
                 className: "fontTable",
             }, this.createFontTable()));
 
-            cells.push(React.DOM.td(
-            {
-                key: cells.length,
-                className: "fontTable",
-            }, this.createPunctuationTable()));
-
             rows.push(React.DOM.tr(
             {
                 key: rows.length,

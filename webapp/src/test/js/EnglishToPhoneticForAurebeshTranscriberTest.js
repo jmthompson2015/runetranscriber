@@ -88,7 +88,7 @@ define(
 
                 // Verify.
                 assert.ok(result);
-                var languageString = example.LANGUAGE_STRING.toLowerCase();
+                var languageString = example.LANGUAGE_STRING;
                 assert.equal(result, languageString);
             };
 
