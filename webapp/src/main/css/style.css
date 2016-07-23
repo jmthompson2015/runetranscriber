@@ -35,12 +35,16 @@ table {
     src: url('https://rawgit.com/jmthompson2015/runetranscriber/master/webapp/src/main/resources/TengwarSindarin.ttf');
 }
 
-#ALIGN_CENTER, .table-details, .align-center {
+#ALIGN_CENTER, #inputArea, #outputArea, .table-details, .align-center {
     text-align: center;
 }
 
 #BACKGROUND_DARK, .table-header-cell-details, .background-dark {
     background-color: darkgreen;
+}
+
+#BACKGROUND_WHITE, #inputArea, #outputArea, .background-dark {
+    background-color: white;
 }
 
 #BORDER_DARK, .language-cell, .number-cell, .phoneme-cell, .rune-cell, .table-cell-anglo-saxon, .table-cell-aurebesh,
@@ -74,8 +78,8 @@ table {
     font-family: Kryptonian;
 }
 
-#FONT_SIZE_LARGE, .table-cell-anglo-saxon, .table-cell-aurebesh, .table-cell-cirth, .table-cell-kryptonian,
-    .table-cell-tengwar, .font-size-large {
+#FONT_SIZE_LARGE, #inputArea, #outputArea, .table-cell-anglo-saxon, .table-cell-aurebesh, .table-cell-cirth,
+    .table-cell-kryptonian, .table-cell-tengwar, .font-size-large {
     font-size: large;
 }
 
@@ -91,17 +95,26 @@ table {
     font-family: Tengwar;
 }
 
+#MARGIN_AUTO, #buttonTable, .margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #PADDING_3, .language-cell, .number-cell, .phoneme-cell, .rune-cell, .table-cell-anglo-saxon, .table-cell-aurebesh,
     .table-cell-cirth, .table-cell-kryptonian, .table-cell-tengwar, .table-details, .table-header-cell-details,
     .padding-3 {
     padding: 3px;
 }
 
+#PADDING_BOTTON_20, #outputArea, .padding-bottom-20 {
+    padding-bottom: 20px;
+}
+
 #PADDING_LEFT_20, .alphabetBlock, .fontTable, .padding-left-20 {
     padding-left: 20px;
 }
 
-#PADDING_TOP_20, .runeLink, .padding-top-20 {
+#PADDING_TOP_20, #outputArea, .runeLink, .padding-top-20 {
     padding-top: 20px;
 }
 
