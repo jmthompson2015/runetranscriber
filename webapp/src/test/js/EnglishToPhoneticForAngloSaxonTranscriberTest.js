@@ -1,8 +1,10 @@
 define([ "EnglishToPhoneticForAngloSaxonTranscriber", "example/AngloSaxonExample1", "example/AngloSaxonExample2",
         "example/AngloSaxonExample3", "example/AngloSaxonExample4", "example/AngloSaxonExample5",
-        "example/AngloSaxonExample6", "example/AngloSaxonExample7", "example/AngloSaxonExample8" ], function(
+        "example/AngloSaxonExample6", "example/AngloSaxonExample7", "example/AngloSaxonExample8",
+        "example/AngloSaxonExampleTROTS1", "example/AngloSaxonExampleTROTS2", ], function(
         EnglishToPhoneticForAngloSaxonTranscriber, AngloSaxonExample1, AngloSaxonExample2, AngloSaxonExample3,
-        AngloSaxonExample4, AngloSaxonExample5, AngloSaxonExample6, AngloSaxonExample7, AngloSaxonExample8)
+        AngloSaxonExample4, AngloSaxonExample5, AngloSaxonExample6, AngloSaxonExample7, AngloSaxonExample8,
+        AngloSaxonExampleTROTS1, AngloSaxonExampleTROTS2)
 {
     "use strict";
     QUnit.module("EnglishToPhoneticForAngloSaxonTranscriber");
@@ -50,6 +52,16 @@ define([ "EnglishToPhoneticForAngloSaxonTranscriber", "example/AngloSaxonExample
         languageStringToWords(assert, AngloSaxonExample8);
     });
 
+    QUnit.test("languageStringToWords() AngloSaxonExampleTROTS1", function(assert)
+    {
+        languageStringToWords(assert, AngloSaxonExampleTROTS1);
+    });
+
+    QUnit.test("languageStringToWords() AngloSaxonExampleTROTS2", function(assert)
+    {
+        languageStringToWords(assert, AngloSaxonExampleTROTS2);
+    });
+
     // ////////////////////////////////////////////////////////////////////////
     // languageWordsToString()
 
@@ -91,6 +103,16 @@ define([ "EnglishToPhoneticForAngloSaxonTranscriber", "example/AngloSaxonExample
     QUnit.test("languageWordsToString() AngloSaxonExample8", function(assert)
     {
         languageWordsToString(assert, AngloSaxonExample8);
+    });
+
+    QUnit.test("languageWordsToString() AngloSaxonExampleTROTS1", function(assert)
+    {
+        languageWordsToString(assert, AngloSaxonExampleTROTS1);
+    });
+
+    QUnit.test("languageWordsToString() AngloSaxonExampleTROTS2", function(assert)
+    {
+        languageWordsToString(assert, AngloSaxonExampleTROTS2);
     });
 
     // ////////////////////////////////////////////////////////////////////////
@@ -136,6 +158,16 @@ define([ "EnglishToPhoneticForAngloSaxonTranscriber", "example/AngloSaxonExample
         transcribeForward(assert, AngloSaxonExample8);
     });
 
+    QUnit.test("transcribeForward() AngloSaxonExampleTROTS1", function(assert)
+    {
+        transcribeForward(assert, AngloSaxonExampleTROTS1);
+    });
+
+    QUnit.test("transcribeForward() AngloSaxonExampleTROTS2", function(assert)
+    {
+        transcribeForward(assert, AngloSaxonExampleTROTS2);
+    });
+
     // ////////////////////////////////////////////////////////////////////////
     // transcribeReverse()
 
@@ -177,6 +209,16 @@ define([ "EnglishToPhoneticForAngloSaxonTranscriber", "example/AngloSaxonExample
     QUnit.test("transcribeReverse() AngloSaxonExample8", function(assert)
     {
         transcribeReverse(assert, AngloSaxonExample8);
+    });
+
+    QUnit.test("transcribeReverse() AngloSaxonExampleTROTS1", function(assert)
+    {
+        transcribeReverse(assert, AngloSaxonExampleTROTS1);
+    });
+
+    QUnit.test("transcribeReverse() AngloSaxonExampleTROTS2", function(assert)
+    {
+        transcribeReverse(assert, AngloSaxonExampleTROTS2);
     });
 
     // ////////////////////////////////////////////////////////////////////////
